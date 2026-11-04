@@ -637,10 +637,12 @@ local CPICK_W, CPICK_GAP = 202, 8
 -- inline hotkey capture
 local hk_bind, hk_idx = false, -1
 local last_sel = -1
--- The list skin omits registry-only section labels. Keep a cached display-row -> registry-index
--- map so large dynamic pages are not fully fetched from C++ every frame.
+-- Section labels (header rows) draw as breakers: a row in the list, never selectable (C++ steps over
+-- them). Keep a cached display-row -> registry-index map so large dynamic pages are not fully fetched
+-- from C++ every frame, plus each selectable row's position among the selectable rows for the counter.
 local list_page, list_raw_count, list_revision = nil, -1, -1
 local list_indices, list_positions = {}, {}
+local list_pick_positions, list_pick_count = {}, 0
 -- Header feature search. Results are snapshots of stable page ids + display text; no menu_item is
 -- copied or activated from this virtual list. Choosing a hit only navigates to its owning page.
 local search_open, search_query, search_last_query = false, "", nil
@@ -665,12 +667,17 @@ local function current_list_items()
     if page ~= list_page or raw_count ~= list_raw_count or revision ~= list_revision then
         list_page, list_raw_count, list_revision = page, raw_count, revision
         list_indices, list_positions = {}, {}
+        list_pick_positions, list_pick_count = {}, 0
         for raw=0,raw_count-1 do
             local item = menu.get_item(raw)
-            if item and not item.is_header then
+            if item then
                 local display = #list_indices
                 list_indices[display+1] = raw
                 list_positions[raw] = display
+                if not item.is_header then
+                    list_pick_positions[raw] = list_pick_count
+                    list_pick_count = list_pick_count + 1
+                end
             end
         end
     end
@@ -1248,6 +1255,19 @@ function draw_menu()
                     search_sel = i
                     open_search_result()
                 end
+              elseif item.is_header then
+                -- Breaker: dim section label, then a hairline to the right edge.
+                local label = string.upper(type(item.name)=="string" and item.name or "")
+                local ly = ry+(ROW_H-text.height(font.small))*0.5
+                local lx = x+PAD_X
+                if label ~= "" then
+                    text.draw(font.small, lx, ly, COL.foot_txt[1],COL.foot_txt[2],COL.foot_txt[3],alpha(COL.foot_txt), label)
+                    lx = lx + text.width(font.small, label) + 10
+                end
+                local my = math.floor(ry+ROW_H*0.5)
+                if lx < x+WIN_W-PAD_X then
+                    draw.rect(lx, my, x+WIN_W-PAD_X, my+1, COL.foot_txt[1],COL.foot_txt[2],COL.foot_txt[3],70)
+                end
               elseif not item.is_header then
                 local is_sel = (i==sel)
                 local hov = hit(x+SCROLL_W, ry, x+WIN_W, ry+ROW_H)
@@ -1429,7 +1449,10 @@ function draw_menu()
         if searching then move_search_selection(1) else menu.move_selection(1) end
     end
     -- counter
-    local cnt = (count>0 and (sel+1) or 0).." / "..count
+    -- Breakers are rows but not options: count only what can be selected.
+    local pick_n = searching and count or list_pick_count
+    local pick_i = searching and sel or (list_pick_positions[raw_sel] or 0)
+    local cnt = (pick_n>0 and (pick_i+1) or 0).." / "..pick_n
     text.draw(font.small, x+WIN_W-PAD_X-text.width(font.small,cnt), fcy-text.height(font.small)*0.5,
         COL.foot_txt[1],COL.foot_txt[2],COL.foot_txt[3],alpha(COL.foot_txt), cnt)
 
