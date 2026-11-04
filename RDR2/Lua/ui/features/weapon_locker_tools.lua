@@ -1,6 +1,6 @@
 features.on_draw("Weapon Locker Tools", function(f)
     if not __panelkit then return end
-    local rows = {{"Status", "Open the in-game weapon locker"}}
+    local rows = {{"Status", f.status or "Open the in-game weapon locker"}}
     if f.active then
         rows = {{"Eligible weapons", tostring(f.count or 0)},
             {"Selected", f.name ~= "" and f.name or "Refresh and select an entry"},

@@ -1333,7 +1333,7 @@ function draw_menu()
                         -- The left/right value arrow already applied the change.
                     elseif item.type==item_type.toggle then menu.toggle_item(raw_i)
                     elseif item.type==item_type.sub_menu or item.type==item_type.array_toggle
-                        or (item.type==item_type.array_option and item.submit_tick)
+                        or ((item.type==item_type.array_option or item.type==item_type.slider) and item.submit_tick)
                         or item.type==item_type.loop_toggle or item.type==item_type.action
                         or item.type==item_type.selected_tick then
                         do_activate()

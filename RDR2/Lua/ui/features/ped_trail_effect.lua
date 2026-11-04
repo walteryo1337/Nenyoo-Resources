@@ -1,4 +1,4 @@
-features.on_draw("Trail Effect", function(f)
+local function draw_trail(f)
     if type(f.segments) ~= "string" then return end
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     if not sw or not sh or sw < 1 or sh < 1 then return end
@@ -12,4 +12,7 @@ features.on_draw("Trail Effect", function(f)
             draw.line(x1 * sw, y1 * sh, x2 * sw, y2 * sh, 225, 180, 255, alpha * 240, 2)
         end
     end
-end)
+end
+
+features.on_draw("Trail Effect", draw_trail)
+features.on_draw("Mount Trail Effect", draw_trail)

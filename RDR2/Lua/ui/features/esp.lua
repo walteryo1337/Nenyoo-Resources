@@ -8,9 +8,13 @@ features.on_draw("ESP", function(f)
         x, y, w, h = tonumber(x), tonumber(y), tonumber(w), tonumber(h)
         dist, hp, maxhp, model = tonumber(dist), tonumber(hp), tonumber(maxhp), tonumber(model)
         kind, player = tonumber(kind), tonumber(player)
-        if x and y and w and h then
-            local cx, cy, bw, bh = x * sw, y * sh, w * sw, h * sh
-            local left, top, right, bottom = cx - bw * 0.5, cy - bh * 0.5, cx + bw * 0.5, cy + bh * 0.5
+        if x and y and w and h and x >= 0 and x <= 1 and y >= 0 and y <= 1
+            and w > 0 and w <= 1 and h > 0 and h <= 1 then
+            local cx, cy, bw, bh = x * sw, y * sh, math.max(2, w * sw), math.max(2, h * sh)
+            local padding = kind == 1 and math.max(2, bh * 0.07) or 1
+            local left, top = math.max(0, cx - bw * 0.5 - padding), math.max(0, cy - bh * 0.5 - padding)
+            local right, bottom = math.min(sw, cx + bw * 0.5 + padding), math.min(sh, cy + bh * 0.5 + padding)
+            bh = bottom - top
             if f.boxes then
                 draw.rect_outline(left, top, right, bottom, f.box_r or 255, f.box_g or 255,
                     f.box_b or 255, f.box_a or 255, 0, f.box_thickness or 2)
