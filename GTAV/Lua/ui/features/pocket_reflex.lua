@@ -45,11 +45,11 @@ features.on_draw("Pocket Reflex", function(f)
         local pulse = 0.5 + 0.5 * math.sin(t * 20)
         draw.rect_outline(x0, y0, x0 + bw, y0 + bh, 255, 255, 255, math.floor(120 + 135 * pulse), 16 * s, 6 * s)
     end
-    text.draw(font.title, sw / 2 - text.width(font.title, big) / 2, y0 + bh * 0.38, 255, 255, 255, 255, big)
+    text.draw(font.display, sw / 2 - text.width(font.display, big) / 2, y0 + bh * 0.38, 255, 255, 255, 255, big)
     if small ~= "" then
         local _, rr, rg, rb = rating(state == 3 and (f.last or 0) or 0)
         if state ~= 3 then rr, rg, rb = 235, 235, 245 end
-        text.draw(font.small, sw / 2 - text.width(font.small, small) / 2, y0 + bh * 0.58, rr, rg, rb, 240, small)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, small) / 2, y0 + bh * 0.58, rr, rg, rb, 240, small)
     end
 
     local i = 0
@@ -61,11 +61,11 @@ features.on_draw("Pocket Reflex", function(f)
         local cx = sx + i * slot + slot / 2
         local label = v > 0 and tostring(v) or "-"
         local _, cr, cg, cb = rating(v)
-        text.draw(font.small, cx - text.width(font.small, label) / 2, y0 + bh - 60 * s, cr, cg, cb, 240, label)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, label) / 2, y0 + bh - 60 * s, cr, cg, cb, 240, label)
         i = i + 1
     end
     local best = math.floor(f.best or 0)
     local foot = string.format("ROUND %d / %d", math.min(math.floor(f.round or 0) + (state == 5 and 0 or 1), n), n)
     if best > 0 then foot = foot .. string.format("     BEST AVERAGE %d MS", best) end
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, foot) / 2, y0 + bh - 26 * s, 220, 220, 232, 230, foot)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, foot) / 2, y0 + bh - 26 * s, 220, 220, 232, 230, foot)
 end)

@@ -11,7 +11,7 @@ features.on_draw("Pocket Minesweeper", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local n = 9
     local cell = math.floor(44 * s)
     local size = n * cell
@@ -23,11 +23,11 @@ features.on_draw("Pocket Minesweeper", function(f)
     local t = f.time or 0
     local clock = string.format("%03d", math.min(999, math.floor(t)))
     local flags = string.format("%02d", math.max(0, math.floor(f.flags_left or 0)))
-    text.draw(font.title, x0, y0 - 44 * s, 240, 80, 70, 255, flags)
-    text.draw(font.title, x0 + size - text.width(font.title, clock), y0 - 44 * s, 240, 80, 70, 255, clock)
+    text.draw(font.display, x0, y0 - 44 * s, 240, 80, 70, 255, flags)
+    text.draw(font.display, x0 + size - text.width(font.display, clock), y0 - 44 * s, 240, 80, 70, 255, clock)
     if f.best then
         local b = string.format("BEST %.1f", f.best)
-        text.draw(font.tiny, cx - text.width(font.tiny, b) / 2, y0 - 36 * s, 190, 190, 205, 230, b)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, b) / 2, y0 - 36 * s, 190, 190, 205, 230, b)
     end
 
     local cells = f.cells or ""
@@ -54,7 +54,7 @@ features.on_draw("Pocket Minesweeper", function(f)
                 if v > 0 then
                     local c = number_colours[v]
                     local label = tostring(v)
-                    text.draw(font.title, x + cell / 2 - text.width(font.title, label) / 2, y + cell / 2 - text.height(font.title) / 2, c[1], c[2], c[3], 255, label)
+                    text.draw(font.display, x + cell / 2 - text.width(font.display, label) / 2, y + cell / 2 - text.height(font.display) / 2, c[1], c[2], c[3], 255, label)
                 end
             end
         end
@@ -72,13 +72,14 @@ features.on_draw("Pocket Minesweeper", function(f)
 
     local hint = "W A S D  MOVE    E  OPEN    G  FLAG"
     if state >= 2 then hint = "E FOR A NEW GAME   TURN OFF TO QUIT" end
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, y0 + size + 12 * s, 180, 185, 195, 230, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, y0 + size + 12 * s, 180, 185, 195, 230, hint)
 
     if state == 2 or state == 3 then
         local msg = state == 2 and "CLEARED" or "BOOM"
         local r, g, b = 120, 230, 120
         if state == 3 then r, g, b = 240, 80, 70 end
-        draw.rect(x0, y0 + size / 2 - text.height(big) * 0.8, x0 + size, y0 + size / 2 + text.height(big) * 0.4, 20, 22, 26, 200, 0)
+        -- Near-opaque band: at 200 alpha the board's numbers showed through the word.
+        draw.rect(x0, y0 + size / 2 - text.height(big) * 0.85, x0 + size, y0 + size / 2 + text.height(big) * 0.45, 20, 22, 26, 240, 0)
         text.draw(big, cx - text.width(big, msg) / 2, y0 + size / 2 - text.height(big) * 0.7, r, g, b, 255, msg)
     end
 end)

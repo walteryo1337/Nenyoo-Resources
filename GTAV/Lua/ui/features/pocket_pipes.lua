@@ -67,14 +67,14 @@ features.on_draw("Pocket Pipes", function(f)
     end
 
     local hy = y0 - 60 * s
-    text.draw(font.item, x0, hy, 245, 245, 250, 255, clock(f.elapsed))
+    text.draw(font.hud, x0, hy, 245, 245, 250, 255, clock(f.elapsed))
     local mid = string.format("WATER %d/%d   MOVES %d", math.floor(f.lit_count or 0), math.floor(f.total or 0), math.floor(f.moves or 0))
-    text.draw(font.small, x0 + gw / 2 - text.width(font.small, mid) / 2, hy + 4 * s, 200, 210, 225, 255, mid)
+    text.draw(font.hud_small, x0 + gw / 2 - text.width(font.hud_small, mid) / 2, hy + 4 * s, 200, 210, 225, 255, mid)
     if f.best then
         local b = "BEST " .. clock(f.best)
-        text.draw(font.small, x0 + gw - text.width(font.small, b), hy + 4 * s, 255, 200, 60, 255, b)
+        text.draw(font.hud_small, x0 + gw - text.width(font.hud_small, b), hy + 4 * s, 255, 200, 60, 255, b)
     end
     local msg, mr, mg, mb = "W A S D MOVE   E TURN RIGHT   Q TURN LEFT   GET WATER TO EVERY HOUSE", 220, 220, 232
     if state == 2 then msg, mr, mg, mb = string.format("EVERY HOUSE HAS WATER IN %s!   E FOR A NEW TOWN", clock(f.elapsed)), 120, 240, 140 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + gw + 22 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + gw + 22 * s, mr, mg, mb, 255, msg)
 end)

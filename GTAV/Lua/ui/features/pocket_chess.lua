@@ -22,7 +22,7 @@ local function piece(cx, cy, size, ch, s)
         for k = -1, 1 do draw.circle(cx + k * r * 0.45, cy - r * 1.0, 3 * s, er, eg, eb, 255) end
     end
     local g = glyph[t] or ""
-    if g ~= "" then text.draw(font.item, cx - text.width(font.item, g) / 2, cy - text.height(font.item) / 2, er, eg, eb, 255, g) end
+    if g ~= "" then text.draw(font.hud, cx - text.width(font.hud, g) / 2, cy - text.height(font.hud) / 2, er, eg, eb, 255, g) end
 end
 
 features.on_draw("Pocket Chess", function(f)
@@ -36,9 +36,9 @@ features.on_draw("Pocket Chess", function(f)
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     local bx, by = x0 + 40 * s, y0 + 56 * s
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 14, 18, 235, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "CHESS")
+    text.draw(font.hud, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "CHESS")
     local rec = string.format("W %d   L %d   D %d", math.floor(f.wins or 0), math.floor(f.losses or 0), math.floor(f.draws or 0))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, rec), y0 + 20 * s, 190, 190, 205, 255, rec)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, rec), y0 + 20 * s, 190, 190, 205, 255, rec)
 
     local board, marks = f.board or "", f.marks or ""
     local sel = f.selected and math.floor(f.selected)
@@ -61,9 +61,9 @@ features.on_draw("Pocket Chess", function(f)
         end
     end
     for k = 0, 7 do
-        text.draw(font.tiny, bx - 16 * s, by + k * c + c / 2 - text.height(font.tiny) / 2, 160, 160, 175, 255, tostring(8 - k))
+        text.draw(font.hud_tiny, bx - 16 * s, by + k * c + c / 2 - text.height(font.hud_tiny) / 2, 160, 160, 175, 255, tostring(8 - k))
         local file = string.sub("abcdefgh", k + 1, k + 1)
-        text.draw(font.tiny, bx + k * c + c / 2 - text.width(font.tiny, file) / 2, by + bw + 4 * s, 160, 160, 175, 255, file)
+        text.draw(font.hud_tiny, bx + k * c + c / 2 - text.width(font.hud_tiny, file) / 2, by + bw + 4 * s, 160, 160, 175, 255, file)
     end
     if state == 1 then
         local x, y = bx + math.floor(f.cx or 0) * c, by + math.floor(f.cy or 0) * c
@@ -83,10 +83,10 @@ features.on_draw("Pocket Chess", function(f)
     elseif state == 3 then msg, cr, cg, cb = "CHECKMATE - YOU WIN!   E TO PLAY AGAIN", 120, 240, 120
     elseif state == 4 then msg, cr, cg, cb = "CHECKMATE - YOU LOSE   E TO PLAY AGAIN", 255, 100, 100
     else msg, cr, cg, cb = "DRAW   E TO PLAY AGAIN", 220, 220, 120 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, by + bw + 26 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, by + bw + 26 * s, cr, cg, cb, 255, msg)
     local m = math.floor((f.material or 0) / 100)
     if m ~= 0 then
         local mt = m > 0 and string.format("YOU +%d", m) or string.format("PHONE +%d", -m)
-        text.draw(font.small, sw / 2 - text.width(font.small, mt) / 2, by + bw + 50 * s, 160, 160, 175, 255, mt)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, mt) / 2, by + bw + 50 * s, 160, 160, 175, 255, mt)
     end
 end)

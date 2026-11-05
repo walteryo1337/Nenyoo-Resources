@@ -5,7 +5,7 @@ features.on_draw("Most Wanted", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -28,10 +28,10 @@ features.on_draw("Most Wanted", function(f)
         end
         local cr, cg, cb = 245, 245, 250
         if t < 15 then cr, cg, cb = 120, 230, 120 end
-        text.draw(font.title, x + w - 14 * s - text.width(font.title, clock), y + 6 * s, cr, cg, cb, 255, clock)
+        text.draw(font.display, x + w - 14 * s - text.width(font.display, clock), y + 6 * s, cr, cg, cb, 255, clock)
         local sub = "SURVIVE OR LOSE THEM"
         if math.floor(f.streak or 0) > 0 then sub = sub .. string.format("   STREAK %d", math.floor(f.streak)) end
-        text.draw(font.tiny, x + 14 * s, y + h - 8 * s - text.height(font.tiny), 210, 200, 200, 235, sub)
+        text.draw(font.hud_tiny, x + 14 * s, y + h - 8 * s - text.height(font.hud_tiny), 210, 200, 200, 235, sub)
         return
     end
 
@@ -43,6 +43,6 @@ features.on_draw("Most Wanted", function(f)
     text.draw(big, cx - text.width(big, msg) / 2, sh * 0.28, r, g, b, 255, msg)
     if (f.pay or 0) > 0 then
         local p = string.format("+$%d", math.floor(f.pay))
-        text.draw(font.item, cx - text.width(font.item, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
+        text.draw(font.hud, cx - text.width(font.hud, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
     end
 end)

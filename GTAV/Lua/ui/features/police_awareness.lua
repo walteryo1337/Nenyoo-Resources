@@ -28,14 +28,14 @@ features.on_draw("Police Awareness", function(f)
     local y = sh - 336 * s + (1 - shown) * 10 * s
     local pad = 6 * s
     local dot = 6 * s
-    local th = text.height(font.tiny)
-    local lw = text.width(font.tiny, label)
-    local dw = text.width(font.tiny, dist)
+    local th = text.height(font.hud_tiny)
+    local lw = text.width(font.hud_tiny, label)
+    local dw = text.width(font.hud_tiny, dist)
     local w = pad * 4 + dot + lw + dw
     local h = th + pad * 2
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, math.floor(150 * a), 4 * s)
     draw.circle(x + pad + dot * 0.5, y + h * 0.5, dot * 0.5, r, g, b, math.floor(255 * a))
-    text.draw(font.tiny, x + pad * 2 + dot, y + pad, r, g, b, math.floor(255 * a), label)
-    text.draw(font.tiny, x + w - pad - dw, y + pad, 180, 180, 195, math.floor(200 * a), dist)
+    text.draw(font.hud_tiny, x + pad * 2 + dot, y + pad, r, g, b, math.floor(255 * a), label)
+    text.draw(font.hud_tiny, x + w - pad - dw, y + pad, 180, 180, 195, math.floor(200 * a), dist)
 end)

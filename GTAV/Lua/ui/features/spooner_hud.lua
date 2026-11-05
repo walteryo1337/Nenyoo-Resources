@@ -28,7 +28,7 @@ features.on_draw("Spooner", function(f)
 
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = max(0.72, min(1.7, sh / 1080))
-    local fnt, small, tiny = font.item, font.small, font.tiny
+    local fnt, small, tiny = font.hud, font.hud_small, font.hud_tiny
     local fh = text.height(fnt)
 
     ------------------------------------------------------------------ crosshair

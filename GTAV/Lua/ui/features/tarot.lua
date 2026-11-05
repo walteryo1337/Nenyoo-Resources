@@ -25,13 +25,13 @@ local function card_face(x0, y0, w, h, s, f, c, t)
     draw.rect(x0, y0, x0 + w, y0 + h, 24, 14, 36, 245, 10 * s)
     draw.rect_outline(x0 + 5 * s, y0 + 5 * s, x0 + w - 5 * s, y0 + h - 5 * s, c[1], c[2], c[3], 230, 7 * s, 2 * s)
     local num = numerals[(f.card or 0) + 1] or ""
-    text.draw(font.small, x0 + w / 2 - text.width(font.small, num) / 2, y0 + 16 * s, c[1], c[2], c[3], 255, num)
+    text.draw(font.hud_small, x0 + w / 2 - text.width(font.hud_small, num) / 2, y0 + 16 * s, c[1], c[2], c[3], 255, num)
     emblem(x0 + w / 2, y0 + h * 0.45, w * 0.2, c, f.reversed, t)
     local name = f.name or ""
-    text.draw(font.item, x0 + w / 2 - text.width(font.item, name) / 2, y0 + h - 70 * s, 240, 235, 250, 255, name)
+    text.draw(font.hud, x0 + w / 2 - text.width(font.hud, name) / 2, y0 + h - 70 * s, 240, 235, 250, 255, name)
     if f.reversed then
         local rv = "REVERSED"
-        text.draw(font.tiny, x0 + w / 2 - text.width(font.tiny, rv) / 2, y0 + h - 40 * s, 255, 110, 100, 255, rv)
+        text.draw(font.hud_tiny, x0 + w / 2 - text.width(font.hud_tiny, rv) / 2, y0 + h - 40 * s, 255, 110, 100, 255, rv)
     end
 end
 
@@ -65,9 +65,9 @@ features.on_draw("Tarot Deck", function(f)
         end
         if turn >= 1 then
             local m = f.meaning or ""
-            local mw = text.width(font.small, m)
+            local mw = text.width(font.hud_small, m)
             draw.rect(sw / 2 - mw / 2 - 14 * s, y0 + h + 14 * s, sw / 2 + mw / 2 + 14 * s, y0 + h + 48 * s, 12, 8, 20, math.floor(210 * fade), 14 * s)
-            text.draw(font.small, sw / 2 - mw / 2, y0 + h + 20 * s, 235, 230, 245, math.floor(255 * fade), m)
+            text.draw(font.hud_small, sw / 2 - mw / 2, y0 + h + 20 * s, 235, 230, 245, math.floor(255 * fade), m)
         end
         return
     end
@@ -77,10 +77,10 @@ features.on_draw("Tarot Deck", function(f)
     draw.rect(x0, y0, x0 + w, y0 + h, 18, 10, 28, 215, 10 * s)
     draw.rect(x0, y0, x0 + 5 * s, y0 + h, c[1], c[2], c[3], 255)
     emblem(x0 + 32 * s, y0 + h / 2, 11 * s, c, f.reversed, t)
-    text.draw(font.small, x0 + 58 * s, y0 + 9 * s, 240, 235, 250, 255, f.name or "")
+    text.draw(font.hud_small, x0 + 58 * s, y0 + 9 * s, 240, 235, 250, 255, f.name or "")
     local secs = math.floor(f.seconds or 0)
     local sub = string.format("%s%d:%02d", f.reversed and "REVERSED  " or "", math.floor(secs / 60), secs % 60)
     local r, g, b = 190, 185, 205
     if f.reversed then r, g, b = 255, 130, 120 end
-    text.draw(font.tiny, x0 + 58 * s, y0 + 36 * s, r, g, b, 230, sub)
+    text.draw(font.hud_tiny, x0 + 58 * s, y0 + 36 * s, r, g, b, 230, sub)
 end)

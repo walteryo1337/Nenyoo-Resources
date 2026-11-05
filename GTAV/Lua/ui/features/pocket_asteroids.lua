@@ -56,7 +56,7 @@ features.on_draw("Pocket Asteroids", function(f)
     end
 
     local hud = string.format("SCORE %d   WAVE %d", math.floor(f.score or 0), math.floor(f.wave or 1))
-    text.draw(font.item, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
     for i = 1, math.floor(f.lives or 0) do
         local lx = x0 + fw - i * 26 * s
         draw.line(lx, y0 - 14 * s, lx + 8 * s, y0 - 36 * s, 120, 230, 255, 255, 2 * s)
@@ -66,5 +66,5 @@ features.on_draw("Pocket Asteroids", function(f)
     local msg
     if state == 2 then msg = string.format("GAME OVER   BEST %d   E TO PLAY AGAIN", math.floor(f.best or 0))
     elseif math.floor(f.score or 0) == 0 then msg = "A / D TURN     W THRUST     E FIRE" end
-    if msg then text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh * 0.62, 220, 220, 232, 240, msg) end
+    if msg then text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh * 0.62, 220, 220, 232, 240, msg) end
 end)

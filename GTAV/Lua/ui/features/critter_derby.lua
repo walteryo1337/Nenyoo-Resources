@@ -14,7 +14,7 @@ features.on_draw("Critter Derby", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
     local pick = math.floor(f.pick or -1)
@@ -35,7 +35,7 @@ features.on_draw("Critter Derby", function(f)
     draw.rect(x, y, x + w, y + 3 * s, 120, 200, 90, 255, 0)
     local title = "CRITTER DERBY"
     if state == 1 then title = string.format("BETS CLOSE IN %d   $%d", math.ceil(f.countdown or 0), math.floor(f.stake or 0)) end
-    text.draw(font.small, x + 12 * s, y + 10 * s, 235, 235, 245, 255, title)
+    text.draw(font.hud_small, x + 12 * s, y + 10 * s, 235, 235, 245, 255, title)
 
     for i, row in ipairs(rows) do
         local idx = i - 1
@@ -44,9 +44,9 @@ features.on_draw("Critter Derby", function(f)
         if idx == pick then nr, ng, nb = ar, ag, ab end
         if winner >= 0 and idx == winner then nr, ng, nb = 255, 205, 60 end
         local label = string.upper(row.name)
-        text.draw(font.small, x + 12 * s, ry, nr, ng, nb, 255, label)
+        text.draw(font.hud_small, x + 12 * s, ry, nr, ng, nb, 255, label)
         local ostr = string.format("%.1fx", row.odds)
-        text.draw(font.tiny, x + 110 * s, ry + 2 * s, 190, 190, 205, 230, ostr)
+        text.draw(font.hud_tiny, x + 110 * s, ry + 2 * s, 190, 190, 205, 230, ostr)
         local bx1, bx2 = x + 160 * s, x + w - 14 * s
         local by = ry + 6 * s
         draw.rect(bx1, by, bx2, by + 8 * s, 255, 255, 255, 25, 4 * s)
@@ -58,6 +58,6 @@ features.on_draw("Critter Derby", function(f)
         local pr = math.floor(f.profit or 0)
         local msg, r, g, b = string.format("+$%d", pr), 120, 230, 120
         if pr <= 0 then msg, r, g, b = string.format("-$%d", -pr), 240, 80, 70 end
-        text.draw(font.title, x + 12 * s, y + h + 6 * s, r, g, b, 255, msg)
+        text.draw(font.display, x + 12 * s, y + h + 6 * s, r, g, b, 255, msg)
     end
 end)

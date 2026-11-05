@@ -88,7 +88,7 @@ features.on_draw("Pocket Bubble Shooter", function(f)
         bubble(sx, sy, r, math.floor(f.cur or 0), 255)
     end
     local nx = x0 + 50 * s
-    text.draw(font.tiny, nx - text.width(font.tiny, "NEXT") / 2, sy - r * 2.4, 200, 200, 215, 255, "NEXT")
+    text.draw(font.hud_tiny, nx - text.width(font.hud_tiny, "NEXT") / 2, sy - r * 2.4, 200, 200, 215, 255, "NEXT")
     bubble(nx, sy, r * 0.8, math.floor(f.next or 0), 255)
     local left = math.floor(f.drop_every or 5) - math.floor(f.misses or 0)
     for k = 1, left do
@@ -96,14 +96,14 @@ features.on_draw("Pocket Bubble Shooter", function(f)
     end
 
     local hy = y0 - 46 * s
-    text.draw(font.item, x0, hy - 4 * s, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
+    text.draw(font.hud, x0, hy - 4 * s, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
     local lvl = string.format("LEVEL %d", math.floor(f.level or 1))
-    text.draw(font.small, x0 + fw / 2 - text.width(font.small, lvl) / 2, hy, 200, 200, 215, 255, lvl)
+    text.draw(font.hud_small, x0 + fw / 2 - text.width(font.hud_small, lvl) / 2, hy, 200, 200, 215, 255, lvl)
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + fw - text.width(font.small, best), hy, 255, 200, 60, 255, best)
+    text.draw(font.hud_small, x0 + fw - text.width(font.hud_small, best), hy, 255, 200, 60, 255, best)
 
     local msg, mr, mg, mb = "A / D AIM (SHIFT FINE)   E SHOOT   Q SWAP   MATCH 3 TO POP", 225, 225, 240
     if state == 2 then msg, mr, mg, mb = "BOARD CLEARED!   BONUS", 120, 240, 140
     elseif state == 3 then msg, mr, mg, mb = string.format("THE BUBBLES REACHED THE LINE   SCORE %d   E TO PLAY AGAIN", math.floor(f.score or 0)), 255, 120, 100 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh + 12 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh + 12 * s, mr, mg, mb, 255, msg)
 end)

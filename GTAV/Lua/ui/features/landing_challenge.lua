@@ -7,7 +7,7 @@ features.on_draw("Landing Challenge", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -28,14 +28,14 @@ features.on_draw("Landing Challenge", function(f)
         draw.circle(px, py, 3 * s, ar, ag, ab, 255)
 
         local dist = string.format("%d M", math.floor(d))
-        text.draw(font.title, px - text.width(font.title, dist) / 2, py + r + 8 * s, 245, 245, 250, 255, dist)
+        text.draw(font.display, px - text.width(font.display, dist) / 2, py + r + 8 * s, 245, 245, 250, 255, dist)
         local alt = string.format("ALT %d M", math.floor(f.height or 0))
-        local ay = py + r + 8 * s + text.height(font.title)
-        text.draw(font.small, px - text.width(font.small, alt) / 2, ay, 210, 210, 222, 235, alt)
+        local ay = py + r + 8 * s + text.height(font.display)
+        text.draw(font.hud_small, px - text.width(font.hud_small, alt) / 2, ay, 210, 210, 222, 235, alt)
         if not f.chute_open and (f.height or 0) < 250 then
             local warn = "PULL THE CHUTE"
             local wa = math.floor(150 + 105 * pulse)
-            text.draw(font.item, cx - text.width(font.item, warn) / 2, sh * 0.7, 255, 90, 70, wa, warn)
+            text.draw(font.hud, cx - text.width(font.hud, warn) / 2, sh * 0.7, 255, 90, 70, wa, warn)
         end
         return
     end
@@ -50,11 +50,11 @@ features.on_draw("Landing Challenge", function(f)
     y = y + text.height(big)
     if result <= 6 then
         local sub = string.format("%.1f M FROM CENTRE", f.result_dist or 0)
-        text.draw(font.item, cx - text.width(font.item, sub) / 2, y, 235, 235, 245, 255, sub)
-        y = y + text.height(font.item) + 2 * s
+        text.draw(font.hud, cx - text.width(font.hud, sub) / 2, y, 235, 235, 245, 255, sub)
+        y = y + text.height(font.hud) + 2 * s
     end
     local line = ""
     if (f.pay or 0) > 0 then line = string.format("+$%d", math.floor(f.pay)) end
     if f.best then line = line .. (line ~= "" and "   " or "") .. string.format("BEST %.1f M", f.best) end
-    if line ~= "" then text.draw(font.small, cx - text.width(font.small, line) / 2, y, 210, 210, 222, 240, line) end
+    if line ~= "" then text.draw(font.hud_small, cx - text.width(font.hud_small, line) / 2, y, 210, 210, 222, 240, line) end
 end)

@@ -26,7 +26,7 @@ features.on_draw("Mind Reader", function(f)
             local cat = math.floor(f["cat" .. i] or 0)
             local tint = TINTS[cat] or TINTS[0]
             local bob = math.sin(t * 2 + i) * 3 * sc
-            local fnt = sc > 0.8 * s and font.small or font.tiny
+            local fnt = sc > 0.8 * s and font.hud_small or font.hud_tiny
             local tw, th = text.width(fnt, txt), text.height(fnt)
             local pad = 12 * sc
             local cx = (f["x" .. i] or 0.5) * sw

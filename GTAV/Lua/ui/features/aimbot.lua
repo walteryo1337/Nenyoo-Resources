@@ -17,6 +17,6 @@ features.on_draw("Aimbot", function(f)
         draw.circle(x, y, 2.5, r, g, b, a)
     end
     if f.show_name and f.target_name and f.target_name ~= "" then
-        text.draw(font.small, x - text.width(font.small, f.target_name) * 0.5, y - 27, 255, 255, 255, a, f.target_name)
+        text.draw(font.hud_small, x - text.width(font.hud_small, f.target_name) * 0.5, y - 27, 255, 255, 255, a, f.target_name)
     end
 end)

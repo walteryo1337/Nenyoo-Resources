@@ -77,8 +77,8 @@ features.on_draw("Pocket Gomoku", function(f)
         local w = math.floor(f.winner or 0)
         msg = w == 1 and "YOU WIN" or (w == 2 and "CPU WINS" or "DRAW")
     end
-    text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, y0 - margin - 100 * s, 245, 245, 250, 255, msg)
+    text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, y0 - margin - 100 * s, 245, 245, 250, 255, msg)
     local foot = state == 3 and "E TO PLAY AGAIN" or "W A S D MOVE     E PLACE"
     foot = foot .. string.format("     %d-%d-%d", math.floor(f.wins or 0), math.floor(f.losses or 0), math.floor(f.draws or 0))
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + span + margin + 14 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + span + margin + 14 * s, 200, 200, 214, 230, foot)
 end)

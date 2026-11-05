@@ -17,7 +17,7 @@ features.on_draw("Street Olympics", function(f)
     local x0, y0 = cx - w / 2, 40 * s
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 215, 12 * s)
     local title = f.dash and "100M DASH" or string.format("LONG JUMP  -  JUMP %d OF 3", math.floor(f.attempt or 1))
-    text.draw(font.small, x0 + 16 * s, y0 + 8 * s, 235, 235, 245, 255, title)
+    text.draw(font.hud_small, x0 + 16 * s, y0 + 8 * s, 235, 235, 245, 255, title)
 
     local big, sub
     if f.dash then
@@ -30,8 +30,8 @@ features.on_draw("Street Olympics", function(f)
         sub = string.format("SET BEST %.2fM   -   RECORD %.2fM", f.set_best or 0, f.best_jump or 0)
         if f.running and (f.to_go or 0) > 0 then sub = string.format("%.0fM TO THE BOARD   -   %s", f.to_go, sub) end
     end
-    text.draw(font.title, x0 + 16 * s, y0 + 32 * s, 255, 220, 90, 255, big)
-    text.draw(font.tiny, x0 + 16 * s, y0 + h - 22 * s, 190, 190, 205, 230, sub)
+    text.draw(font.display, x0 + 16 * s, y0 + 32 * s, 255, 220, 90, 255, big)
+    text.draw(font.hud_tiny, x0 + 16 * s, y0 + h - 22 * s, 190, 190, 205, 230, sub)
 
     local msg, r, g, b
     if f.countdown then
@@ -50,5 +50,5 @@ features.on_draw("Street Olympics", function(f)
             msg, r, g, b = head .. "  -  NO MEDAL", 220, 220, 230
         end
     end
-    if msg then text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.3, r, g, b, 255, msg) end
+    if msg then text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.3, r, g, b, 255, msg) end
 end)

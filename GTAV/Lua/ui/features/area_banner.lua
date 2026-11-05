@@ -14,7 +14,7 @@ features.on_draw("Area Banner", function(f)
     local age = f.age or 1
     local a = math.floor(255 * fade(age))
     local name = string.upper(f.name or "")
-    local fnt = font.display or font.item
+    local fnt = font.display
     local tw = text.width(fnt, name)
     local th = text.height(fnt)
     local cx = sw * 0.5

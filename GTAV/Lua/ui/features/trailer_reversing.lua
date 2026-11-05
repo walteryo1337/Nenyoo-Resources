@@ -15,7 +15,7 @@ features.on_draw("Trailer Reversing", function(f)
     local s = sh / 1080
     local t = ctx.time() or 0
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local state = math.floor(f.state or 0)
 
     if state == 2 then
@@ -35,7 +35,7 @@ features.on_draw("Trailer Reversing", function(f)
                 draw.circle(sx, sy, 7 * s, on and 255 or 50, on and 245 or 50, on and 170 or 60, 255)
             end
             local line = string.format("+$%d   %s   %d CONES HIT", math.floor(f.pay or 0), clock(f.elapsed or 0), math.floor(f.cones_hit or 0))
-            text.draw(font.item, cx - text.width(font.item, line) / 2, sh * 0.26 + text.height(big) + 56 * s, 245, 245, 250, 255, line)
+            text.draw(font.hud, cx - text.width(font.hud, line) / 2, sh * 0.26 + text.height(big) + 56 * s, 245, 245, 250, 255, line)
         end
         return
     end
@@ -43,7 +43,7 @@ features.on_draw("Trailer Reversing", function(f)
     local pw, ph = 230 * s, 400 * s
     local px, py = sw - pw - 40 * s, sh / 2 - ph / 2
     draw.rect(px, py, px + pw, py + ph, 12, 12, 20, 210, 10 * s)
-    text.draw(font.small, px + 14 * s, py + 10 * s, 220, 220, 235, 255, "REVERSE INTO THE BAY")
+    text.draw(font.hud_small, px + 14 * s, py + 10 * s, 220, 220, 235, 255, "REVERSE INTO THE BAY")
 
     local bw, bl = f.bay_w or 4, f.bay_l or 15
     local v_min, v_max = -bl / 2 - 4, bl / 2 + 34
@@ -87,23 +87,23 @@ features.on_draw("Trailer Reversing", function(f)
     local angle = f.angle or 0
     local ang_ok = math.abs(angle) <= 6
     local a_txt = string.format("ANGLE %+.1f", angle)
-    text.draw(font.small, px + 14 * s, iy, ang_ok and 120 or 255, ang_ok and 235 or 200, ang_ok and 140 or 90, 255, a_txt)
+    text.draw(font.hud_small, px + 14 * s, iy, ang_ok and 120 or 255, ang_ok and 235 or 200, ang_ok and 140 or 90, 255, a_txt)
     local gap = math.max(0, f.rear_gap or 0)
     local g_txt = string.format("%.1f M", gap)
-    text.draw(font.small, px + pw - 14 * s - text.width(font.small, g_txt), iy, 220, 220, 235, 255, g_txt)
+    text.draw(font.hud_small, px + pw - 14 * s - text.width(font.hud_small, g_txt), iy, 220, 220, 235, 255, g_txt)
     local left = f.time_left or 0
     local tl = clock(left)
     local tr2 = left < 30000 and 255 or 245
-    text.draw(font.small, px + 14 * s, iy + 24 * s, tr2, left < 30000 and 110 or 245, left < 30000 and 90 or 250, 255, tl)
+    text.draw(font.hud_small, px + 14 * s, iy + 24 * s, tr2, left < 30000 and 110 or 245, left < 30000 and 90 or 250, 255, tl)
     local cones = string.format("CONES %d", math.floor(f.cones_hit or 0))
-    text.draw(font.small, px + pw - 14 * s - text.width(font.small, cones), iy + 24 * s, (f.cones_hit or 0) > 0 and 255 or 200, (f.cones_hit or 0) > 0 and 120 or 200, 90, 255, cones)
+    text.draw(font.hud_small, px + pw - 14 * s - text.width(font.hud_small, cones), iy + 24 * s, (f.cones_hit or 0) > 0 and 255 or 200, (f.cones_hit or 0) > 0 and 120 or 200, 90, 255, cones)
 
     local hold = f.hold or 0
     if hold > 0 then
         local w = 300 * s
         local x, y = sw / 2 - w / 2, sh * 0.8
         local l = "HOLD IT THERE..."
-        text.draw(font.item, sw / 2 - text.width(font.item, l) / 2, y - 30 * s, 120, 240, 140, 255, l)
+        text.draw(font.hud, sw / 2 - text.width(font.hud, l) / 2, y - 30 * s, 120, 240, 140, 255, l)
         draw.rect(x, y, x + w, y + 10 * s, 255, 255, 255, 40, 5 * s)
         draw.rect(x, y, x + w * hold, y + 10 * s, 120, 240, 140, 255, 5 * s)
     end

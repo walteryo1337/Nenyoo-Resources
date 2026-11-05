@@ -39,24 +39,24 @@ features.on_draw("Pocket Craps", function(f)
         local cy = y0 + 70 * s
         draw.rect(cx - bwid / 2 + 4 * s, cy - 36 * s, cx + bwid / 2 - 4 * s, cy + 36 * s, 240, 240, 230, 40, 6 * s)
         local label = n == 6 and "SIX" or (n == 9 and "NINE" or tostring(n))
-        text.draw(font.title, cx - text.width(font.title, label) / 2, cy - text.height(font.title) / 2, 245, 245, 235, 255, label)
+        text.draw(font.display, cx - text.width(font.display, label) / 2, cy - text.height(font.display) / 2, 245, 245, 235, 255, label)
         if n == point then
             draw.circle(cx, cy - 50 * s, 18 * s, 245, 245, 245, 255)
-            text.draw(font.tiny, cx - text.width(font.tiny, "ON") / 2, cy - 50 * s - text.height(font.tiny) / 2, 20, 20, 20, 255, "ON")
+            text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, "ON") / 2, cy - 50 * s - text.height(font.hud_tiny) / 2, 20, 20, 20, 255, "ON")
         end
     end
     if point == 0 then
         draw.circle(bx - 26 * s, y0 + 20 * s, 18 * s, 20, 20, 20, 255)
-        text.draw(font.tiny, bx - 26 * s - text.width(font.tiny, "OFF") / 2, y0 + 20 * s - text.height(font.tiny) / 2, 245, 245, 245, 255, "OFF")
+        text.draw(font.hud_tiny, bx - 26 * s - text.width(font.hud_tiny, "OFF") / 2, y0 + 20 * s - text.height(font.hud_tiny) / 2, 245, 245, 245, 255, "OFF")
     end
 
     local side = math.floor(f.side or 0)
     local ly = y0 + h - 120 * s
     local pass_on, dont_on = side == 0, side == 1
     draw.rect(x0 + 40 * s, ly, x0 + w * 0.62, ly + 46 * s, 240, 240, 230, pass_on and 70 or 20, 6 * s)
-    text.draw(font.item, x0 + 60 * s, ly + 10 * s, 245, 245, 235, 255, "PASS LINE")
+    text.draw(font.hud, x0 + 60 * s, ly + 10 * s, 245, 245, 235, 255, "PASS LINE")
     draw.rect(x0 + w * 0.64, ly, x0 + w - 40 * s, ly + 46 * s, 240, 240, 230, dont_on and 70 or 20, 6 * s)
-    text.draw(font.item, x0 + w * 0.66, ly + 10 * s, 245, 245, 235, 255, "DON'T PASS")
+    text.draw(font.hud, x0 + w * 0.66, ly + 10 * s, 245, 245, 235, 255, "DON'T PASS")
     local staked = math.floor(f.staked or 0)
     if staked > 0 then
         local chip_x = pass_on and (x0 + w * 0.5) or (x0 + w * 0.88)
@@ -82,7 +82,7 @@ features.on_draw("Pocket Craps", function(f)
     die(sw / 2 + 50 * s, dy, d2, rolling)
     if d1 > 0 and not rolling then
         local tot = tostring(d1 + d2)
-        text.draw(font.item, sw / 2 - text.width(font.item, tot) / 2, dy + 50 * s, 245, 245, 235, 255, tot)
+        text.draw(font.hud, sw / 2 - text.width(font.hud, tot) / 2, dy + 50 * s, 245, 245, 235, 255, tot)
     end
 
     local hist = {}
@@ -90,20 +90,20 @@ features.on_draw("Pocket Craps", function(f)
     local hx = x0 + w - 30 * s
     for i = #hist, 1, -1 do
         local v = hist[i]
-        local wv = text.width(font.small, v)
+        local wv = text.width(font.hud_small, v)
         hx = hx - wv - 14 * s
         local r, g, b = 245, 245, 235
         if v == "7" then r, g, b = 255, 120, 110 end
-        text.draw(font.small, hx, y0 + h * 0.3, r, g, b, 255, v)
+        text.draw(font.hud_small, hx, y0 + h * 0.3, r, g, b, 255, v)
     end
 
     local hy = y0 - 56 * s
-    text.draw(font.item, x0, hy, 245, 245, 250, 255, "CASH " .. money(f.cash or 0))
+    text.draw(font.hud, x0, hy, 245, 245, 250, 255, "CASH " .. money(f.cash or 0))
     local net = math.floor(f.net or 0)
     local nr, ng, nb = 200, 200, 210
     if net > 0 then nr, ng, nb = 120, 240, 140 elseif net < 0 then nr, ng, nb = 255, 120, 100 end
     local ns = "SESSION " .. (net >= 0 and "+" or "") .. money(net)
-    text.draw(font.item, x0 + w - text.width(font.item, ns), hy, nr, ng, nb, 255, ns)
+    text.draw(font.hud, x0 + w - text.width(font.hud, ns), hy, nr, ng, nb, 255, ns)
 
     local msg, mr, mg, mb = "", 245, 245, 235
     local outcome = math.floor(f.outcome or 0)
@@ -118,5 +118,5 @@ features.on_draw("Pocket Craps", function(f)
         elseif outcome == 3 then msg, mr, mg, mb = "PUSH, BET RETURNED", 255, 210, 90
         else msg, mr, mg, mb = "THE HOUSE TAKES IT", 255, 110, 100 end
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + h + 26 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + h + 26 * s, mr, mg, mb, 255, msg)
 end)

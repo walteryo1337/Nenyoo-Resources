@@ -62,10 +62,10 @@ features.on_draw("Pocket Highway", function(f)
     end
 
     local score = string.format("%d", math.floor(f.score or 0))
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 - 86 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 - 86 * s, 245, 245, 250, 255, score)
     local info = string.format("BEST %d     %d KM/H", math.floor(f.best or 0), math.floor((f.speed or 0) * 120))
-    text.draw(font.small, sw / 2 - text.width(font.small, info) / 2, y0 - 36 * s, 200, 200, 214, 230, info)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, info) / 2, y0 - 36 * s, 200, 200, 214, 230, info)
 
     local foot = state == 2 and "CRASHED     E TO DRIVE AGAIN" or "A / D CHANGE LANE     W BOOST     S BRAKE"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + rh + 16 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + rh + 16 * s, 200, 200, 214, 230, foot)
 end)

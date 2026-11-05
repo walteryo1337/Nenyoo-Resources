@@ -125,15 +125,15 @@ features.on_draw("Pocket Maze Chase", function(f)
     if f.popup_points then
         local x, y = to_screen(f.popup_x or 0, f.popup_y or 0)
         local label = tostring(math.floor(f.popup_points))
-        text.draw(font.small, x - text.width(font.small, label) / 2, y - 10 * s - (f.popup_age or 0) / 1000 * 16 * s, 40, 230, 255, 255, label)
+        text.draw(font.hud_small, x - text.width(font.hud_small, label) / 2, y - 10 * s - (f.popup_age or 0) / 1000 * 16 * s, 40, 230, 255, 255, label)
     end
 
     local hy = y0 - 46 * s
-    text.draw(font.small, x0, hy, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
+    text.draw(font.hud_small, x0, hy, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + bw / 2 - text.width(font.small, best) / 2, hy, 200, 200, 212, 255, best)
+    text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, best) / 2, hy, 200, 200, 212, 255, best)
     local lvl = string.format("LEVEL %d", math.floor(f.level or 1))
-    text.draw(font.small, x0 + bw - text.width(font.small, lvl), hy, 200, 200, 212, 255, lvl)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, lvl), hy, 200, 200, 212, 255, lvl)
     for i = 1, math.min(6, math.floor(f.lives or 0)) do
         draw.circle(x0 + (i - 0.5) * 22 * s, y0 - 14 * s, 7 * s, 255, 230, 40, 255)
     end
@@ -143,10 +143,10 @@ features.on_draw("Pocket Maze Chase", function(f)
     elseif state == 4 then banner, br, bg, bb = "MAZE CLEAR!", 120, 240, 140
     elseif state == 5 then banner, br, bg, bb = "GAME OVER", 255, 80, 80 end
     if banner then
-        local w = text.width(font.item, banner)
-        text.draw(font.item, x0 + bw / 2 - w / 2, y0 + 11 * c + c / 2 - text.height(font.item) / 2, br, bg, bb, 255, banner)
+        local w = text.width(font.hud, banner)
+        text.draw(font.hud, x0 + bw / 2 - w / 2, y0 + 11 * c + c / 2 - text.height(font.hud) / 2, br, bg, bb, 255, banner)
     end
     local msg = "W A S D STEER   EAT EVERY DOT   POWER PELLETS TURN THE GHOSTS"
     if state == 5 then msg = string.format("SCORE %d   BEST %d   E TO PLAY AGAIN", math.floor(f.score or 0), math.floor(f.best or 0)) end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bh + 12 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bh + 12 * s, 220, 220, 232, 255, msg)
 end)

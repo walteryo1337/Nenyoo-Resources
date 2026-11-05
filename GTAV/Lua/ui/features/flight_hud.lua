@@ -22,7 +22,7 @@ features.on_draw("Flight HUD", function(f)
     local a = 220
     local ppd = sh * 0.012
     local radius = 230 * s
-    local th = text.height(font.tiny)
+    local th = text.height(font.hud_tiny)
 
     local pitch, roll = f.pitch or 0, f.roll or 0
     local ang = math.rad(roll)
@@ -41,7 +41,7 @@ features.on_draw("Flight HUD", function(f)
                 local L, gap = 70 * s, 30 * s
                 line(hx - ca * L, hy - sa * L, hx - ca * gap, hy - sa * gap, a, 1.2 * s)
                 line(hx + ca * gap, hy + sa * gap, hx + ca * L, hy + sa * L, a, 1.2 * s)
-                label(font.tiny, hx + ca * (L + 6 * s), hy + sa * (L + 6 * s) - th / 2, tostring(p), a)
+                label(font.hud_tiny, hx + ca * (L + 6 * s), hy + sa * (L + 6 * s) - th / 2, tostring(p), a)
             end
         end
     end
@@ -65,27 +65,27 @@ features.on_draw("Flight HUD", function(f)
             line(x, tape_y, x, tape_y - (tall and 10 or 5) * s, a, 1 * s)
             if tall then
                 local names = { [0] = "N", [90] = "E", [180] = "S", [270] = "W" }
-                label(font.tiny, x, tape_y - 12 * s - th, names[hh] or string.format("%02d", hh / 10), a, "center")
+                label(font.hud_tiny, x, tape_y - 12 * s - th, names[hh] or string.format("%02d", hh / 10), a, "center")
             end
         end
     end
     line(cx, tape_y + 2 * s, cx - 5 * s, tape_y + 9 * s, 255, 1.5 * s)
     line(cx, tape_y + 2 * s, cx + 5 * s, tape_y + 9 * s, 255, 1.5 * s)
-    label(font.small, cx, tape_y + 10 * s, string.format("%03d", math.floor(heading + 0.5) % 360), a, "center")
+    label(font.hud_small, cx, tape_y + 10 * s, string.format("%03d", math.floor(heading + 0.5) % 360), a, "center")
 
     local side = 300 * s
-    label(font.tiny, cx - side, cy - th * 1.6, "SPD", a, "right")
-    label(font.small, cx - side, cy - th * 0.5, string.format("%d", math.floor(f.speed or 0)), a, "right")
-    label(font.tiny, cx - side, cy + th * 0.9, "KM/H", a, "right")
+    label(font.hud_tiny, cx - side, cy - th * 1.6, "SPD", a, "right")
+    label(font.hud_small, cx - side, cy - th * 0.5, string.format("%d", math.floor(f.speed or 0)), a, "right")
+    label(font.hud_tiny, cx - side, cy + th * 0.9, "KM/H", a, "right")
 
     local climb = f.climb or 0
-    label(font.tiny, cx + side, cy - th * 1.6, "ALT", a)
-    label(font.small, cx + side, cy - th * 0.5, string.format("%d", math.floor(f.altitude or 0)), a)
-    label(font.tiny, cx + side, cy + th * 0.9, string.format("%+.1f M/S", climb), a)
+    label(font.hud_tiny, cx + side, cy - th * 1.6, "ALT", a)
+    label(font.hud_small, cx + side, cy - th * 0.5, string.format("%d", math.floor(f.altitude or 0)), a)
+    label(font.hud_tiny, cx + side, cy + th * 0.9, string.format("%+.1f M/S", climb), a)
 
     local gear = math.floor(f.gear or -1)
     if f.plane and gear >= 0 then
         local g = gear == 0 and "GEAR DOWN" or (gear == 3 and "GEAR UP" or "GEAR MOVING")
-        label(font.tiny, cx, cy + radius + 10 * s, g, a, "center")
+        label(font.hud_tiny, cx, cy + radius + 10 * s, g, a, "center")
     end
 end)

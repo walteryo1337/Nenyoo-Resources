@@ -27,8 +27,8 @@ features.on_draw("Lost Wallet", function(f)
         title = result == 1 and "RETURNED" or "KEPT IT"
         sub = string.format("+$%d", math.floor(f.paid or 0))
     end
-    text.draw(font.item, x + 14 * s, y + 10 * s, 245, 245, 250, 255, title)
-    text.draw(font.small, x + 14 * s, y + 12 * s + text.height(font.item), 210, 210, 222, 240, sub)
+    text.draw(font.hud, x + 14 * s, y + 10 * s, 245, 245, 250, 255, title)
+    text.draw(font.hud_small, x + 14 * s, y + 12 * s + text.height(font.hud), 210, 210, 222, 240, sub)
 
     local returned = math.floor(f.returned or 0)
     local kept = math.floor(f.kept or 0)
@@ -39,11 +39,11 @@ features.on_draw("Lost Wallet", function(f)
         draw.rect(bx1, by, bx2, by + 4 * s, 240, 90, 70, 200, 2 * s)
         draw.rect(bx1, by, bx1 + (bx2 - bx1) * honesty, by + 4 * s, 120, 230, 120, 230, 2 * s)
         local hstr = string.format("HONESTY %d%%", math.floor(honesty * 100 + 0.5))
-        text.draw(font.tiny, bx2 - text.width(font.tiny, hstr), by - text.height(font.tiny) - 2 * s, 190, 190, 205, 230, hstr)
+        text.draw(font.hud_tiny, bx2 - text.width(font.hud_tiny, hstr), by - text.height(font.hud_tiny) - 2 * s, 190, 190, 205, 230, hstr)
     end
 
     if state == 2 then
         local msg = string.format("G  KEEP THE CASH  %d", math.ceil(f.decide_left or 0))
-        text.draw(font.small, x + w / 2 - text.width(font.small, msg) / 2, y + h + 6 * s, ar, ag, ab, 255, msg)
+        text.draw(font.hud_small, x + w / 2 - text.width(font.hud_small, msg) / 2, y + h + 6 * s, ar, ag, ab, 255, msg)
     end
 end)

@@ -94,9 +94,9 @@ local function tape(x, cy, half, value, step, dir, s, r, g, b, a)
             draw.line(x, ty, x + dir * len, ty, r, g, b, major and ta or floor(ta * 0.7), major and 1.5 or 1.1)
             if major then
                 local lbl = string.format("%d", v)
-                local lw = text.width(font.tiny, lbl)
-                text.draw(font.tiny, dir > 0 and (x + len + 5 * s) or (x - len - 5 * s - lw),
-                    ty - text.height(font.tiny) * 0.5, r, g, b, floor(ta * 0.85), lbl)
+                local lw = text.width(font.hud_tiny, lbl)
+                text.draw(font.hud_tiny, dir > 0 and (x + len + 5 * s) or (x - len - 5 * s - lw),
+                    ty - text.height(font.hud_tiny) * 0.5, r, g, b, floor(ta * 0.85), lbl)
             end
         end
     end
@@ -123,7 +123,7 @@ local function compass(cx, y, w, heading, s, r, g, b, a)
             local card = CARDINALS[nd]
             draw.line(x, y + 15 * s, x, y + (card and 7 or 11) * s, r, g, b, ta, card and 1.5 or 1.0)
             if card then
-                centre_spaced(font.tiny, x, y - 3 * s, 1 * s, r, g, b, ta, card)
+                centre_spaced(font.hud_tiny, x, y - 3 * s, 1 * s, r, g, b, ta, card)
             end
         end
     end
@@ -133,11 +133,11 @@ end
 
 -- Right-anchored status chip.
 local function chip(x2, y, s, label, r, g, b)
-    local w = text.width(font.tiny, label) + 16 * s
+    local w = text.width(font.hud_tiny, label) + 16 * s
     local h = 15 * s
     draw.rect(x2 - w, y, x2, y + h, r, g, b, A(38), 2)
     draw.rect(x2 - w, y, x2 - w + 2.5 * s, y + h, r, g, b, A(255), 0)
-    text.draw(font.tiny, x2 - w + 9 * s, y + 3 * s, r, g, b, A(240), label)
+    text.draw(font.hud_tiny, x2 - w + 9 * s, y + 3 * s, r, g, b, A(240), label)
     return h + 5 * s
 end
 
@@ -196,7 +196,7 @@ features.on_draw("Super Man", function(f)
     text.draw_spaced(font.display, cx0 - tw * 0.5, ty, ac_r, ac_g, ac_b, A(245), title, tsp)
 
     local label = pounding and "GROUND POUND" or (STATES[state] or "ONLINE")
-    centre_spaced(font.small, cx0, ty + tth - 4 * s, 4 * s, WHT_R, WHT_G, WHT_B, A(200), label)
+    centre_spaced(font.hud_small, cx0, ty + tth - 4 * s, 4 * s, WHT_R, WHT_G, WHT_B, A(200), label)
 
     compass(cx0, ty + tth + 22 * s, 440 * s, f.heading or 0, s, ac_r, ac_g, ac_b, A(215))
 
@@ -207,8 +207,8 @@ features.on_draw("Super Man", function(f)
         local lxt, rxt = m + 30 * s, sw - m - 30 * s
         tape(lxt, cy0, half, sm_speed, 5, 1, s, ac_r, ac_g, ac_b, ta)
         tape(rxt, cy0, half, max(0, sm_alt), 20, -1, s, ac_r, ac_g, ac_b, ta)
-        centre_spaced(font.tiny, lxt + 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "SPD M/S")
-        centre_spaced(font.tiny, rxt - 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "ALT M")
+        centre_spaced(font.hud_tiny, lxt + 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "SPD M/S")
+        centre_spaced(font.hud_tiny, rxt - 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "ALT M")
     end
 
     ------------------------------------------------------------------ crest (bottom-left)
@@ -233,14 +233,14 @@ features.on_draw("Super Man", function(f)
     local sth = text.height(font.display)
     text.draw_centered(font.display, kx - 50 * s, ky - sth * 0.5 - 3 * s, kx + 50 * s,
         WHT_R, WHT_G, WHT_B, A(250), spd)
-    centre_spaced(font.tiny, kx, ky + sth * 0.5 - 4 * s, 2 * s, GOLD_R, GOLD_G, GOLD_B, A(200), "M/S")
-    centre_spaced(font.tiny, kx, ky + r_thr * 0.86, 3 * s, ac_r, ac_g, ac_b, A(170), "VELOCITY")
+    centre_spaced(font.hud_tiny, kx, ky + sth * 0.5 - 4 * s, 2 * s, GOLD_R, GOLD_G, GOLD_B, A(200), "M/S")
+    centre_spaced(font.hud_tiny, kx, ky + r_thr * 0.86, 3 * s, ac_r, ac_g, ac_b, A(170), "VELOCITY")
 
     -- throttle readout beside the crest
     local lx = kx + r_thr + 20 * s
-    text.draw_spaced(font.small, lx, ky - 22 * s, 168, 196, 226, A(215), "THROTTLE", 2 * s)
+    text.draw_spaced(font.hud_small, lx, ky - 22 * s, 168, 196, 226, A(215), "THROTTLE", 2 * s)
     seg_bar(lx, ky - 6 * s, 124 * s, 6 * s, 12, sm_throttle, ac_r, ac_g, ac_b, A(255))
-    text.draw(font.small, lx, ky + 6 * s, 168, 196, 226, A(200),
+    text.draw(font.hud_small, lx, ky + 6 * s, 168, 196, 226, A(200),
         string.format("%d / %d", floor((f.flight_speed or 0) + 0.5), floor(ceiling + 0.5)))
 
     ------------------------------------------------------------------ status (bottom-right)
@@ -255,17 +255,17 @@ features.on_draw("Super Man", function(f)
     if f.breathing then chips_y = chips_y - chip(tx2, chips_y, s, "FREEZE BREATH", 150, 220, 255) end
     if f.invuln then chips_y = chips_y - chip(tx2, chips_y, s, "INVULNERABLE", BLU_R, BLU_G, BLU_B) end
 
-    local ay = chips_y - text.height(font.item) - 6 * s
-    right_text(font.item, tx2, ay, 200, 220, 238, A(230), string.format("ALT  %.1f m", sm_alt))
+    local ay = chips_y - text.height(font.hud) - 6 * s
+    right_text(font.hud, tx2, ay, 200, 220, 238, A(230), string.format("ALT  %.1f m", sm_alt))
 
     local cy_ = ay - text.height(font.display) - 2 * s
     if state ~= 0 then
         local secs = floor((f.airborne_ms or 0) / 1000)
         right_text(font.display, tx2, cy_, WHT_R, WHT_G, WHT_B, A(245),
             string.format("%02d:%02d", floor(secs / 60), secs % 60))
-        right_text(font.tiny, tx2, cy_ - 11 * s, ac_r, ac_g, ac_b, A(190), "AIRBORNE")
+        right_text(font.hud_tiny, tx2, cy_ - 11 * s, ac_r, ac_g, ac_b, A(190), "AIRBORNE")
     else
-        right_text(font.item, tx2, cy_ + text.height(font.display) - text.height(font.item),
+        right_text(font.hud, tx2, cy_ + text.height(font.display) - text.height(font.hud),
             168, 196, 226, A(205), "JUMP TO TAKE OFF")
     end
 
@@ -279,7 +279,7 @@ features.on_draw("Super Man", function(f)
         -- carrying: the reticle becomes the throw sight
         local d = (30 - 6 * sm_carry) * s
         diamond(cx0, cy0, d, d * 1.15, GOLD_R, GOLD_G, GOLD_B, A(190 * sm_carry), 1.5)
-        centre_spaced(font.tiny, cx0, cy0 + 44 * s, 3 * s, GOLD_R, GOLD_G, GOLD_B,
+        centre_spaced(font.hud_tiny, cx0, cy0 + 44 * s, 3 * s, GOLD_R, GOLD_G, GOLD_B,
             A(210 * sm_carry), "RELEASE TO THROW")
     end
 
@@ -308,9 +308,9 @@ features.on_draw("Super Man", function(f)
                 hint_2 = hint_2 .. (hint_2 ~= "" and "   " or "") .. (kbm and "G " or "DPAD ") .. "FREEZE BREATH"
             end
         end
-        centre_spaced(font.tiny, cx0, sh - m - 22 * s, 2 * s, 176, 200, 224, A(185), hint_1)
+        centre_spaced(font.hud_tiny, cx0, sh - m - 22 * s, 2 * s, 176, 200, 224, A(185), hint_1)
         if hint_2 ~= "" then
-            centre_spaced(font.tiny, cx0, sh - m - 9 * s, 2 * s, 152, 178, 204, A(155), hint_2)
+            centre_spaced(font.hud_tiny, cx0, sh - m - 9 * s, 2 * s, 152, 178, 204, A(155), hint_2)
         end
     end
 end)

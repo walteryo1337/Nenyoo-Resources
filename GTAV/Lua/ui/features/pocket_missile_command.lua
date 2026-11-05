@@ -93,21 +93,21 @@ features.on_draw("Pocket Missile Command", function(f)
     end
 
     local hy = y0 - 44 * s
-    text.draw(font.small, x0, hy, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
+    text.draw(font.hud_small, x0, hy, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
     local mid = string.format("WAVE %d   x%d", math.floor(f.wave or 1), math.floor(f.mult or 1))
-    text.draw(font.small, x0 + fw / 2 - text.width(font.small, mid) / 2, hy, 255, 210, 90, 255, mid)
+    text.draw(font.hud_small, x0 + fw / 2 - text.width(font.hud_small, mid) / 2, hy, 255, 210, 90, 255, mid)
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + fw - text.width(font.small, best), hy, 200, 200, 212, 255, best)
+    text.draw(font.hud_small, x0 + fw - text.width(font.hud_small, best), hy, 200, 200, 212, 255, best)
 
     local banner, br, bg, bb
     if state == 1 then banner, br, bg, bb = string.format("WAVE %d   DEFEND THE CITIES", math.floor(f.wave or 1)), 255, 210, 90
     elseif state == 3 then banner, br, bg, bb = string.format("WAVE CLEAR   BONUS %d", math.floor(f.bonus or 0)), 120, 240, 140
     elseif state == 4 then banner, br, bg, bb = "THE END", 255, 80, 80 end
     if banner then
-        local w = text.width(font.item, banner)
-        text.draw(font.item, sw / 2 - w / 2, y0 + fh * 0.4, br, bg, bb, 255, banner)
+        local w = text.width(font.hud, banner)
+        text.draw(font.hud, sw / 2 - w / 2, y0 + fh * 0.4, br, bg, bb, 255, banner)
     end
     local msg = "W A S D AIM   HOLD SHIFT FOR FAST AIM   E FIRES FROM THE NEAREST LAUNCHER"
     if state == 4 then msg = string.format("SCORE %d   BEST %d   E TO PLAY AGAIN", math.floor(f.score or 0), math.floor(f.best or 0)) end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh + 12 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh + 12 * s, 220, 220, 232, 255, msg)
 end)

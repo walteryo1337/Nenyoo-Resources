@@ -411,21 +411,21 @@ local function L_vinyl(c)
     shell(c, x, y, w, c.h, true)
     local pad = 7 * u
     local hy = y + pad
-    text.draw(font.tiny, x + pad + 3 * u, hy, c.ar, c.ag, c.ab, A(255), c.s.source:upper())
+    text.draw(font.hud_tiny, x + pad + 3 * u, hy, c.ar, c.ag, c.ab, A(255), c.s.source:upper())
     local r = 15 * u
     disc(c, x + pad + 3 * u + r, y + 26 * u + r, r)
     local bx = x + pad + 3 * u + r * 2 + 7 * u
     local bw = x + w - pad - bx
     local ty = y + 24 * u
-    local ay = under(ty, font.item, 14 * u)
-    title_mq(c, font.item, bx, ty, bw, c.s.title)
-    sub(c, font.small, bx, ay, bw, c.s.artist)
-    local sy = max(y + 50 * u, ay + text.height(font.small) + 1 * u)
+    local ay = under(ty, font.hud, 14 * u)
+    title_mq(c, font.hud, bx, ty, bw, c.s.title)
+    sub(c, font.hud_small, bx, ay, bw, c.s.artist)
+    local sy = max(y + 50 * u, ay + text.height(font.hud_small) + 1 * u)
     local by = y + c.h - 30 * u
     spectrum(c, bx, sy, bw, max(2 * u, (by - 4 * u) - sy), 22)
     scrub(c, x + pad, by, w - pad * 2, 3 * u, true)
     -- the duration is right-aligned, so it has to stop short of the resize grip in the corner
-    times(c, font.tiny, x + pad, by + 5 * u, w - pad * 2 - 7 * u)
+    times(c, font.hud_tiny, x + pad, by + 5 * u, w - pad * 2 - 7 * u)
     local cw = ctrl_w(c, "full", 9 * u)
     ctrls(c, x + (w - cw) * 0.5, y + c.h - 16 * u, "full", 9 * u)
 end
@@ -443,13 +443,13 @@ local function L_slim(c)
     -- A 36-unit bar cannot hold two unscaled text lines at the bottom of the scale range, so the
     -- artist drops out and the title centres rather than being pushed through the floor.
     local ty = y + pad + 1 * u
-    local ay = under(ty, font.small, 11 * u)
-    local ah = (c.s.artist ~= "") and text.height(font.tiny) or 0
+    local ay = under(ty, font.hud_small, 11 * u)
+    local ah = (c.s.artist ~= "") and text.height(font.hud_tiny) or 0
     if ah > 0 and ay + ah <= y + h - 3 * u then
-        title_mq(c, font.small, bx, ty, bw, c.s.title)
-        sub(c, font.tiny, bx, ay, bw, c.s.artist)
+        title_mq(c, font.hud_small, bx, ty, bw, c.s.title)
+        sub(c, font.hud_tiny, bx, ay, bw, c.s.artist)
     else
-        title_mq(c, font.small, bx, y + (h - text.height(font.small)) * 0.5 - 1 * u, bw, c.s.title)
+        title_mq(c, font.hud_small, bx, y + (h - text.height(font.hud_small)) * 0.5 - 1 * u, bw, c.s.title)
     end
     ctrls(c, cx0, y + (h - 8 * 1.7 * u) * 0.5, "mid", 8 * u)
     scrub(c, x, y + h - 2 * u, w, 2 * u, false)
@@ -477,7 +477,7 @@ local function L_album(c)
     local by = y + h - pad - ch
     local cy = by + ch * 0.5
 
-    local tf   = font.tiny
+    local tf   = font.hud_tiny
     local pstr = fmt_time(c.s.pos)
     local dstr = c.s.dur > 0.01 and fmt_time(c.s.dur) or "LIVE"
     local pw, dw = text.width(tf, pstr), text.width(tf, dstr)
@@ -510,12 +510,12 @@ local function L_album(c)
         draw.pop_clip()
     end
 
-    local th  = text.height(font.item)
-    local ah  = (c.s.artist ~= "") and text.height(font.small) or 0
+    local th  = text.height(font.hud)
+    local ah  = (c.s.artist ~= "") and text.height(font.hud_small) or 0
     local blk = th + (ah > 0 and (ah + 1 * u) or 0)
     local tty = top + max(0, (sbot - top - blk) * 0.5)
-    title_mq(c, font.item, bx, tty, bw, c.s.title)
-    if ah > 0 then sub(c, font.small, bx, tty + th + 1 * u, bw, c.s.artist) end
+    title_mq(c, font.hud, bx, tty, bw, c.s.title)
+    if ah > 0 then sub(c, font.hud_small, bx, tty + th + 1 * u, bw, c.s.artist) end
 end
 
 local function L_portrait(c)
@@ -532,21 +532,21 @@ local function L_portrait(c)
     local by = y + h - pad - ch
     ctrls(c, x + (w - cw) * 0.5, by, "tiny", cu)
 
-    local tf  = font.tiny
+    local tf  = font.hud_tiny
     local tiy = by - 4 * u - text.height(tf)
     times(c, tf, x + pad, tiy, iw)
     local sy = tiy - 6 * u
     scrub(c, x + pad, sy, iw, 3 * u, false)
 
-    local th  = text.height(font.item)
-    local ah  = (c.s.artist ~= "") and text.height(font.small) or 0
+    local th  = text.height(font.hud)
+    local ah  = (c.s.artist ~= "") and text.height(font.hud_small) or 0
     local blk = th + (ah > 0 and (ah + 1 * u) or 0)
     local a   = max(0, min(iw, (sy - 6 * u) - blk - 5 * u - (y + pad)))
     art(c, x + (w - a) * 0.5, y + pad, a, a, 4 * u)
 
     local tty = y + pad + a + 5 * u
-    title_mq(c, font.item, x + pad, tty, iw, c.s.title)
-    if ah > 0 then sub(c, font.small, x + pad, tty + th + 1 * u, iw, c.s.artist) end
+    title_mq(c, font.hud, x + pad, tty, iw, c.s.title)
+    if ah > 0 then sub(c, font.hud_small, x + pad, tty + th + 1 * u, iw, c.s.artist) end
 end
 
 local function L_bare(c)
@@ -557,12 +557,12 @@ local function L_bare(c)
     art(c, x, y, a, a, 3 * u)
     local bx = x + a + 6 * u
     local bw = w - a - 6 * u
-    text.draw(font.tiny, bx, y, c.ar, c.ag, c.ab, A(255), c.s.source:upper())
-    local ty = under(y, font.tiny, 9 * u)
-    title_mq(c, font.item, bx, ty, bw, c.s.title)
-    sub(c, font.small, bx, under(ty, font.item, 14 * u), bw, c.s.artist)
+    text.draw(font.hud_tiny, bx, y, c.ar, c.ag, c.ab, A(255), c.s.source:upper())
+    local ty = under(y, font.hud_tiny, 9 * u)
+    title_mq(c, font.hud, bx, ty, bw, c.s.title)
+    sub(c, font.hud_small, bx, under(ty, font.hud, 14 * u), bw, c.s.artist)
     scrub(c, x, y + 40 * u, w, 2 * u, false)
-    times(c, font.tiny, x, y + 45 * u, w)
+    times(c, font.hud_tiny, x, y + 45 * u, w)
     ctrls(c, x, y + c.h - 13 * u, "full", 8 * u)
 end
 
@@ -578,18 +578,18 @@ local function L_wave(c)
     local cw = ctrl_w(c, "mid", 8 * u)
     local bx = x + pad + 3 * u + a + 5 * u
     local bw = x + w - pad - cw - 6 * u - bx
-    title_mq(c, font.item, bx, y + pad, bw, c.s.title)
-    sub(c, font.tiny, bx, under(y + pad, font.item, 13 * u), bw, c.s.artist)
+    title_mq(c, font.hud, bx, y + pad, bw, c.s.title)
+    sub(c, font.hud_tiny, bx, under(y + pad, font.hud, 13 * u), bw, c.s.artist)
     ctrls(c, x + w - pad - cw, y + pad + 1 * u, "mid", 8 * u)
     -- anchored off the panel floor rather than a fixed offset, which dropped the row through it
-    local ty = y + h - 4 * u - text.height(font.tiny)
-    text.draw(font.tiny, x + pad, ty, c.dim[1], c.dim[2], c.dim[3], A(230), fmt_time(c.s.pos))
+    local ty = y + h - 4 * u - text.height(font.hud_tiny)
+    text.draw(font.hud_tiny, x + pad, ty, c.dim[1], c.dim[2], c.dim[3], A(230), fmt_time(c.s.pos))
     local dstr = c.s.dur > 0.01 and fmt_time(c.s.dur) or "LIVE"
-    local dw = text.width(font.tiny, dstr)
+    local dw = text.width(font.hud_tiny, dstr)
     local dx = x + w - 13 * u - dw          -- clear of the resize grip in the corner
-    local sx = x + pad + text.width(font.tiny, fmt_time(c.s.pos)) + 5 * u
+    local sx = x + pad + text.width(font.hud_tiny, fmt_time(c.s.pos)) + 5 * u
     scrub(c, sx, ty + 4 * u, (dx - 5 * u) - sx, 3 * u, true)
-    text.draw(font.tiny, dx, ty, c.dim[1], c.dim[2], c.dim[3], A(230), dstr)
+    text.draw(font.hud_tiny, dx, ty, c.dim[1], c.dim[2], c.dim[3], A(230), dstr)
 end
 
 local function L_capsule(c)
@@ -604,8 +604,8 @@ local function L_capsule(c)
     local bx = cx + rad + 6 * u
     local bw = x + w - 7 * u - cw - 6 * u - bx
     local ty = y + 7 * u
-    title_mq(c, font.small, bx, ty, bw, c.s.title)
-    sub(c, font.tiny, bx, under(ty, font.small, 11 * u), bw, c.s.artist)
+    title_mq(c, font.hud_small, bx, ty, bw, c.s.title)
+    sub(c, font.hud_tiny, bx, under(ty, font.hud_small, 11 * u), bw, c.s.artist)
     ctrls(c, x + w - 7 * u - cw, y + (h - 13 * u) * 0.5, "mid", 8 * u)
 end
 
@@ -620,12 +620,12 @@ local function L_ticker(c)
     local bw = cx0 - 5 * u - bx
     -- The text never stops, so a title of any length arrives in full instead of being truncated.
     local line = c.s.title .. "   \194\183   " .. c.s.artist .. "   \194\183   " .. c.s.source .. "   \194\183   "
-    local lw = text.width(font.small, line)
+    local lw = text.width(font.hud_small, line)
     if lw > 0 then
         marquee_off = (marquee_off + c.dt * 34) % lw
         draw.push_clip(bx, y, bx + bw, y + h)
-        text.draw(font.small, bx - marquee_off, y + 3 * u, c.txt[1], c.txt[2], c.txt[3], A(255), line)
-        text.draw(font.small, bx - marquee_off + lw, y + 3 * u, c.txt[1], c.txt[2], c.txt[3], A(255), line)
+        text.draw(font.hud_small, bx - marquee_off, y + 3 * u, c.txt[1], c.txt[2], c.txt[3], A(255), line)
+        text.draw(font.hud_small, bx - marquee_off + lw, y + 3 * u, c.txt[1], c.txt[2], c.txt[3], A(255), line)
         draw.pop_clip()
     end
     ctrls(c, cx0, y + (h - 12 * u) * 0.5, "tiny", 7 * u)
@@ -657,10 +657,10 @@ local function L_cassette(c)
     local ly = wy + wh + 5 * u
     local a = 15 * u
     art(c, wx, ly, a, a, 2 * u)
-    title_mq(c, font.small, wx + a + 5 * u, ly, ww - a - 5 * u, c.s.title)
-    sub(c, font.tiny, wx + a + 5 * u, under(ly, font.small, 11 * u), ww - a - 5 * u, c.s.artist)
+    title_mq(c, font.hud_small, wx + a + 5 * u, ly, ww - a - 5 * u, c.s.title)
+    sub(c, font.hud_tiny, wx + a + 5 * u, under(ly, font.hud_small, 11 * u), ww - a - 5 * u, c.s.artist)
     -- the duration is right-aligned, so it has to stop short of the resize grip in the corner
-    times(c, font.tiny, wx, y + h - 22 * u, ww - 7 * u)
+    times(c, font.hud_tiny, wx, y + h - 22 * u, ww - 7 * u)
     local cw = ctrl_w(c, "full", 8 * u)
     ctrls(c, x + (w - cw) * 0.5, y + h - 15 * u, "full", 8 * u)
 end
@@ -678,15 +678,15 @@ local function L_panel(c)
     local a = 20 * u
     local ty = hy + 5 * u
     art(c, bx, ty, a, a, 2 * u)
-    title_mq(c, font.small, bx + a + 5 * u, ty, bw - a - 5 * u, c.s.title)
-    local ay = under(ty, font.small, 11 * u)
-    sub(c, font.tiny, bx + a + 5 * u, ay, bw - a - 5 * u, c.s.artist)
-    local ry = max(hy + a + 9 * u, ay + text.height(font.tiny) + 2 * u)
+    title_mq(c, font.hud_small, bx + a + 5 * u, ty, bw - a - 5 * u, c.s.title)
+    local ay = under(ty, font.hud_small, 11 * u)
+    sub(c, font.hud_tiny, bx + a + 5 * u, ay, bw - a - 5 * u, c.s.artist)
+    local ry = max(hy + a + 9 * u, ay + text.height(font.hud_tiny) + 2 * u)
     local function row(label, value)
-        text.draw(font.small, bx, ry, c.dim[1], c.dim[2], c.dim[3], A(255), label)
-        local v = fit(value, font.small, bw - text.width(font.small, label) - 12 * u)
-        text.draw(font.small, bx + bw - text.width(font.small, v), ry, c.txt[1], c.txt[2], c.txt[3], A(255), v)
-        ry = under(ry, font.small, 12 * u)
+        text.draw(font.hud_small, bx, ry, c.dim[1], c.dim[2], c.dim[3], A(255), label)
+        local v = fit(value, font.hud_small, bw - text.width(font.hud_small, label) - 12 * u)
+        text.draw(font.hud_small, bx + bw - text.width(font.hud_small, v), ry, c.txt[1], c.txt[2], c.txt[3], A(255), v)
+        ry = under(ry, font.hud_small, 12 * u)
     end
     row("Source", c.s.source ~= "" and c.s.source or "-")
     row("Time", fmt_time(c.s.pos) .. " / " .. (c.s.dur > 0.01 and fmt_time(c.s.dur) or "LIVE"))
@@ -711,15 +711,15 @@ local function L_lower(c)
     art(c, x + pad + 3 * u, y + pad, a, a, 3 * u)
     local cw = ctrl_w(c, "full", 8 * u)
     local tstr = fmt_time(c.s.pos) .. " / " .. (c.s.dur > 0.01 and fmt_time(c.s.dur) or "LIVE")
-    local tw = text.width(font.small, tstr)
+    local tw = text.width(font.hud_small, tstr)
     local cx0 = x + w - 14 * u - cw         -- clear of the resize grip in the corner
     local bx = x + pad + 3 * u + a + 7 * u
     local bw = cx0 - tw - 12 * u - bx
     local ty = y + pad + 1 * u
-    title_mq(c, font.item, bx, ty, bw, c.s.title)
-    sub(c, font.small, bx, under(ty, font.item, 14 * u), bw, c.s.artist)
+    title_mq(c, font.hud, bx, ty, bw, c.s.title)
+    sub(c, font.hud_small, bx, under(ty, font.hud, 14 * u), bw, c.s.artist)
     ctrls(c, cx0, y + (h - 8 * 1.7 * u) * 0.5, "full", 8 * u)
-    text.draw(font.small, cx0 - tw - 6 * u, y + (h - 8 * u) * 0.5,
+    text.draw(font.hud_small, cx0 - tw - 6 * u, y + (h - 8 * u) * 0.5,
               c.dim[1], c.dim[2], c.dim[3], A(220), tstr)
     scrub(c, x, y + h - 2.5 * u, w, 2.5 * u, false)
 end
@@ -736,8 +736,8 @@ local function L_orb(c)
     local cw = ctrl_w(c, "tiny", 7 * u)
     ctrls(c, x + (w - cw) * 0.5, y + w + 3 * u, "tiny", 7 * u)
     local ty = y + w + 16 * u
-    text.draw(font.tiny, x + (w - text.width(font.tiny, fit(c.s.title, font.tiny, w * 2))) * 0.5, ty,
-              c.txt[1], c.txt[2], c.txt[3], A(230), fit(c.s.title, font.tiny, w * 2))
+    text.draw(font.hud_tiny, x + (w - text.width(font.hud_tiny, fit(c.s.title, font.hud_tiny, w * 2))) * 0.5, ty,
+              c.txt[1], c.txt[2], c.txt[3], A(230), fit(c.s.title, font.hud_tiny, w * 2))
 end
 
 -- ORDER MUST MATCH AUDIO_DESIGNS in theme.lua -- the setting stores an index.
@@ -808,24 +808,24 @@ local function draw_folded(c, d)
     local bx = ax + a + 6 * u
     local bw = vx - 5 * u - bx
     if bw > 12 then
-        local th, sh = text.height(font.small), text.height(font.tiny)
+        local th, sh = text.height(font.hud_small), text.height(font.hud_tiny)
         local tstr = fmt_time(c.s.pos)
         if c.s.dur > 0.01 then tstr = tstr .. " / " .. fmt_time(c.s.dur) end
         if h - 2 * u >= th + sh + 4 * u then
             local ty = y + (h - 2 * u - th - sh - 1 * u) * 0.5
-            text.draw(font.small, bx, ty, c.txt[1], c.txt[2], c.txt[3], A(255), fit(c.s.title, font.small, bw))
-            local tw = text.width(font.tiny, tstr)
+            text.draw(font.hud_small, bx, ty, c.txt[1], c.txt[2], c.txt[3], A(255), fit(c.s.title, font.hud_small, bw))
+            local tw = text.width(font.hud_tiny, tstr)
             local line = c.s.artist
             local lw = bw - tw - 6 * u
             if line ~= "" and lw > 20 then
-                text.draw(font.tiny, bx, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(220), fit(line, font.tiny, lw))
-                text.draw(font.tiny, bx + bw - tw, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(200), tstr)
+                text.draw(font.hud_tiny, bx, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(220), fit(line, font.hud_tiny, lw))
+                text.draw(font.hud_tiny, bx + bw - tw, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(200), tstr)
             else
-                text.draw(font.tiny, bx, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(200), fit(tstr, font.tiny, bw))
+                text.draw(font.hud_tiny, bx, ty + th + 1 * u, c.dim[1], c.dim[2], c.dim[3], A(200), fit(tstr, font.hud_tiny, bw))
             end
         else
-            text.draw(font.small, bx, y + (h - 2 * u - th) * 0.5,
-                      c.txt[1], c.txt[2], c.txt[3], A(255), fit(c.s.title, font.small, bw))
+            text.draw(font.hud_small, bx, y + (h - 2 * u - th) * 0.5,
+                      c.txt[1], c.txt[2], c.txt[3], A(255), fit(c.s.title, font.hud_small, bw))
         end
     end
 

@@ -6,7 +6,7 @@ features.on_draw("Tail Job", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
     local t = ctx.time() or 0
@@ -20,7 +20,7 @@ features.on_draw("Tail Job", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.28, r, g, b, 255, msg)
         if (f.pay or 0) > 0 then
             local p = string.format("+$%d", math.floor(f.pay))
-            text.draw(font.item, cx - text.width(font.item, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
+            text.draw(font.hud, cx - text.width(font.hud, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
         end
         return
     end
@@ -37,7 +37,7 @@ features.on_draw("Tail Job", function(f)
     local mx = x + w * d / max_d
     draw.rect(mx - 2 * s, y - 5 * s, mx + 2 * s, y + h + 5 * s, 255, 255, 255, 255, 2 * s)
     local dstr = string.format("%d M", math.floor(f.distance or 0))
-    text.draw(font.small, cx - text.width(font.small, dstr) / 2, y - text.height(font.small) - 4 * s, 235, 235, 245, 255, dstr)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, dstr) / 2, y - text.height(font.hud_small) - 4 * s, 235, 235, 245, 255, dstr)
 
     local sus = math.max(0, math.min(1, f.suspicion or 0))
     local sy = y + h + 12 * s
@@ -49,9 +49,9 @@ features.on_draw("Tail Job", function(f)
     if lost >= 0 then
         local pulse = 0.5 + 0.5 * math.sin(t * 8)
         msg, r, g, b = string.format("CATCH UP  %d", math.ceil(lost)), 240, 120, 90
-        text.draw(font.item, cx - text.width(font.item, msg) / 2, sy + 14 * s, r, g, b, math.floor(160 + 95 * pulse), msg)
+        text.draw(font.hud, cx - text.width(font.hud, msg) / 2, sy + 14 * s, r, g, b, math.floor(160 + 95 * pulse), msg)
     elseif sus > 0.5 then
         msg = "BACK OFF"
-        text.draw(font.item, cx - text.width(font.item, msg) / 2, sy + 14 * s, 245, 180, 60, 255, msg)
+        text.draw(font.hud, cx - text.width(font.hud, msg) / 2, sy + 14 * s, 245, 180, 60, 255, msg)
     end
 end)

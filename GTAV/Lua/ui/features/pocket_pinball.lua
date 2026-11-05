@@ -61,7 +61,7 @@ features.on_draw("Pocket Pinball", function(f)
 
     local mult = string.format("x%d", math.floor(f.multiplier or 1))
     local mx, my = P(0.46, 0.85)
-    text.draw(font.title, mx - text.width(font.title, mult) / 2, my, ar, ag, ab, 200, mult)
+    text.draw(font.display, mx - text.width(font.display, mult) / 2, my, ar, ag, ab, 200, mult)
 
     local fl = (f.flip_len or 0.16) * tw
     local py = f.pivot_y or 1.52
@@ -94,9 +94,9 @@ features.on_draw("Pocket Pinball", function(f)
     end
 
     local hy = y0 - 50 * s
-    text.draw(font.item, x0, hy - 4 * s, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
+    text.draw(font.hud, x0, hy - 4 * s, 245, 245, 250, 255, string.format("SCORE %d", math.floor(f.score or 0)))
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + tw - text.width(font.small, best), hy, 255, 200, 60, 255, best)
+    text.draw(font.hud_small, x0 + tw - text.width(font.hud_small, best), hy, 255, 200, 60, 255, best)
     for k = 1, math.floor(f.balls or 0) do
         draw.circle(x0 + tw / 2 + (k - 2) * 18 * s, hy + 10 * s, 6 * s, 200, 205, 215, 255)
     end
@@ -108,5 +108,5 @@ features.on_draw("Pocket Pinball", function(f)
         local blink = math.floor(t * 2) % 2 == 0 and 255 or 160
         msg, mr, mg, mb = string.format("GAME OVER   SCORE %d   E TO PLAY AGAIN", math.floor(f.score or 0)), 255, blink, 100
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + tw * th + 12 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + tw * th + 12 * s, mr, mg, mb, 255, msg)
 end)

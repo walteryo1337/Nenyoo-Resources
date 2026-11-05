@@ -6,7 +6,7 @@
 -- digits with the reserve beside it, and the magazine as a strip of rounds underneath.
 
 local floor, min, max, sin = math.floor, math.min, math.max, math.sin
-local BIG = font.display or font.title
+local BIG = font.display
 
 -- Font metrics: em = the slot's size in px, base = top-of-box to baseline (both from the engine when
 -- available, so placement does not depend on the face's line spacing).
@@ -54,7 +54,7 @@ local function numerals(right, y, px, s, c, a)
 end
 
 local function chip(right, y, label, c, a)
-    local fnt = font.tiny
+    local fnt = font.hud_tiny
     local w = text.width(fnt, label) + 12
     local h = text.height(fnt) + 6
     draw.rect(right - w, y, right, y + h, c[1], c[2], c[3], floor(a), 3)
@@ -84,7 +84,7 @@ local function draw_counter(f, right, top, now)
     -- Row 1: weapon name, state chip to its left.
     local ny = top + 8
     local name = f.weapon and string.upper(f.weapon) or "AMMO"
-    local nw = spaced(font.tiny, right, ny, name, DIM, 235, 1.5)
+    local nw = spaced(font.hud_tiny, right, ny, name, DIM, 235, 1.5)
     local cx = right - nw - 10
     if reloading then
         chip(cx, ny - 3, "RELOADING", ACC, 230)

@@ -14,9 +14,9 @@ features.on_draw("Pocket Lights Out", function(f)
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     local gx, gy = x0 + 20 * s, y0 + 60 * s
     draw.rect(x0, y0, x0 + pw, y0 + ph, 10, 10, 16, 235, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, string.format("LIGHTS OUT   LEVEL %d", math.floor(f.level or 1)))
+    text.draw(font.hud, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, string.format("LIGHTS OUT   LEVEL %d", math.floor(f.level or 1)))
     local info = string.format("MOVES %d   PAR %d", math.floor(f.moves or 0), math.floor(f.par or 0))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, info), y0 + 22 * s, 200, 200, 212, 255, info)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, info), y0 + 22 * s, 200, 200, 212, 255, info)
 
     local cells = f.cells or ""
     local state = math.floor(f.state or 0)
@@ -52,7 +52,7 @@ features.on_draw("Pocket Lights Out", function(f)
         msg = under and "LIGHTS OUT! AT OR UNDER PAR   E NEXT LEVEL" or "LIGHTS OUT!   E NEXT LEVEL"
         cr, cg, cb = 120, 240, 140
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, gy + gw + 18 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, gy + gw + 18 * s, cr, cg, cb, 255, msg)
     local rec = string.format("LIGHTS ON %d   TOTAL PRESSES %d", math.floor(f.lit or 0), math.floor(f.total_moves or 0))
-    text.draw(font.small, sw / 2 - text.width(font.small, rec) / 2, gy + gw + 44 * s, 160, 160, 175, 255, rec)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, rec) / 2, gy + gw + 44 * s, 160, 160, 175, 255, rec)
 end)

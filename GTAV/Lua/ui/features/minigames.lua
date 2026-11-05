@@ -18,8 +18,8 @@ features.on_draw("Minigames", function(f)
         draw.rect(sw * 0.5 - 170, sh * 0.34, sw * 0.5 + 170, sh * 0.34 + 4, r, g, b, 255, 4)
         text.draw(font.display, sw * 0.5 - 72, sh * 0.34 + 20, r, g, b, 255, title)
         local score = f.dance and ("You " .. math.floor(f.dance_player_score or 0) .. "  -  " .. math.floor(f.dance_opponent_score or 0) .. " Rival") or ("Score: " .. math.floor(f.score or 0))
-        text.draw(font.item, sw * 0.5 - 80, sh * 0.34 + 58, 235, 235, 240, 255, score)
-        text.draw(font.item, sw * 0.5 - 80, sh * 0.34 + 80, 175, 175, 185, 255, "Best: " .. math.floor(f.best or 0))
+        text.draw(font.hud, sw * 0.5 - 80, sh * 0.34 + 58, 235, 235, 240, 255, score)
+        text.draw(font.hud, sw * 0.5 - 80, sh * 0.34 + 80, 175, 175, 185, 255, "Best: " .. math.floor(f.best or 0))
         return
     end
 
@@ -30,9 +30,9 @@ features.on_draw("Minigames", function(f)
         draw.rect(x, y, x + w, y + h, 10, 10, 16, 225, 8)
         draw.rect(x, y, x + w, y + 4, ar, ag, ab, 255, 3)
         text.draw(font.display, x + 18, y + 14, ar, ag, ab, 255, "DANCE BATTLE")
-        text.draw(font.item, x + w - 125, y + 18, 225, 225, 232, 255, "ROUND " .. math.floor(f.dance_round or 1) .. " / 3")
-        text.draw(font.item, x + 18, y + 47, 245, 245, 250, 255, phase_text)
-        text.draw(font.item, x + w - 205, y + 47, 205, 205, 214, 255,
+        text.draw(font.hud, x + w - 125, y + 18, 225, 225, 232, 255, "ROUND " .. math.floor(f.dance_round or 1) .. " / 3")
+        text.draw(font.hud, x + 18, y + 47, 245, 245, 250, 255, phase_text)
+        text.draw(font.hud, x + w - 205, y + 47, 205, 205, 214, 255,
             "YOU " .. math.floor(f.dance_player_score or 0) .. "  -  " .. math.floor(f.dance_opponent_score or 0) .. " RIVAL")
 
         local moves = { "W", "D", "S", "A" }
@@ -48,19 +48,19 @@ features.on_draw("Minigames", function(f)
             local active = phase == 3 and i == math.floor(f.dance_response_index or 0) + 1
             local sr, sg, sb = active and ar or 38, active and ag or 38, active and ab or 48
             draw.rect(sx + (i - 1) * slot_w, y + 78, sx + (i - 1) * slot_w + 36, y + 114, sr, sg, sb, 245, 5)
-            text.draw(font.item, sx + (i - 1) * slot_w + 12, y + 87, 245, 245, 250, 255, value or "?")
+            text.draw(font.hud, sx + (i - 1) * slot_w + 12, y + 87, 245, 245, 250, 255, value or "?")
         end
 
         local feedback = math.floor(f.dance_feedback or 0)
         local feedback_text = feedback == 1 and "PERFECT" or (feedback == 2 and "GOOD" or (feedback == 3 and "WRONG" or (feedback == 4 and "MISS" or "")))
         local fr, fg, fb = feedback >= 3 and 240 or ar, feedback >= 3 and 70 or ag, feedback >= 3 and 70 or ab
         if feedback_text ~= "" then
-            text.draw(font.item, x + 18, y + 130, fr, fg, fb, 255, feedback_text)
+            text.draw(font.hud, x + 18, y + 130, fr, fg, fb, 255, feedback_text)
         elseif phase == 3 then
             local expected = moves[(math.floor(f.dance_expected or -1) + 1)] or "?"
-            text.draw(font.item, x + 18, y + 130, 225, 225, 232, 255, "PRESS " .. expected)
+            text.draw(font.hud, x + 18, y + 130, 225, 225, 232, 255, "PRESS " .. expected)
         end
-        text.draw(font.item, x + w - 122, y + 130, 205, 205, 214, 255, "COMBO x" .. math.floor(f.dance_combo or 0))
+        text.draw(font.hud, x + w - 122, y + 130, 205, 205, 214, 255, "COMBO x" .. math.floor(f.dance_combo or 0))
         local p = math.max(0, math.min(1, f.dance_timing or 0))
         draw.rect(x + 18, y + 157, x + w - 18, y + 164, 42, 42, 50, 230, 3)
         if phase == 3 then
@@ -74,13 +74,13 @@ features.on_draw("Minigames", function(f)
     draw.rect(x + 4, y, x + w, y + 3, ar, ag, ab, 210, 2)
 
     text.draw(font.display, x + 18, y + 14, ar, ag, ab, 255, f.title or "Minigame")
-    text.draw(font.item, x + 18, y + 45, 215, 215, 222, 255, f.objective or "")
-    text.draw(font.item, x + 18, y + 70, 240, 240, 245, 255, f.status or "")
+    text.draw(font.hud, x + 18, y + 45, 215, 215, 222, 255, f.objective or "")
+    text.draw(font.hud, x + 18, y + 70, 240, 240, 245, 255, f.status or "")
 
     local seconds = math.floor((f.time_ms or 0) / 1000)
     local timer = string.format("%d:%02d", math.floor(seconds / 60), seconds % 60)
-    text.draw(font.item, x + 18, y + 95, 175, 175, 185, 255, timer)
-    text.draw(font.item, x + w - 105, y + 95, 235, 235, 240, 255, "Score " .. math.floor(f.score or 0))
+    text.draw(font.hud, x + 18, y + 95, 175, 175, 185, 255, timer)
+    text.draw(font.hud, x + w - 105, y + 95, 235, 235, 240, 255, "Score " .. math.floor(f.score or 0))
 
     local p = math.max(0, math.min(1, f.progress or 0))
     draw.rect(x + 18, y + 121, x + w - 18, y + 128, 42, 42, 50, 230, 3)

@@ -23,7 +23,7 @@ features.on_draw("Squad Panel", function(f)
     local y = sh - 400 * s - n * row_h
 
     draw.rect(x - 8 * s, y - 30 * s, x + w + 8 * s, y + n * row_h + 4 * s, 10, 10, 16, math.floor(170 * a), 8 * s)
-    text.draw(font.tiny, x, y - 24 * s, 200, 200, 214, math.floor(230 * a), "SQUAD")
+    text.draw(font.hud_tiny, x, y - 24 * s, 200, 200, 214, math.floor(230 * a), "SQUAD")
 
     local i, humans, pets = 0, 0, 0
     for animal, dead, inveh, hp, ar, dist in string.gmatch(f.members or "", "(%d),(%d),(%d),([%d%.]+),([%d%.]+),(%d+);") do
@@ -40,9 +40,9 @@ features.on_draw("Squad Panel", function(f)
         local dead_now = dead == "1"
         local lr, lg, lb = 235, 235, 245
         if dead_now then lr, lg, lb = 235, 80, 80 end
-        text.draw(font.tiny, x, ry, lr, lg, lb, math.floor(240 * a), label)
+        text.draw(font.hud_tiny, x, ry, lr, lg, lb, math.floor(240 * a), label)
         local info = dead_now and "DOWN" or string.format("%dm%s", tonumber(dist), inveh == "1" and "  CAR" or "")
-        text.draw(font.tiny, x + w - text.width(font.tiny, info), ry, 190, 190, 205, math.floor(220 * a), info)
+        text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, info), ry, 190, 190, 205, math.floor(220 * a), info)
 
         local health = tonumber(hp) or 0
         local hr, hg, hb = 90, 225, 120

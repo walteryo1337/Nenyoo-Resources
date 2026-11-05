@@ -88,11 +88,11 @@ features.on_draw("Pocket Artillery", function(f)
         local hr = frac > 0.5 and math.floor(255 * (1 - frac) * 2) or 255
         local hg = frac > 0.5 and 220 or math.floor(220 * frac * 2)
         draw.rect(hx - hw, hy, hx - hw + hw * 2 * frac, hy + 6 * s, hr, hg, 60, 255, 3 * s)
-        text.draw(font.tiny, hx - text.width(font.tiny, tk[9]) / 2, hy - 16 * s, 245, 245, 250, 255, tk[9])
+        text.draw(font.hud_tiny, hx - text.width(font.hud_tiny, tk[9]) / 2, hy - 16 * s, 245, 245, 250, 255, tk[9])
         if state == 4 and tk[10] > 0 then
             local rise = age / 900
             local l = string.format("-%d", math.floor(tk[10]))
-            text.draw(font.item, hx - text.width(font.item, l) / 2, hy - 40 * s - rise * 30 * s, 255, 90, 70, math.floor(255 * (1 - rise * 0.8)), l)
+            text.draw(font.hud, hx - text.width(font.hud, l) / 2, hy - 40 * s - rise * 30 * s, 255, 90, 70, math.floor(255 * (1 - rise * 0.8)), l)
         end
     end
 
@@ -125,7 +125,7 @@ features.on_draw("Pocket Artillery", function(f)
     local hy = y0 - 62 * s
     local wind = f.wind or 0
     local wl = "WIND"
-    text.draw(font.small, sw / 2 - text.width(font.small, wl) / 2, hy, 220, 220, 235, 255, wl)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, wl) / 2, hy, 220, 220, 235, 255, wl)
     local len = wind / 0.3 * 70 * s
     local wy = hy + 32 * s
     draw.rect(sw / 2 - 72 * s, wy - 3 * s, sw / 2 + 72 * s, wy + 3 * s, 50, 50, 60, 255, 3 * s)
@@ -139,13 +139,13 @@ features.on_draw("Pocket Artillery", function(f)
 
     local angle = math.floor((f.t1angle or 45) + 0.5)
     local power = f.t1power or 0.6
-    text.draw(font.item, x0, hy - 2 * s, 245, 245, 250, 255, string.format("ANGLE %d", angle))
-    text.draw(font.small, x0, hy + 26 * s, 200, 200, 215, 255, "POWER")
-    local pbx = x0 + text.width(font.small, "POWER") + 10 * s
+    text.draw(font.hud, x0, hy - 2 * s, 245, 245, 250, 255, string.format("ANGLE %d", angle))
+    text.draw(font.hud_small, x0, hy + 26 * s, 200, 200, 215, 255, "POWER")
+    local pbx = x0 + text.width(font.hud_small, "POWER") + 10 * s
     draw.rect(pbx, hy + 30 * s, pbx + 160 * s, hy + 42 * s, 40, 40, 50, 255, 4 * s)
     draw.rect(pbx, hy + 30 * s, pbx + 160 * s * power, hy + 42 * s, 255, math.floor(220 - power * 160), 60, 255, 4 * s)
     local rec = string.format("WINS %d   LOSSES %d", math.floor(f.wins or 0), math.floor(f.losses or 0))
-    text.draw(font.small, x0 + fw - text.width(font.small, rec), hy + 4 * s, 255, 200, 60, 255, rec)
+    text.draw(font.hud_small, x0 + fw - text.width(font.hud_small, rec), hy + 4 * s, 255, 200, 60, 255, rec)
 
     local msg, mr, mg, mb = "A / D AIM   W / S POWER   HOLD SHIFT FOR FINE CONTROL   E FIRE", 225, 225, 240
     if state == 2 then msg = "THE CPU IS LINING UP A SHOT..."
@@ -157,5 +157,5 @@ features.on_draw("Pocket Artillery", function(f)
         elseif w == 1 then msg, mr, mg, mb = "YOUR TANK WAS DESTROYED   E FOR A NEW ROUND", 255, 120, 100
         else msg, mr, mg, mb = "BOTH TANKS DESTROYED - DRAW   E FOR A NEW ROUND", 255, 210, 90 end
     end
-    if msg ~= "" then text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh + 14 * s, mr, mg, mb, 255, msg) end
+    if msg ~= "" then text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh + 14 * s, mr, mg, mb, 255, msg) end
 end)

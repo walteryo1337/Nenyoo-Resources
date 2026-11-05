@@ -7,7 +7,7 @@
 
 local floor, min, max, sin, cos, sqrt, rad = math.floor, math.min, math.max, math.sin, math.cos, math.sqrt, math.rad
 local atan2 = math.atan2 or math.atan
-local BIG = font.display or font.title
+local BIG = font.display
 
 local function em_of(f) return (text.em and text.em(f)) or text.height(f) end
 local function base_of(f) return (text.baseline and text.baseline(f)) or em_of(f) * 0.97 end
@@ -79,7 +79,7 @@ end
 local function slot_content(cx, cy, i, s, lit, fa)
     local x, y = pol(cx, cy, R_MID, (i - 1) * SPAN)
     if not s or s.count == 0 then
-        spaced_c(font.tiny, x, y, SLOT_NAMES[i], DIM, (lit and 150 or 70) * fa, 1.2)
+        spaced_c(font.hud_tiny, x, y, SLOT_NAMES[i], DIM, (lit and 150 or 70) * fa, 1.2)
         return
     end
     local iw, ih = 116, 58
@@ -102,7 +102,7 @@ local function slot_content(cx, cy, i, s, lit, fa)
                 draw.circle(sx + (p - 1) * gap, py, on and 2.6 or 1.8, c[1], c[2], c[3], floor((on and 255 or 120) * fa))
             end
         else
-            spaced_c(font.tiny, x, py, s.pick .. " / " .. s.count, DIM, 200 * fa, 1)
+            spaced_c(font.hud_tiny, x, py, s.pick .. " / " .. s.count, DIM, 200 * fa, 1)
         end
     end
 end
@@ -141,15 +141,15 @@ local function hub(cx, cy, f, slots, now, fa)
         local a0 = (now * 360) % 360
         draw.circle_outline(cx, cy - 12, 18, 255, 255, 255, floor(30 * fa), 3)
         arc(cx, cy - 12, 18, a0, a0 + 100, ACC, 255 * fa, 3)
-        spaced_c(font.tiny, cx, cy + 26, "LOADING WEAPONS", DIM, 230 * fa, 1.4)
+        spaced_c(font.hud_tiny, cx, cy + 26, "LOADING WEAPONS", DIM, 230 * fa, 1.4)
         return
     end
     local h = floor(f.highlight or 1)
     local s = slots[h]
-    spaced_c(font.tiny, cx, cy - 46, SLOT_NAMES[h] or "", ACC, 255 * fa, 1.6)
+    spaced_c(font.hud_tiny, cx, cy - 46, SLOT_NAMES[h] or "", ACC, 255 * fa, 1.6)
     if not s or s.count == 0 then
         fit(font.value, cx, cy - 10, "Empty", 180, 1.4, DIM, 220 * fa)
-        spaced_c(font.tiny, cx, cy + 18, "NO WEAPONS IN THIS SLOT", DIM, 150 * fa, 1)
+        spaced_c(font.hud_tiny, cx, cy + 18, "NO WEAPONS IN THIS SLOT", DIM, 150 * fa, 1)
         return
     end
     local ammo = floor(f.ammo or 0)
@@ -158,13 +158,13 @@ local function hub(cx, cy, f, slots, now, fa)
     fit(font.value, cx, has_ammo and cy - 18 or cy - 2, s.name, 184, 1.45, INK, 255 * fa)
     if has_ammo then
         numerals(cx, cy + 16, 30, ammo >= 9999 and "INF" or tostring(ammo), INK, 255 * fa)
-        spaced_c(font.tiny, cx, cy + 42, "ROUNDS", DIM, 190 * fa, 1.4)
+        spaced_c(font.hud_tiny, cx, cy + 42, "ROUNDS", DIM, 190 * fa, 1.4)
     end
     if s.count > 1 then
         local y = cy + 66
         local label = s.pick .. " OF " .. s.count
-        local w = text.width_spaced(font.tiny, label, 1.2)
-        spaced_c(font.tiny, cx, y, label, DIM, 220 * fa, 1.2)
+        local w = text.width_spaced(font.hud_tiny, label, 1.2)
+        spaced_c(font.hud_tiny, cx, y, label, DIM, 220 * fa, 1.2)
         chevron(cx - w * 0.5 - 10, y, -1, ACC, 255 * fa)
         chevron(cx + w * 0.5 + 10, y, 1, ACC, 255 * fa)
     end

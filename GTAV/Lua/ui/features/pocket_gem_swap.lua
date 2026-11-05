@@ -97,21 +97,21 @@ features.on_draw("Pocket Gem Swap", function(f)
     if state == 2 and (f.last_points or 0) > 0 then
         local label = string.format("+%d", math.floor(f.last_points))
         if (f.cascade or 0) > 1 then label = label .. string.format("  CHAIN x%d", math.floor(f.cascade)) end
-        local w = text.width(font.title, label)
-        text.draw(font.title, sw / 2 - w / 2, y0 + bw / 2 - 30 * s - age / CLEAR_MS * 20 * s, 255, 230, 120, 255, label)
+        local w = text.width(font.display, label)
+        text.draw(font.display, sw / 2 - w / 2, y0 + bw / 2 - 30 * s - age / CLEAR_MS * 20 * s, 255, 230, 120, 255, label)
     end
 
     local hy = y0 - 60 * s
-    text.draw(font.item, x0, hy, 245, 240, 255, 255, string.format("SCORE %d", math.floor(f.score or 0)))
+    text.draw(font.hud, x0, hy, 245, 240, 255, 255, string.format("SCORE %d", math.floor(f.score or 0)))
     local mv = string.format("MOVES %d", math.floor(f.moves_left or 0))
     local mr, mg, mb = 220, 220, 240
     if (f.moves_left or 0) <= 5 then mr, mg, mb = 255, 120, 100 end
-    text.draw(font.item, x0 + bw / 2 - text.width(font.item, mv) / 2, hy, mr, mg, mb, 255, mv)
+    text.draw(font.hud, x0 + bw / 2 - text.width(font.hud, mv) / 2, hy, mr, mg, mb, 255, mv)
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + bw - text.width(font.small, best), hy + 4 * s, 255, 200, 60, 255, best)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, best), hy + 4 * s, 255, 200, 60, 255, best)
 
     local msg, r, g, b = "W A S D MOVE   E PICK A GEM, THEN A DIRECTION TO SWAP   LINE UP 3 OR MORE", 225, 220, 240
     if f.selected then msg = "NOW PRESS W A S D TO SWAP   Q OR E TO CANCEL" end
     if state == 4 then msg, r, g, b = string.format("OUT OF MOVES   SCORE %d   E TO PLAY AGAIN", math.floor(f.score or 0)), 255, 210, 90 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bw + 22 * s, r, g, b, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bw + 22 * s, r, g, b, 255, msg)
 end)

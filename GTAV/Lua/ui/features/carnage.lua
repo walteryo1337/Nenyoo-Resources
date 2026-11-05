@@ -18,13 +18,13 @@ features.on_draw("Carnage Score", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local fnt = font.display or font.title
+    local fnt = font.display
     local cx = sw / 2
     local y = sh * 0.11
 
     local label = "CARNAGE"
-    text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, y, ar, ag, ab, 230, label)
-    y = y + text.height(font.tiny)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, y, ar, ag, ab, 230, label)
+    y = y + text.height(font.hud_tiny)
 
     local pop = gain_age < 1 and (1 - gain_age) or 0
     local value = commas(score)
@@ -36,7 +36,7 @@ features.on_draw("Carnage Score", function(f)
 
     if combo > 1 then
         local tag = string.format("x%d", combo)
-        text.draw(font.item, cx + vw / 2 + 8 * s, y + vh * 0.2, 255, 200, 60, 255, tag)
+        text.draw(font.hud, cx + vw / 2 + 8 * s, y + vh * 0.2, 255, 200, 60, 255, tag)
     end
     y = y + vh + 2 * s
 
@@ -51,9 +51,9 @@ features.on_draw("Carnage Score", function(f)
     if gain_age < 1 then
         local a = math.floor(255 * (1 - gain_age))
         local msg = (f.wreck and "WRECKED! +" or "+") .. commas(f.gain or 0)
-        text.draw(font.small, cx - text.width(font.small, msg) / 2, y + gain_age * 10 * s, 255, f.wreck and 120 or 220, 80, a, msg)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, y + gain_age * 10 * s, 255, f.wreck and 120 or 220, 80, a, msg)
     end
 
     local best = string.format("BEST %s", commas(f.best or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, best) / 2, y + text.height(font.small) + 4 * s, 180, 180, 195, 200, best)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, best) / 2, y + text.height(font.hud_small) + 4 * s, 180, 180, 195, 200, best)
 end)

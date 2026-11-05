@@ -8,7 +8,7 @@ features.on_draw("Street Boxing", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -26,10 +26,10 @@ features.on_draw("Street Boxing", function(f)
         local rec = string.format("RECORD %d-%d", math.floor(f.wins or 0), math.floor(f.losses or 0))
         local y = sh * 0.26 + text.height(big)
         if sub then
-            text.draw(font.item, cx - text.width(font.item, sub) / 2, y, 245, 245, 250, 255, sub)
-            y = y + text.height(font.item)
+            text.draw(font.hud, cx - text.width(font.hud, sub) / 2, y, 245, 245, 250, 255, sub)
+            y = y + text.height(font.hud)
         end
-        text.draw(font.small, cx - text.width(font.small, rec) / 2, y + 4 * s, 200, 200, 214, 230, rec)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, rec) / 2, y + 4 * s, 200, 200, 214, 230, rec)
         return
     end
 
@@ -48,14 +48,14 @@ features.on_draw("Street Boxing", function(f)
     end
     bar(cx - gap / 2 - bw, f.my_hp or 0, 90, 170, 255, true)
     bar(cx + gap / 2, f.opp_hp or 0, 240, 90, 70, false)
-    text.draw(font.small, cx - gap / 2 - bw, top + bh + 4 * s, 220, 220, 232, 240, "YOU")
+    text.draw(font.hud_small, cx - gap / 2 - bw, top + bh + 4 * s, 220, 220, 232, 240, "YOU")
     local tname = tiers[math.floor(f.tier or 0) + 1] or "FIGHTER"
-    text.draw(font.small, cx + gap / 2 + bw - text.width(font.small, tname), top + bh + 4 * s, 220, 220, 232, 240, tname)
+    text.draw(font.hud_small, cx + gap / 2 + bw - text.width(font.hud_small, tname), top + bh + 4 * s, 220, 220, 232, 240, tname)
 
     if state == 2 then
         local t = math.max(0, f.time_left or 0)
         local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
-        text.draw(font.item, cx - text.width(font.item, clock) / 2, top - 2 * s, 245, 245, 250, 255, clock)
+        text.draw(font.hud, cx - text.width(font.hud, clock) / 2, top - 2 * s, 245, 245, 250, 255, clock)
     elseif state == 1 then
         local n = math.max(1, math.ceil(f.countdown or 0))
         local str = tostring(n)
@@ -64,6 +64,6 @@ features.on_draw("Street Boxing", function(f)
 
     if (f.stake or 0) > 0 then
         local st = string.format("STAKE $%d", math.floor(f.stake))
-        text.draw(font.tiny, cx - text.width(font.tiny, st) / 2, top + bh + 6 * s, 190, 190, 205, 230, st)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, st) / 2, top + bh + 6 * s, 190, 190, 205, 230, st)
     end
 end)

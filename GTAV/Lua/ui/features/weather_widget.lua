@@ -70,11 +70,11 @@ features.on_draw("Weather Widget", function(f)
 
     local pad = 10 * s
     local icon_w = 36 * s
-    local tw = text.width(font.item, temp)
-    local lw = text.width(font.small, label)
-    local ww = text.width(font.tiny, wind)
+    local tw = text.width(font.hud, temp)
+    local lw = text.width(font.hud_small, label)
+    local ww = text.width(font.hud_tiny, wind)
     local w = icon_w + pad + math.max(tw + pad + lw, ww) + pad * 2
-    local h = text.height(font.item) + text.height(font.tiny) + pad * 1.5
+    local h = text.height(font.hud) + text.height(font.hud_tiny) + pad * 1.5
     local x = sw - w - 18 * s
     local y = 90 * s
 
@@ -83,7 +83,7 @@ features.on_draw("Weather Widget", function(f)
 
     local tx = x + pad + icon_w + pad
     local ty = y + pad * 0.5
-    text.draw(font.item, tx, ty, 240, 240, 245, 255, temp)
-    text.draw(font.small, tx + tw + pad, ty + 2 * s, ar, ag, ab, 255, label)
-    text.draw(font.tiny, tx, ty + text.height(font.item) + 2 * s, 180, 180, 195, 230, wind)
+    text.draw(font.hud, tx, ty, 240, 240, 245, 255, temp)
+    text.draw(font.hud_small, tx + tw + pad, ty + 2 * s, ar, ag, ab, 255, label)
+    text.draw(font.hud_tiny, tx, ty + text.height(font.hud) + 2 * s, 180, 180, 195, 230, wind)
 end)

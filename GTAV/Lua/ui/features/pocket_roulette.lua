@@ -78,7 +78,7 @@ features.on_draw("Pocket Roulette", function(f)
         local an = a - step / 2
         local label = tostring(WHEEL[i + 1])
         local nx, ny = cx + math.cos(an) * R * 0.8, cy + math.sin(an) * R * 0.8
-        text.draw(font.tiny, nx - text.width(font.tiny, label) / 2, ny - text.height(font.tiny, label) / 2, 255, 255, 255, 255, label)
+        text.draw(font.hud_tiny, nx - text.width(font.hud_tiny, label) / 2, ny - text.height(font.hud_tiny, label) / 2, 255, 255, 255, 255, label)
     end
     draw.circle_outline(cx, cy, R * 0.86, 220, 190, 110, 255, 2 * s)
     draw.circle(cx, cy, R * 0.62, 110, 70, 35, 255)
@@ -134,7 +134,7 @@ features.on_draw("Pocket Roulette", function(f)
         elseif id <= 39 then label = "2:1"
         elseif id <= 42 then label = DOZENS[id - 39]
         else label = OUTSIDE[id - 42] end
-        local fnt = id <= 39 and font.item or font.small
+        local fnt = id <= 39 and font.hud or font.hud_small
         if id == 45 or id == 46 then
             local mx, my = (x1 + x2) / 2, (y1 + y2) / 2
             local rr, gg, bb = id == 45 and 200 or 20, id == 45 and 30 or 20, id == 45 and 40 or 25
@@ -162,7 +162,7 @@ features.on_draw("Pocket Roulette", function(f)
         draw.circle(mx, my, 13 * s, cr, cg, cb, 255)
         draw.circle_outline(mx, my, 10 * s, 255, 255, 255, 200, 2 * s)
         local l = short(amount)
-        text.draw(font.tiny, mx - text.width(font.tiny, l) / 2, my - text.height(font.tiny, l) / 2, 255, 255, 255, 255, l)
+        text.draw(font.hud_tiny, mx - text.width(font.hud_tiny, l) / 2, my - text.height(font.hud_tiny, l) / 2, 255, 255, 255, 255, l)
     end
 
     if state ~= 2 then
@@ -187,19 +187,19 @@ features.on_draw("Pocket Roulette", function(f)
         draw.circle(px, hy + 14 * s, 14 * s, r, g, b, 255)
         if i == #hist then draw.circle_outline(px, hy + 14 * s, 16 * s, 255, 230, 120, 255, 2 * s) end
         local l = tostring(n)
-        text.draw(font.tiny, px - text.width(font.tiny, l) / 2, hy + 14 * s - text.height(font.tiny, l) / 2, 255, 255, 255, 255, l)
+        text.draw(font.hud_tiny, px - text.width(font.hud_tiny, l) / 2, hy + 14 * s - text.height(font.hud_tiny, l) / 2, 255, 255, 255, 255, l)
     end
-    text.draw(font.small, bx0, hy + 4 * s, 200, 200, 210, 255, "LAST NUMBERS")
+    text.draw(font.hud_small, bx0, hy + 4 * s, 200, 200, 210, 255, "LAST NUMBERS")
 
     local iy = by0 + ch * 4.6 + 22 * s
-    text.draw(font.item, bx0, iy, 245, 245, 250, 255, string.format("CASH %s", money(f.cash or 0)))
+    text.draw(font.hud, bx0, iy, 245, 245, 250, 255, string.format("CASH %s", money(f.cash or 0)))
     local chip = string.format("CHIP %s", money(f.chip or 0))
-    text.draw(font.item, bx0 + cw * 7 - text.width(font.item, chip) / 2, iy, 255, 210, 90, 255, chip)
+    text.draw(font.hud, bx0 + cw * 7 - text.width(font.hud, chip) / 2, iy, 255, 210, 90, 255, chip)
     local staked = string.format("ON TABLE %s", money(f.staked or 0))
-    text.draw(font.item, bx0 + cw * 14 - text.width(font.item, staked), iy, 220, 220, 235, 255, staked)
+    text.draw(font.hud, bx0 + cw * 14 - text.width(font.hud, staked), iy, 220, 220, 235, 255, staked)
     local net = f.net or 0
     local nets = string.format("SESSION %s%s", net < 0 and "-" or "+", money(net))
-    text.draw(font.small, bx0, iy + 32 * s, net < 0 and 255 or 120, net < 0 and 110 or 235, net < 0 and 100 or 140, 255, nets)
+    text.draw(font.hud_small, bx0, iy + 32 * s, net < 0 and 255 or 120, net < 0 and 110 or 235, net < 0 and 100 or 140, 255, nets)
 
     local msg, mr, mg, mb = "WASD MOVE   E PLACE CHIP   SHIFT + A / D CHIP VALUE   Q UNDO (SHIFT CLEAR)   R SPIN / REBET", 225, 225, 240
     if state == 2 then msg = "NO MORE BETS..."
@@ -209,5 +209,5 @@ features.on_draw("Pocket Roulette", function(f)
         if win > 0 then msg, mr, mg, mb = string.format("%d %s   YOU WIN %s", result, colour, money(win)), 120, 245, 140
         else msg, mr, mg, mb = string.format("%d %s   NO WIN", result, colour), 255, 140, 120 end
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, cy + R + 36 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, cy + R + 36 * s, mr, mg, mb, 255, msg)
 end)

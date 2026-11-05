@@ -44,7 +44,7 @@ features.on_draw("Target Scanner", function(f)
         if f.hx then
             local x, y = f.hx * sw, f.hy * sh
             draw.circle_outline(x, y, 6, 255, 255, 255, 160, 1.5)
-            text.draw_outlined(font.tiny, x + 12, y - text.height(font.tiny) * 0.5, 230, 230, 235, 230, 0, 0, 0, 170, 1.5, dist_txt)
+            text.draw_outlined(font.hud_tiny, x + 12, y - text.height(font.hud_tiny) * 0.5, 230, 230, 235, 230, 0, 0, 0, 170, 1.5, dist_txt)
         end
         return
     end
@@ -85,16 +85,16 @@ features.on_draw("Target Scanner", function(f)
     if kind == 2 and f.occupants then rows[#rows + 1] = { "ON BOARD", string.format("%d", f.occupants) } end
 
     local lw = 0
-    for _, r in ipairs(rows) do lw = math.max(lw, text.width(font.tiny, r[1])) end
+    for _, r in ipairs(rows) do lw = math.max(lw, text.width(font.hud_tiny, r[1])) end
     local vw = 0
-    for _, r in ipairs(rows) do vw = math.max(vw, text.width(font.tiny, r[2])) end
+    for _, r in ipairs(rows) do vw = math.max(vw, text.width(font.hud_tiny, r[2])) end
     local tag = nil
     if f.hostile then tag = "HOSTILE" elseif f.player then tag = "PLAYER" end
-    local tw = text.width(font.small, title) + (tag and text.width(font.tiny, tag) + 22 or 0)
+    local tw = text.width(font.hud_small, title) + (tag and text.width(font.hud_tiny, tag) + 22 or 0)
     local w = math.max(tw, lw + vw + 18, 150) + 24
-    local rh = text.height(font.tiny) + 5
+    local rh = text.height(font.hud_tiny) + 5
     local bars = (f.health and 1 or 0) + (f.armour and 1 or 0)
-    local h = 12 + text.height(font.small) + 6 + #rows * rh + bars * 14 + 8
+    local h = 12 + text.height(font.hud_small) + 6 + #rows * rh + bars * 14 + 8
 
     local px = x2 + 12
     if px + w > sw - 10 then px = x1 - 12 - w end
@@ -104,20 +104,20 @@ features.on_draw("Target Scanner", function(f)
 
     draw.rect(px, py, px + w, py + h, 10, 10, 16, math.floor(215 * ease), 6)
     local cy = py + 10
-    text.draw(font.small, px + 12, cy, 255, 255, 255, alpha, title)
+    text.draw(font.hud_small, px + 12, cy, 255, 255, 255, alpha, title)
     if tag then
-        local tx = px + 12 + text.width(font.small, title) + 10
-        local tagw = text.width(font.tiny, tag) + 10
-        local th = text.height(font.tiny) + 4
-        local ty = cy + (text.height(font.small) - th) * 0.5
+        local tx = px + 12 + text.width(font.hud_small, title) + 10
+        local tagw = text.width(font.hud_tiny, tag) + 10
+        local th = text.height(font.hud_tiny) + 4
+        local ty = cy + (text.height(font.hud_small) - th) * 0.5
         draw.rect(tx, ty, tx + tagw, ty + th, cr, cg, cb, math.floor(230 * ease), 3)
-        text.draw(font.tiny, tx + 5, ty + 2, 255, 255, 255, alpha, tag)
+        text.draw(font.hud_tiny, tx + 5, ty + 2, 255, 255, 255, alpha, tag)
     end
-    cy = cy + text.height(font.small) + 6
+    cy = cy + text.height(font.hud_small) + 6
 
     for _, r in ipairs(rows) do
-        text.draw(font.tiny, px + 12, cy, 150, 150, 165, alpha, r[1])
-        text.draw(font.tiny, px + 12 + lw + 14, cy, 235, 235, 240, alpha, r[2])
+        text.draw(font.hud_tiny, px + 12, cy, 150, 150, 165, alpha, r[1])
+        text.draw(font.hud_tiny, px + 12 + lw + 14, cy, 235, 235, 240, alpha, r[2])
         cy = cy + rh
     end
 

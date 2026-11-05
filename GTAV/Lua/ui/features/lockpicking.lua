@@ -15,7 +15,7 @@ features.on_draw("Lockpicking", function(f)
         local msg, r, g, b = "GAVE UP", 200, 200, 210
         if result == 1 then msg, r, g, b = "UNLOCKED", 120, 230, 120
         elseif result == 2 then msg, r, g, b = "PICKS BROKEN", 240, 80, 70 end
-        local big = font.display or font.title
+        local big = font.display
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.3, r, g, b, 255, msg)
         return
     end
@@ -53,8 +53,8 @@ features.on_draw("Lockpicking", function(f)
         draw.rect(ix, by + 14 * s, ix + 4 * s, by + 34 * s, 210, 214, 222, 255, 1 * s)
     end
     local diff = ({ "EASY LOCK", "SPORTS LOCK", "HIGH SECURITY" })[math.floor(f.difficulty or 1)] or "LOCK"
-    text.draw(font.small, bx2 - text.width(font.small, diff), by + 14 * s, ar, ag, ab, 255, diff)
+    text.draw(font.hud_small, bx2 - text.width(font.hud_small, diff), by + 14 * s, ar, ag, ab, 255, diff)
 
     local hint = "A / D  MOVE PICK     HOLD W  TURN     BACKSPACE  STOP"
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, cy - 180 * s, 180, 180, 195, 230, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, cy - 180 * s, 180, 180, 195, 230, hint)
 end)

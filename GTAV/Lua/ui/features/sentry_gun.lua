@@ -48,21 +48,21 @@ local function label(s, sw, sh, now, r, g, b)
     local title = NAMES[s.type] or "SENTRY"
     local status = STATES[s.state] or ""
     local sub = s.kills > 0 and string.format("%s   %d KILLS", status, s.kills) or status
-    local w = math.max(text.width(font.small, title), text.width(font.tiny, sub)) + 34
-    local h = text.height(font.small) + text.height(font.tiny) + 12
+    local w = math.max(text.width(font.hud_small, title), text.width(font.hud_tiny, sub)) + 34
+    local h = text.height(font.hud_small) + text.height(font.hud_tiny) + 12
     local x1, y1 = x - w * 0.5, y - h
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, math.floor(190 * fade), 6)
     local pulse = (s.state == 2 or s.state == 1) and (0.6 + 0.4 * math.sin(now * 12)) or 1
     draw.circle(x1 + 13, y1 + h * 0.5, 4.5, r, g, b, math.floor(a * pulse))
-    text.draw(font.small, x1 + 24, y1 + 5, 255, 255, 255, a, title)
-    text.draw(font.tiny, x1 + 24, y1 + 7 + text.height(font.small), r, g, b, a, sub)
+    text.draw(font.hud_small, x1 + 24, y1 + 5, 255, 255, 255, a, title)
+    text.draw(font.hud_tiny, x1 + 24, y1 + 7 + text.height(font.hud_small), r, g, b, a, sub)
 
     if s.kill_age and s.kill_age >= 0 then
         local p = s.kill_age
         local ka = math.floor(255 * math.min(1, (1 - p) / 0.35))
         local msg = "+1 KILL"
         draw.with_scale(x, y1 - 20, 1 + 0.4 * math.max(0, 1 - p / 0.12), function()
-            text.draw_outlined(font.item, x - text.width(font.item, msg) * 0.5, y1 - 26 - p * 22, 255, 220, 60, ka,
+            text.draw_outlined(font.hud, x - text.width(font.hud, msg) * 0.5, y1 - 26 - p * 22, 255, 220, 60, ka,
                 0, 0, 0, math.floor(ka * 0.8), 2.0, msg)
         end)
     end

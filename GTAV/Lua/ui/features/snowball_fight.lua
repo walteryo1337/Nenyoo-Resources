@@ -22,10 +22,10 @@ local function stat(x, y, w, label, value, age, r, g, b)
     draw.with_scale(x + w * 0.5, y + 22, pop, function()
         centred(font.display, x + w * 0.5, y + 4, s, r, g, b, 255)
     end)
-    centred(font.tiny, x + w * 0.5, y + 8 + text.height(font.display), label, 160, 170, 185, 255)
+    centred(font.hud_tiny, x + w * 0.5, y + 8 + text.height(font.display), label, 160, 170, 185, 255)
     if age then
         local a = math.floor(255 * (1 - age))
-        centred(font.small, x + w * 0.5 + 26, y - age * 18, "+1", r, g, b, a)
+        centred(font.hud_small, x + w * 0.5 + 26, y - age * 18, "+1", r, g, b, a)
     end
 end
 
@@ -40,13 +40,13 @@ features.on_draw("Snowball Fight", function(f)
     if f.landed_age and f.landed_age < 0.6 then
         local p = f.landed_age / 0.6
         draw.with_scale(sw * 0.5, sh * 0.42, 1 + 0.3 * (1 - p), function()
-            text.draw_outlined(font.item, sw * 0.5 - text.width(font.item, "SPLAT!") * 0.5, sh * 0.42 - 30 * p,
+            text.draw_outlined(font.hud, sw * 0.5 - text.width(font.hud, "SPLAT!") * 0.5, sh * 0.42 - 30 * p,
                 235, 245, 255, math.floor(255 * (1 - p)), 40, 90, 140, math.floor(200 * (1 - p)), 2.0, "SPLAT!")
         end)
     end
 
     local w = 230
-    local h = 40 + text.height(font.tiny) * 3 + text.height(font.display)
+    local h = 40 + text.height(font.hud_tiny) * 3 + text.height(font.display)
     local right = sw * 0.985
     local x, y = right - w, sh * 0.30
     draw.rect(x, y, right, y + h, 10, 14, 22, 205, 8)
@@ -57,14 +57,14 @@ features.on_draw("Snowball Fight", function(f)
         draw.line(x + 16 + math.cos(t) * 5, y + 15 + math.sin(t) * 5, x + 16 - math.cos(t) * 5, y + 15 - math.sin(t) * 5,
             200, 230, 255, 255, 1.5)
     end
-    text.draw(font.tiny, x + 28, y + 8, 200, 230, 255, 255, "SNOWBALL FIGHT")
+    text.draw(font.hud_tiny, x + 28, y + 8, 200, 230, 255, 255, "SNOWBALL FIGHT")
     local mode = f.mode == 1 and "FREE FOR ALL" or "EVERYONE VS YOU"
     local people = string.format("%d IN", math.floor(f.fighters or 0))
-    text.draw(font.tiny, right - 14 - text.width(font.tiny, people), y + 8, 140, 150, 165, 255, people)
-    text.draw(font.tiny, x + 28, y + 8 + text.height(font.tiny), 140, 150, 165, 255, mode)
+    text.draw(font.hud_tiny, right - 14 - text.width(font.hud_tiny, people), y + 8, 140, 150, 165, 255, people)
+    text.draw(font.hud_tiny, x + 28, y + 8 + text.height(font.hud_tiny), 140, 150, 165, 255, mode)
 
     local col = (w - 20) * 0.5
-    local sy = y + 22 + text.height(font.tiny) * 2
+    local sy = y + 22 + text.height(font.hud_tiny) * 2
     stat(x + 10, sy, col, "YOU HIT", f.landed, f.landed_age, 170, 220, 255)
     if f.mode == 1 then
         stat(x + 10 + col, sy, col, "FIGHTERS", f.fighters, nil, 240, 240, 245)

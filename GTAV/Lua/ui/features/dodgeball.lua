@@ -11,7 +11,7 @@ features.on_draw("Dodgeball", function(f)
     local w, h = 300 * s, 64 * s
     local x0, y0 = sw / 2 - w / 2, 40 * s
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 215, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "DODGEBALL")
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "DODGEBALL")
 
     local lives, max = math.floor(f.lives or 0), math.floor(f.max_lives or 3)
     for i = 1, max do
@@ -29,18 +29,18 @@ features.on_draw("Dodgeball", function(f)
     else mid = "KNOCKED OUT" end
     local r, g, b = 255, 230, 120
     if state == 3 then r, g, b = 130, 255, 160 elseif state == 4 then r, g, b = 255, 110, 110 end
-    text.draw(font.item, x0 + 14 * s, y0 + 32 * s, r, g, b, 255, mid)
+    text.draw(font.hud, x0 + 14 * s, y0 + 32 * s, r, g, b, 255, mid)
     local dodged = string.format("%d DODGED", math.floor(f.dodged or 0))
-    text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, dodged), y0 + 40 * s, 190, 190, 205, 230, dodged)
+    text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, dodged), y0 + 40 * s, 190, 190, 205, 230, dodged)
 
     local hit = f.hit or 0
     if hit > 0 then
         draw.rect_outline(0, 0, sw, sh, 255, 60, 60, math.floor(160 * hit), 0, 14 * s)
         local msg = "HIT!"
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, sh * 0.35, 255, 90, 90, math.floor(255 * hit), msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, sh * 0.35, 255, 90, 90, math.floor(255 * hit), msg)
     end
     if state == 2 then
         local hint = "STAY IN THE COURT  -  DODGE THE BALLS"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, math.floor(150 + 60 * math.sin(t * 2)), hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, math.floor(150 + 60 * math.sin(t * 2)), hint)
     end
 end)

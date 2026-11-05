@@ -30,18 +30,18 @@ features.on_draw("Pocket Simon", function(f)
         else
             draw.circle(px, py, rad, math.floor(p.r * 0.35), math.floor(p.g * 0.35), math.floor(p.b * 0.35), 255)
         end
-        local kw = text.width(font.title, p.key)
-        text.draw(font.title, px - kw / 2, py - text.height(font.title) / 2, 255, 255, 255, on and 255 or 120, p.key)
+        local kw = text.width(font.display, p.key)
+        text.draw(font.display, px - kw / 2, py - text.height(font.display) / 2, 255, 255, 255, on and 255 or 120, p.key)
     end
     draw.circle(cx, cy, 30 * s, 20, 20, 26, 255)
     local n = tostring(math.floor(f.score or 0))
-    text.draw(font.item, cx - text.width(font.item, n) / 2, cy - text.height(font.item) / 2, 240, 240, 248, 255, n)
+    text.draw(font.hud, cx - text.width(font.hud, n) / 2, cy - text.height(font.hud) / 2, 240, 240, 248, 255, n)
 
     local title
     if state == 1 then title = "WATCH"
     elseif state == 2 then title = string.format("YOUR TURN  %d / %d", math.floor(f.pos or 0), math.floor(f.len or 0))
     else title = "GAME OVER" end
-    text.draw(font.item, cx - text.width(font.item, title) / 2, cy - frame - 40 * s, 245, 245, 250, 255, title)
+    text.draw(font.hud, cx - text.width(font.hud, title) / 2, cy - frame - 40 * s, 245, 245, 250, 255, title)
 
     if state == 2 then
         local ar, ag, ab = theme.accent()
@@ -53,5 +53,5 @@ features.on_draw("Pocket Simon", function(f)
     end
 
     local foot = state == 3 and "PRESS W A S D TO PLAY AGAIN" or string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, cx - text.width(font.small, foot) / 2, cy + frame + 20 * s, 190, 190, 205, 230, foot)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, foot) / 2, cy + frame + 20 * s, 190, 190, 205, 230, foot)
 end)

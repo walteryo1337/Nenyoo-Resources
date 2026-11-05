@@ -14,9 +14,9 @@ features.on_draw("Alien Invasion", function(f)
     local px, py = sw - pw - 30 * s, sh * 0.30
     draw.rect(px, py, px + pw, py + ph, 10, 16, 12, 215, 10 * s)
     draw.rect(px, py, px + 4 * s, py + ph, 90, 255, 130, 255, 2 * s)
-    text.draw(font.item, px + 16 * s, py + 10 * s, 140, 255, 160, 255, "ALIEN INVASION")
+    text.draw(font.hud, px + 16 * s, py + 10 * s, 140, 255, 160, 255, "ALIEN INVASION")
     local stats = string.format("DOWNED %d   ALIENS %d   TAKEN %d", math.floor(f.downed or 0), math.floor(f.aliens or 0), math.floor(f.abducted or 0))
-    text.draw(font.small, px + 16 * s, py + 42 * s, 200, 220, 205, 255, stats)
+    text.draw(font.hud_small, px + 16 * s, py + 42 * s, 200, 220, 205, 255, stats)
     for i, hp in ipairs(hps) do
         local by = py + (66 + (i - 1) * 22) * s
         local bx1, bx2 = px + 16 * s, px + pw - 16 * s
@@ -29,8 +29,8 @@ features.on_draw("Alien Invasion", function(f)
         draw.rect_gradient(0, 0, sw, sh, 90, 255, 130, math.floor(40 * pulse), 90, 255, 130, math.floor(40 * pulse),
             90, 255, 130, math.floor(80 * pulse), 90, 255, 130, math.floor(80 * pulse))
         local msg = "TRACTOR BEAM!  SHOOT THE SHIP TO BREAK FREE"
-        local w = text.width(font.title, msg)
-        draw.rect(sw / 2 - w / 2 - 16 * s, sh * 0.2 - 10 * s, sw / 2 + w / 2 + 16 * s, sh * 0.2 + text.height(font.title) + 10 * s, 10, 16, 12, 220, 8 * s)
-        text.draw(font.title, sw / 2 - w / 2, sh * 0.2, 140, 255, 160, 255, msg)
+        local w = text.width(font.display, msg)
+        draw.rect(sw / 2 - w / 2 - 16 * s, sh * 0.2 - 10 * s, sw / 2 + w / 2 + 16 * s, sh * 0.2 + text.height(font.display) + 10 * s, 10, 16, 12, 220, 8 * s)
+        text.draw(font.display, sw / 2 - w / 2, sh * 0.2, 140, 255, 160, 255, msg)
     end
 end)

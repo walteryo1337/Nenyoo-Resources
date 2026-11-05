@@ -20,5 +20,5 @@ features.on_draw("Easy Melee Attack", function(f)
     draw.rect(x + s - 2, y + s - 6, x + s, y + s, ar, ag, ab, 235, 0)
 
     -- "Hold [E]" prompt above the reticle
-    text.draw(font.item, x - 22, y - s - 22, 255, 255, 255, 255, "Hold [E]")
+    text.draw(font.hud, x - 22, y - s - 22, 255, 255, 255, 255, "Hold [E]")
 end)

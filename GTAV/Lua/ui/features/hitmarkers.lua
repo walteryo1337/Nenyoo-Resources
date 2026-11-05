@@ -26,6 +26,6 @@ features.on_draw("Hitmarkers", function(f)
     draw.line(cx - gap,  cy + gap,  cx - size, cy + size, r, g, b, a, th)
 
     if f.streak_on and (f.streak or 0) > 1 then
-        text.draw(font.item, cx + size + 6, cy - 8, r, g, b, a, "x" .. math.floor(f.streak))
+        text.draw(font.hud, cx + size + 6, cy - 8, r, g, b, a, "x" .. math.floor(f.streak))
     end
 end)

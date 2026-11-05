@@ -39,10 +39,10 @@ features.on_draw("Compass", function(f)
             local card = CARDINALS[nd]
             if card then
                 draw.line(x, y + 24 * s, x, y + 14 * s, 235, 235, 240, a, 1.6)
-                local tw = text.width(font.small, card)
+                local tw = text.width(font.hud_small, card)
                 local r, g, bl = 235, 235, 240
                 if nd == 0 then r, g, bl = 235, 80, 80 end
-                text.draw(font.small, x - tw * 0.5, y - 2 * s, r, g, bl, a, card)
+                text.draw(font.hud_small, x - tw * 0.5, y - 2 * s, r, g, bl, a, card)
             else
                 draw.line(x, y + 24 * s, x, y + 18 * s, 200, 200, 210, floor(a * 0.8), 1.0)
             end
@@ -56,8 +56,8 @@ features.on_draw("Compass", function(f)
         draw.circle(x, y + 8 * s, 5 * s, 200, 90, 240, a)
         local dist = f.waypoint_distance or 0
         local label = dist >= 1000 and string.format("%.1f km", dist / 1000) or string.format("%d m", floor(dist))
-        local lw = text.width(font.tiny, label)
-        text.draw(font.tiny, cx - lw * 0.5, y + 34 * s, 200, 90, 240, 255, label)
+        local lw = text.width(font.hud_tiny, label)
+        text.draw(font.hud_tiny, cx - lw * 0.5, y + 34 * s, 200, 90, 240, 255, label)
     end
 
     draw.line(cx, y + 26 * s, cx - 5 * s, y + 32 * s, ar, ag, ab, 255, 1.6)
@@ -66,7 +66,7 @@ features.on_draw("Compass", function(f)
     local street = f.street or ""
     if street ~= "" then
         local sy = y + (f.waypoint_heading and 50 or 36) * s
-        local tw = text.width(font.small, street)
-        text.draw(font.small, cx - tw * 0.5, sy, 230, 230, 235, 220, street)
+        local tw = text.width(font.hud_small, street)
+        text.draw(font.hud_small, cx - tw * 0.5, sy, 230, 230, 235, 220, street)
     end
 end)

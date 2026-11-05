@@ -12,7 +12,7 @@ features.on_draw("Race Creator", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local points = math.floor(f.points or 0)
 
@@ -20,7 +20,7 @@ features.on_draw("Race Creator", function(f)
         local pulse = 160 + math.floor(95 * math.abs(math.sin(ctx.time() * 3)))
         draw.circle(cx - 90 * s, sh * 0.08 + 7 * s, 5 * s, 235, 60, 60, pulse)
         local msg = string.format("RECORDING ROUTE   %d CHECKPOINTS", points)
-        text.draw(font.small, cx - 78 * s, sh * 0.08, 240, 240, 245, 255, msg)
+        text.draw(font.hud_small, cx - 78 * s, sh * 0.08, 240, 240, 245, 255, msg)
         return
     end
 
@@ -29,7 +29,7 @@ features.on_draw("Race Creator", function(f)
     if state == 0 then
         local d = math.floor(f.distance or 0)
         local msg = string.format("DRIVE TO THE START   %d M", d)
-        text.draw(font.small, cx - text.width(font.small, msg) / 2, y, 240, 240, 245, 255, msg)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, y, 240, 240, 245, 255, msg)
     elseif state == 1 then
         local n = math.floor(f.countdown or 0)
         local msg = n > 0 and tostring(n) or "GO"
@@ -44,11 +44,11 @@ features.on_draw("Race Creator", function(f)
         else
             info = "FINISHED"
         end
-        text.draw(font.small, cx - text.width(font.small, info) / 2, y, ar, ag, ab, 255, info)
-        y = y + text.height(font.small) + 2 * s
+        text.draw(font.hud_small, cx - text.width(font.hud_small, info) / 2, y, ar, ag, ab, 255, info)
+        y = y + text.height(font.hud_small) + 2 * s
         if (f.best or 0) > 0 then
             local best = "BEST " .. clock(f.best)
-            text.draw(font.tiny, cx - text.width(font.tiny, best) / 2, y, 180, 180, 195, 220, best)
+            text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, best) / 2, y, 180, 180, 195, 220, best)
         end
     end
 end)

@@ -9,12 +9,12 @@ features.on_draw("Wildlife Spotter", function(f)
     local cx, cy = sw / 2, sh / 2
 
     local log = string.format("LOG  %d / %d", math.floor(f.count or 0), math.floor(f.total or 0))
-    local lw = text.width(font.small, log) + 20 * s
+    local lw = text.width(font.hud_small, log) + 20 * s
     local lx, ly = sw - lw - 24 * s, sh * 0.22
     draw.rect(lx, ly, lx + lw, ly + 26 * s, 10, 12, 16, 190, 5 * s)
     local frac = (f.total or 0) > 0 and (f.count or 0) / f.total or 0
     draw.rect(lx, ly + 23 * s, lx + lw * frac, ly + 26 * s, ar, ag, ab, 255, 0)
-    text.draw(font.small, lx + 10 * s, ly + 13 * s - text.height(font.small) / 2, 235, 235, 245, 255, log)
+    text.draw(font.hud_small, lx + 10 * s, ly + 13 * s - text.height(font.hud_small) / 2, 235, 235, 245, 255, log)
 
     if f.aiming and f.species then
         local r = 26 * s
@@ -33,17 +33,17 @@ features.on_draw("Wildlife Spotter", function(f)
         end
         local label = f.species
         if f.known then label = label .. "  (logged)" end
-        local tw = text.width(font.small, label)
+        local tw = text.width(font.hud_small, label)
         local ty = cy + r + 10 * s
-        draw.rect(cx - tw / 2 - 8 * s, ty - 3 * s, cx + tw / 2 + 8 * s, ty + text.height(font.small) + 3 * s, 10, 12, 16, 180, 4 * s)
-        text.draw(font.small, cx - tw / 2, ty, 240, 240, 248, 255, label)
+        draw.rect(cx - tw / 2 - 8 * s, ty - 3 * s, cx + tw / 2 + 8 * s, ty + text.height(font.hud_small) + 3 * s, 10, 12, 16, 180, 4 * s)
+        text.draw(font.hud_small, cx - tw / 2, ty, 240, 240, 248, 255, label)
     end
 
     local age = f.last_age or 99
     if f.last and age < 3 then
         local a = math.floor(255 * math.min(1, (3 - age) * 1.5))
         local msg = f.last_new and ("NEW: " .. f.last) or (f.last .. " already logged")
-        local fnt = font.item
+        local fnt = font.hud
         local r, g, b = 200, 200, 210
         if f.last_new then r, g, b = ar, ag, ab end
         text.draw(fnt, cx - text.width(fnt, msg) / 2, sh * 0.72, r, g, b, a, msg)

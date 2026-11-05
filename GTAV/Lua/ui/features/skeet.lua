@@ -16,7 +16,7 @@ features.on_draw("Skeet Shooting", function(f)
     local y = sh * 0.08
 
     local title = string.format("SKEET   %d / %d   BEST %d", math.floor(f.hits or 0), count, math.floor(f.best or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, title) / 2, y - text.height(font.tiny) - 6 * s, 220, 220, 230, 240, title)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, title) / 2, y - text.height(font.hud_tiny) - 6 * s, 220, 220, 230, 240, title)
 
     for i = 1, count do
         local c = results:sub(i, i)
@@ -34,10 +34,10 @@ features.on_draw("Skeet Shooting", function(f)
     if not f.finished and age < 0.6 then
         local a = math.floor(255 * (1 - age / 0.6))
         local msg = "PULL!"
-        local fnt = font.display or font.title
+        local fnt = font.display
         text.draw(fnt, cx - text.width(fnt, msg) / 2, y + dot + 14 * s, ar, ag, ab, a, msg)
     elseif f.finished then
         local msg = "NEXT ROUND SOON"
-        text.draw(font.small, cx - text.width(font.small, msg) / 2, y + dot + 14 * s, 200, 200, 210, 230, msg)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, y + dot + 14 * s, 200, 200, 210, 230, msg)
     end
 end)

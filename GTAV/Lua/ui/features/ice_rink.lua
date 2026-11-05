@@ -10,17 +10,17 @@ features.on_draw("Ice Rink", function(f)
     local w, h = 230 * s, 132 * s
     local x0, y0 = 30 * s, sh * 0.5 - h / 2
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 14, 22, 210, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 220, 240, 255, 255, "ICE RINK")
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 220, 240, 255, 255, "ICE RINK")
     local kmh = (f.speed or 0) * 3.6
-    text.draw(font.title, x0 + 14 * s, y0 + 36 * s, 170, 220, 255, 255, string.format("%.0f", kmh))
-    text.draw(font.tiny, x0 + 18 * s + text.width(font.title, string.format("%.0f", kmh)), y0 + 54 * s, 190, 200, 215, 230, "KM/H")
+    text.draw(font.display, x0 + 14 * s, y0 + 36 * s, 170, 220, 255, 255, string.format("%.0f", kmh))
+    text.draw(font.hud_tiny, x0 + 18 * s + text.width(font.display, string.format("%.0f", kmh)), y0 + 54 * s, 190, 200, 215, 230, "KM/H")
     local bx0, bx1, by = x0 + 14 * s, x0 + w - 14 * s, y0 + 86 * s
     draw.rect(bx0, by, bx1, by + 6 * s, 40, 44, 60, 255, 3 * s)
     local k = math.max(0, math.min(1, (f.speed or 0) / 13))
     if k > 0 then draw.rect(bx0, by, bx0 + (bx1 - bx0) * k, by + 6 * s, 120, 200, 255, 255, 3 * s) end
-    text.draw(font.tiny, x0 + 14 * s, y0 + h - 30 * s, 255, 220, 90, 230, string.format("STYLE %d", math.floor(f.style or 0)))
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + h - 30 * s, 255, 220, 90, 230, string.format("STYLE %d", math.floor(f.style or 0)))
     local best = string.format("TOP %.0f", (f.best_speed or 0) * 3.6)
-    text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, best), y0 + h - 30 * s, 190, 200, 215, 230, best)
+    text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, best), y0 + h - 30 * s, 190, 200, 215, 230, best)
 
     local pop = f.pop or 0
     if pop > 0 then
@@ -28,13 +28,13 @@ features.on_draw("Ice Rink", function(f)
         local names = { "SINGLE", "DOUBLE", "TRIPLE", "QUAD" }
         local name = names[turns] or string.format("%dx", turns)
         local msg = string.format("%s SPIN!  +%d", name, math.floor(f.pop_points or 0))
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, sh * 0.3 - 26 * s * (1 - pop), 170, 225, 255, math.floor(255 * pop), msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, sh * 0.3 - 26 * s * (1 - pop), 170, 225, 255, math.floor(255 * pop), msg)
     end
     if not f.on_ice then
         local hint = "STEP ONTO THE ICE"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, sh - 120 * s, 200, 210, 225, math.floor(150 + 60 * math.sin(t * 2)), hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, sh - 120 * s, 200, 210, 225, math.floor(150 + 60 * math.sin(t * 2)), hint)
     else
         local hint = "W A S D  GLIDE   -   SHIFT  PUSH HARDER   -   SPACE AT SPEED  SPIN JUMP"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, sh - 120 * s, 200, 210, 225, 170, hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, sh - 120 * s, 200, 210, 225, 170, hint)
     end
 end)

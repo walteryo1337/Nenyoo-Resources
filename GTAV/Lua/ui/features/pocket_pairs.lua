@@ -21,7 +21,7 @@ features.on_draw("Pocket Pairs", function(f)
     local cards = {}
     for v in string.gmatch(f.cards or "", "(%-?%d+),") do cards[#cards + 1] = tonumber(v) end
     local cur = math.floor(f.cursor or 0)
-    local big = font.display or font.title
+    local big = font.display
     for i = 0, cols * rows - 1 do
         local r, c = math.floor(i / cols), i % cols
         local x = x0 + c * (cw + gap)
@@ -46,11 +46,11 @@ features.on_draw("Pocket Pairs", function(f)
 
     local t = f.seconds or 0
     local head = string.format("MOVES %d   %d:%02d", math.floor(f.moves or 0), math.floor(t / 60), math.floor(t % 60))
-    text.draw(font.item, x0, y0 - 54 * s, 245, 245, 250, 255, head)
+    text.draw(font.hud, x0, y0 - 54 * s, 245, 245, 250, 255, head)
     if (f.best or 0) > 0 then
         local b = string.format("BEST %d", math.floor(f.best))
-        text.draw(font.item, x0 + bw - text.width(font.item, b), y0 - 54 * s, 200, 200, 214, 240, b)
+        text.draw(font.hud, x0 + bw - text.width(font.hud, b), y0 - 54 * s, 200, 200, 214, 240, b)
     end
     local foot = math.floor(f.state or 0) == 3 and "ALL PAIRS FOUND!   E TO DEAL AGAIN" or "W A S D MOVE     E FLIP"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + bh + 20 * s, 220, 220, 232, 240, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + bh + 20 * s, 220, 220, 232, 240, foot)
 end)

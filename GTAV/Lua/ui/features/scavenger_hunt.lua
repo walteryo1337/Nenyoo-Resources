@@ -31,19 +31,19 @@ features.on_draw("Scavenger Hunt", function(f)
         items[i] = f["item" .. i] or ""
         found[i] = f["found" .. i] and true or false
     end
-    local lh = text.height(font.small) + 6 * s
+    local lh = text.height(font.hud_small) + 6 * s
     local w = 280 * s
     local h = 44 * s + 5 * lh
     local x, y = 30 * s, sh * 0.3
     draw.rect(x, y, x + w, y + h, 245, 240, 225, 235, 4 * s)
     local head = "SCAVENGER HUNT"
-    text.draw(font.small, x + 12 * s, y + 10 * s, 60, 50, 40, 255, head)
+    text.draw(font.hud_small, x + 12 * s, y + 10 * s, 60, 50, 40, 255, head)
     if state == 1 then
         local tl = math.max(0, f.time_left or 0)
         local clock = string.format("%d:%02d", math.floor(tl / 60), math.floor(tl % 60))
         local cr, cg, cb = 60, 50, 40
         if tl < 60 then cr, cg, cb = 190, 40, 40 end
-        text.draw(font.small, x + w - 12 * s - text.width(font.small, clock), y + 10 * s, cr, cg, cb, 255, clock)
+        text.draw(font.hud_small, x + w - 12 * s - text.width(font.hud_small, clock), y + 10 * s, cr, cg, cb, 255, clock)
     end
     for i = 1, 5 do
         local ry = y + 38 * s + (i - 1) * lh
@@ -58,10 +58,10 @@ features.on_draw("Scavenger Hunt", function(f)
             r, g, b = 140, 135, 125
         end
         local label = items[i]
-        text.draw(font.small, bx + 22 * s, ry, r, g, b, 255, label)
+        text.draw(font.hud_small, bx + 22 * s, ry, r, g, b, 255, label)
         if found[i] then
-            local lw = text.width(font.small, label)
-            draw.line(bx + 22 * s, ry + text.height(font.small) / 2, bx + 22 * s + lw, ry + text.height(font.small) / 2, 140, 135, 125, 255, 2 * s)
+            local lw = text.width(font.hud_small, label)
+            draw.line(bx + 22 * s, ry + text.height(font.hud_small) / 2, bx + 22 * s + lw, ry + text.height(font.hud_small) / 2, 140, 135, 125, 255, 2 * s)
         end
     end
 
@@ -70,6 +70,6 @@ features.on_draw("Scavenger Hunt", function(f)
         for i = 1, 5 do if found[i] then n = n + 1 end end
         local msg = n == 5 and "HUNT COMPLETE" or string.format("%d OF 5 FOUND", n)
         if (f.pay or 0) > 0 then msg = msg .. string.format("  +$%d", math.floor(f.pay)) end
-        text.draw(font.item, x, y + h + 8 * s, 245, 245, 250, 255, msg)
+        text.draw(font.hud, x, y + h + 8 * s, 245, 245, 250, 255, msg)
     end
 end)

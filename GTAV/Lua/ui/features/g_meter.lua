@@ -38,9 +38,9 @@ features.on_draw("G-Force Meter", function(f)
         if #trail > 24 then table.remove(trail) end
     end
 
-    local th = text.height(font.tiny)
+    local th = text.height(font.hud_tiny)
     local peaks = string.format("LAT %.1f  BRK %.1f  ACC %.1f", f.peak_lat or 0, f.peak_brake or 0, f.peak_accel or 0)
-    local half = math.max(radius + pad, text.width(font.tiny, peaks) / 2 + pad)
+    local half = math.max(radius + pad, text.width(font.hud_tiny, peaks) / 2 + pad)
     draw.rect(cx - half, cy - radius - pad, cx + half, cy + radius + pad + th * 2 + 6 * s, 10, 10, 16, math.floor(150 * a), 8 * s)
     draw.circle(cx, cy, radius, 0, 0, 0, math.floor(90 * a))
     for i = 1, 3 do
@@ -62,6 +62,6 @@ features.on_draw("G-Force Meter", function(f)
     local total = math.sqrt(lat * lat + lon * lon)
     local big = string.format("%.2f G", total)
     local ty = cy + radius + 4 * s
-    text.draw(font.tiny, cx - text.width(font.tiny, big) / 2, ty, 245, 245, 250, math.floor(255 * a), big)
-    text.draw(font.tiny, cx - text.width(font.tiny, peaks) / 2, ty + th + 2 * s, 180, 180, 195, math.floor(220 * a), peaks)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, big) / 2, ty, 245, 245, 250, math.floor(255 * a), big)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, peaks) / 2, ty + th + 2 * s, 180, 180, 195, math.floor(220 * a), peaks)
 end)

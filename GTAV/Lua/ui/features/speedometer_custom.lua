@@ -41,7 +41,7 @@ local COLD   = { 48, 53, 61 }
 local SPIKE  = { 255, 72, 16 }
 local ORANGE = { 255, 132, 28 }
 local REDBED = { 90, 30, 30 }
-local BIG    = font.display or font.title
+local BIG    = font.display
 
 -- Font metrics: em = the slot's size in px, base = top-of-box to baseline (both from the engine when
 -- available, so placement does not depend on the face's line spacing).
@@ -203,7 +203,7 @@ end
 
 -- Indicator lamps: dim outline when off, filled when on. Returns width, height.
 local function lamps(x, y, f, align)
-    local fnt, gap = font.tiny, 5
+    local fnt, gap = font.hud_tiny, 5
     local ph = text.height(fnt) + 7
     local total = gap * 3
     for i = 1, 4 do LAMP_W[i] = text.width(fnt, FLAG_NAMES[i]) + 12; total = total + LAMP_W[i] end
@@ -228,7 +228,7 @@ end
 local function ticks(cx, cy, r, top, step, lit_to, colfn, label_r, minors)
     minors = minors or 4
     local n = max(1, floor(top / step + 0.5)) * minors
-    local lh = text.height(font.small)
+    local lh = text.height(font.hud_small)
     for i = 0, n do
         local t = i / n
         local ang = START + SWEEP * t
@@ -239,7 +239,7 @@ local function ticks(cx, cy, r, top, step, lit_to, colfn, label_r, minors)
         line(x0, y0, x1, y1, lit and colfn(t) or DIM, major and 240 or 140, major and 2 or 1)
         if major and label_r then
             local lx, ly = pol(cx, cy, label_r, ang)
-            txt(font.small, lx, ly - lh * 0.6, tostring(floor(i / minors * step + 0.5)), lit and INK or DIM, 225, "c")
+            txt(font.hud_small, lx, ly - lh * 0.6, tostring(floor(i / minors * step + 0.5)), lit and INK or DIM, 225, "c")
         end
     end
 end
@@ -319,13 +319,13 @@ local function flame_dial(f, x, y, w, h, now)
     needle(cx, cy, R - 36, START + SWEEP * S.ratio, SPIKE)
 
     big(cx, cy + 18, 40, speed_str(), INK, 255, "c")
-    spaced(font.tiny, cx, cy + 61, unit_str(f), ORANGE, 245, 2, "c")
+    spaced(font.hud_tiny, cx, cy + 61, unit_str(f), ORANGE, 245, 2, "c")
     gear_badge(cx, cy + 88, 14, f)
     if f.show_flags then
         local on1 = f.handbrake
         local on2 = S.brk > 0.15
-        txt(font.tiny, cx - 26, cy + 83, "HBK", on1 and AMB or DIM, on1 and 255 or 110, "r")
-        txt(font.tiny, cx + 26, cy + 83, "BRK", on2 and RED or DIM, on2 and 255 or 110)
+        txt(font.hud_tiny, cx - 26, cy + 83, "HBK", on1 and AMB or DIM, on1 and 255 or 110, "r")
+        txt(font.hud_tiny, cx + 26, cy + 83, "BRK", on2 and RED or DIM, on2 and 255 or 110)
     end
     if f.show_engine then
         local hp = clamp(f.engine_health or 0, 0, 1)
@@ -366,16 +366,16 @@ local function tach_first(f, x, y, w, h, now)
         local ang = a0 + span * k / 8
         local lx, ly = pol(cx, cy, R - 24, ang)
         local lit = k / 8 <= S.rpm
-        txt(font.small, lx, ly - text.height(font.small) * 0.6, tostring(k), lit and INK or DIM, 230, "c")
+        txt(font.hud_small, lx, ly - text.height(font.hud_small) * 0.6, tostring(k), lit and INK or DIM, 230, "c")
     end
-    spaced(font.tiny, cx - 128, cy - 18, "x1000 RPM", DIM, 200, 1.5)
+    spaced(font.hud_tiny, cx - 128, cy - 18, "x1000 RPM", DIM, 200, 1.5)
 
     local g = gear_str(f.gear)
     local gp = 64 * (1 + 0.18 * S.pop)
     big_shadow(cx, cy - 86 - (gp - 64) * 0.5, gp, g, over and RED or INK, 255, "c")
 
     big(cx - 6, cy - 2, 34, speed_str(), INK, 255, "r")
-    spaced(font.tiny, cx + 2, cy + 18, unit_str(f), ACC, 240, 1.5)
+    spaced(font.hud_tiny, cx + 2, cy + 18, unit_str(f), ACC, 240, 1.5)
 
     if f.show_flags then lamps(cx, y + h - 32, f, "c") end
     if f.show_engine then bar(x + 24, y + h - 9, w - 48, 3, f.engine_health, (f.engine_health or 0) < 0.35 and RED or GRN) end
@@ -392,9 +392,9 @@ local function card_size(f)
 end
 
 local function labeled_bar(x, y, w, label, v, c, value)
-    txt(font.tiny, x, y, label, DIM, 230)
-    if value then txt(font.tiny, x + w, y, value, INK, 230, "r") end
-    bar(x, y + text.height(font.tiny) + 5, w, 4, v, c)
+    txt(font.hud_tiny, x, y, label, DIM, 230)
+    if value then txt(font.hud_tiny, x + w, y, value, INK, 230, "r") end
+    bar(x, y + text.height(font.hud_tiny) + 5, w, 4, v, c)
 end
 
 local function telemetry_card(f, x, y, w, h, now)
@@ -402,24 +402,24 @@ local function telemetry_card(f, x, y, w, h, now)
     rect(x + 12, y, x + w - 12, y + 3, ACC, 255, 1.5)
     local px, iw = x + 16, w - 32
 
-    local name = f.veh_name and fit(font.item, f.veh_name, iw - 60) or "VEHICLE"
-    txt(font.item, px, y + 11, name, INK, 245)
+    local name = f.veh_name and fit(font.hud, f.veh_name, iw - 60) or "VEHICLE"
+    txt(font.hud, px, y + 11, name, INK, 245)
     local dts = dt_str(f)
     if dts then
-        local tw = text.width(font.tiny, dts) + 12
-        frame(x + w - 16 - tw, y + 11, x + w - 16, y + 11 + text.height(font.tiny) + 7, ACC, 200, 3, 1)
-        txt(font.tiny, x + w - 16 - tw * 0.5, y + 14, dts, ACC, 255, "c")
+        local tw = text.width(font.hud_tiny, dts) + 12
+        frame(x + w - 16 - tw, y + 11, x + w - 16, y + 11 + text.height(font.hud_tiny) + 7, ACC, 200, 3, 1)
+        txt(font.hud_tiny, x + w - 16 - tw * 0.5, y + 14, dts, ACC, 255, "c")
     end
 
     local cy = y + 36
     big(px - 2, cy, 58, speed_str(), INK, 255, "l")
-    spaced(font.tiny, px, cy + 64, unit_str(f), DIM, 230, 2)
+    spaced(font.hud_tiny, px, cy + 64, unit_str(f), DIM, 230, 2)
     local gx = x + w - 16 - 62
     rect(gx, cy + 4, gx + 62, cy + 66, HUB, 240, 8)
     frame(gx, cy + 4, gx + 62, cy + 66, S.rpm >= REDLINE and RED or ACC, 220, 8, 1.5)
     local gp = 42 * (1 + 0.15 * S.pop)
     big(gx + 31, cy + 35 - gp * 0.6, gp, gear_str(f.gear), S.rpm >= REDLINE and RED or INK, 255, "c")
-    txt(font.tiny, gx + 31, cy + 70, "GEAR", DIM, 200, "c")
+    txt(font.hud_tiny, gx + 31, cy + 70, "GEAR", DIM, 200, "c")
     local yy = cy + 86
 
     if f.show_rpm then
@@ -433,9 +433,9 @@ local function telemetry_card(f, x, y, w, h, now)
     yy = yy + 32
 
     if f.show_telemetry then
-        txt(font.tiny, px, yy, "SLIP ANGLE", DIM, 230)
-        txt(font.tiny, px + iw, yy, string.format("%d DEG", slip_deg()), f.drifting and ACC or INK, 240, "r")
-        local sy = yy + text.height(font.tiny) + 6
+        txt(font.hud_tiny, px, yy, "SLIP ANGLE", DIM, 230)
+        txt(font.hud_tiny, px + iw, yy, string.format("%d DEG", slip_deg()), f.drifting and ACC or INK, 240, "r")
+        local sy = yy + text.height(font.hud_tiny) + 6
         local mid = px + iw * 0.5
         rect(px, sy, px + iw, sy + 6, TRACK, 215, 3)
         local sx = mid + clamp(S.slip / 60, -1, 1) * iw * 0.5
@@ -474,7 +474,7 @@ local function bare_numerals(f, x, y, w, h, now)
         local fx = right
         for i = 4, 1, -1 do
             local on, c = flag(f, i)
-            if on then fx = fx - txt(font.tiny, fx, ly, FLAG_NAMES[i], c, 255, "r") - 8 end
+            if on then fx = fx - txt(font.hud_tiny, fx, ly, FLAG_NAMES[i], c, 255, "r") - 8 end
         end
     end
 end
@@ -507,7 +507,7 @@ local function panel_native(f, x, y, w, h, now)
         yy = yy + 30
     end
     native_row(x, yy, w, "SPEED")
-    local uw = spaced(font.tiny, x + w - 10, yy + 15, unit_str(f), DIM, 230, 1, "r")
+    local uw = spaced(font.hud_tiny, x + w - 10, yy + 15, unit_str(f), DIM, 230, 1, "r")
     big(x + w - 16 - uw, yy + 4, 25, speed_str(), INK, 255, "r")
     yy = yy + 37
     native_row(x, yy, w, "GEAR")
@@ -544,23 +544,23 @@ local function lower_third(f, x, y, w, h, now)
     local sw = big(x + h + 18, y + 6, 50, s, INK, 255, "l", ghost)
     spaced(font.label, x + h + 26 + sw, y + 18, unit_str(f), ACC, 245, 2)
     if f.show_telemetry and dt_str(f) then
-        txt(font.tiny, x + h + 26 + sw, y + 38, dt_str(f), DIM, 230)
+        txt(font.hud_tiny, x + h + 26 + sw, y + 38, dt_str(f), DIM, 230)
     end
 
     local rx = x + w - 16
     line(x + 300, y + 12, x + 300, y + h - 12, INK, 30, 1)
-    local name = f.veh_name and fit(font.item, f.veh_name, rx - x - 452) or ""
-    if name ~= "" then txt(font.item, rx, y + 10, name, INK, 245, "r") end
+    local name = f.veh_name and fit(font.hud, f.veh_name, rx - x - 452) or ""
+    if name ~= "" then txt(font.hud, rx, y + 10, name, INK, 245, "r") end
     if f.show_telemetry then
         local s2 = string.format("SLIP %d DEG", slip_deg())
-        txt(font.tiny, rx, y + 32, s2, f.drifting and ACC or DIM, 235, "r")
+        txt(font.hud_tiny, rx, y + 32, s2, f.drifting and ACC or DIM, 235, "r")
     end
     if f.show_flags then lamps(rx, y + h - 24, f, "r") end
     local mx0, mw = x + 316, 116
     local rows = f.show_engine and 3 or 2
     local ry = y + (h - rows * 20) * 0.5
     local function mini(label, v, c)
-        txt(font.tiny, mx0, ry, label, DIM, 220)
+        txt(font.hud_tiny, mx0, ry, label, DIM, 220)
         bar(mx0 + 46, ry + 4, mw - 46, 4, v, c)
         ry = ry + 20
     end
@@ -595,14 +595,14 @@ local function twin_cluster(f, x, y, w, h, now)
     local lx, rx, cy = x + R + 10, x + w - R - 10, y + R + 14
     round_gauge(lx, cy, R, S.ratio, S.top, S.step, acc_col, nil, true)
     big(lx, cy + 26, 30, speed_str(), INK, 255, "c")
-    spaced(font.tiny, lx, cy + 60, unit_str(f), ACC, 240, 1.5, "c")
+    spaced(font.hud_tiny, lx, cy + 60, unit_str(f), ACC, 240, 1.5, "c")
 
     if f.show_rpm then
         round_gauge(rx, cy, R, S.rpm, 8, 1, rpm_col, REDLINE, true)
-        spaced(font.tiny, rx, cy + 60, "RPM x1000", DIM, 220, 1.5, "c")
+        spaced(font.hud_tiny, rx, cy + 60, "RPM x1000", DIM, 220, 1.5, "c")
     else
         round_gauge(rx, cy, R, clamp(f.engine_health or 0, 0, 1), 100, 25, health_col, nil, true)
-        spaced(font.tiny, rx, cy + 60, "ENGINE %", DIM, 220, 1.5, "c")
+        spaced(font.hud_tiny, rx, cy + 60, "ENGINE %", DIM, 220, 1.5, "c")
     end
 
     local mx = x + w * 0.5
@@ -610,10 +610,10 @@ local function twin_cluster(f, x, y, w, h, now)
     if f.show_flags then
         for i = 1, 4 do
             local on, c = flag(f, i)
-            txt(font.tiny, mx, cy + 34 + (i - 1) * 14, FLAG_NAMES[i], on and c or DIM, on and 255 or 100, "c")
+            txt(font.hud_tiny, mx, cy + 34 + (i - 1) * 14, FLAG_NAMES[i], on and c or DIM, on and 255 or 100, "c")
         end
     end
-    if f.show_telemetry and dt_str(f) then txt(font.tiny, mx, y + 8, dt_str(f), DIM, 230, "c") end
+    if f.show_telemetry and dt_str(f) then txt(font.hud_tiny, mx, y + 8, dt_str(f), DIM, 230, "c") end
     if f.show_engine and f.show_rpm then
         bar(mx - 30, y + h - 10, 60, 3, f.engine_health, (f.engine_health or 0) < 0.35 and RED or GRN)
     end
@@ -647,20 +647,20 @@ local function drift_hud(f, x, y, w, h, now)
         spaced(font.label, cx, y + 2, "DRIFTING", ACC, 255 * p, 3, "c")
     end
     big_shadow(cx, cy - 116, 54, tostring(floor(abs(slip) + 0.5)), drifting and ACC or INK, 255, "c")
-    spaced(font.tiny, cx, cy - 52, "DRIFT ANGLE", DIM, 230, 2, "c")
+    spaced(font.hud_tiny, cx, cy - 52, "DRIFT ANGLE", DIM, 230, 2, "c")
 
     local by = cy - 30
     big(cx - 16, by, 30, speed_str(), INK, 255, "r")
-    spaced(font.tiny, cx - 16, by + 34, unit_str(f), DIM, 220, 1.5, "r")
+    spaced(font.hud_tiny, cx - 16, by + 34, unit_str(f), DIM, 220, 1.5, "r")
     local hot = S.rpm >= REDLINE
     big(cx + 16, by, 30 * (1 + 0.2 * S.pop), gear_str(f.gear), hot and RED or INK, 255, "l")
-    spaced(font.tiny, cx + 16, by + 34, "GEAR", DIM, 220, 1.5)
+    spaced(font.hud_tiny, cx + 16, by + 34, "GEAR", DIM, 220, 1.5)
 
     local pw = 70
     bar(cx - R + 6, cy - 6, pw, 4, S.thr, GRN)
-    txt(font.tiny, cx - R + 6, cy + 2, "THR", DIM, 220)
+    txt(font.hud_tiny, cx - R + 6, cy + 2, "THR", DIM, 220)
     bar(cx + R - 6 - pw, cy - 6, pw, 4, S.brk, RED)
-    txt(font.tiny, cx + R - 6, cy + 2, "BRK", DIM, 220, "r")
+    txt(font.hud_tiny, cx + R - 6, cy + 2, "BRK", DIM, 220, "r")
     if f.show_rpm then
         local ry = cy + 20
         seg_bar(cx - 100, ry, 200, 6, S.rpm, 20, rpm_col, 2)

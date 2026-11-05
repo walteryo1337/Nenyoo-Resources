@@ -32,28 +32,28 @@ features.on_draw("Fitness Tracker", function(f)
         draw.line(cx + math.cos(a0) * r, cy + math.sin(a0) * r, cx + math.cos(a1) * r, cy + math.sin(a1) * r, rr, rg, rb, 255, 5 * s)
     end
     local pct = string.format("%d%%", math.floor(p * 100))
-    text.draw(font.small, cx - text.width(font.small, pct) / 2, cy - text.height(font.small) / 2, 245, 245, 250, 255, pct)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, pct) / 2, cy - text.height(font.hud_small) / 2, 245, 245, 250, 255, pct)
 
     local tx = x + 90 * s
     local ty = y + 12 * s
     local steps = string.format("%d", math.floor(f.steps or 0))
-    text.draw(font.title, tx, ty, 245, 245, 250, 255, steps)
-    ty = ty + text.height(font.title)
-    text.draw(font.tiny, tx, ty, 190, 190, 205, 230, string.format("/ %d STEPS", math.floor(goal)))
-    ty = ty + text.height(font.tiny) + 4 * s
-    text.draw(font.tiny, tx, ty, 225, 225, 235, 240, string.format("%d KCAL  %s", math.floor(f.calories or 0), km((f.walk or 0) + (f.run or 0))))
-    ty = ty + text.height(font.tiny) + 2 * s
+    text.draw(font.display, tx, ty, 245, 245, 250, 255, steps)
+    ty = ty + text.height(font.display)
+    text.draw(font.hud_tiny, tx, ty, 190, 190, 205, 230, string.format("/ %d STEPS", math.floor(goal)))
+    ty = ty + text.height(font.hud_tiny) + 4 * s
+    text.draw(font.hud_tiny, tx, ty, 225, 225, 235, 240, string.format("%d KCAL  %s", math.floor(f.calories or 0), km((f.walk or 0) + (f.run or 0))))
+    ty = ty + text.height(font.hud_tiny) + 2 * s
     local act = activity_names[math.floor(f.activity or 0)] or "IDLE"
     local streak = math.floor(f.streak or 0)
     local line = act
     if streak > 0 then line = line .. string.format("   STREAK %d", streak) end
-    text.draw(font.tiny, tx, ty, ar, ag, ab, 255, line)
+    text.draw(font.hud_tiny, tx, ty, ar, ag, ab, 255, line)
 
     local age = f.goal_age or 99
     if f.goal_hit and age < 3 then
         local a = math.floor(255 * math.min(1, (3 - age) * 1.5))
         local msg = "GOAL REACHED"
-        local big = font.item
+        local big = font.hud
         text.draw(big, x + w / 2 - text.width(big, msg) / 2, y - text.height(big) - 6 * s, 90, 220, 110, a, msg)
     end
 end)

@@ -25,7 +25,7 @@ features.on_draw("Pocket Tetris", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cell = math.floor(30 * s)
     local bw, bh = 10 * cell, 20 * cell
     local x0, y0 = sw / 2 - bw / 2 - 70 * s, sh / 2 - bh / 2
@@ -52,13 +52,13 @@ features.on_draw("Pocket Tetris", function(f)
 
     local px = x0 + bw + 26 * s
     local function stat(label, value, y)
-        text.draw(font.tiny, px, y, 180, 185, 195, 230, label)
-        text.draw(font.title, px, y + text.height(font.tiny), 245, 245, 250, 255, value)
-        return y + text.height(font.tiny) + text.height(font.title) + 10 * s
+        text.draw(font.hud_tiny, px, y, 180, 185, 195, 230, label)
+        text.draw(font.display, px, y + text.height(font.hud_tiny), 245, 245, 250, 255, value)
+        return y + text.height(font.hud_tiny) + text.height(font.display) + 10 * s
     end
     local y = y0
-    text.draw(font.tiny, px, y, 180, 185, 195, 230, "NEXT")
-    y = y + text.height(font.tiny) + 6 * s
+    text.draw(font.hud_tiny, px, y, 180, 185, 195, 230, "NEXT")
+    y = y + text.height(font.hud_tiny) + 6 * s
     local nb = math.floor(22 * s)
     draw.rect(px, y, px + nb * 5, y + nb * 3, 10, 12, 16, 230, 4 * s)
     local nxt = math.floor(f.next or 0) + 1
@@ -72,7 +72,7 @@ features.on_draw("Pocket Tetris", function(f)
     y = stat("BEST", tostring(math.floor(f.best or 0)), y)
     local help = { "A D  MOVE", "W  ROTATE", "S  SOFT DROP", "SPACE  HARD DROP" }
     for i, line in ipairs(help) do
-        text.draw(font.tiny, px, y + (i - 1) * (text.height(font.tiny) + 2 * s), 170, 175, 190, 220, line)
+        text.draw(font.hud_tiny, px, y + (i - 1) * (text.height(font.hud_tiny) + 2 * s), 170, 175, 190, 220, line)
     end
 
     if math.floor(f.state or 0) == 2 then
@@ -80,6 +80,6 @@ features.on_draw("Pocket Tetris", function(f)
         local msg = "GAME OVER"
         text.draw(big, x0 + bw / 2 - text.width(big, msg) / 2, y0 + bh / 2 - text.height(big), ar, ag, ab, 255, msg)
         local again = "W OR SPACE TO RESTART"
-        text.draw(font.small, x0 + bw / 2 - text.width(font.small, again) / 2, y0 + bh / 2 + 6 * s, 235, 235, 245, 255, again)
+        text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, again) / 2, y0 + bh / 2 + 6 * s, 235, 235, 245, 255, again)
     end
 end)

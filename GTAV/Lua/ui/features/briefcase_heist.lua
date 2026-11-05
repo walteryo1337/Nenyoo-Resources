@@ -6,7 +6,7 @@ features.on_draw("Briefcase Heist", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
     local t = ctx.time() or 0
@@ -20,7 +20,7 @@ features.on_draw("Briefcase Heist", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.28, r, g, b, 255, msg)
         if (f.pay or 0) > 0 then
             local p = string.format("+$%d", math.floor(f.pay))
-            text.draw(font.item, cx - text.width(font.item, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
+            text.draw(font.hud, cx - text.width(font.hud, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
         end
         return
     end
@@ -38,8 +38,8 @@ features.on_draw("Briefcase Heist", function(f)
     else
         label, lr, lg, lb = "HIDDEN", 200, 200, 212
     end
-    text.draw(font.small, cx - text.width(font.small, label) / 2, y, lr, lg, lb, 255, label)
-    local by = y + text.height(font.small) + 4 * s
+    text.draw(font.hud_small, cx - text.width(font.hud_small, label) / 2, y, lr, lg, lb, 255, label)
+    local by = y + text.height(font.hud_small) + 4 * s
     draw.rect(x, by, x + w, by + 8 * s, 255, 255, 255, 30, 4 * s)
     if sus > 0 then
         local r, g, b = 245, 200, 70
@@ -54,5 +54,5 @@ features.on_draw("Briefcase Heist", function(f)
         local left = math.max(0, 200 - (f.distance or 0))
         obj = string.format("GET CLEAR   %d M TO GO", math.floor(left))
     end
-    text.draw(font.item, cx - text.width(font.item, obj) / 2, by + 14 * s, 240, 240, 248, 255, obj)
+    text.draw(font.hud, cx - text.width(font.hud, obj) / 2, by + 14 * s, 240, 240, 248, 255, obj)
 end)

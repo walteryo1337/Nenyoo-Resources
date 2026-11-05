@@ -26,7 +26,7 @@ features.on_draw("Kinetic Absorber", function(f)
         draw.line(cx + math.cos(a1) * r, cy + math.sin(a1) * r, cx + math.cos(a2) * r, cy + math.sin(a2) * r, rr, gg, bb, aa, 4 * s)
     end
     local label = full and "KINETIC  FULL" or string.format("KINETIC  %d%%", math.floor(charge * 100 + 0.5))
-    text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, cy + r + 6 * s, 255, 210, 150, 230, label)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, cy + r + 6 * s, 255, 210, 150, 230, label)
     if flash > 0 then
         draw.circle_outline(cx, cy, r + (1 - flash) * 80 * s, 255, 200, 120, math.floor(255 * flash), 3 * s)
     end

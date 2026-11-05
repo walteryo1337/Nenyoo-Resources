@@ -17,7 +17,7 @@ features.on_draw("Lucky Wheel", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx, cy = sw / 2, sh * 0.48
     local r = 170 * s
     local n = #labels
@@ -43,7 +43,7 @@ features.on_draw("Lucky Wheel", function(f)
         local a = math.rad((i + 0.5) * seg + rot)
         local lx, ly = cx + math.sin(a) * r * 0.66, cy - math.cos(a) * r * 0.66
         local label = labels[i + 1]
-        text.draw(font.small, lx - text.width(font.small, label) / 2, ly - text.height(font.small) / 2, 255, 255, 255, 255, label)
+        text.draw(font.hud_small, lx - text.width(font.hud_small, label) / 2, ly - text.height(font.hud_small) / 2, 255, 255, 255, 255, label)
     end
     draw.circle(cx, cy, 22 * s, 25, 25, 30, 255)
     draw.circle(cx, cy, 14 * s, ar, ag, ab, 255)

@@ -115,9 +115,9 @@ local function tape(x, cy, half, value, step, dir, s, r, g, b, a)
             draw.line(x, ty, x + dir * len, ty, r, g, b, major and ta or floor(ta * 0.7), major and 1.5 or 1.1)
             if major then
                 local lbl = string.format("%d", v)
-                local lw = text.width(font.tiny, lbl)
-                text.draw(font.tiny, dir > 0 and (x + len + 5 * s) or (x - len - 5 * s - lw),
-                    ty - text.height(font.tiny) * 0.5, r, g, b, floor(ta * 0.85), lbl)
+                local lw = text.width(font.hud_tiny, lbl)
+                text.draw(font.hud_tiny, dir > 0 and (x + len + 5 * s) or (x - len - 5 * s - lw),
+                    ty - text.height(font.hud_tiny) * 0.5, r, g, b, floor(ta * 0.85), lbl)
             end
         end
     end
@@ -133,8 +133,8 @@ end
 -- One gauge row beside the reactor: colour cap, label, right-aligned percentage.
 local function legend_row(x, y, w, s, label, value, r, g, b)
     draw.rect(x, y + 3 * s, x + 3 * s, y + 12 * s, r, g, b, A(255), 0)
-    text.draw_spaced(font.small, x + 9 * s, y, 168, 196, 210, A(215), label, 2 * s)
-    right_text(font.small, x + w, y, r, g, b, A(245), string.format("%d%%", floor(value * 100 + 0.5)))
+    text.draw_spaced(font.hud_small, x + 9 * s, y, 168, 196, 210, A(215), label, 2 * s)
+    right_text(font.hud_small, x + w, y, r, g, b, A(245), string.format("%d%%", floor(value * 100 + 0.5)))
 end
 
 features.on_draw("Iron Man", function(f)
@@ -203,9 +203,9 @@ features.on_draw("Iron Man", function(f)
     local sy0 = ty + tth - 2 * s
     if hot then
         local flash = 0.55 + 0.45 * sin(now * 11.0)
-        centre_spaced(font.small, cx0, sy0, 4 * s, RED_R, RED_G, RED_B, A(140 + 115 * flash), "// SYSTEM OVERHEAT //")
+        centre_spaced(font.hud_small, cx0, sy0, 4 * s, RED_R, RED_G, RED_B, A(140 + 115 * flash), "// SYSTEM OVERHEAT //")
     else
-        centre_spaced(font.small, cx0, sy0, 4 * s, 150, 190, 208, A(190), STATES[floor(f.state or 0)] or "ONLINE")
+        centre_spaced(font.hud_small, cx0, sy0, 4 * s, 150, 190, 208, A(190), STATES[floor(f.state or 0)] or "ONLINE")
     end
 
     ------------------------------------------------------------------ arc reactor (bottom-left)
@@ -241,7 +241,7 @@ features.on_draw("Iron Man", function(f)
     local pwr = string.format("%d", floor((f.energy or 0) * 100 + 0.5))
     local pth = text.height(font.display)
     text.draw_centered(font.display, rc_x - r_core, rc_y - pth * 0.5, rc_x + r_core, HOT_R, HOT_G, HOT_B, A(250), pwr)
-    centre_spaced(font.tiny, rc_x, rc_y + r_pow * 0.80, 3 * s, ac_r, ac_g, ac_b, A(165), "ARC REACTOR")
+    centre_spaced(font.hud_tiny, rc_x, rc_y + r_pow * 0.80, 3 * s, ac_r, ac_g, ac_b, A(165), "ARC REACTOR")
 
     -- gauge legend to the right of the rings
     local lx = rc_x + r_tick + 20 * s
@@ -267,10 +267,10 @@ features.on_draw("Iron Man", function(f)
             draw.rect(px, pip_y, px + pip_w, pip_y + pip_h, DIM_R, DIM_G, DIM_B, A(150), 1)
         end
     end
-    right_text(font.small, tx2 - 4 * (pip_w + pip_g) + pip_g - 10 * s, pip_y - 3 * s, 168, 196, 210, A(200), "WEAPON")
+    right_text(font.hud_small, tx2 - 4 * (pip_w + pip_g) + pip_g - 10 * s, pip_y - 3 * s, 168, 196, 210, A(200), "WEAPON")
 
-    local wy = pip_y - text.height(font.item) - 6 * s
-    right_text(font.item, tx2, wy, GOLD_R, GOLD_G, GOLD_B, A(245), wname)
+    local wy = pip_y - text.height(font.hud) - 6 * s
+    right_text(font.hud, tx2, wy, GOLD_R, GOLD_G, GOLD_B, A(245), wname)
 
     local ry = wy - 10 * s
     draw.line(tx2 - 210 * s, ry, tx2, ry, ac_r, ac_g, ac_b, A(120), 1.2)
@@ -278,14 +278,14 @@ features.on_draw("Iron Man", function(f)
     local spd = string.format("%d", floor(sm_speed + 0.5))
     local spd_h = text.height(font.display)
     local sy = ry - 8 * s - spd_h
-    right_text(font.small, tx2, sy + spd_h - text.height(font.small) - 4 * s, 168, 196, 210, A(215), "M/S")
-    right_text(font.display, tx2 - text.width(font.small, "M/S") - 7 * s, sy, HOT_R, HOT_G, HOT_B, A(250), spd)
+    right_text(font.hud_small, tx2, sy + spd_h - text.height(font.hud_small) - 4 * s, 168, 196, 210, A(215), "M/S")
+    right_text(font.display, tx2 - text.width(font.hud_small, "M/S") - 7 * s, sy, HOT_R, HOT_G, HOT_B, A(250), spd)
 
-    local ay = sy - text.height(font.item) - 3 * s
-    right_text(font.item, tx2, ay, 190, 216, 228, A(225), string.format("ALT  %.1f m", sm_alt))
+    local ay = sy - text.height(font.hud) - 3 * s
+    right_text(font.hud, tx2, ay, 190, 216, 228, A(225), string.format("ALT  %.1f m", sm_alt))
 
-    local hy = ay - text.height(font.small) - 6 * s
-    right_text(font.small, tx2, hy, 168, 196, 210, A(190),
+    local hy = ay - text.height(font.hud_small) - 6 * s
+    right_text(font.hud_small, tx2, hy, 168, 196, 210, A(190),
         string.format("PROJ %d    LOCKS %d", floor(f.projectiles or 0), floor(f.locks or 0)))
     frame_corners(tx2 - 214 * s, hy - 8 * s, tx2 + 6 * s, tby + 6 * s, 14 * s, ac_r, ac_g, ac_b, A(105), 1.3)
 
@@ -296,8 +296,8 @@ features.on_draw("Iron Man", function(f)
         local lxt, rxt = m + 30 * s, sw - m - 30 * s
         tape(lxt, cy0, half, sm_speed, 5, 1, s, ac_r, ac_g, ac_b, ta)
         tape(rxt, cy0, half, max(0, sm_alt), 20, -1, s, ac_r, ac_g, ac_b, ta)
-        centre_spaced(font.tiny, lxt + 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "SPD M/S")
-        centre_spaced(font.tiny, rxt - 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "ALT M")
+        centre_spaced(font.hud_tiny, lxt + 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "SPD M/S")
+        centre_spaced(font.hud_tiny, rxt - 10 * s, cy0 - half - 18 * s, 3 * s, ac_r, ac_g, ac_b, ta, "ALT M")
     end
 
     ------------------------------------------------------------------ reticle
@@ -332,7 +332,7 @@ features.on_draw("Iron Man", function(f)
             local lp = 0.6 + 0.4 * sin(now * 7.5)
             draw.circle_outline(cx0, cy0, (30 + 5 * lp) * s, RED_R, RED_G, RED_B, A(150 * lp * sm_lock), 1.4)
             local tt = TARGETS[floor(f.target_type or 0)] or "ENTITY"
-            centre_spaced(font.small, cx0, cy0 + 56 * s, 3 * s, RED_R, RED_G, RED_B, A(235 * sm_lock),
+            centre_spaced(font.hud_small, cx0, cy0 + 56 * s, 3 * s, RED_R, RED_G, RED_B, A(235 * sm_lock),
                 string.format("LOCK  %s  %dM", tt, floor(sm_dist + 0.5)))
             local n = max(1, floor(f.locks or 1))
             if n > 1 then
@@ -344,7 +344,7 @@ features.on_draw("Iron Man", function(f)
                 end
             end
         elseif f.aiming then
-            centre_spaced(font.small, cx0, cy0 + 56 * s, 3 * s, GOLD_R, GOLD_G, GOLD_B, A(210 * sm_aim),
+            centre_spaced(font.hud_small, cx0, cy0 + 56 * s, 3 * s, GOLD_R, GOLD_G, GOLD_B, A(210 * sm_aim),
                 string.format("SCANNING  %dM", floor(sm_dist + 0.5)))
         end
     end
@@ -355,7 +355,7 @@ features.on_draw("Iron Man", function(f)
         arc(cx0, cy0, 60 * s, -PI, -PI + PI * 2 * ch, HOT_R, HOT_G, HOT_B, A(240), 3.0)
         draw.circle(cx0, cy0, 20 * s * ch, HOT_R, HOT_G, HOT_B, A(90 * ch))
         draw.circle_outline(cx0, cy0, (66 - 30 * ch) * s, HOT_R, HOT_G, HOT_B, A(140 * ch), 1.6)
-        centre_spaced(font.small, cx0, cy0 - 84 * s, 4 * s, HOT_R, HOT_G, HOT_B, A(240),
+        centre_spaced(font.hud_small, cx0, cy0 - 84 * s, 4 * s, HOT_R, HOT_G, HOT_B, A(240),
             string.format("UNIBEAM  %d%%", floor(ch * 100 + 0.5)))
     end
 
@@ -379,8 +379,8 @@ features.on_draw("Iron Man", function(f)
     local ub = ready and GOLD_B or (hot and RED_B or 198)
     local upulse = ready and (0.62 + 0.38 * sin(now * 4.0)) or 1
 
-    text.draw_spaced(font.tiny, ux, uy - 13 * s, ur, ug, ub, A(210), "HOUSE PARTY", 3 * s)
-    right_text(font.tiny, ux + uw, uy - 13 * s, ur, ug, ub, A(210), ustate)
+    text.draw_spaced(font.hud_tiny, ux, uy - 13 * s, ur, ug, ub, A(210), "HOUSE PARTY", 3 * s)
+    right_text(font.hud_tiny, ux + uw, uy - 13 * s, ur, ug, ub, A(210), ustate)
     seg_bar(ux, uy, uw, 5 * s, 24, prog,
         ready and GOLD_R or (hot and RED_R or CY_R), ready and GOLD_G or (hot and RED_G or CY_G),
         ready and GOLD_B or (hot and RED_B or CY_B), A((ready and 255 or 190) * upulse))
@@ -388,7 +388,7 @@ features.on_draw("Iron Man", function(f)
     if f.controls then
         local h1 = "JUMP ASCEND   CTRL DESCEND   SHIFT BOOST   MELEE ABILITY"
         local h2 = "AIM+ATTACK FIRE   AIM+RELOAD CYCLE WEAPON   AIM+WHEEL CYCLE TARGET"
-        centre_spaced(font.tiny, cx0, sh - m - 22 * s, 2 * s, 158, 190, 206, A(180), h1)
-        centre_spaced(font.tiny, cx0, sh - m - 9 * s, 2 * s, 140, 170, 186, A(150), h2)
+        centre_spaced(font.hud_tiny, cx0, sh - m - 22 * s, 2 * s, 158, 190, 206, A(180), h1)
+        centre_spaced(font.hud_tiny, cx0, sh - m - 9 * s, 2 * s, 140, 170, 186, A(150), h2)
     end
 end)

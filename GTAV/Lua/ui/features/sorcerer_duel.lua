@@ -12,7 +12,7 @@ features.on_draw("Sorcerer Duel", function(f)
     local w, h = 620 * s, 16 * s
     local x0, y0 = sw / 2 - w / 2, 70 * s
     local title = string.upper(f.title or "Sorcerer")
-    text.draw(font.small, sw / 2 - text.width(font.small, title) / 2, y0 - 30 * s, 220, 180, 255, 255, title)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, title) / 2, y0 - 30 * s, 220, 180, 255, 255, title)
     draw.rect(x0 - 3 * s, y0 - 3 * s, x0 + w + 3 * s, y0 + h + 3 * s, 14, 8, 22, 220, 6 * s)
     if hp > 0 then
         local enraged = hp < 0.35 and state == 1
@@ -30,12 +30,12 @@ features.on_draw("Sorcerer Duel", function(f)
     if f.warning and state == 1 then
         local msg = "LIGHTNING  -  MOVE!"
         local pulse = math.floor(160 + 95 * math.abs(math.sin(t * 10)))
-        text.draw(font.item, sw / 2 - text.width(font.item, msg) / 2, y0 + h + 14 * s, 255, 230, 120, pulse, msg)
+        text.draw(font.hud, sw / 2 - text.width(font.hud, msg) / 2, y0 + h + 14 * s, 255, 230, 120, pulse, msg)
     end
     if state == 2 or state == 3 then
         local msg = state == 2 and "SORCERER DEFEATED" or "YOU WERE BESTED"
         local r, g, b = 150, 255, 170
         if state == 3 then r, g, b = 255, 110, 110 end
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, sh * 0.32, r, g, b, 255, msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, sh * 0.32, r, g, b, 255, msg)
     end
 end)

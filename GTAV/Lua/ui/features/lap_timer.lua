@@ -46,15 +46,15 @@ local function world_label(f, sw, sh, ar, ag, ab, now)
         sub, sr, sg, sb = string.format("Lap %d underway", f.lap or 1), 200, 200, 210
     end
 
-    local w = math.max(text.width(font.small, title), text.width(font.tiny, sub)) + 52
-    local h = text.height(font.small) + text.height(font.tiny) + 16
+    local w = math.max(text.width(font.hud_small, title), text.width(font.hud_tiny, sub)) + 52
+    local h = text.height(font.hud_small) + text.height(font.hud_tiny) + 16
     local x1, y1 = x - w * 0.5, y - h
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, math.floor(190 * a), 6)
     flag_icon(x1 + 14, y1 + h * 0.5 - 8, alpha)
-    text.draw(font.small, x1 + 36, y1 + 6, 255, 255, 255, alpha, title)
-    text.draw(font.tiny, x1 + 36, y1 + 8 + text.height(font.small), sr, sg, sb, alpha, sub)
+    text.draw(font.hud_small, x1 + 36, y1 + 6, 255, 255, 255, alpha, title)
+    text.draw(font.hud_tiny, x1 + 36, y1 + 8 + text.height(font.hud_small), sr, sg, sb, alpha, sub)
     draw.line(x, y1 + h, x, y1 + h + 14, 255, 255, 255, math.floor(alpha * 0.7), 2)
-    centered(font.tiny, x, y1 + h + 16, 220, 220, 230, math.floor(alpha * 0.85), string.format("%d m", math.floor(d + 0.5)))
+    centered(font.hud_tiny, x, y1 + h + 16, 220, 220, 230, math.floor(alpha * 0.85), string.format("%d m", math.floor(d + 0.5)))
 end
 
 local function lap_clock(f, sw, sh, ar, ag, ab)
@@ -63,7 +63,7 @@ local function lap_clock(f, sw, sh, ar, ag, ab)
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, 200, 8)
 
     flag_icon(x1 + 14, y1 + 12, 235)
-    text.draw(font.small, x1 + 36, y1 + 10, 255, 255, 255, 245, string.format("LAP %d", f.lap or 1))
+    text.draw(font.hud_small, x1 + 36, y1 + 10, 255, 255, 255, 245, string.format("LAP %d", f.lap or 1))
 
     local t = fmt(f.elapsed)
     local tr, tg, tb = 255, 255, 255
@@ -72,13 +72,13 @@ local function lap_clock(f, sw, sh, ar, ag, ab)
         text.draw(font.display, x1 + 16, y1 + 34, tr, tg, tb, 255, t)
     end)
 
-    local row = y1 + h - text.height(font.tiny) * 2 - 12
+    local row = y1 + h - text.height(font.hud_tiny) * 2 - 12
     local function stat(label, value, ry, r, g, b)
-        text.draw(font.tiny, x1 + 16, ry, 160, 160, 170, 235, label)
-        text.draw(font.tiny, x1 + w - 16 - text.width(font.tiny, value), ry, r, g, b, 245, value)
+        text.draw(font.hud_tiny, x1 + 16, ry, 160, 160, 170, 235, label)
+        text.draw(font.hud_tiny, x1 + w - 16 - text.width(font.hud_tiny, value), ry, r, g, b, 245, value)
     end
     stat("BEST", f.best and fmt(f.best) or "--", row, 255, 200, 60)
-    stat("LAST", f.last and fmt(f.last) or "--", row + text.height(font.tiny) + 4, 220, 220, 230)
+    stat("LAST", f.last and fmt(f.last) or "--", row + text.height(font.hud_tiny) + 4, 220, 220, 230)
 end
 
 local function lap_card(f, sw, sh, ar, ag, ab, now)
@@ -94,17 +94,17 @@ local function lap_card(f, sw, sh, ar, ag, ab, now)
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, math.floor(210 * a), 8)
     draw.rect(x1, y1, x1 + w, y1 + 3, hr, hg, hb, math.floor(255 * a), 0)
 
-    centered(font.tiny, cx, y1 + 10, 170, 170, 180, math.floor(235 * a), string.format("LAP %d", math.max(1, (f.lap or 2) - 1)))
+    centered(font.hud_tiny, cx, y1 + 10, 170, 170, 180, math.floor(235 * a), string.format("LAP %d", math.max(1, (f.lap or 2) - 1)))
     draw.with_scale(cx, y1 + 28, 1.7, function()
         centered(font.display, cx, y1 + 28, 255, 255, 255, math.floor(255 * a), fmt(f.result))
     end)
 
-    local line_y = y1 + h - text.height(font.small) - 10
+    local line_y = y1 + h - text.height(font.hud_small) - 10
     if f.record then
         local pulse = 0.75 + 0.25 * math.sin(now * 8)
-        centered(font.small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST LAP")
+        centered(font.hud_small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST LAP")
     else
-        centered(font.small, cx, line_y, 235, 80, 70, math.floor(245 * a),
+        centered(font.hud_small, cx, line_y, 235, 80, 70, math.floor(245 * a),
             string.format("+%.3f s   BEST %s", f.delta or 0, fmt(f.best)))
     end
 end

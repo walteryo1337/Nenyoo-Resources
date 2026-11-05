@@ -21,7 +21,7 @@ features.on_draw("Cup Game", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
     local swaps = parse(f.swaps)
@@ -102,13 +102,13 @@ features.on_draw("Cup Game", function(f)
         local keys = { "A", "W", "D" }
         for i = 1, 3 do
             local k = keys[i]
-            text.draw(font.title, slot_x[i] - text.width(font.title, k) / 2, py + 12 * s, 255, 255, 255, 230, k)
+            text.draw(font.display, slot_x[i] - text.width(font.display, k) / 2, py + 12 * s, 255, 255, 255, 230, k)
         end
         local msg = string.format("PICK A CUP  %d", math.ceil(f.pick_left or 0))
-        text.draw(font.item, cx - text.width(font.item, msg) / 2, py - text.height(font.item) - 8 * s, 245, 245, 250, 255, msg)
+        text.draw(font.hud, cx - text.width(font.hud, msg) / 2, py - text.height(font.hud) - 8 * s, 245, 245, 250, 255, msg)
     elseif state == 2 then
         local msg = "WATCH THE BALL"
-        text.draw(font.item, cx - text.width(font.item, msg) / 2, py - text.height(font.item) - 8 * s, 245, 245, 250, 255, msg)
+        text.draw(font.hud, cx - text.width(font.hud, msg) / 2, py - text.height(font.hud) - 8 * s, 245, 245, 250, 255, msg)
     elseif state == 4 then
         local outcome = math.floor(f.outcome or 0)
         local msgs = { "SHARP EYES", "WRONG CUP", "HUSTLED", "TOO SLOW" }
@@ -126,5 +126,5 @@ features.on_draw("Cup Game", function(f)
     local net = math.floor(f.net or 0)
     local foot = string.format("STAKE $%d   SESSION %s$%d", math.floor(f.stake or 0), net < 0 and "-" or "+", math.abs(net))
     if math.floor(f.streak or 0) > 0 then foot = foot .. string.format("   STREAK %d", math.floor(f.streak)) end
-    text.draw(font.tiny, px + 14 * s, py + ph - 8 * s - text.height(font.tiny), 230, 230, 235, 230, foot)
+    text.draw(font.hud_tiny, px + 14 * s, py + ph - 8 * s - text.height(font.hud_tiny), 230, 230, 235, 230, foot)
 end)

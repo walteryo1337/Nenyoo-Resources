@@ -54,12 +54,12 @@ features.on_draw("Pocket Claw Machine", function(f)
 
     local cost = math.floor(f.cost or 0)
     local head = cost > 0 and string.format("$%d A PLAY", cost) or "FREE PLAY"
-    text.draw(font.item, x0, y0 - 46 * s, 245, 245, 250, 255, head)
+    text.draw(font.hud, x0, y0 - 46 * s, 245, 245, 250, 255, head)
     local net = math.floor(f.net or 0)
     local ns = string.format("NET %s$%d", net < 0 and "-" or "+", math.abs(net))
     local nr, ng, nb = 120, 230, 120
     if net < 0 then nr, ng, nb = 240, 90, 80 end
-    text.draw(font.item, x0 + w - text.width(font.item, ns), y0 - 46 * s, nr, ng, nb, 255, ns)
+    text.draw(font.hud, x0 + w - text.width(font.hud, ns), y0 - 46 * s, nr, ng, nb, 255, ns)
 
     local counts = {}
     for n in string.gmatch(f.collection or "", "(%d+),") do counts[#counts + 1] = tonumber(n) end
@@ -68,7 +68,7 @@ features.on_draw("Pocket Claw Machine", function(f)
         local c = counts[i] or 0
         local label = string.format("%d", c)
         prize_blob(cx + 14 * s, y0 + h + 30 * s, 10 * s, p, s)
-        text.draw(font.small, cx + 30 * s, y0 + h + 22 * s, c > 0 and 245 or 130, c > 0 and 245 or 130, c > 0 and 250 or 140, 255, label)
+        text.draw(font.hud_small, cx + 30 * s, y0 + h + 22 * s, c > 0 and 245 or 130, c > 0 and 245 or 130, c > 0 and 250 or 140, 255, label)
         cx = cx + w / #prizes
     end
     local state = math.floor(f.state or 0)
@@ -79,5 +79,5 @@ features.on_draw("Pocket Claw Machine", function(f)
     elseif f.slip_flash then
         foot = "IT SLIPPED!"
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + h + 54 * s, 220, 220, 232, 240, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + h + 54 * s, 220, 220, 232, 240, foot)
 end)

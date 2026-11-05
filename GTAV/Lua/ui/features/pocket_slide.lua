@@ -15,10 +15,10 @@ features.on_draw("Pocket Slide Puzzle", function(f)
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     local bx, by = x0 + 20 * s, y0 + 60 * s
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 14, 20, 230, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, "SLIDE PUZZLE")
+    text.draw(font.hud, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, "SLIDE PUZZLE")
     local el = f.elapsed or 0
     local info = string.format("%d MOVES   %d:%02d", math.floor(f.moves or 0), math.floor(el / 60), math.floor(el % 60))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, info), y0 + 22 * s, 200, 200, 212, 255, info)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, info), y0 + 22 * s, 200, 200, 212, 255, info)
     draw.rect(bx - 4 * s, by - 4 * s, bx + bw + 4 * s, by + bw + 4 * s, 30, 30, 40, 255, 8 * s)
 
     local tiles = f.tiles or ""
@@ -37,7 +37,7 @@ features.on_draw("Pocket Slide Puzzle", function(f)
             if state == 2 then tr, tg, tb = 120, 230, 140 end
             draw.rect(x + inset, y + inset, x + c - inset, y + c - inset, tr, tg, tb, 255, 8 * s)
             local label = tostring(v)
-            local fnt = n >= 5 and font.item or font.title
+            local fnt = n >= 5 and font.hud or font.display
             text.draw(fnt, x + c / 2 - text.width(fnt, label) / 2, y + c / 2 - text.height(fnt) / 2, 25, 25, 32, 255, label)
         end
     end
@@ -45,11 +45,11 @@ features.on_draw("Pocket Slide Puzzle", function(f)
     local msg, cr, cg, cb
     if state == 2 then msg, cr, cg, cb = "SOLVED!   E FOR A NEW PUZZLE", 120, 240, 140
     else msg, cr, cg, cb = "W A S D SLIDE A TILE INTO THE GAP   Q RESHUFFLE", 220, 220, 232 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, by + bw + 18 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, by + bw + 18 * s, cr, cg, cb, 255, msg)
     local rec = string.format("SOLVED %d", math.floor(f.solves or 0))
     if f.best_moves then
         local bt = f.best_time or 0
         rec = rec .. string.format("   BEST %d MOVES   %d:%02d", math.floor(f.best_moves), math.floor(bt / 60), math.floor(bt % 60))
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, rec) / 2, by + bw + 44 * s, 160, 160, 175, 255, rec)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, rec) / 2, by + bw + 44 * s, 160, 160, 175, 255, rec)
 end)

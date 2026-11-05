@@ -22,9 +22,9 @@ features.on_draw("Alchemist", function(f)
         if left then
             draw.rect(x0, y, x0 + w, y + rh, 12, 12, 18, 210, 8 * s)
             draw.circle(x0 + 16 * s, y + rh / 2, 8 * s, p.r, p.g, p.b, 255)
-            text.draw(font.tiny, x0 + 32 * s, y + 4 * s, 235, 235, 245, 255, p.label)
+            text.draw(font.hud_tiny, x0 + 32 * s, y + 4 * s, 235, 235, 245, 255, p.label)
             local secs = string.format("%ds", math.ceil(f[p.key .. "_secs"] or 0))
-            text.draw(font.tiny, x0 + w - 10 * s - text.width(font.tiny, secs), y + 4 * s, 200, 200, 214, 230, secs)
+            text.draw(font.hud_tiny, x0 + w - 10 * s - text.width(font.hud_tiny, secs), y + 4 * s, 200, 200, 214, 230, secs)
             local bx0, bx1, by = x0 + 32 * s, x0 + w - 10 * s, y + rh - 9 * s
             draw.rect(bx0, by, bx1, by + 4 * s, 40, 40, 52, 255, 2 * s)
             local k = math.max(0, math.min(1, left))

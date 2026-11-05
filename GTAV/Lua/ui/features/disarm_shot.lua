@@ -62,14 +62,14 @@ features.on_draw("Disarm Shot", function(f)
             local sub = SUB[m.reaction]
             local pop = 1 + 0.45 * math.max(0, 1 - p / 0.12)
             draw.with_scale(x, y, pop, function()
-                local tw = text.width(font.item, title)
+                local tw = text.width(font.hud, title)
                 local icon_w = disarmed and 28 or 0
                 local x0 = x - (tw + icon_w) * 0.5
-                if disarmed then broken_gun(x0 + 12, y + text.height(font.item) * 0.5, a, r, g, b) end
-                text.draw_outlined(font.item, x0 + icon_w, y, r, g, b, a, 0, 0, 0, math.floor(a * 0.8), 2.0, title)
+                if disarmed then broken_gun(x0 + 12, y + text.height(font.hud) * 0.5, a, r, g, b) end
+                text.draw_outlined(font.hud, x0 + icon_w, y, r, g, b, a, 0, 0, 0, math.floor(a * 0.8), 2.0, title)
                 if sub then
-                    local sw2 = text.width(font.tiny, sub)
-                    text.draw_outlined(font.tiny, x - sw2 * 0.5, y + text.height(font.item) + 2, 230, 230, 235, a,
+                    local sw2 = text.width(font.hud_tiny, sub)
+                    text.draw_outlined(font.hud_tiny, x - sw2 * 0.5, y + text.height(font.hud) + 2, 230, 230, 235, a,
                         0, 0, 0, math.floor(a * 0.7), 1.5, sub)
                 end
             end)

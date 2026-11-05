@@ -29,11 +29,11 @@ features.on_draw("Reversing Camera", function(f)
 
     local label = "REAR"
     local pad = 6 * s
-    local tw = text.width(font.small, label)
-    local th = text.height(font.small)
+    local tw = text.width(font.hud_small, label)
+    local th = text.height(font.hud_small)
     local x, y = 32 * s, 32 * s
     draw.rect(x, y, x + tw + pad * 2, y + th + pad * 2, 10, 10, 16, 160, 4 * s)
-    text.draw(font.small, x + pad, y + pad, 245, 245, 250, 255, label)
+    text.draw(font.hud_small, x + pad, y + pad, 245, 245, 250, 255, label)
     local kmh = string.format("%d KM/H", math.floor((f.speed or 0) * 3.6 + 0.5))
-    text.draw(font.tiny, x, y + th + pad * 3, 230, 230, 235, 230, kmh)
+    text.draw(font.hud_tiny, x, y + th + pad * 3, 230, 230, 235, 230, kmh)
 end)

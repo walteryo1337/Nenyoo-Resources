@@ -23,7 +23,7 @@ features.on_draw("Damage Monitor", function(f)
     }
 
     local pad = 10 * s
-    local lh = text.height(font.tiny) + 12 * s
+    local lh = text.height(font.hud_tiny) + 12 * s
     local w = 200 * s
     local extra = (f.tyres_total or 0) > 0 and lh or 0
     local h = pad * 2 + lh * #rows + extra
@@ -36,11 +36,11 @@ features.on_draw("Damage Monitor", function(f)
         local ry = y + pad + (i - 1) * lh
         local frac = r[2]
         local cr, cg, cb = colour(frac)
-        text.draw(font.tiny, x + pad, ry, 170, 170, 180, math.floor(230 * shown), r[1])
+        text.draw(font.hud_tiny, x + pad, ry, 170, 170, 180, math.floor(230 * shown), r[1])
         local pct = string.format("%d%%", math.floor(frac * 100 + 0.5))
-        local pw = text.width(font.tiny, pct)
-        text.draw(font.tiny, x + w - pad - pw, ry, cr, cg, cb, a, pct)
-        local by = ry + text.height(font.tiny) + 3 * s
+        local pw = text.width(font.hud_tiny, pct)
+        text.draw(font.hud_tiny, x + w - pad - pw, ry, cr, cg, cb, a, pct)
+        local by = ry + text.height(font.hud_tiny) + 3 * s
         local bw = w - pad * 2
         draw.rect(x + pad, by, x + pad + bw, by + 4 * s, 0, 0, 0, math.floor(140 * shown), 2 * s)
         if frac > 0 then draw.rect(x + pad, by, x + pad + bw * frac, by + 4 * s, cr, cg, cb, a, 2 * s) end
@@ -52,8 +52,8 @@ features.on_draw("Damage Monitor", function(f)
         local label = string.format("%d / %d", total - burst, total)
         local cr, cg, cb = 120, 220, 140
         if burst > 0 then cr, cg, cb = 235, 70, 70 end
-        text.draw(font.tiny, x + pad, ry, 170, 170, 180, math.floor(230 * shown), "TYRES OK")
-        local lw = text.width(font.tiny, label)
-        text.draw(font.tiny, x + w - pad - lw, ry, cr, cg, cb, a, label)
+        text.draw(font.hud_tiny, x + pad, ry, 170, 170, 180, math.floor(230 * shown), "TYRES OK")
+        local lw = text.width(font.hud_tiny, label)
+        text.draw(font.hud_tiny, x + w - pad - lw, ry, cr, cg, cb, a, label)
     end
 end)

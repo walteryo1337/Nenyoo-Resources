@@ -71,9 +71,9 @@ features.on_draw("Pocket Minigolf", function(f)
     local diff = math.floor(f.total or 0) - math.floor(f.total_par or 0)
     local sign = diff > 0 and "+" or ""
     local hud = string.format("HOLE %d   PAR %d   STROKES %d", hole, math.floor(f.par or 3), math.floor(f.strokes or 0))
-    text.draw(font.item, x0 - border, y0 - border - 52 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0 - border, y0 - border - 52 * s, 245, 245, 250, 255, hud)
     local tot = string.format("TOTAL %d (%s%d)", math.floor(f.total or 0), sign, diff)
-    text.draw(font.item, x0 + cw + border - text.width(font.item, tot), y0 - border - 52 * s, 200, 230, 200, 255, tot)
+    text.draw(font.hud, x0 + cw + border - text.width(font.hud, tot), y0 - border - 52 * s, 200, 230, 200, 255, tot)
 
     local pbw = 200 * s
     local pbx = x0 + cw + border - pbw
@@ -87,7 +87,7 @@ features.on_draw("Pocket Minigolf", function(f)
         i = i + 1
         card = card .. (v == "0" and "-" or v) .. (i < 9 and "  " or "")
     end
-    text.draw(font.small, x0 - border, pby - 2 * s, 190, 210, 190, 255, "CARD  " .. card)
+    text.draw(font.hud_small, x0 - border, pby - 2 * s, 190, 210, 190, 255, "CARD  " .. card)
 
     local ev = math.floor(f.event or 0)
     local age = f.event_age or 99999
@@ -99,9 +99,9 @@ features.on_draw("Pocket Minigolf", function(f)
     elseif ev == 3 and state == 3 then banner = "PICKED UP"
     elseif ev == 4 and age < 700 then banner = "LIPPED OUT!" end
     if banner then
-        local w = text.width(font.title, banner)
+        local w = text.width(font.display, banner)
         draw.rect(sw / 2 - w / 2 - 16 * s, y0 + ch / 2 - 30 * s, sw / 2 + w / 2 + 16 * s, y0 + ch / 2 + 30 * s, 12, 12, 16, 210, 8 * s)
-        text.draw(font.title, sw / 2 - w / 2, y0 + ch / 2 - text.height(font.title) / 2, 255, 230, 120, 255, banner)
+        text.draw(font.display, sw / 2 - w / 2, y0 + ch / 2 - text.height(font.display) / 2, 255, 230, 120, 255, banner)
     end
 
     local msg
@@ -110,5 +110,5 @@ features.on_draw("Pocket Minigolf", function(f)
         if f.best then msg = msg .. string.format("   BEST %d", math.floor(f.best)) end
         msg = msg .. "   E TO PLAY AGAIN"
     else msg = "A / D AIM   W / S POWER   E PUTT   Q RESTART ROUND" end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, pby + 34 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, pby + 34 * s, 220, 220, 232, 255, msg)
 end)

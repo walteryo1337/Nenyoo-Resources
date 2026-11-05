@@ -6,7 +6,7 @@ features.on_draw("Musical Spots", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local t = ctx.time() or 0
     local state = math.floor(f.state or 0)
@@ -19,13 +19,13 @@ features.on_draw("Musical Spots", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.28, r, g, b, 255, msg)
         if (f.pay or 0) > 0 then
             local p = string.format("+$%d", math.floor(f.pay))
-            text.draw(font.item, cx - text.width(font.item, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
+            text.draw(font.hud, cx - text.width(font.hud, p) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, p)
         end
         return
     end
 
     local info = string.format("%d PLAYERS   %d SPOTS", math.floor(f.players_left or 0), math.floor(f.spots or 0))
-    text.draw(font.small, cx - text.width(font.small, info) / 2, sh * 0.05, 220, 220, 232, 240, info)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, info) / 2, sh * 0.05, 220, 220, 232, 240, info)
 
     if state == 1 then
         for i = 0, 2 do
@@ -38,7 +38,7 @@ features.on_draw("Musical Spots", function(f)
         if f.camping then
             local pulse = 0.5 + 0.5 * math.sin(t * 10)
             local msg = "KEEP MOVING"
-            text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.2, 240, 90, 70, math.floor(150 + 105 * pulse), msg)
+            text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.2, 240, 90, 70, math.floor(150 + 105 * pulse), msg)
         end
     elseif state == 2 then
         local msg = f.you_claimed and "SAFE" or "GRAB A SPOT!"
@@ -47,6 +47,6 @@ features.on_draw("Musical Spots", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.14, r, g, b, 255, msg)
     elseif state == 3 then
         local msg = "SOMEONE IS OUT"
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.14, 235, 235, 245, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.14, 235, 235, 245, 255, msg)
     end
 end)

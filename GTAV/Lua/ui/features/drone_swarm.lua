@@ -15,7 +15,7 @@ features.on_draw("Drone Swarm", function(f)
     local width, height = 245 * scale, 105 * scale
 
     draw.rect(x, y, x + width, y + height, 5, 8, 12, 185, 4)
-    text.draw_spaced(font.small, x + 13 * scale, y + 10 * scale,
+    text.draw_spaced(font.hud_small, x + 13 * scale, y + 10 * scale,
                      orange_r, orange_g, orange_b, 245, "DRONE SWARM", 2 * scale)
 
     local mode = math.floor(f.mode or 0)
@@ -25,25 +25,25 @@ features.on_draw("Drone Swarm", function(f)
     local live = math.floor(f.live or 0)
     local desired = math.floor(f.desired or 0)
     local status = string.format("%s   %d/%d ONLINE", MODE[mode] or "PILOT", live, desired)
-    text.draw(font.tiny, x + 13 * scale, y + 37 * scale, 235, 240, 245, 235, status)
-    text.draw(font.tiny, x + 13 * scale, y + 57 * scale, 185, 195, 205, 225,
+    text.draw(font.hud_tiny, x + 13 * scale, y + 37 * scale, 235, 240, 245, 235, status)
+    text.draw(font.hud_tiny, x + 13 * scale, y + 57 * scale, 185, 195, 205, 225,
               string.format("%s   |   %s", FORMATION[formation] or "V", WEAPON[weapon] or "STUN"))
 
     local order = COMMAND[command] or "FOLLOW"
     local ordr, ordg, ordb = 120, 205, 255
     if command == 2 and f.target_valid then ordr, ordg, ordb = 255, 90, 75 end
-    text.draw_spaced(font.tiny, x + 13 * scale, y + 79 * scale,
+    text.draw_spaced(font.hud_tiny, x + 13 * scale, y + 79 * scale,
                      ordr, ordg, ordb, 240, "ORDER  " .. order, 1.5 * scale)
 
     local telemetry = string.format("SPD %.1f   ALT %.1f   HOME %.0fM",
                                     f.speed or 0, f.altitude or 0, f.distance or 0)
-    local tw = text.width(font.tiny, telemetry)
-    text.draw(font.tiny, sw - tw - 28 * scale, sh - 32 * scale,
+    local tw = text.width(font.hud_tiny, telemetry)
+    text.draw(font.hud_tiny, sw - tw - 28 * scale, sh - 32 * scale,
               220, 225, 230, 220, telemetry)
 
     if mode ~= 0 then
         local hint = "AIM + ATTACK: MOVE / TARGET"
-        text.draw(font.tiny, sw * 0.5 - text.width(font.tiny, hint) * 0.5,
+        text.draw(font.hud_tiny, sw * 0.5 - text.width(font.hud_tiny, hint) * 0.5,
                   sh - 32 * scale, 180, 195, 210, 215, hint)
         return
     end
@@ -58,6 +58,6 @@ features.on_draw("Drone Swarm", function(f)
     draw.circle(cx, cy, 2 * scale, orange_r, orange_g, orange_b, 235)
 
     local hint = "MOVE: WASD   RISE: JUMP   DESCEND: SPRINT   FIRE: ATTACK"
-    text.draw(font.tiny, sw * 0.5 - text.width(font.tiny, hint) * 0.5,
+    text.draw(font.hud_tiny, sw * 0.5 - text.width(font.hud_tiny, hint) * 0.5,
               sh - 32 * scale, 180, 195, 210, 215, hint)
 end)

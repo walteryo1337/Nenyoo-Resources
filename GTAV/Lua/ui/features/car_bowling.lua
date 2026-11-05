@@ -53,7 +53,7 @@ local function board(f, sw, sh, now, ar, ag, ab)
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 210, 8)
     draw.rect(x, y, x + w, y + 3, ar, ag, ab, 255, 2)
 
-    text.draw(font.tiny, x + 12, y + 9, 165, 165, 180, 255, "CAR BOWLING")
+    text.draw(font.hud_tiny, x + 12, y + 9, 165, 165, 180, 255, "CAR BOWLING")
     local status
     if f.state == 1 then
         status = string.format("DRIVE THROUGH THE PINS  %dm", math.floor(f.distance or 0))
@@ -66,7 +66,7 @@ local function board(f, sw, sh, now, ar, ag, ab)
     end
     local best = (f.best or 0) > 0 and string.format("   BEST %d", f.best) or ""
     local right_txt = status .. best
-    text.draw(font.tiny, x + w - 12 - text.width(font.tiny, right_txt), y + 9, 200, 200, 215, 255, right_txt)
+    text.draw(font.hud_tiny, x + w - 12 - text.width(font.hud_tiny, right_txt), y + 9, 200, 200, 215, 255, right_txt)
 
     pins(x + 12 + pin_w * 0.5, y + h - 14, math.floor(f.standing or 0), 13, 4.5, ar, ag, ab)
 
@@ -82,29 +82,29 @@ local function board(f, sw, sh, now, ar, ag, ab)
         else
             draw.rect(cx, cy, cx + cell - 3, cy + 40, 30, 30, 40, 230, 3)
         end
-        centred(font.tiny, cx + (cell - 3) * 0.5, cy + 2, tostring(i), 120, 120, 135, 255)
+        centred(font.hud_tiny, cx + (cell - 3) * 0.5, cy + 2, tostring(i), 120, 120, 135, 255)
         local v = list[i]
         local s = mark(v)
         local r, g, b = 240, 240, 245
         if v == 10 then r, g, b = 255, 200, 40 end
-        centred(font.small, cx + (cell - 3) * 0.5, cy + 16, s, r, g, b, 255)
+        centred(font.hud_small, cx + (cell - 3) * 0.5, cy + 16, s, r, g, b, 255)
     end
 
     local tx = x + 12 + pin_w + cell * 10 + 6
     draw.rect(tx, cy, tx + 64, cy + 40, 30, 30, 40, 230, 3)
-    centred(font.tiny, tx + 32, cy + 2, "TOTAL", 120, 120, 135, 255)
-    centred(font.item, tx + 32, cy + 14, tostring(math.floor(f.total or 0)), ar, ag, ab, 255)
+    centred(font.hud_tiny, tx + 32, cy + 2, "TOTAL", 120, 120, 135, 255)
+    centred(font.hud, tx + 32, cy + 14, tostring(math.floor(f.total or 0)), ar, ag, ab, 255)
 end
 
 local function lane(f, sw, sh, now)
     if not f.lane_x then return end
     local x, y = f.lane_x * sw, f.lane_y * sh
     local s = string.format("PINS  %dm", math.floor(f.distance or 0))
-    local w = text.width(font.small, s) + 20
-    local h = text.height(font.small) + 8
+    local w = text.width(font.hud_small, s) + 20
+    local h = text.height(font.hud_small) + 8
     local p = 0.75 + 0.25 * math.sin(now * 5)
     draw.rect(x - w * 0.5, y - h, x + w * 0.5, y, 10, 10, 16, math.floor(200 * p), 5)
-    text.draw(font.small, x - w * 0.5 + 10, y - h + 4, 255, 200, 40, 255, s)
+    text.draw(font.hud_small, x - w * 0.5 + 10, y - h + 4, 255, 200, 40, 255, s)
 end
 
 local function result(f, sw, sh, now, ar, ag, ab)
@@ -137,7 +137,7 @@ local function result(f, sw, sh, now, ar, ag, ab)
     end)
     if f.game_over then
         local s = string.format("GAME OVER   TOTAL %d", math.floor(f.total or 0))
-        centred(font.item, cx, cy + text.height(font.display) + 10, s, ar, ag, ab, a)
+        centred(font.hud, cx, cy + text.height(font.display) + 10, s, ar, ag, ab, a)
     end
 end
 

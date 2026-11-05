@@ -41,15 +41,15 @@ features.on_draw("Pocket Breakout", function(f)
     draw.circle(x0 + (f.ball_x or 0.5) * fw, y0 + (f.ball_y or 0.9) * fh, math.max(4 * s, fw * BALL_R), 245, 245, 250, 255)
 
     local hud = string.format("SCORE %d   LEVEL %d", math.floor(f.score or 0), math.floor(f.level or 1))
-    text.draw(font.item, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
     local lives = string.rep("o ", math.floor(f.lives or 0))
-    text.draw(font.item, x0 + fw - text.width(font.item, lives), y0 - 40 * s, 240, 90, 90, 255, lives)
+    text.draw(font.hud, x0 + fw - text.width(font.hud, lives), y0 - 40 * s, 240, 90, 90, 255, lives)
 
     local state = math.floor(f.state or 0)
     local msg
     if state == 1 then msg = "A / D MOVE     W LAUNCH"
     elseif state == 3 then msg = string.format("GAME OVER   BEST %d", math.floor(f.best or 0)) end
     if msg then
-        text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh * 0.6, 220, 220, 232, 240, msg)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh * 0.6, 220, 220, 232, 240, msg)
     end
 end)

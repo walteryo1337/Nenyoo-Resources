@@ -33,11 +33,11 @@ features.on_draw("Pocket Nonogram", function(f)
     for i = 1, n do
         local done = string.sub(row_done, i, i) == "1"
         local label = rows[i] or ""
-        local y = y0 + (i - 0.5) * c - text.height(font.small) / 2
+        local y = y0 + (i - 0.5) * c - text.height(font.hud_small) / 2
         local r, g, b = 235, 235, 240
         if done then r, g, b = 110, 200, 120 end
         if i - 1 == math.floor(f.cy or 0) and state == 1 then draw.rect(x0 - clue_w, y0 + (i - 1) * c, x0 - 4 * s, y0 + i * c, 255, 255, 255, 25, 4 * s) end
-        text.draw(font.small, x0 - 10 * s - text.width(font.small, label), y, r, g, b, 255, label)
+        text.draw(font.hud_small, x0 - 10 * s - text.width(font.hud_small, label), y, r, g, b, 255, label)
     end
     for i = 1, n do
         local done = string.sub(col_done, i, i) == "1"
@@ -47,11 +47,11 @@ features.on_draw("Pocket Nonogram", function(f)
         for v in string.gmatch(cols[i] or "", "(%d+)") do nums[#nums + 1] = v end
         local cx = x0 + (i - 0.5) * c
         if i - 1 == math.floor(f.cx or 0) and state == 1 then draw.rect(x0 + (i - 1) * c, y0 - clue_h, x0 + i * c, y0 - 4 * s, 255, 255, 255, 25, 4 * s) end
-        local lh = text.height(font.small) + 2 * s
+        local lh = text.height(font.hud_small) + 2 * s
         for k = #nums, 1, -1 do
             local label = nums[k]
             local y = y0 - 8 * s - (#nums - k + 1) * lh
-            text.draw(font.small, cx - text.width(font.small, label) / 2, y, r, g, b, 255, label)
+            text.draw(font.hud_small, cx - text.width(font.hud_small, label) / 2, y, r, g, b, 255, label)
         end
     end
 
@@ -87,13 +87,13 @@ features.on_draw("Pocket Nonogram", function(f)
 
     local hy = y0 - clue_h - 50 * s
     local lx = x0 - clue_w - 6 * s
-    text.draw(font.item, lx, hy, 245, 245, 250, 255, clock(f.elapsed))
+    text.draw(font.hud, lx, hy, 245, 245, 250, 255, clock(f.elapsed))
     if f.best then
         local b = "BEST " .. clock(f.best)
-        text.draw(font.small, x0 + gw - text.width(font.small, b), hy + 4 * s, 255, 200, 60, 255, b)
+        text.draw(font.hud_small, x0 + gw - text.width(font.hud_small, b), hy + 4 * s, 255, 200, 60, 255, b)
     end
 
     local msg, mr, mg, mb = "W A S D MOVE   E FILL   Q CROSS OUT   HOLD E OR Q AND MOVE TO PAINT A LINE", 220, 220, 232
     if state == 2 then msg, mr, mg, mb = string.format("SOLVED IN %s!   E FOR A NEW PUZZLE", clock(f.elapsed)), 120, 240, 140 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + gw + 24 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + gw + 24 * s, mr, mg, mb, 255, msg)
 end)

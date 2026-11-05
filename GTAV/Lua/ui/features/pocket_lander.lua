@@ -42,7 +42,7 @@ features.on_draw("Pocket Lunar Lander", function(f)
             local ya = py(hts[first])
             draw.rect(px(first), ya - 2 * s, px(last), ya + 3 * s, 120, 240, 140, 255, 2 * s)
             local label = "x" .. mult
-            text.draw(font.tiny, (px(first) + px(last)) / 2 - text.width(font.tiny, label) / 2, ya + 6 * s, 120, 240, 140, 255, label)
+            text.draw(font.hud_tiny, (px(first) + px(last)) / 2 - text.width(font.hud_tiny, label) / 2, ya + 6 * s, 120, 240, 140, 255, label)
         end
     end
 
@@ -87,15 +87,15 @@ features.on_draw("Pocket Lunar Lander", function(f)
     local function col(ok) if ok then return 120, 240, 140 end return 255, 110, 90 end
     local hx = x0
     local hy = y0 - 46 * s
-    text.draw(font.small, hx, hy, 245, 245, 250, 255, string.format("SCORE %d   LEVEL %d   LIVES %d", math.floor(f.score or 0), math.floor(f.level or 1), math.floor(f.lives or 0)))
+    text.draw(font.hud_small, hx, hy, 245, 245, 250, 255, string.format("SCORE %d   LEVEL %d   LIVES %d", math.floor(f.score or 0), math.floor(f.level or 1), math.floor(f.lives or 0)))
     local r1, g1, b1 = col(math.abs(vy) <= safe_vy)
     local r2, g2, b2 = col(math.abs(vx) <= safe_vx)
     local r3, g3, b3 = col(math.abs(a) <= safe_a)
     local rx = x0 + fw * 0.55
-    text.draw(font.small, rx, hy, r1, g1, b1, 255, string.format("V %.1f", -vy))
-    text.draw(font.small, rx + 90 * s, hy, r2, g2, b2, 255, string.format("H %.1f", vx))
-    text.draw(font.small, rx + 180 * s, hy, r3, g3, b3, 255, string.format("TILT %d", math.floor(math.deg(a))))
-    text.draw(font.small, rx + 280 * s, hy, 200, 200, 212, 255, string.format("ALT %d", math.floor(f.altitude or 0)))
+    text.draw(font.hud_small, rx, hy, r1, g1, b1, 255, string.format("V %.1f", -vy))
+    text.draw(font.hud_small, rx + 90 * s, hy, r2, g2, b2, 255, string.format("H %.1f", vx))
+    text.draw(font.hud_small, rx + 180 * s, hy, r3, g3, b3, 255, string.format("TILT %d", math.floor(math.deg(a))))
+    text.draw(font.hud_small, rx + 280 * s, hy, 200, 200, 212, 255, string.format("ALT %d", math.floor(f.altitude or 0)))
     local fuel = f.fuel or 0
     draw.rect(x0, y0 - 18 * s, x0 + fw * 0.4, y0 - 10 * s, 40, 40, 48, 255, 4 * s)
     local fr, fg = 255, 200
@@ -106,5 +106,5 @@ features.on_draw("Pocket Lunar Lander", function(f)
     if state == 2 then msg, cr, cg, cb = string.format("THE EAGLE HAS LANDED!   +%d", math.floor(f.last_points or 0)), 120, 240, 140
     elseif state == 3 then msg, cr, cg, cb = "CRASHED!", 255, 100, 100
     elseif state == 4 then msg, cr, cg, cb = string.format("GAME OVER   SCORE %d   BEST %d   E TO PLAY AGAIN", math.floor(f.score or 0), math.floor(f.best or 0)), 255, 180, 90 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh + 12 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh + 12 * s, cr, cg, cb, 255, msg)
 end)

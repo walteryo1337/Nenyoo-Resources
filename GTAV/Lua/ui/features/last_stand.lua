@@ -50,10 +50,10 @@ local function fighting(f, sw, sh, now)
     end)
 
     local ty = cy + r + 18
-    text.draw_outlined(font.item, cx - text.width(font.item, "LAST STAND") * 0.5, ty, 255, 70, 60, 255, 0, 0, 0, 200, 2.0, "LAST STAND")
+    text.draw_outlined(font.hud, cx - text.width(font.hud, "LAST STAND") * 0.5, ty, 255, 70, 60, 255, 0, 0, 0, 200, 2.0, "LAST STAND")
     local sub = "GET A KILL TO SURVIVE"
     local blink = urgent and (0.55 + 0.45 * math.sin(now * 16)) or 1
-    text.draw_outlined(font.small, cx - text.width(font.small, sub) * 0.5, ty + text.height(font.item) + 4,
+    text.draw_outlined(font.hud_small, cx - text.width(font.hud_small, sub) * 0.5, ty + text.height(font.hud) + 4,
         255, 255, 255, math.floor(255 * blink), 0, 0, 0, 180, 1.5, sub)
 end
 
@@ -71,14 +71,14 @@ local function result(f, sw, sh)
         text.draw_outlined(font.display, cx - text.width(font.display, title) * 0.5, cy, r, g, b, math.floor(255 * fade),
             0, 0, 0, math.floor(200 * fade), 2.5, title)
     end)
-    centred(font.small, cx, cy + text.height(font.display) + 8, sub, 230, 230, 235, math.floor(230 * fade))
+    centred(font.hud_small, cx, cy + text.height(font.display) + 8, sub, 230, 230, 235, math.floor(230 * fade))
 end
 
 local function indicator(f, sw, sh, now)
     local x, y = sw * 0.165, sh * 0.955 - 30
     local ready = f.state == 0
     local label = ready and "LAST STAND READY" or string.format("LAST STAND  %ds", math.ceil(f.left or 0))
-    local w = text.width(font.tiny, label) + 46
+    local w = text.width(font.hud_tiny, label) + 46
     local h = 30
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 190, 6)
     local ix, iy = x + 16, y + h * 0.5
@@ -91,7 +91,7 @@ local function indicator(f, sw, sh, now)
         ring(ix, iy, 8, f.cooldown or 0, 255, 120, 100, 255, 3)
     end
     local tr, tg, tb = ready and 255 or 170, ready and 255 or 170, ready and 255 or 185
-    text.draw(font.tiny, x + 32, y + (h - text.height(font.tiny)) * 0.5, tr, tg, tb, 255, label)
+    text.draw(font.hud_tiny, x + 32, y + (h - text.height(font.hud_tiny)) * 0.5, tr, tg, tb, 255, label)
 end
 
 features.on_draw("Last Stand", function(f)

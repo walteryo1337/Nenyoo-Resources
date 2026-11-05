@@ -41,23 +41,23 @@ features.on_draw("Roadster Thrusters", function(f)
     end
 
     local pct = string.format("%d%%", math.floor(fuel * 100 + 0.5))
-    text.draw(font.title, cx - text.width(font.title, pct) / 2,
-              cy - text.height(font.title) * 0.6, cr, cg, cb, math.floor(255 * fade), pct)
+    text.draw(font.display, cx - text.width(font.display, pct) / 2,
+              cy - text.height(font.display) * 0.6, cr, cg, cb, math.floor(255 * fade), pct)
     local label = f.label or "RCS Fuel"
-    text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, cy + r * 0.38, 200, 205, 215, math.floor(220 * fade), label)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, cy + r * 0.38, 200, 205, 215, math.floor(220 * fade), label)
 
     local y = cy + r + 18 * s
     if f.suction then
         local sr, sg, sb = 170, 175, 190
         if f.attached then sr, sg, sb = 120, 230, 150 elseif f.armed then sr, sg, sb = 240, 200, 110 end
-        text.draw(font.tiny, cx - text.width(font.tiny, f.suction) / 2, y, sr, sg, sb, math.floor(230 * fade), f.suction)
-        y = y + text.height(font.tiny) + 2 * s
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, f.suction) / 2, y, sr, sg, sb, math.floor(230 * fade), f.suction)
+        y = y + text.height(font.hud_tiny) + 2 * s
     end
     if f.mode then
-        text.draw(font.tiny, cx - text.width(font.tiny, f.mode) / 2, y, 150, 200, 255, math.floor(235 * fade), f.mode)
-        y = y + text.height(font.tiny) + 2 * s
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, f.mode) / 2, y, 150, 200, 255, math.floor(235 * fade), f.mode)
+        y = y + text.height(font.hud_tiny) + 2 * s
     end
     if f.warn and (math.floor((ctx.time() or 0) * 4) % 2 == 0) then
-        text.draw(font.tiny, cx - text.width(font.tiny, f.warn) / 2, cy - r - 22 * s, 235, 103, 92, math.floor(255 * fade), f.warn)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, f.warn) / 2, cy - r - 22 * s, 235, 103, 92, math.floor(255 * fade), f.warn)
     end
 end)

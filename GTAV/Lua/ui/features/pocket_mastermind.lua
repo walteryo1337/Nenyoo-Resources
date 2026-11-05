@@ -35,10 +35,10 @@ features.on_draw("Pocket Mastermind", function(f)
     local ph = (tries + 2) * rh + 70 * s
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 14, 20, 230, 12 * s)
-    text.draw(font.item, x0 + 18 * s, y0 + 14 * s, 245, 245, 250, 255, "MASTERMIND")
+    text.draw(font.hud, x0 + 18 * s, y0 + 14 * s, 245, 245, 250, 255, "MASTERMIND")
     local stats = string.format("WINS %d/%d   STREAK %d", math.floor(f.wins or 0), math.floor(f.played or 0), math.floor(f.streak or 0))
     if f.best then stats = stats .. string.format("   BEST %d", math.floor(f.best)) end
-    text.draw(font.small, x0 + pw - 18 * s - text.width(font.small, stats), y0 + 18 * s, 190, 190, 200, 255, stats)
+    text.draw(font.hud_small, x0 + pw - 18 * s - text.width(font.hud_small, stats), y0 + 18 * s, 190, 190, 200, 255, stats)
 
     local pr = 14 * s
     local pegx = function(i) return x0 + 70 * s + i * 44 * s end
@@ -49,7 +49,7 @@ features.on_draw("Pocket Mastermind", function(f)
     draw.rect(x0 + 50 * s, top + 4 * s, x0 + 50 * s + 4 * 44 * s, top + rh - 4 * s, 24, 24, 32, 255, 8 * s)
     for i = 0, 3 do
         if secret then peg(pegx(i), sy, pr, code_digit(secret, i + 1))
-        else text.draw(font.item, pegx(i) - text.width(font.item, "?") / 2, sy - text.height(font.item) / 2, 150, 150, 165, 255, "?") end
+        else text.draw(font.hud, pegx(i) - text.width(font.hud, "?") / 2, sy - text.height(font.hud) / 2, 150, 150, 165, 255, "?") end
     end
 
     local rows = {}
@@ -61,7 +61,7 @@ features.on_draw("Pocket Mastermind", function(f)
     for r = 0, tries - 1 do
         local ry = top + (r + 1) * rh + 8 * s
         local cy = ry + rh / 2
-        text.draw(font.small, x0 + 18 * s, cy - text.height(font.small) / 2, 110, 110, 125, 255, tostring(r + 1))
+        text.draw(font.hud_small, x0 + 18 * s, cy - text.height(font.hud_small) / 2, 110, 110, 125, 255, tostring(r + 1))
         local row = rows[r + 1]
         local current = state == 1 and r == used
         if current then
@@ -101,5 +101,5 @@ features.on_draw("Pocket Mastermind", function(f)
     if state == 2 then msg, cr, cg, cb = string.format("CRACKED IN %d   E TO PLAY AGAIN", used), 120, 240, 120
     elseif state == 3 then msg, cr, cg, cb = "OUT OF GUESSES   E TO PLAY AGAIN", 255, 100, 100
     elseif (f.flash_age or 99999) < 900 then msg, cr, cg, cb = "FILL ALL FOUR SLOTS FIRST", 255, 180, 80 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, fy, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, fy, cr, cg, cb, 255, msg)
 end)

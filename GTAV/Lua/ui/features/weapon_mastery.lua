@@ -16,13 +16,13 @@ features.on_draw("Weapon Mastery", function(f)
         local pad = 10 * s
         local title = f.name or "WEAPON"
         local line = string.format("%s   %d KILLS", f.tier_name or "", math.floor(f.kills or 0))
-        local w = math.max(text.width(font.small, title), text.width(font.tiny, line), 180 * s) + pad * 2
-        local h = text.height(font.small) + text.height(font.tiny) + pad * 2 + 12 * s
+        local w = math.max(text.width(font.hud_small, title), text.width(font.hud_tiny, line), 180 * s) + pad * 2
+        local h = text.height(font.hud_small) + text.height(font.hud_tiny) + pad * 2 + 12 * s
         local x, y = 28 * s, sh * 0.62
         draw.rect(x, y, x + w, y + h, 10, 12, 18, 185, 6 * s)
         draw.rect(x, y, x + 3 * s, y + h, c[1], c[2], c[3], 255, 0)
-        text.draw(font.small, x + pad, y + pad, 240, 240, 248, 255, title)
-        text.draw(font.tiny, x + pad, y + pad + text.height(font.small) + 2 * s, c[1], c[2], c[3], 255, line)
+        text.draw(font.hud_small, x + pad, y + pad, 240, 240, 248, 255, title)
+        text.draw(font.hud_tiny, x + pad, y + pad + text.height(font.hud_small) + 2 * s, c[1], c[2], c[3], 255, line)
         local by = y + h - pad - 4 * s
         draw.rect(x + pad, by, x + w - pad, by + 4 * s, 0, 0, 0, 150, 2 * s)
         local frac = 1
@@ -39,7 +39,7 @@ features.on_draw("Weapon Mastery", function(f)
         local a = math.floor(255 * math.min(1, (3 - age) * 1.5))
         local names = { "BRONZE", "SILVER", "GOLD", "PLATINUM" }
         local msg = (names[math.floor(f.tier_up_tier or 0)] or "") .. " MASTERY"
-        local big = font.display or font.title
+        local big = font.display
         text.draw(big, sw / 2 - text.width(big, msg) / 2, sh * 0.26, tc[1], tc[2], tc[3], a, msg)
     end
 end)

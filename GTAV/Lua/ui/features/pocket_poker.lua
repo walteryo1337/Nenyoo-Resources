@@ -26,14 +26,14 @@ features.on_draw("Pocket Video Poker", function(f)
 
     -- pay table
     local ty = y0 + 16 * s
-    local lh = text.height(font.tiny) + 2 * s
+    local lh = text.height(font.hud_tiny) + 2 * s
     for i = 10, 2, -1 do
         local hot = state == 3 and result == i - 1
         local r, g, b = 200, 200, 214
         if hot then r, g, b = 255, 220, 90 end
-        text.draw(font.tiny, x0 + 24 * s, ty, r, g, b, 255, hands[i])
+        text.draw(font.hud_tiny, x0 + 24 * s, ty, r, g, b, 255, hands[i])
         local p = tostring(pays[i])
-        text.draw(font.tiny, x0 + 260 * s - text.width(font.tiny, p), ty, r, g, b, 255, p)
+        text.draw(font.hud_tiny, x0 + 260 * s - text.width(font.hud_tiny, p), ty, r, g, b, 255, p)
         ty = ty + lh
     end
 
@@ -53,11 +53,11 @@ features.on_draw("Pocket Video Poker", function(f)
             local red = suit == 1 or suit == 2
             local r, g, b = 25, 25, 30
             if red then r, g, b = 210, 40, 40 end
-            local big = font.display or font.title
+            local big = font.display
             local label = ranks[rank + 1]
             text.draw(big, x + cw / 2 - text.width(big, label) / 2, cy + ch * 0.32 - text.height(big) / 2, r, g, b, 255, label)
             local sl = suits[suit + 1]
-            text.draw(font.title, x + cw / 2 - text.width(font.title, sl) / 2, cy + ch * 0.72 - text.height(font.title) / 2, r, g, b, 255, sl)
+            text.draw(font.display, x + cw / 2 - text.width(font.display, sl) / 2, cy + ch * 0.72 - text.height(font.display) / 2, r, g, b, 255, sl)
         else
             draw.rect(x, cy, x + cw, cy + ch, 120, 30, 40, 255, 10 * s)
             draw.rect(x + 10 * s, cy + 10 * s, x + cw - 10 * s, cy + ch - 10 * s, 150, 45, 55, 255, 6 * s)
@@ -67,7 +67,7 @@ features.on_draw("Pocket Video Poker", function(f)
         end
         if has_bit(holds, i) then
             local held = "HELD"
-            text.draw(font.small, x + cw / 2 - text.width(font.small, held) / 2, cy - text.height(font.small) - 6 * s, 255, 220, 90, 255, held)
+            text.draw(font.hud_small, x + cw / 2 - text.width(font.hud_small, held) / 2, cy - text.height(font.hud_small) - 6 * s, 255, 220, 90, 255, held)
         end
     end
 
@@ -75,20 +75,20 @@ features.on_draw("Pocket Video Poker", function(f)
     local ns = string.format("NET %s$%d", net < 0 and "-" or "+", math.abs(net))
     local nr, ng, nb = 120, 230, 120
     if net < 0 then nr, ng, nb = 240, 90, 80 end
-    text.draw(font.item, x0 + w - 24 * s - text.width(font.item, ns), y0 + 16 * s, nr, ng, nb, 255, ns)
+    text.draw(font.hud, x0 + w - 24 * s - text.width(font.hud, ns), y0 + 16 * s, nr, ng, nb, 255, ns)
     local stake = math.floor(f.stake or 0)
     local bet = stake > 0 and string.format("BET $%d", stake) or "FREE PLAY"
-    text.draw(font.small, x0 + w - 24 * s - text.width(font.small, bet), y0 + 20 * s + text.height(font.item), 220, 220, 232, 240, bet)
+    text.draw(font.hud_small, x0 + w - 24 * s - text.width(font.hud_small, bet), y0 + 20 * s + text.height(font.hud), 220, 220, 232, 240, bet)
 
     if state == 3 then
         local msg = hands[result + 1] or ""
         if (f.paid or 0) > 0 then msg = msg .. string.format("   WIN $%d", math.floor(f.paid)) end
         local r, g, b = 220, 220, 232
         if (f.paid or 0) > 0 then r, g, b = 255, 220, 90 end
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, y0 + h * 0.36, r, g, b, 255, msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, y0 + h * 0.36, r, g, b, 255, msg)
     end
     local foot
     if state == 2 then foot = "A / D SELECT     W HOLD     E DRAW"
     else foot = "E DEAL" end
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + h - 40 * s, 230, 230, 240, 255, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + h - 40 * s, 230, 230, 240, 255, foot)
 end)

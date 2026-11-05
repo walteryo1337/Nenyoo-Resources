@@ -41,7 +41,7 @@ features.on_draw("Pocket Plinko", function(f)
         draw.rect(bx - gap * 0.45, by - 14 * s, bx + gap * 0.45, by + 18 * s, r, g, b, a, 4 * s)
         if hot then draw.rect(bx - gap * 0.45, by - 18 * s, bx + gap * 0.45, by - 14 * s, 255, 255, 255, 255, 0) end
         local m = mult[i + 1] or ""
-        text.draw(font.tiny, bx - text.width(font.tiny, m) / 2, by + 2 * s - text.height(font.tiny) / 2, 20, 20, 26, 255, m)
+        text.draw(font.hud_tiny, bx - text.width(font.hud_tiny, m) / 2, by + 2 * s - text.height(font.hud_tiny) / 2, 20, 20, 26, 255, m)
     end
 
     for row, rights, dir, frac in string.gmatch(f.balls or "", "(%d+),(%d+),(%d+),([%d%.]+);") do
@@ -57,14 +57,14 @@ features.on_draw("Pocket Plinko", function(f)
 
     local stake = math.floor(f.stake or 0)
     local head = stake > 0 and string.format("E DROP A BALL   $%d EACH", stake) or "E DROP A BALL   (FOR FUN)"
-    text.draw(font.small, cx - text.width(font.small, head) / 2, top - 58 * s, 230, 230, 240, 255, head)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, head) / 2, top - 58 * s, 230, 230, 240, 255, head)
     local net = math.floor(f.net or 0)
     local ns = string.format("NET %s$%d", net < 0 and "-" or "+", math.abs(net))
     local nr, ng, nb = 120, 230, 120
     if net < 0 then nr, ng, nb = 240, 90, 80 end
-    text.draw(font.item, cx - text.width(font.item, ns) / 2, by + 30 * s, nr, ng, nb, 255, ns)
+    text.draw(font.hud, cx - text.width(font.hud, ns) / 2, by + 30 * s, nr, ng, nb, 255, ns)
     if f.flash and (f.last_win or 0) > 0 then
         local w = string.format("+$%d", math.floor(f.last_win))
-        text.draw(font.title, cx - text.width(font.title, w) / 2, top - 28 * s, 255, 220, 100, 255, w)
+        text.draw(font.display, cx - text.width(font.display, w) / 2, top - 28 * s, 255, 220, 100, 255, w)
     end
 end)

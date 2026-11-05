@@ -16,7 +16,7 @@ features.on_draw("Car Show", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local state = math.floor(f.state or 0)
     local p = f.progress or 1
 
@@ -26,13 +26,13 @@ features.on_draw("Car Show", function(f)
     local x, y = sw - w - 40 * s, sh * 0.25
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 215, 8 * s)
     draw.rect(x, y, x + w, y + 3 * s, ar, ag, ab, 255, 0)
-    text.draw(font.item, x + 16 * s, y + 14 * s, 245, 245, 250, 255, "JUDGES' SCORECARD")
+    text.draw(font.hud, x + 16 * s, y + 14 * s, 245, 245, 250, 255, "JUDGES' SCORECARD")
 
     local total_shown = 0
     for i, c in ipairs(categories) do
         local ry = y + 56 * s + (i - 1) * rh
         local reveal = math.max(0, math.min(1, p * (#categories + 1) - (i - 1)))
-        text.draw(font.small, x + 16 * s, ry, 200, 200, 212, 240, c.label)
+        text.draw(font.hud_small, x + 16 * s, ry, 200, 200, 212, 240, c.label)
         local score = math.floor(f[c.key] or 0)
         local shown = math.floor(score * reveal + 0.5)
         total_shown = total_shown + shown
@@ -41,14 +41,14 @@ features.on_draw("Car Show", function(f)
         draw.rect(bx1, by, bx2, by + 8 * s, 255, 255, 255, 25, 4 * s)
         if shown > 0 then draw.rect(bx1, by, bx1 + (bx2 - bx1) * shown / 20, by + 8 * s, ar, ag, ab, 235, 4 * s) end
         local sstr = reveal > 0 and tostring(shown) or "-"
-        text.draw(font.small, x + w - 16 * s - text.width(font.small, sstr), ry, 245, 245, 250, 255, sstr)
+        text.draw(font.hud_small, x + w - 16 * s - text.width(font.hud_small, sstr), ry, 245, 245, 250, 255, sstr)
     end
 
     local ty = y + 56 * s + #categories * rh + 6 * s
     draw.rect(x + 16 * s, ty, x + w - 16 * s, ty + 1.5 * s, 255, 255, 255, 60, 0)
     local tstr = string.format("%d / 100", state == 2 and math.floor(f.total or 0) or total_shown)
-    text.draw(font.title, x + w - 16 * s - text.width(font.title, tstr), ty + 8 * s, 245, 245, 250, 255, tstr)
-    text.draw(font.small, x + 16 * s, ty + 14 * s, 200, 200, 212, 240, "TOTAL")
+    text.draw(font.display, x + w - 16 * s - text.width(font.display, tstr), ty + 8 * s, 245, 245, 250, 255, tstr)
+    text.draw(font.hud_small, x + 16 * s, ty + 14 * s, 200, 200, 212, 240, "TOTAL")
 
     if state == 2 then
         local place = math.floor(f.place or 4) + 1
@@ -58,7 +58,7 @@ features.on_draw("Car Show", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.2, c[1], c[2], c[3], 255, msg)
         if (f.prize or 0) > 0 then
             local pr = string.format("+$%d", math.floor(f.prize))
-            text.draw(font.item, cx - text.width(font.item, pr) / 2, sh * 0.2 + text.height(big), 245, 245, 250, 255, pr)
+            text.draw(font.hud, cx - text.width(font.hud, pr) / 2, sh * 0.2 + text.height(big), 245, 245, 250, 255, pr)
         end
     end
 end)

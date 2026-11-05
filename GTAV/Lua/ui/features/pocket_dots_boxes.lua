@@ -33,7 +33,7 @@ features.on_draw("Pocket Dots and Boxes", function(f)
                 local col = o == "1" and YOU or PHONE
                 draw.rect(px(c - 1) + 6 * s, py(r - 1) + 6 * s, px(c + 1) - 6 * s, py(r + 1) - 6 * s, col[1], col[2], col[3], 80, 6 * s)
                 local label = o == "1" and "YOU" or "PH"
-                text.draw(font.small, px(c) - text.width(font.small, label) / 2, py(r) - text.height(font.small) / 2, col[1], col[2], col[3], 255, label)
+                text.draw(font.hud_small, px(c) - text.width(font.hud_small, label) / 2, py(r) - text.height(font.hud_small) / 2, col[1], col[2], col[3], 255, label)
             end
         end
     end
@@ -74,11 +74,11 @@ features.on_draw("Pocket Dots and Boxes", function(f)
 
     local you, phone = math.floor(f.you or 0), math.floor(f.phone or 0)
     local hy = y0 - 64 * s
-    text.draw(font.item, x0, hy, YOU[1], YOU[2], YOU[3], 255, string.format("YOU %d", you))
+    text.draw(font.hud, x0, hy, YOU[1], YOU[2], YOU[3], 255, string.format("YOU %d", you))
     local ps = string.format("PHONE %d", phone)
-    text.draw(font.item, x0 + bw - text.width(font.item, ps), hy, PHONE[1], PHONE[2], PHONE[3], 255, ps)
+    text.draw(font.hud, x0 + bw - text.width(font.hud, ps), hy, PHONE[1], PHONE[2], PHONE[3], 255, ps)
     local rec = string.format("WINS %d/%d", math.floor(f.wins or 0), math.floor(f.played or 0))
-    text.draw(font.small, x0 + bw / 2 - text.width(font.small, rec) / 2, hy + 4 * s, 200, 200, 210, 255, rec)
+    text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, rec) / 2, hy + 4 * s, 200, 200, 210, 255, rec)
 
     local msg, mr, mg, mb = "", 230, 230, 236
     if state == 1 then
@@ -89,5 +89,5 @@ features.on_draw("Pocket Dots and Boxes", function(f)
         elseif you < phone then msg, mr, mg, mb = string.format("THE PHONE WINS %d - %d   E TO PLAY AGAIN", phone, you), 255, 110, 100
         else msg = "A DRAW   E TO PLAY AGAIN" end
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bw + 30 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bw + 30 * s, mr, mg, mb, 255, msg)
 end)

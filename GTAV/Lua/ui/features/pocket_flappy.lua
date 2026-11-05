@@ -69,17 +69,17 @@ features.on_draw("Pocket Flappy", function(f)
     draw.rect(bx + r * 0.6, by - tilt * r * 0.3, bx + r * 1.25, by + r * 0.25 - tilt * r * 0.3, 255, 130, 40, 255, 3 * s)
 
     local score = string.format("%d", math.floor(f.score or 0))
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 + 20 * s, 255, 255, 255, 255, score)
-    text.draw(font.small, x0, y0 - 44 * s, 235, 235, 245, 255, "POCKET FLAPPY")
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 + 20 * s, 255, 255, 255, 255, score)
+    text.draw(font.hud_small, x0, y0 - 44 * s, 235, 235, 245, 255, "POCKET FLAPPY")
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.tiny, x0 + fw - text.width(font.tiny, best), y0 - 40 * s, 255, 220, 90, 230, best)
+    text.draw(font.hud_tiny, x0 + fw - text.width(font.hud_tiny, best), y0 - 40 * s, 255, 220, 90, 230, best)
 
     local state = math.floor(f.state or 0)
     local hint
     if state == 1 then hint = "PRESS W OR SPACE TO FLAP"
     elseif state == 3 then hint = "PRESS E TO TRY AGAIN"
     else hint = "W / SPACE  FLAP" end
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 + fh + 14 * s, 200, 200, 214, math.floor(170 + 60 * math.sin(t * 3)), hint)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + fh + 14 * s, 200, 200, 214, math.floor(170 + 60 * math.sin(t * 3)), hint)
     if state == 3 then
         local sc = math.floor(f.score or 0)
         local medal, mr, mg, mb = nil, 0, 0, 0
@@ -90,12 +90,12 @@ features.on_draw("Pocket Flappy", function(f)
         local cy = y0 + fh * 0.35
         draw.rect(x0 + fw * 0.12, cy, x0 + fw * 0.88, cy + 150 * s, 250, 240, 210, 245, 10 * s)
         local msg = "GAME OVER"
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, cy + 12 * s, 220, 90, 60, 255, msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, cy + 12 * s, 220, 90, 60, 255, msg)
         local line = string.format("SCORE %d   BEST %d", sc, math.floor(f.best or 0))
-        text.draw(font.small, sw / 2 - text.width(font.small, line) / 2, cy + 70 * s, 80, 70, 60, 255, line)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, line) / 2, cy + 70 * s, 80, 70, 60, 255, line)
         if medal then
             draw.circle(sw / 2, cy + 120 * s, 14 * s, mr, mg, mb, 255)
-            text.draw(font.tiny, sw / 2 + 22 * s, cy + 110 * s, 80, 70, 60, 255, medal)
+            text.draw(font.hud_tiny, sw / 2 + 22 * s, cy + 110 * s, 80, 70, 60, 255, medal)
         end
     end
 end)

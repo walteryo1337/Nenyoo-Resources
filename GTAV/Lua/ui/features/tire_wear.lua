@@ -9,7 +9,7 @@ features.on_draw("Tire Wear", function(f)
     local h = 8
     local x = sw * 0.015
     local y = sh * 0.735
-    local lh = text.height(font.small)
+    local lh = text.height(font.hud_small)
     local t = ctx.time and ctx.time() or 0
 
     local r, g, b = 200, 200, 210
@@ -25,10 +25,10 @@ features.on_draw("Tire Wear", function(f)
     local label = "TIRES"
     if tread <= 0 then label = "TIRES  BALD"
     elseif f.low_grip then label = "TIRES  LOW GRIP" end
-    text.draw(font.small, x, y - lh - 4, 230, 230, 235, 255, label)
+    text.draw(font.hud_small, x, y - lh - 4, 230, 230, 235, 255, label)
     local pct = string.format("%d%%", math.floor(tread * 100 + 0.5))
     if f.wearing and math.floor(t * 8) % 2 == 0 then pct = "- " .. pct end
-    text.draw(font.small, x + w - text.width(font.small, pct), y - lh - 4, r, g, b, a, pct)
+    text.draw(font.hud_small, x + w - text.width(font.hud_small, pct), y - lh - 4, r, g, b, a, pct)
 
     draw.rect(x, y, x + w, y + h, 40, 40, 48, 220, 3)
     if tread > 0 then

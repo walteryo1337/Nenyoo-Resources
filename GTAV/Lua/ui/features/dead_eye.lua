@@ -28,7 +28,7 @@ features.on_draw("Dead Eye", function(f)
 
     if n > 0 then
         local label = "DEAD EYE  " .. n
-        local w = text.width(font.item, label)
-        text.draw(font.item, cx - w * 0.5, sh * 0.86, 240, 200, 120, 255, label)
+        local w = text.width(font.hud, label)
+        text.draw(font.hud, cx - w * 0.5, sh * 0.86, 240, 200, 120, 255, label)
     end
 end)

@@ -34,24 +34,24 @@ local function panel(title, sub, f, progress)
     local t = math.max(0, f.time_left or 0)
     local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
 
-    local tw = text.width(font.tiny, title)
-    local cw = text.width(font.title, clock)
-    local sw2 = text.width(font.tiny, sub)
+    local tw = text.width(font.hud_tiny, title)
+    local cw = text.width(font.display, clock)
+    local sw2 = text.width(font.hud_tiny, sub)
     local w = math.max(tw, cw, sw2) + pad * 2
-    local h = text.height(font.tiny) * 2 + text.height(font.title) + pad * 2 + 4 * s
+    local h = text.height(font.hud_tiny) * 2 + text.height(font.display) + pad * 2 + 4 * s
     local x = sw - w - 28 * s
     local y = sh * 0.42
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 165, 6 * s)
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, 255, 0)
     local cy = y + pad
-    text.draw(font.tiny, x + w - pad - tw, cy, ar, ag, ab, 255, title)
-    cy = cy + text.height(font.tiny) + 2 * s
+    text.draw(font.hud_tiny, x + w - pad - tw, cy, ar, ag, ab, 255, title)
+    cy = cy + text.height(font.hud_tiny) + 2 * s
     local r, g, b = 245, 245, 250
     if t < 20 then r, g, b = 235, 70, 70 end
-    text.draw(font.title, x + w - pad - cw, cy, r, g, b, 255, clock)
-    cy = cy + text.height(font.title) + 2 * s
-    text.draw(font.tiny, x + w - pad - sw2, cy, 200, 200, 210, 230, sub)
+    text.draw(font.display, x + w - pad - cw, cy, r, g, b, 255, clock)
+    cy = cy + text.height(font.display) + 2 * s
+    text.draw(font.hud_tiny, x + w - pad - sw2, cy, 200, 200, 210, 230, sub)
     if progress then
         draw.rect(x + pad, y + h - 5 * s, x + w - pad, y + h - 2 * s, 0, 0, 0, 150, 0)
         draw.rect(x + pad, y + h - 5 * s, x + pad + (w - pad * 2) * progress, y + h - 2 * s, ar, ag, ab, 255, 0)

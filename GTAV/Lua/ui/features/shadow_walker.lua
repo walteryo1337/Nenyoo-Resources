@@ -25,8 +25,8 @@ features.on_draw("Shadow Walker", function(f)
     end
     if not msg then return end
 
-    local tw = text.width(font.small, msg)
+    local tw = text.width(font.hud_small, msg)
     local x0, y0 = sw / 2 - tw / 2 - 16 * s, sh - 150 * s
     draw.rect(x0, y0, x0 + tw + 32 * s, y0 + 30 * s, 10, 6, 18, 190, 15 * s)
-    text.draw(font.small, sw / 2 - tw / 2, y0 + 6 * s, r, g, b, alpha, msg)
+    text.draw(font.hud_small, sw / 2 - tw / 2, y0 + 6 * s, r, g, b, alpha, msg)
 end)

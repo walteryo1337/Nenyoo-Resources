@@ -46,10 +46,10 @@ features.on_draw("Pocket Peg Solitaire", function(f)
     end
 
     local hy = y0 - 64 * s
-    text.draw(font.item, x0, hy, 245, 240, 230, 255, string.format("PEGS %d", math.floor(f.pegs or 0)))
+    text.draw(font.hud, x0, hy, 245, 240, 230, 255, string.format("PEGS %d", math.floor(f.pegs or 0)))
     if f.best then
         local b = string.format("BEST %d", math.floor(f.best))
-        text.draw(font.item, x0 + bw - text.width(font.item, b), hy, 255, 200, 60, 255, b)
+        text.draw(font.hud, x0 + bw - text.width(font.hud, b), hy, 255, 200, 60, 255, b)
     end
 
     local msg, mr, mg, mb = "W A S D MOVE   E PICK A PEG, E AGAIN TO JUMP   Q UNDO", 230, 225, 215
@@ -60,5 +60,5 @@ features.on_draw("Pocket Peg Solitaire", function(f)
         elseif left <= 3 then msg, mr, mg, mb = string.format("NO MOVES LEFT   %d PEGS, NOT BAD   E PLAY AGAIN   Q UNDO", left), 255, 210, 90
         else msg, mr, mg, mb = string.format("NO MOVES LEFT   %d PEGS   E PLAY AGAIN   Q UNDO", left), 255, 140, 110 end
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bw + 26 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bw + 26 * s, mr, mg, mb, 255, msg)
 end)

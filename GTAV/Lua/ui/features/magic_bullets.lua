@@ -28,6 +28,6 @@ features.on_draw("Magic Bullets", function(f)
     end
     if f.show_counter then
         local label = "Magic Bullets  " .. tostring(math.floor(f.hit_count or 0))
-        text.draw(font.small, sw - text.width(font.small, label) - 24, sh * 0.72, r, g, b, a, label)
+        text.draw(font.hud_small, sw - text.width(font.hud_small, label) - 24, sh * 0.72, r, g, b, a, label)
     end
 end)

@@ -11,7 +11,7 @@ features.on_draw("Lawn Mowing", function(f)
     local cell = 14 * s
     local pad = 10 * s
     local w = math.max(cols * cell, 150 * s) + pad * 2
-    local h = rows * cell + pad * 3 + text.height(font.title) + text.height(font.tiny) + 6 * s
+    local h = rows * cell + pad * 3 + text.height(font.display) + text.height(font.hud_tiny) + 6 * s
     local x = sw - w - 28 * s
     local y = sh * 0.38
 
@@ -21,12 +21,12 @@ features.on_draw("Lawn Mowing", function(f)
     local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
     local cr, cg, cb = 245, 245, 250
     if t < 20 and not f.finished then cr, cg, cb = 235, 70, 70 end
-    text.draw(font.title, x + pad, y + pad, cr, cg, cb, 255, clock)
+    text.draw(font.display, x + pad, y + pad, cr, cg, cb, 255, clock)
     local pct = string.format("%d%%", math.floor((f.coverage or 0) * 100))
-    text.draw(font.title, x + w - pad - text.width(font.title, pct), y + pad, ar, ag, ab, 255, pct)
+    text.draw(font.display, x + w - pad - text.width(font.display, pct), y + pad, ar, ag, ab, 255, pct)
 
     local gx = x + (w - cols * cell) / 2
-    local gy = y + pad * 2 + text.height(font.title)
+    local gy = y + pad * 2 + text.height(font.display)
     for r = 0, rows - 1 do
         for c = 0, cols - 1 do
             local i = r * cols + c + 1
@@ -45,5 +45,5 @@ features.on_draw("Lawn Mowing", function(f)
     local sub = f.finished and "JOB DONE" or (f.in_mower and "MOW THE LONG GRASS" or "GET BACK ON THE MOWER")
     local sr, sg, sb = 200, 200, 210
     if not f.in_mower and not f.finished then sr, sg, sb = 240, 170, 70 end
-    text.draw(font.tiny, x + w / 2 - text.width(font.tiny, sub) / 2, gy + rows * cell + pad * 0.6, sr, sg, sb, 235, sub)
+    text.draw(font.hud_tiny, x + w / 2 - text.width(font.hud_tiny, sub) / 2, gy + rows * cell + pad * 0.6, sr, sg, sb, 235, sub)
 end)

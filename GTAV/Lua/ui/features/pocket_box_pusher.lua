@@ -58,12 +58,12 @@ features.on_draw("Pocket Box Pusher", function(f)
 
     local hy = y0 - 64 * s
     local lx = sw / 2 - pw / 2
-    text.draw(font.item, lx, hy, 245, 245, 250, 255, string.format("LEVEL %d/%d", math.floor(f.level or 1), math.floor(f.levels or 1)))
+    text.draw(font.hud, lx, hy, 245, 245, 250, 255, string.format("LEVEL %d/%d", math.floor(f.level or 1), math.floor(f.levels or 1)))
     local stats = string.format("MOVES %d   PUSHES %d   PAR %d", math.floor(f.moves or 0), math.floor(f.pushes or 0), math.floor(f.par or 0))
-    text.draw(font.small, lx + pw - text.width(font.small, stats), hy + 4 * s, 220, 220, 228, 255, stats)
+    text.draw(font.hud_small, lx + pw - text.width(font.hud_small, stats), hy + 4 * s, 220, 220, 228, 255, stats)
     if f.best then
         local b = string.format("BEST %d", math.floor(f.best))
-        text.draw(font.small, lx + pw - text.width(font.small, b), hy + 30 * s, 255, 200, 60, 255, b)
+        text.draw(font.hud_small, lx + pw - text.width(font.hud_small, b), hy + 30 * s, 255, 200, 60, 255, b)
     end
     local hold = f.restart_hold or 0
     if hold > 0 then
@@ -79,5 +79,5 @@ features.on_draw("Pocket Box Pusher", function(f)
     elseif state == 3 then
         msg, mr, mg, mb = "EVERY LEVEL SOLVED!   E TO START OVER", 255, 210, 90
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bh + 24 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bh + 24 * s, mr, mg, mb, 255, msg)
 end)

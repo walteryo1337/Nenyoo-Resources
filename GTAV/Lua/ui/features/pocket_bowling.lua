@@ -51,7 +51,7 @@ local function meter(x, y, w, h, s, value, label, centred, ar, ag, ab)
     else
         draw.rect_gradient(x, y, x + w * value, y + h, 90, 200, 110, 255, 240, 200, 60, 255, 240, 200, 60, 255, 90, 200, 110, 255)
     end
-    text.draw(font.tiny, x, y - 18 * s, 200, 200, 214, 230, label)
+    text.draw(font.hud_tiny, x, y - 18 * s, 200, 200, 214, 230, label)
 end
 
 features.on_draw("Pocket Bowling", function(f)
@@ -65,7 +65,7 @@ features.on_draw("Pocket Bowling", function(f)
     local pw, ph = 760 * s, 720 * s
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     draw.rect(x0, y0, x0 + pw, y0 + ph, 10, 10, 16, 225, 14 * s)
-    text.draw(font.small, x0 + 18 * s, y0 + 12 * s, 235, 235, 245, 255, "POCKET BOWLING")
+    text.draw(font.hud_small, x0 + 18 * s, y0 + 12 * s, 235, 235, 245, 255, "POCKET BOWLING")
 
     local lane_len = f.lane_length or 6
     local lx_scale, ly_scale = 230 * s, (ph - 110 * s) / (lane_len + 0.4)
@@ -130,7 +130,7 @@ features.on_draw("Pocket Bowling", function(f)
         local hl = fi == cur and state ~= 6
         draw.rect(rx, cy, rx + rw, cy + cell_h, hl and 45 or 26, hl and 45 or 26, hl and 62 or 36, 255, 6 * s)
         if hl then draw.rect_outline(rx, cy, rx + rw, cy + cell_h, ar, ag, ab, 255, 6 * s, 1.5 * s) end
-        text.draw(font.tiny, rx + 10 * s, cy + 14 * s, 160, 160, 176, 255, tostring(fi))
+        text.draw(font.hud_tiny, rx + 10 * s, cy + 14 * s, 160, 160, 176, 255, tostring(fi))
         local m = marks[fi]
         local box = 24 * s
         local slots = fi == 10 and 3 or 2
@@ -141,12 +141,12 @@ features.on_draw("Pocket Bowling", function(f)
             if mk then
                 local cr, cg, cb = 235, 235, 245
                 if mk == "X" or mk == "/" then cr, cg, cb = ar, ag, ab end
-                text.draw(font.tiny, bx + box / 2 - text.width(font.tiny, mk) / 2, cy + 7 * s, cr, cg, cb, 255, mk)
+                text.draw(font.hud_tiny, bx + box / 2 - text.width(font.hud_tiny, mk) / 2, cy + 7 * s, cr, cg, cb, 255, mk)
             end
         end
         local tv = tonumber(totals[fi] or "-1") or -1
         if tv >= 0 then
-            text.draw(font.small, rx + 40 * s, cy + 12 * s, 235, 235, 245, 255, tostring(tv))
+            text.draw(font.hud_small, rx + 40 * s, cy + 12 * s, 235, 235, 245, 255, tostring(tv))
         end
     end
 
@@ -166,8 +166,8 @@ features.on_draw("Pocket Bowling", function(f)
     end
     local best = math.floor(f.best or 0)
     local summary = best > 0 and string.format("SCORE %d   BEST %d", math.floor(f.total or 0), best) or string.format("SCORE %d", math.floor(f.total or 0))
-    text.draw(font.small, x0 + pw - 18 * s - text.width(font.small, summary), y0 + 12 * s, 235, 235, 245, 255, summary)
+    text.draw(font.hud_small, x0 + pw - 18 * s - text.width(font.hud_small, summary), y0 + 12 * s, 235, 235, 245, 255, summary)
     if hint ~= "" then
-        text.draw(font.tiny, x0 + pw / 2 - text.width(font.tiny, hint) / 2, y0 + ph - 8 * s - text.height(font.tiny), 200, 200, 214, 230, hint)
+        text.draw(font.hud_tiny, x0 + pw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + ph - 8 * s - text.height(font.hud_tiny), 200, 200, 214, 230, hint)
     end
 end)

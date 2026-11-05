@@ -108,14 +108,14 @@ features.on_draw("Ebony Maw", function(f)
         draw.circle(tx, ty, 2.5 * s, mr, mg, mb, a)
 
         local state = (not ready) and "CHARGING" or (f.locked and "LOCKED" or "IMPACT POINT")
-        centre_spaced(font.small, tx, ty + (f.locked and 32 or 27) * s, 2 * s, mr, mg, mb, a,
+        centre_spaced(font.hud_small, tx, ty + (f.locked and 32 or 27) * s, 2 * s, mr, mg, mb, a,
             string.format("%s  %dM", state, floor(sm_dist + 0.5)))
     end
 
     -- Aiming with the target off screen: say so, rather than leaving the player wondering where the
     -- marker went.
     if f.show_marker and f.aiming and not f.target_on_screen then
-        centre_spaced(font.small, cx0, cy0 + 44 * s, 3 * s, VIO_R, VIO_G, VIO_B, A(190 * sm_aim),
+        centre_spaced(font.hud_small, cx0, cy0 + 44 * s, 3 * s, VIO_R, VIO_G, VIO_B, A(190 * sm_aim),
                       "TARGET OFF SCREEN")
     end
 
@@ -128,7 +128,7 @@ features.on_draw("Ebony Maw", function(f)
     local tth = text.height(font.display)
     local ty0 = m - 6 * s
     text.draw_spaced(font.display, cx0 - tw * 0.5, ty0, VIO_R, VIO_G, VIO_B, A(240), title, tsp)
-    centre_spaced(font.small, cx0, ty0 + tth - 4 * s, 4 * s, STN_R, STN_G, STN_B, A(190),
+    centre_spaced(font.hud_small, cx0, ty0 + tth - 4 * s, 4 * s, STN_R, STN_G, STN_B, A(190),
                   f.mode or "ROCK BARRAGE")
 
     ------------------------------------------------------------------ orbit gauge (bottom-left)
@@ -164,28 +164,28 @@ features.on_draw("Ebony Maw", function(f)
     local cnt = string.format("%d", rocks)
     text.draw_centered(font.display, ox - r_ring, oy - text.height(font.display) * 0.5, ox + r_ring,
                        WHT_R, WHT_G, WHT_B, A(250), cnt)
-    centre_spaced(font.tiny, ox, oy + r_ring * 0.52, 2 * s, STN_R, STN_G, STN_B, A(180),
+    centre_spaced(font.hud_tiny, ox, oy + r_ring * 0.52, 2 * s, STN_R, STN_G, STN_B, A(180),
                   string.format("OF %d", max_rocks))
-    centre_spaced(font.tiny, ox, oy + r_ring + 26 * s, 3 * s, VIO_R, VIO_G, VIO_B, A(175), "ORBIT")
+    centre_spaced(font.hud_tiny, ox, oy + r_ring + 26 * s, 3 * s, VIO_R, VIO_G, VIO_B, A(175), "ORBIT")
 
     ------------------------------------------------------------------ telemetry (bottom-right)
     local tx2 = sw - m
     local by = sh - m - 30 * s
-    local lh = text.height(font.item) + 4 * s
+    local lh = text.height(font.hud) + 4 * s
 
-    right_text(font.item, tx2, by - lh * 2, STN_R, STN_G, STN_B, A(230),
+    right_text(font.hud, tx2, by - lh * 2, STN_R, STN_G, STN_B, A(230),
                string.format("IN FLIGHT   %d", floor(f.projectiles or 0)))
 
     if f.aiming then
         local tt = TARGETS[floor(f.target_type or 0)] or "ENTITY"
-        right_text(font.item, tx2, by - lh,
+        right_text(font.hud, tx2, by - lh,
                    f.locked and GOLD_R or VIO_R, f.locked and GOLD_G or VIO_G, f.locked and GOLD_B or VIO_B,
                    A(240), string.format("%s   %dM", tt, floor(sm_dist + 0.5)))
     else
-        right_text(font.item, tx2, by - lh, 150, 140, 165, A(200), "NO TARGET")
+        right_text(font.hud, tx2, by - lh, 150, 140, 165, A(200), "NO TARGET")
     end
 
-    right_text(font.small, tx2, by, ready and GOLD_R or 150, ready and GOLD_G or 140,
+    right_text(font.hud_small, tx2, by, ready and GOLD_R or 150, ready and GOLD_G or 140,
                ready and GOLD_B or 165, A(225),
                ready and "BARRAGE READY" or string.format("CHARGING  %d%%", floor(sm_cool * 100 + 0.5)))
 
@@ -201,5 +201,5 @@ features.on_draw("Ebony Maw", function(f)
             and "WASD STEER   SPACE ASCEND   CTRL DESCEND   SHIFT BOOST   RMB AIM   LMB LAUNCH"
             or  "LS STEER   X ASCEND   LS DESCEND   A BOOST   LT AIM   RT LAUNCH"
     end
-    centre_spaced(font.tiny, cx0, sh - m - 10 * s, 2 * s, 178, 168, 194, A(180), hint_1)
+    centre_spaced(font.hud_tiny, cx0, sh - m - 10 * s, 2 * s, 178, 168, 194, A(180), hint_1)
 end)

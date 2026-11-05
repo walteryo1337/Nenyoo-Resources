@@ -41,22 +41,22 @@ end
 local function live(f, sw, sh, ar, ag, ab, now)
     local cx, y = sw * 0.5, sh * 0.12
     local secs = f.live_seconds or 0
-    centered(font.tiny, cx, y, 200, 200, 210, 235, "AIRBORNE")
+    centered(font.hud_tiny, cx, y, 200, 200, 210, 235, "AIRBORNE")
     draw.with_scale(cx, y + 16, 1.7, function()
         text.draw_outlined(font.display, cx - text.width(font.display, string.format("%.2f", secs)) * 0.5, y + 16,
             255, 255, 255, 255, 0, 0, 0, 190, 2.0, string.format("%.2f", secs))
     end)
     local stats = string.format("%.1f m HIGH   %d m FAR", f.live_height or 0, math.floor((f.live_distance or 0) + 0.5))
-    centered(font.small, cx, y + 16 + text.height(font.display) * 1.7 + 4, 220, 220, 230, 240, stats)
+    centered(font.hud_small, cx, y + 16 + text.height(font.display) * 1.7 + 4, 220, 220, 230, 240, stats)
 
     local list = tricks(f, "live_")
-    local ty = y + 16 + text.height(font.display) * 1.7 + text.height(font.small) + 12
+    local ty = y + 16 + text.height(font.display) * 1.7 + text.height(font.hud_small) + 12
     for i, t in ipairs(list) do
         local pulse = 0.8 + 0.2 * math.sin(now * 10 + i)
-        local w = text.width(font.small, t) + 20
-        draw.rect(cx - w * 0.5, ty, cx + w * 0.5, ty + text.height(font.small) + 6, ar, ag, ab, math.floor(200 * pulse), 4)
-        centered(font.small, cx, ty + 3, 255, 255, 255, 255, t)
-        ty = ty + text.height(font.small) + 10
+        local w = text.width(font.hud_small, t) + 20
+        draw.rect(cx - w * 0.5, ty, cx + w * 0.5, ty + text.height(font.hud_small) + 6, ar, ag, ab, math.floor(200 * pulse), 4)
+        centered(font.hud_small, cx, ty + 3, 255, 255, 255, 255, t)
+        ty = ty + text.height(font.hud_small) + 10
     end
 end
 
@@ -82,21 +82,21 @@ local function card(f, sw, sh, ar, ag, ab, now)
     local sy = y + text.height(font.display) * 1.25 + 8
     local stats = string.format("%.2f s   %.1f m HIGH   %d m FAR",
         f.result_seconds or 0, f.result_height or 0, math.floor((f.result_distance or 0) + 0.5))
-    text.draw_outlined(font.small, cx - text.width(font.small, stats) * 0.5, sy,
+    text.draw_outlined(font.hud_small, cx - text.width(font.hud_small, stats) * 0.5, sy,
         235, 235, 240, math.floor(245 * a), 0, 0, 0, math.floor(170 * a), 1.5, stats)
 
     local score = "+" .. commas(f.result_score or 0)
-    local scy = sy + text.height(font.small) + 4
-    text.draw_outlined(font.item, cx - text.width(font.item, score) * 0.5, scy,
+    local scy = sy + text.height(font.hud_small) + 4
+    text.draw_outlined(font.hud, cx - text.width(font.hud, score) * 0.5, scy,
         255, 255, 255, math.floor(250 * a), 0, 0, 0, math.floor(170 * a), 1.5, score)
 
-    local ly = scy + text.height(font.item) + 4
-    centered(font.tiny, cx, ly, landing[2], landing[3], landing[4], math.floor(240 * a), landing[1])
+    local ly = scy + text.height(font.hud) + 4
+    centered(font.hud_tiny, cx, ly, landing[2], landing[3], landing[4], math.floor(240 * a), landing[1])
     if f.record then
         local pulse = 0.75 + 0.25 * math.sin(now * 8)
-        centered(font.small, cx, ly + text.height(font.tiny) + 4, 255, 200, 60, math.floor(255 * a * pulse), "NEW RECORD")
+        centered(font.hud_small, cx, ly + text.height(font.hud_tiny) + 4, 255, 200, 60, math.floor(255 * a * pulse), "NEW RECORD")
     elseif f.best_seconds then
-        centered(font.tiny, cx, ly + text.height(font.tiny) + 4, 180, 180, 190, math.floor(220 * a),
+        centered(font.hud_tiny, cx, ly + text.height(font.hud_tiny) + 4, 180, 180, 190, math.floor(220 * a),
             string.format("BEST %.2f s   %s PTS", f.best_seconds, commas(f.best_score or 0)))
     end
 end

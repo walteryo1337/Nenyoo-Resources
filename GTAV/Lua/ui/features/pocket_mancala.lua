@@ -26,9 +26,9 @@ features.on_draw("Pocket Mancala", function(f)
     local pw, ph = bw + 40 * s, 330 * s
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 12, 12, 230, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "MANCALA")
+    text.draw(font.hud, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "MANCALA")
     local rec = string.format("WINS %d/%d", math.floor(f.wins or 0), math.floor(f.played or 0))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, rec), y0 + 20 * s, 190, 190, 205, 255, rec)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, rec), y0 + 20 * s, 190, 190, 205, 255, rec)
 
     local bx, by = x0 + 20 * s, y0 + 60 * s
     local bh = 210 * s
@@ -52,8 +52,8 @@ features.on_draw("Pocket Mancala", function(f)
             if fresh and last_end == idx then draw.circle_outline(px, py, pr + 3 * s, 255, 230, 120, 220, 3 * s) end
             seeds(px, py, b[idx], pr, s)
             local n = tostring(b[idx])
-            local ly = idx <= 6 and py + pr + 6 * s or py - pr - 6 * s - text.height(font.small)
-            text.draw(font.small, px - text.width(font.small, n) / 2, ly, 245, 235, 220, 255, n)
+            local ly = idx <= 6 and py + pr + 6 * s or py - pr - 6 * s - text.height(font.hud_small)
+            text.draw(font.hud_small, px - text.width(font.hud_small, n) / 2, ly, 245, 235, 220, 255, n)
         end
     end
     for _, st in ipairs({ { 7, cx_right }, { 14, cx_left } }) do
@@ -61,10 +61,10 @@ features.on_draw("Pocket Mancala", function(f)
         draw.rect(sx - 38 * s, by + 22 * s, sx + 38 * s, by + bh - 22 * s, 70, 40, 20, 255, 36 * s)
         if fresh and last_end == idx then draw.rect(sx - 40 * s, by + 20 * s, sx + 40 * s, by + bh - 20 * s, 255, 230, 120, 60, 36 * s) end
         local n = tostring(b[idx])
-        text.draw(font.title, sx - text.width(font.title, n) / 2, cy_mid - text.height(font.title) / 2, 245, 235, 220, 255, n)
+        text.draw(font.display, sx - text.width(font.display, n) / 2, cy_mid - text.height(font.display) / 2, 245, 235, 220, 255, n)
     end
-    text.draw(font.tiny, cx_right - text.width(font.tiny, "YOU") / 2, by + bh - 18 * s, 255, 230, 120, 255, "YOU")
-    text.draw(font.tiny, cx_left - text.width(font.tiny, "PHONE") / 2, by + bh - 18 * s, 220, 220, 230, 255, "PHONE")
+    text.draw(font.hud_tiny, cx_right - text.width(font.hud_tiny, "YOU") / 2, by + bh - 18 * s, 255, 230, 120, 255, "YOU")
+    text.draw(font.hud_tiny, cx_left - text.width(font.hud_tiny, "PHONE") / 2, by + bh - 18 * s, 220, 220, 230, 255, "PHONE")
 
     if state == 1 then
         local px, py = pit_pos(math.floor(f.cursor or 0) + 1)
@@ -83,5 +83,5 @@ features.on_draw("Pocket Mancala", function(f)
     elseif state == 3 then msg, cr, cg, cb = "YOU WIN!   E TO PLAY AGAIN", 120, 240, 120
     elseif state == 4 then msg, cr, cg, cb = "YOU LOSE   E TO PLAY AGAIN", 255, 100, 100
     else msg, cr, cg, cb = "DRAW   E TO PLAY AGAIN", 220, 220, 120 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, by + bh + 20 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, by + bh + 20 * s, cr, cg, cb, 255, msg)
 end)

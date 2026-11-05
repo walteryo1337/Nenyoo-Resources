@@ -11,19 +11,19 @@ features.on_draw("Prop Hunt", function(f)
     local w, h = 340 * s, 78 * s
     local x0, y0 = sw / 2 - w / 2, 40 * s
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 215, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "PROP HUNT")
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "PROP HUNT")
 
     local phase, r, g, b
     if state == 1 then phase, r, g, b = string.format("HIDE!  %ds", secs), 140, 210, 255
     elseif state == 2 then phase, r, g, b = string.format("STAY HIDDEN  %d:%02d", math.floor(secs / 60), secs % 60), 255, 225, 120
     elseif state == 3 then phase, r, g, b = "NOBODY FOUND YOU", 130, 255, 160
     else phase, r, g, b = "FOUND!", 255, 110, 110 end
-    text.draw(font.item, x0 + 14 * s, y0 + 30 * s, r, g, b, 255, phase)
+    text.draw(font.hud, x0 + 14 * s, y0 + 30 * s, r, g, b, 255, phase)
 
     local taunts = math.floor(f.taunts or 0)
     if taunts > 0 then
         local tt = string.format("%d TAUNT%s", taunts, taunts == 1 and "" or "S")
-        text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, tt), y0 + 12 * s, 255, 200, 140, 230, tt)
+        text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, tt), y0 + 12 * s, 255, 200, 140, 230, tt)
     end
 
     if state == 2 then
@@ -36,13 +36,13 @@ features.on_draw("Prop Hunt", function(f)
         end
         if f.moving then
             local mv = "MOVING  -  THEY CAN SEE YOU"
-            text.draw(font.tiny, sw / 2 - text.width(font.tiny, mv) / 2, y0 + h + 8 * s, 255, 170, 120, math.floor(160 + 80 * math.sin(t * 6)), mv)
+            text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, mv) / 2, y0 + h + 8 * s, 255, 170, 120, math.floor(160 + 80 * math.sin(t * 6)), mv)
         else
             local hint = "KEEP STILL    E  TAUNT"
-            text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, 200, hint)
+            text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, 200, hint)
         end
     elseif state == 1 then
         local hint = "FIND A SPOT WHERE YOUR DISGUISE FITS IN"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, 220, hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + h + 8 * s, 200, 200, 214, 220, hint)
     end
 end)

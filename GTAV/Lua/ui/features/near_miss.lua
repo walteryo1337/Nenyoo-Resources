@@ -22,11 +22,11 @@ local function popups(f, sw, sh, ar, ag, ab)
         local x, y, p = tonumber(xs) * sw, tonumber(ys) * sh, tonumber(ps)
         local a = math.floor(255 * math.min(1, (1 - p) / 0.35))
         local pop = 1 + 0.3 * math.max(0, 1 - p / 0.12)
-        outlined(font.tiny, x, y - 22, 255, 255, 255, a, "NEAR MISS")
+        outlined(font.hud_tiny, x, y - 22, 255, 255, 255, a, "NEAR MISS")
         draw.with_scale(x, y - 4, 1.2 * pop, function()
-            outlined(font.item, x, y - 4, ar, ag, ab, a, "+" .. commas(tonumber(pts) or 0))
+            outlined(font.hud, x, y - 4, ar, ag, ab, a, "+" .. commas(tonumber(pts) or 0))
         end)
-        if name ~= "" then outlined(font.tiny, x, y + text.height(font.item) * 1.2, 220, 220, 230, math.floor(a * 0.9), name) end
+        if name ~= "" then outlined(font.hud_tiny, x, y + text.height(font.hud) * 1.2, 220, 220, 230, math.floor(a * 0.9), name) end
     end
 end
 
@@ -38,7 +38,7 @@ local function combo_panel(f, sw, sh, ar, ag, ab, now)
     local left = math.max(0, math.min(1, f.combo_left or 0))
 
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, 200, 8)
-    text.draw(font.tiny, x1 + 16, y1 + 10, 200, 200, 210, 235, "NEAR MISS COMBO")
+    text.draw(font.hud_tiny, x1 + 16, y1 + 10, 200, 200, 210, 235, "NEAR MISS COMBO")
 
     local mult = "x" .. combo
     local pulse = 1 + 0.08 * math.max(0, math.sin(now * 10))
@@ -46,7 +46,7 @@ local function combo_panel(f, sw, sh, ar, ag, ab, now)
         text.draw(font.display, x1 + 16, y1 + 28, 255, 255, 255, 255, mult)
     end)
     local pts = commas(f.combo_points or 0)
-    text.draw(font.small, x1 + w - 16 - text.width(font.small, pts), y1 + 38, ar, ag, ab, 250, pts)
+    text.draw(font.hud_small, x1 + w - 16 - text.width(font.hud_small, pts), y1 + 38, ar, ag, ab, 250, pts)
 
     local by = y1 + h - 16
     local r, g, b = ar, ag, ab
@@ -77,17 +77,17 @@ local function banner(f, sw, sh, now)
     local sy = y + text.height(font.display) * 1.3 + 6
     local pts = commas(f.banner_points or 0)
     if f.banner_broken then
-        local w = text.width(font.item, pts)
-        outlined(font.item, cx, sy, 200, 200, 210, math.floor(240 * a), pts)
-        draw.line(cx - w * 0.5 - 4, sy + text.height(font.item) * 0.55, cx + w * 0.5 + 4, sy + text.height(font.item) * 0.55, 235, 60, 60, math.floor(240 * a), 2.5)
-        centered(font.small, cx, sy + text.height(font.item) + 6, 235, 140, 130, math.floor(235 * a), "You clipped a car; points lost")
+        local w = text.width(font.hud, pts)
+        outlined(font.hud, cx, sy, 200, 200, 210, math.floor(240 * a), pts)
+        draw.line(cx - w * 0.5 - 4, sy + text.height(font.hud) * 0.55, cx + w * 0.5 + 4, sy + text.height(font.hud) * 0.55, 235, 60, 60, math.floor(240 * a), 2.5)
+        centered(font.hud_small, cx, sy + text.height(font.hud) + 6, 235, 140, 130, math.floor(235 * a), "You clipped a car; points lost")
     else
-        outlined(font.item, cx, sy, 255, 255, 255, math.floor(250 * a), "+" .. pts)
+        outlined(font.hud, cx, sy, 255, 255, 255, math.floor(250 * a), "+" .. pts)
         if f.banner_best then
             local pulse = 0.75 + 0.25 * math.sin(now * 8)
-            centered(font.small, cx, sy + text.height(font.item) + 6, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
+            centered(font.hud_small, cx, sy + text.height(font.hud) + 6, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
         elseif f.best_points then
-            centered(font.small, cx, sy + text.height(font.item) + 6, 200, 200, 210, math.floor(230 * a),
+            centered(font.hud_small, cx, sy + text.height(font.hud) + 6, 200, 200, 210, math.floor(230 * a),
                 string.format("BEST x%d   %s", math.floor(f.best_combo or 0), commas(f.best_points)))
         end
     end

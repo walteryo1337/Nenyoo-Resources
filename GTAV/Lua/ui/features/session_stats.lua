@@ -35,8 +35,8 @@ features.on_draw("Session Stats", function(f)
     }
 
     local pad = 10 * s
-    local lh = text.height(font.small) + 4 * s
-    local title_h = text.height(font.tiny) + 6 * s
+    local lh = text.height(font.hud_small) + 4 * s
+    local title_h = text.height(font.hud_tiny) + 6 * s
     local w = 210 * s
     local h = title_h + lh * #lines + pad * 2
     local x = sw - w - 18 * s
@@ -44,12 +44,12 @@ features.on_draw("Session Stats", function(f)
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 150, 6 * s)
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, 230, 0)
-    text.draw(font.tiny, x + pad, y + pad, ar, ag, ab, 255, "SESSION")
+    text.draw(font.hud_tiny, x + pad, y + pad, ar, ag, ab, 255, "SESSION")
 
     for i, l in ipairs(lines) do
         local ly = y + pad + title_h + (i - 1) * lh
-        text.draw(font.tiny, x + pad, ly + 2 * s, 170, 170, 180, 230, l[1])
-        local vw = text.width(font.small, l[2])
-        text.draw(font.small, x + w - pad - vw, ly, 240, 240, 245, 255, l[2])
+        text.draw(font.hud_tiny, x + pad, ly + 2 * s, 170, 170, 180, 230, l[1])
+        local vw = text.width(font.hud_small, l[2])
+        text.draw(font.hud_small, x + w - pad - vw, ly, 240, 240, 245, 255, l[2])
     end
 end)

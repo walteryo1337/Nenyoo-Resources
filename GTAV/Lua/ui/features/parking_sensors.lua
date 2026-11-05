@@ -130,9 +130,9 @@ local function draw_display(f, zs, sw, sh, now)
     else
         label, lr, lg, lb = "CLEAR", 160, 230, 170
     end
-    local ty = rear and (cy - panel_h * 0.5 + 8) or (cy + panel_h * 0.5 - 8 - text.height(font.item))
-    local tw = text.width(font.item, label)
-    text.draw_outlined(font.item, cx - tw * 0.5, ty, lr, lg, lb, 255, 0, 0, 0, 170, 1.5, label)
+    local ty = rear and (cy - panel_h * 0.5 + 8) or (cy + panel_h * 0.5 - 8 - text.height(font.hud))
+    local tw = text.width(font.hud, label)
+    text.draw_outlined(font.hud, cx - tw * 0.5, ty, lr, lg, lb, 255, 0, 0, 0, 170, 1.5, label)
 end
 
 local function draw_hit(f, sw, sh, now)
@@ -147,7 +147,7 @@ local function draw_hit(f, sw, sh, now)
     draw.circle(x, y, 5, c[1], c[2], c[3], 245)
     draw.circle_outline(x, y, 5, 0, 0, 0, 160, 1.5)
     local label = (f.closest or 0) <= 0.3 and "STOP" or string.format("%.1f m", f.closest)
-    text.draw_outlined(font.small, x + 12, y - text.height(font.small) * 0.5, 255, 255, 255, 245, 0, 0, 0, 200, 1.5, label)
+    text.draw_outlined(font.hud_small, x + 12, y - text.height(font.hud_small) * 0.5, 255, 255, 255, 245, 0, 0, 0, 200, 1.5, label)
 end
 
 features.on_draw("Parking Sensors", function(f)

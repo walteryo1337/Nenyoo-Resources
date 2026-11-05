@@ -21,9 +21,9 @@ local function card(x, y, w, h, c, s)
     local rank = ranks[c % 13 + 1]
     local r, g, b = 25, 25, 30
     if suit == 2 or suit == 3 then r, g, b = 200, 30, 40 end
-    text.draw(font.item, x + 6 * s, y + 4 * s, r, g, b, 255, rank)
+    text.draw(font.hud, x + 6 * s, y + 4 * s, r, g, b, 255, rank)
     local sy = suits[suit]
-    text.draw(font.title, x + w / 2 - text.width(font.title, sy) / 2, y + h / 2 - text.height(font.title) / 2 + 6 * s, r, g, b, 255, sy)
+    text.draw(font.display, x + w / 2 - text.width(font.display, sy) / 2, y + h / 2 - text.height(font.display) / 2 + 6 * s, r, g, b, 255, sy)
 end
 
 local function row(label, cards, hidden, total, y, cx, s)
@@ -34,7 +34,7 @@ local function row(label, cards, hidden, total, y, cx, s)
     for i, c in ipairs(cards) do card(x + (i - 1) * (w + gap), y, w, h, c, s) end
     if hidden then card(x + #cards * (w + gap), y, w, h, nil, s) end
     local tag = string.format("%s  %d", label, total)
-    text.draw(font.small, cx - text.width(font.small, tag) / 2, y + h + 4 * s, 220, 220, 232, 240, tag)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, tag) / 2, y + h + 4 * s, 220, 220, 232, 240, tag)
 end
 
 features.on_draw("Blackjack", function(f)
@@ -73,9 +73,9 @@ features.on_draw("Blackjack", function(f)
         end
         if result == 4 then r, g, b = 255, 205, 60 end
     end
-    text.draw(font.title, cx - text.width(font.title, msg) / 2, y - text.height(font.title) - 6 * s, r, g, b, 255, msg)
+    text.draw(font.display, cx - text.width(font.display, msg) / 2, y - text.height(font.display) - 6 * s, r, g, b, 255, msg)
 
     local net = math.floor(f.net or 0)
     local foot = string.format("BET $%d   SESSION %s$%d", math.floor(f.stake or 0), net < 0 and "-" or "+", math.abs(net))
-    text.draw(font.tiny, x + 12 * s, y + h - 8 * s - text.height(font.tiny), 220, 235, 225, 230, foot)
+    text.draw(font.hud_tiny, x + 12 * s, y + h - 8 * s - text.height(font.hud_tiny), 220, 235, 225, 230, foot)
 end)

@@ -74,8 +74,8 @@ features.on_draw("Sat Nav", function(f)
     local tx = x + 92 * s
     local r, g, b = 245, 245, 250
     if not f.arriving and (dir == 3 or dir == 4) and (f.junction or 999) <= 60 then r, g, b = ar, ag, ab end
-    text.draw(font.title, tx, y + 12 * s, r, g, b, 255, title)
-    text.draw(font.small, tx, y + 14 * s + text.height(font.title), 215, 215, 228, 240, sub)
+    text.draw(font.display, tx, y + 12 * s, r, g, b, 255, title)
+    text.draw(font.hud_small, tx, y + 14 * s + text.height(font.display), 215, 215, 228, 240, sub)
     local dest = metres(f.destination or 0) .. " TO GO"
-    text.draw(font.tiny, tx, y + h - 10 * s - text.height(font.tiny), 180, 180, 195, 230, dest)
+    text.draw(font.hud_tiny, tx, y + h - 10 * s - text.height(font.hud_tiny), 180, 180, 195, 230, dest)
 end)

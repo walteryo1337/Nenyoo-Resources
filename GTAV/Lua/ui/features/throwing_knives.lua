@@ -13,7 +13,7 @@ features.on_draw("Throwing Knives", function(f)
     local x = sw - 40 * s - w
     local y = sh * 0.80
 
-    text.draw(font.tiny, x + w - text.width(font.tiny, "KNIVES"), y - text.height(font.tiny) - 4 * s, 200, 200, 210, 230, "KNIVES")
+    text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, "KNIVES"), y - text.height(font.hud_tiny) - 4 * s, 200, 200, 210, 230, "KNIVES")
     for i = 1, total do
         local bx = x + (i - 1) * (size + gap)
         if i <= ready then
@@ -24,6 +24,6 @@ features.on_draw("Throwing Knives", function(f)
     end
     if ready == 0 then
         local msg = "PICK UP YOUR KNIVES"
-        text.draw(font.tiny, x + w - text.width(font.tiny, msg), y + size * 2.4 + 6 * s, 255, 90, 80, 230, msg)
+        text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, msg), y + size * 2.4 + 6 * s, 255, 90, 80, 230, msg)
     end
 end)

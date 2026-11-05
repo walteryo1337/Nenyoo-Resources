@@ -76,14 +76,14 @@ features.on_draw("Pocket Sky Jumper", function(f)
     end
 
     local hy = y0 - 46 * s
-    text.draw(font.item, x0, hy - 4 * s, 245, 245, 250, 255, tostring(score))
+    text.draw(font.hud, x0, hy - 4 * s, 245, 245, 250, 255, tostring(score))
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + fw - text.width(font.small, best), hy, 255, 200, 60, 255, best)
+    text.draw(font.hud_small, x0 + fw - text.width(font.hud_small, best), hy, 255, 200, 60, 255, best)
     local msg, mr, mg, mb = "A / D STEER   BOUNCE AS HIGH AS YOU CAN   EDGES WRAP AROUND", 225, 230, 240
     if state == 2 then
         msg, mr, mg, mb = string.format("YOU FELL!   HEIGHT %d   E TO JUMP AGAIN", score), 255, 140, 110
-        local w = text.width(font.title, "SPLAT")
-        text.draw(font.title, sw / 2 - w / 2, y0 + fh * 0.4, 255, 255, 255, 255, "SPLAT")
+        local w = text.width(font.display, "SPLAT")
+        text.draw(font.display, sw / 2 - w / 2, y0 + fh * 0.4, 255, 255, 255, 255, "SPLAT")
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh + 12 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh + 12 * s, mr, mg, mb, 255, msg)
 end)

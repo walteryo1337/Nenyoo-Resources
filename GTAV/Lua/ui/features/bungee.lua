@@ -29,22 +29,22 @@ features.on_draw("Bungee Jump", function(f)
     local px, py = sw - pw - 30 * s, sh * 0.30
     draw.rect(px, py, px + pw, py + ph, 12, 12, 16, 215, 10 * s)
     draw.rect(px, py, px + 4 * s, py + ph, 255, 200, 60, 255, 2 * s)
-    text.draw(font.item, px + 16 * s, py + 10 * s, 245, 245, 250, 255, "BUNGEE")
+    text.draw(font.hud, px + 16 * s, py + 10 * s, 245, 245, 250, 255, "BUNGEE")
 
     if state == 2 or state == 3 then
         local h = f.height or 0
         local hr, hg = 210, 210
         if h < 5 then hr, hg = 255, 120 end
-        text.draw(font.small, px + 16 * s, py + 42 * s, hr, hg, 222, 255,
+        text.draw(font.hud_small, px + 16 * s, py + 42 * s, hr, hg, 222, 255,
             string.format("%.0fm ABOVE   LOWEST %.1fm", h, f.lowest or 0))
         local tail = state == 3 and "WINCHING UP" or "E CUT THE CORD"
-        text.draw(font.small, px + 16 * s, py + 64 * s, 170, 170, 185, 255,
+        text.draw(font.hud_small, px + 16 * s, py + 64 * s, 170, 170, 185, 255,
             string.format("BOUNCES %d   %s", math.floor(f.bounces or 0), tail))
     else
-        text.draw(font.small, px + 16 * s, py + 42 * s, 210, 210, 222, 255, "STEP OFF A HIGH EDGE")
+        text.draw(font.hud_small, px + 16 * s, py + 42 * s, 210, 210, 222, 255, "STEP OFF A HIGH EDGE")
         local rec = string.format("JUMPS %d", math.floor(f.jumps or 0))
         if f.best_dip then rec = rec .. string.format("   BEST %.1fm", f.best_dip) end
         if f.last_bounces then rec = rec .. string.format("   LAST %d BOUNCES", math.floor(f.last_bounces)) end
-        text.draw(font.small, px + 16 * s, py + 64 * s, 170, 170, 185, 255, rec)
+        text.draw(font.hud_small, px + 16 * s, py + 64 * s, 170, 170, 185, 255, rec)
     end
 end)

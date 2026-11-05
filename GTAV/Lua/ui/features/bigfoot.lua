@@ -22,18 +22,18 @@ features.on_draw("Bigfoot Hunt", function(f)
     local w, h = 270 * s, 104 * s
     local x0, y0 = 30 * s, sh * 0.5 - h / 2
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 210, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "BIGFOOT HUNT")
-    text.draw(font.tiny, x0 + 14 * s, y0 + 38 * s, r, g, b, math.floor(180 + 70 * math.sin(t * 3)), hint)
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "BIGFOOT HUNT")
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + 38 * s, r, g, b, math.floor(180 + 70 * math.sin(t * 3)), hint)
     local best = grades[math.floor(f.best or 0)] or ""
-    text.draw(font.tiny, x0 + 14 * s, y0 + 62 * s, 255, 220, 90, 230, "BEST PHOTO  " .. best)
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + 62 * s, 255, 220, 90, 230, "BEST PHOTO  " .. best)
     local tally = string.format("%d SHOTS   $%d", math.floor(f.photos or 0), math.floor(f.earned or 0))
-    text.draw(font.tiny, x0 + 14 * s, y0 + 82 * s, 190, 190, 205, 230, tally)
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + 82 * s, 190, 190, 205, 230, tally)
 
     if fl > 0 then
         local gr = math.floor(f.grade or 0)
         local msg = gr == 0 and "MISSED HIM" or grades[gr]
         local mr, mg, mb = 255, 90, 80
         if gr == 3 then mr, mg, mb = 255, 215, 90 elseif gr == 2 then mr, mg, mb = 170, 230, 140 elseif gr == 1 then mr, mg, mb = 200, 200, 214 end
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, sh * 0.3, mr, mg, mb, math.floor(255 * fl), msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, sh * 0.3, mr, mg, mb, math.floor(255 * fl), msg)
     end
 end)

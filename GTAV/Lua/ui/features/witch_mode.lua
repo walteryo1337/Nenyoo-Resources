@@ -236,18 +236,18 @@ features.on_draw("Witch Mode", function(f)
     local iy = py + 18 * s
     local col_r_edge = px + panel_w - 14 * s
 
-    text.draw_spaced(font.small, ix, iy, RIM_R, RIM_G, RIM_B, A(215), "GRIMOIRE", 2 * s)
-    right_text(font.tiny, col_r_edge, iy + 2 * s,
+    text.draw_spaced(font.hud_small, ix, iy, RIM_R, RIM_G, RIM_B, A(215), "GRIMOIRE", 2 * s)
+    right_text(font.hud_tiny, col_r_edge, iy + 2 * s,
         MUTE_R, MUTE_G, MUTE_B, A(220), STATES[floor(f.state or 0)] or "AWAKENED")
 
     -- Spell name (headline).
-    text.draw(font.item, ix, iy + 20 * s, sr, sg, sb, A(250), spell_name)
+    text.draw(font.hud, ix, iy + 20 * s, sr, sg, sb, A(250), spell_name)
 
     -- Cooldown label + %.
     local ready = sm_cool >= 0.999
     local cool_label = ready and "READY" or "CHANNELING"
-    text.draw(font.tiny, ix, iy + 46 * s, PARCH_R, PARCH_G, PARCH_B, A(225), cool_label)
-    right_text(font.tiny, col_r_edge, iy + 46 * s,
+    text.draw(font.hud_tiny, ix, iy + 46 * s, PARCH_R, PARCH_G, PARCH_B, A(225), cool_label)
+    right_text(font.hud_tiny, col_r_edge, iy + 46 * s,
         sr, sg, sb, A(245), string.format("%3d%%", floor(sm_cool * 100 + 0.5)))
 
     -- Slim linear cooldown bar under the labels.
@@ -260,11 +260,11 @@ features.on_draw("Witch Mode", function(f)
     -- Telemetry glyphs.
     local ty = iy + 78 * s
     local mid = ix + (col_r_edge - ix) * 0.5
-    text.draw(font.tiny,  ix,  ty,          MUTE_R, MUTE_G, MUTE_B, A(200), "ALTITUDE")
-    text.draw(font.small, ix,  ty + 12 * s, PARCH_R, PARCH_G, PARCH_B, A(240),
+    text.draw(font.hud_tiny,  ix,  ty,          MUTE_R, MUTE_G, MUTE_B, A(200), "ALTITUDE")
+    text.draw(font.hud_small, ix,  ty + 12 * s, PARCH_R, PARCH_G, PARCH_B, A(240),
         string.format("%3.0fm", sm_alt))
-    text.draw(font.tiny,  mid, ty,          MUTE_R, MUTE_G, MUTE_B, A(200), "VELOCITY")
-    text.draw(font.small, mid, ty + 12 * s, PARCH_R, PARCH_G, PARCH_B, A(240),
+    text.draw(font.hud_tiny,  mid, ty,          MUTE_R, MUTE_G, MUTE_B, A(200), "VELOCITY")
+    text.draw(font.hud_small, mid, ty + 12 * s, PARCH_R, PARCH_G, PARCH_B, A(240),
         string.format("%3.0fm/s", sm_speed))
 
     ------------------------------------------------------------------
@@ -313,12 +313,12 @@ features.on_draw("Witch Mode", function(f)
 
         if f.target then
             local dist = string.format("%.0fm", sm_dist)
-            local dw   = text.width(font.tiny, dist)
-            text.draw(font.tiny, rx - dw * 0.5, ry + r_out + 8 * s,
+            local dw   = text.width(font.hud_tiny, dist)
+            text.draw(font.hud_tiny, rx - dw * 0.5, ry + r_out + 8 * s,
                 sr, sg, sb, A(230), dist)
             local kind = f.target_player and "SOUL" or "TARGET"
-            local kw   = text.width(font.tiny, kind)
-            text.draw(font.tiny, rx - kw * 0.5, ry - r_out - 18 * s,
+            local kw   = text.width(font.hud_tiny, kind)
+            text.draw(font.hud_tiny, rx - kw * 0.5, ry - r_out - 18 * s,
                 PARCH_R, PARCH_G, PARCH_B, A(210), kind)
         end
     end
@@ -337,7 +337,7 @@ features.on_draw("Witch Mode", function(f)
         else
             hint = "JUMP TO MOUNT THE BROOM"
         end
-        local tw = text.width(font.tiny, hint)
+        local tw = text.width(font.hud_tiny, hint)
         local hx = sw * 0.5 - tw * 0.5
         local hy = sh - 30 * s
         draw.rect(hx - 20 * s, hy - 6 * s, hx + tw + 20 * s, hy + 14 * s,
@@ -347,6 +347,6 @@ features.on_draw("Witch Mode", function(f)
             local dy = hy + 4 * s
             star(dx, dy, 4 * s, 1.6 * s, 4, PI * 0.25, sr, sg, sb, A(215), 1)
         end
-        text.draw(font.tiny, hx, hy, PARCH_R, PARCH_G, PARCH_B, A(235), hint)
+        text.draw(font.hud_tiny, hx, hy, PARCH_R, PARCH_G, PARCH_B, A(235), hint)
     end
 end)

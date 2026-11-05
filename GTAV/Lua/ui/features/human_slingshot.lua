@@ -37,7 +37,7 @@ features.on_draw("Human Slingshot", function(f)
         draw.rect(x, y, x + width * charge, y + height, ar, ag, ab, 245, 3)
 
         local label = string.format("HUMAN SLINGSHOT  %d%%", math.floor(charge * 100 + 0.5))
-        text.draw(font.small, sw * 0.5 - text.width(font.small, label) * 0.5,
+        text.draw(font.hud_small, sw * 0.5 - text.width(font.hud_small, label) * 0.5,
             y + height + 4, 235, 235, 240, 245, label)
     end
 end)

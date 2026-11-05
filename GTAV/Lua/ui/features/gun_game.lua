@@ -13,19 +13,19 @@ features.on_draw("Gun Game", function(f)
 
     draw.rect(x0, y0, x0 + w, y0 + h, 10, 10, 16, 215, 12 * s)
     local title = string.format("GUN GAME   %d / %d", math.min(level + 1, levels), levels)
-    text.draw(font.small, x0 + 16 * s, y0 + 10 * s, 235, 235, 245, 255, title)
+    text.draw(font.hud_small, x0 + 16 * s, y0 + 10 * s, 235, 235, 245, 255, title)
     local secs = math.floor(f.seconds or 0)
     local clock = string.format("%d:%02d", math.floor(secs / 60), secs % 60)
-    text.draw(font.small, x0 + w - 16 * s - text.width(font.small, clock), y0 + 10 * s, 200, 200, 214, 230, clock)
+    text.draw(font.hud_small, x0 + w - 16 * s - text.width(font.hud_small, clock), y0 + 10 * s, 200, 200, 214, 230, clock)
 
     local weapon = f.weapon or (level == levels - 1 and "Knife" or string.format("Weapon %d", level + 1))
     local final = level == levels - 1
     local wr, wg, wb = 255, 255, 255
     if final then wr, wg, wb = 255, 200, 60 end
-    text.draw(font.item, x0 + 16 * s, y0 + 36 * s, wr, wg, wb, 255, final and (weapon .. "  -  FINAL KILL") or weapon)
+    text.draw(font.hud, x0 + 16 * s, y0 + 36 * s, wr, wg, wb, 255, final and (weapon .. "  -  FINAL KILL") or weapon)
     if f.next and not final then
         local nxt = "NEXT: " .. f.next
-        text.draw(font.tiny, x0 + w - 16 * s - text.width(font.tiny, nxt), y0 + 42 * s, 190, 190, 205, 220, nxt)
+        text.draw(font.hud_tiny, x0 + w - 16 * s - text.width(font.hud_tiny, nxt), y0 + 42 * s, 190, 190, 205, 220, nxt)
     end
 
     local pip_w = (w - 32 * s) / levels

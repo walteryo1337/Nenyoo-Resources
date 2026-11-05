@@ -18,8 +18,8 @@ features.on_draw("Pocket Snake", function(f)
 
     local score = string.format("SCORE %d", math.floor(f.score or 0))
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.small, x0, y0 - pad - 26 * s + (26 * s - text.height(font.small)) / 2, 220, 225, 235, 255, score)
-    text.draw(font.small, x0 + bw - text.width(font.small, best), y0 - pad - 26 * s + (26 * s - text.height(font.small)) / 2, 180, 185, 195, 255, best)
+    text.draw(font.hud_small, x0, y0 - pad - 26 * s + (26 * s - text.height(font.hud_small)) / 2, 220, 225, 235, 255, score)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, best), y0 - pad - 26 * s + (26 * s - text.height(font.hud_small)) / 2, 180, 185, 195, 255, best)
 
     local fx, fy = math.floor(f.food_x or -1), math.floor(f.food_y or -1)
     if fx >= 0 then
@@ -37,14 +37,14 @@ features.on_draw("Pocket Snake", function(f)
     end
 
     local hint = "W A S D TO STEER   TURN OFF TO QUIT"
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, y0 + bh + pad + 4 * s, 170, 175, 190, 230, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, y0 + bh + pad + 4 * s, 170, 175, 190, 230, hint)
 
     if math.floor(f.state or 0) == 2 then
         draw.rect(x0, y0, x0 + bw, y0 + bh, 20, 22, 26, 170, 2 * s)
         local over = "GAME OVER"
-        local big = font.display or font.title
+        local big = font.display
         text.draw(big, cx - text.width(big, over) / 2, y0 + bh / 2 - text.height(big), ar, ag, ab, 255, over)
         local again = "PRESS ANY DIRECTION TO PLAY AGAIN"
-        text.draw(font.small, cx - text.width(font.small, again) / 2, y0 + bh / 2 + 4 * s, 235, 235, 245, 255, again)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, again) / 2, y0 + bh / 2 + 4 * s, 235, 235, 245, 255, again)
     end
 end)

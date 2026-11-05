@@ -55,12 +55,12 @@ local function live_panel(f, sw, sh, ar, ag, ab, now)
     arc(cx, cy, rad, math.min(mid, tip), math.max(mid, tip), nr, ng, nb, 235, 6)
     draw.line(cx, cy, cx + math.cos(tip) * (rad - 10), cy + math.sin(tip) * (rad - 10), 255, 255, 255, 235, 2.5)
     draw.circle(cx, cy, 5, 255, 255, 255, 235)
-    centered(font.tiny, cx, cy + 8, 200, 200, 210, 220, string.format("%d DEG", math.floor(math.abs(ang) + 0.5)))
+    centered(font.hud_tiny, cx, cy + 8, 200, 200, 210, 220, string.format("%d DEG", math.floor(math.abs(ang) + 0.5)))
 
     -- Score above the gauge.
     local label = f.sliding and "DRIFT" or "CHAIN"
     local sy = cy - rad - 78
-    centered(font.tiny, cx, sy - 14, 200, 200, 210, 235, label)
+    centered(font.hud_tiny, cx, sy - 14, 200, 200, 210, 235, label)
     draw.with_scale(cx, sy, 1.6, function()
         centered(font.display, cx, sy, 255, 255, 255, 255, commas(shown))
     end)
@@ -71,7 +71,7 @@ local function live_panel(f, sw, sh, ar, ag, ab, now)
     draw.circle(mx, my, 22, 10, 10, 16, 210)
     arc(mx, my, 22, -math.pi * 0.5, -math.pi * 0.5 + math.pi * 2, 255, 255, 255, 40, 3)
     arc(mx, my, 22, -math.pi * 0.5, -math.pi * 0.5 + math.pi * 2 * (f.mult_progress or 0), ar, ag, ab, 240, 3)
-    centered(font.small, mx, my - text.height(font.small) * 0.5, 255, 255, 255, 250, "x" .. mult)
+    centered(font.hud_small, mx, my - text.height(font.hud_small) * 0.5, 255, 255, 255, 250, "x" .. mult)
 
     -- Chain timer: drains while you are straight; slide again before it empties.
     if not f.sliding then
@@ -82,7 +82,7 @@ local function live_panel(f, sw, sh, ar, ag, ab, now)
         draw.rect(cx - w * 0.5, by, cx + w * 0.5, by + 5, 40, 40, 48, 220, 2)
         draw.rect(cx - w * 0.5, by, cx - w * 0.5 + w * left, by + 5, r, g, b, 245, 2)
         local pulse = 0.6 + 0.4 * math.sin(now * 12)
-        centered(font.tiny, cx, by + 8, r, g, b, math.floor(240 * pulse), "SLIDE AGAIN TO KEEP THE CHAIN")
+        centered(font.hud_tiny, cx, by + 8, r, g, b, math.floor(240 * pulse), "SLIDE AGAIN TO KEEP THE CHAIN")
     end
 end
 
@@ -109,20 +109,20 @@ local function result_banner(f, sw, sh, now)
 
     local score = commas(f.result or 0)
     local sy = y + text.height(font.display) * 1.4 + 6
-    local sw2 = text.width(font.item, score)
-    text.draw_outlined(font.item, cx - sw2 * 0.5, sy, 255, 255, 255, math.floor(250 * a), 0, 0, 0, math.floor(180 * a), 1.5, score)
+    local sw2 = text.width(font.hud, score)
+    text.draw_outlined(font.hud, cx - sw2 * 0.5, sy, 255, 255, 255, math.floor(250 * a), 0, 0, 0, math.floor(180 * a), 1.5, score)
     if f.failed then
-        draw.line(cx - sw2 * 0.5 - 4, sy + text.height(font.item) * 0.55, cx + sw2 * 0.5 + 4, sy + text.height(font.item) * 0.55, 235, 60, 60, math.floor(240 * a), 2.5)
+        draw.line(cx - sw2 * 0.5 - 4, sy + text.height(font.hud) * 0.55, cx + sw2 * 0.5 + 4, sy + text.height(font.hud) * 0.55, 235, 60, 60, math.floor(240 * a), 2.5)
     end
 
-    local line_y = sy + text.height(font.item) + 6
+    local line_y = sy + text.height(font.hud) + 6
     if f.new_best then
         local pulse = 0.75 + 0.25 * math.sin(now * 8)
-        centered(font.small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
+        centered(font.hud_small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
     elseif f.failed then
-        centered(font.small, cx, line_y, 235, 140, 130, math.floor(235 * a), "You hit something; points lost")
+        centered(font.hud_small, cx, line_y, 235, 140, 130, math.floor(235 * a), "You hit something; points lost")
     elseif f.best then
-        centered(font.small, cx, line_y, 200, 200, 210, math.floor(230 * a), "BEST " .. commas(f.best))
+        centered(font.hud_small, cx, line_y, 200, 200, 210, math.floor(230 * a), "BEST " .. commas(f.best))
     end
 end
 

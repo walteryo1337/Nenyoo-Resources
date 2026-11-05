@@ -46,7 +46,7 @@ features.on_draw("Pocket Pool", function(f)
             end
             draw.circle(px, py, br * 0.42, 250, 250, 250, 255)
             local label = tostring(id)
-            text.draw(font.tiny, px - text.width(font.tiny, label) / 2, py - text.height(font.tiny) / 2, 20, 20, 24, 255, label)
+            text.draw(font.hud_tiny, px - text.width(font.hud_tiny, label) / 2, py - text.height(font.hud_tiny) / 2, 20, 20, 24, 255, label)
         end
         draw.circle(px - br * 0.35, py - br * 0.35, br * 0.25, 255, 255, 255, 70)
     end
@@ -69,7 +69,7 @@ features.on_draw("Pocket Pool", function(f)
 
     local hud = string.format("SHOTS %d   LEFT %d", math.floor(f.shots or 0), math.floor(f.left or 15))
     if f.best then hud = hud .. string.format("   BEST %d", math.floor(f.best)) end
-    text.draw(font.item, x0 - rail + 14 * s, y0 - rail - 38 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0 - rail + 14 * s, y0 - rail - 38 * s, 245, 245, 250, 255, hud)
     local pw = 160 * s
     local bx2 = x0 + tw + rail - 14 * s
     local by1 = y0 - rail - 30 * s
@@ -78,13 +78,13 @@ features.on_draw("Pocket Pool", function(f)
 
     local ev = events[math.floor(f.event or 0)]
     if ev and (f.event_age or 99999) < 1200 then
-        local w = text.width(font.title, ev[1])
-        text.draw(font.title, sw / 2 - w / 2, y0 + th / 2 - text.height(font.title) / 2, ev[2], ev[3], ev[4], 230, ev[1])
+        local w = text.width(font.display, ev[1])
+        text.draw(font.display, sw / 2 - w / 2, y0 + th / 2 - text.height(font.display) / 2, ev[2], ev[3], ev[4], 230, ev[1])
     end
 
     local msg
     if state == 3 then msg = string.format("TABLE CLEARED IN %d   E TO RACK AGAIN", math.floor(f.shots or 0))
     elseif state == 2 then msg = "..."
     else msg = "A / D AIM   W / S POWER   E SHOOT   Q RE-RACK" end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + th + rail + 16 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + th + rail + 16 * s, 220, 220, 232, 255, msg)
 end)

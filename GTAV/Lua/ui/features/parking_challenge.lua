@@ -11,7 +11,7 @@ local function gauge(x, y, w, label, value, ok_limit, max_value, s)
     if good then r, g, b = 90, 230, 110 end
     local mx = x + w * frac
     draw.rect(mx - 2 * s, y - 3 * s, mx + 2 * s, y + 9 * s, r, g, b, 255, 1 * s)
-    text.draw(font.tiny, x, y - text.height(font.tiny) - 2 * s, 210, 210, 222, 235, label)
+    text.draw(font.hud_tiny, x, y - text.height(font.hud_tiny) - 2 * s, 210, 210, 222, 235, label)
 end
 
 features.on_draw("Parking Challenge", function(f)
@@ -19,7 +19,7 @@ features.on_draw("Parking Challenge", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -38,7 +38,7 @@ features.on_draw("Parking Challenge", function(f)
             end
             if f.bumped then
                 local note = "BUMPED A CAR  -1 STAR"
-                text.draw(font.tiny, cx - text.width(font.tiny, note) / 2, y + 26 * s, 240, 150, 90, 240, note)
+                text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, note) / 2, y + 26 * s, 240, 150, 90, 240, note)
             end
         end
         return
@@ -52,9 +52,9 @@ features.on_draw("Parking Challenge", function(f)
     local clock = string.format("%d", math.ceil(t))
     local cr, cg, cb = 245, 245, 250
     if t < 10 then cr, cg, cb = 240, 80, 70 end
-    text.draw(font.title, x + w - 12 * s - text.width(font.title, clock), y + 8 * s, cr, cg, cb, 255, clock)
-    text.draw(font.small, x + 12 * s, y + 10 * s, 240, 240, 248, 255, string.format("BAY %d", math.floor(f.round or 0)))
-    text.draw(font.tiny, x + 12 * s, y + 10 * s + text.height(font.small), 190, 190, 205, 230,
+    text.draw(font.display, x + w - 12 * s - text.width(font.display, clock), y + 8 * s, cr, cg, cb, 255, clock)
+    text.draw(font.hud_small, x + 12 * s, y + 10 * s, 240, 240, 248, 255, string.format("BAY %d", math.floor(f.round or 0)))
+    text.draw(font.hud_tiny, x + 12 * s, y + 10 * s + text.height(font.hud_small), 190, 190, 205, 230,
         string.format("%d M   STARS %d", math.floor(f.distance or 0), math.floor(f.total_stars or 0)))
 
     local gx, gw = x + 12 * s, w - 24 * s

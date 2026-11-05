@@ -10,7 +10,7 @@ features.on_draw("Guided Missile", function(f)
     if not f.flying then
         if f.cooling then
             local msg = "MISSILE RELOADING"
-            text.draw(font.tiny, cx - text.width(font.tiny, msg) / 2, cy + 40 * s, 255, 160, 80, 200, msg)
+            text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, msg) / 2, cy + 40 * s, 255, 160, 80, 200, msg)
         end
         return
     end
@@ -33,8 +33,8 @@ features.on_draw("Guided Missile", function(f)
         draw.line(x, y, x, y - c[2] * 18 * s, 120, 255, 140, a, 2 * s)
     end
 
-    text.draw(font.small, 40 * s, 40 * s, 120, 255, 140, g, "GUIDED MISSILE")
-    text.draw(font.tiny, 40 * s, 72 * s, 120, 255, 140, 200, string.format("ALT %4.0fM", f.height or 0))
+    text.draw(font.hud_small, 40 * s, 40 * s, 120, 255, 140, g, "GUIDED MISSILE")
+    text.draw(font.hud_tiny, 40 * s, 72 * s, 120, 255, 140, 200, string.format("ALT %4.0fM", f.height or 0))
     local fx0, fx1, fy = 40 * s, 260 * s, 96 * s
     draw.rect(fx0, fy, fx1, fy + 8 * s, 20, 50, 25, 220, 2 * s)
     local k = math.max(0, math.min(1, f.fuel or 0))
@@ -42,5 +42,5 @@ features.on_draw("Guided Missile", function(f)
     if k < 0.25 then fr, fg = 255, 90 end
     draw.rect(fx0, fy, fx0 + (fx1 - fx0) * k, fy + 8 * s, fr, fg, 120, 255, 2 * s)
     local hint = "MOUSE  STEER   -   CLICK  DETONATE"
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, sh - 80 * s, 120, 255, 140, 200, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, sh - 80 * s, 120, 255, 140, 200, hint)
 end)

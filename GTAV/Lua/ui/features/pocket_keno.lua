@@ -27,12 +27,12 @@ features.on_draw("Pocket Keno", function(f)
     local pw, ph = 860 * s, 560 * s
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     draw.rect(x0, y0, x0 + pw, y0 + ph, 10, 10, 16, 228, 14 * s)
-    text.draw(font.small, x0 + 18 * s, y0 + 12 * s, 235, 235, 245, 255, "POCKET KENO")
+    text.draw(font.hud_small, x0 + 18 * s, y0 + 12 * s, 235, 235, 245, 255, "POCKET KENO")
     local net = math.floor(f.net or 0)
     local net_s = "SESSION " .. money(net)
     local nr, ng, nb = 200, 200, 214
     if net > 0 then nr, ng, nb = 110, 225, 130 elseif net < 0 then nr, ng, nb = 235, 110, 90 end
-    text.draw(font.small, x0 + pw - 18 * s - text.width(font.small, net_s), y0 + 12 * s, nr, ng, nb, 255, net_s)
+    text.draw(font.hud_small, x0 + pw - 18 * s - text.width(font.hud_small, net_s), y0 + 12 * s, nr, ng, nb, 255, net_s)
 
     local picked = f.picked or ""
     local drawn = {}
@@ -66,7 +66,7 @@ features.on_draw("Pocket Keno", function(f)
             draw.rect_outline(cx, cy, cx + cw, cy + ch, 255, 255, 255, pulse, 6 * s, 2 * s)
         end
         local label = tostring(i + 1)
-        text.draw(font.item, cx + cw / 2 - text.width(font.item, label) / 2, cy + ch / 2 - text.height(font.item) / 2, tr, tg, tb, 255, label)
+        text.draw(font.hud, cx + cw / 2 - text.width(font.hud, label) / 2, cy + ch / 2 - text.height(font.hud) / 2, tr, tg, tb, 255, label)
     end
 
     local rx = gx + 10 * (cw + gap) + 14 * s
@@ -75,11 +75,11 @@ features.on_draw("Pocket Keno", function(f)
     local hits = math.floor(f.hits or 0)
     draw.rect(rx, gy, rx + rw, gy + 8 * (ch + gap) - gap, 22, 22, 32, 255, 8 * s)
     local yy = gy + 10 * s
-    text.draw(font.small, rx + 12 * s, yy, 235, 235, 245, 255, string.format("SPOTS %d / 10", spots))
+    text.draw(font.hud_small, rx + 12 * s, yy, 235, 235, 245, 255, string.format("SPOTS %d / 10", spots))
     yy = yy + 26 * s
-    text.draw(font.tiny, rx + 12 * s, yy, 170, 170, 186, 255, "HITS")
+    text.draw(font.hud_tiny, rx + 12 * s, yy, 170, 170, 186, 255, "HITS")
     local pays_hdr = "PAYS"
-    text.draw(font.tiny, rx + rw - 12 * s - text.width(font.tiny, pays_hdr), yy, 170, 170, 186, 255, pays_hdr)
+    text.draw(font.hud_tiny, rx + rw - 12 * s - text.width(font.hud_tiny, pays_hdr), yy, 170, 170, 186, 255, pays_hdr)
     yy = yy + 20 * s
     local pays = split(f.pays)
     local bet = math.floor((state == 1 and f.bet or f.stake) or 0)
@@ -88,32 +88,32 @@ features.on_draw("Pocket Keno", function(f)
         if mult > 0 then
             local hl = state ~= 1 and h == hits
             if hl then draw.rect(rx + 6 * s, yy - 2 * s, rx + rw - 6 * s, yy + 20 * s, 70, 200, 100, 90, 4 * s) end
-            text.draw(font.tiny, rx + 12 * s, yy, 235, 235, 245, 255, tostring(h))
+            text.draw(font.hud_tiny, rx + 12 * s, yy, 235, 235, 245, 255, tostring(h))
             local pay = money(mult * bet)
-            text.draw(font.tiny, rx + rw - 12 * s - text.width(font.tiny, pay), yy, 235, 220, 150, 255, pay)
+            text.draw(font.hud_tiny, rx + rw - 12 * s - text.width(font.hud_tiny, pay), yy, 235, 220, 150, 255, pay)
             yy = yy + 22 * s
         end
     end
     if spots == 0 then
-        text.draw(font.tiny, rx + 12 * s, yy, 170, 170, 186, 255, "PICK UP TO 10")
+        text.draw(font.hud_tiny, rx + 12 * s, yy, 170, 170, 186, 255, "PICK UP TO 10")
     end
 
     local by = gy + 8 * (ch + gap) - gap - 92 * s
-    text.draw(font.tiny, rx + 12 * s, by, 170, 170, 186, 255, "STAKE " .. money(math.floor(f.bet or 0)))
+    text.draw(font.hud_tiny, rx + 12 * s, by, 170, 170, 186, 255, "STAKE " .. money(math.floor(f.bet or 0)))
     if state ~= 1 then
-        text.draw(font.small, rx + 12 * s, by + 24 * s, 235, 235, 245, 255, string.format("MATCHED %d", hits))
+        text.draw(font.hud_small, rx + 12 * s, by + 24 * s, 235, 235, 245, 255, string.format("MATCHED %d", hits))
     end
     if state == 3 then
         local win = math.floor(f.win or 0)
         local msg = win > 0 and ("WON " .. money(win)) or "NO WIN"
         local wr, wg, wb = 235, 110, 90
         if win > 0 then wr, wg, wb = 110, 225, 130 end
-        text.draw(font.small, rx + 12 * s, by + 50 * s, wr, wg, wb, 255, msg)
+        text.draw(font.hud_small, rx + 12 * s, by + 50 * s, wr, wg, wb, 255, msg)
     end
 
     local hint
     if state == 1 then hint = "W A S D  MOVE    E  PICK    R  QUICK PICK    SPACE  DRAW"
     elseif state == 2 then hint = "DRAWING..."
     else hint = "SPACE  SAME NUMBERS AGAIN    ANY OTHER KEY  CHANGE PICKS" end
-    text.draw(font.tiny, x0 + pw / 2 - text.width(font.tiny, hint) / 2, y0 + ph - 14 * s - text.height(font.tiny), 200, 200, 214, 230, hint)
+    text.draw(font.hud_tiny, x0 + pw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + ph - 14 * s - text.height(font.hud_tiny), 200, 200, 214, 230, hint)
 end)

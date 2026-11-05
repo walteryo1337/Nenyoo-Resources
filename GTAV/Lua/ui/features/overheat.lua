@@ -33,6 +33,6 @@ features.on_draw("Weapon Overheating", function(f)
     draw.rect(x, y, x + w * heat, y + h, r, g, b, math.floor(255 * a), 2 * s)
     if f.venting then
         local label = "OVERHEATED"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, label) / 2, y + h + 4 * s, r, g, b, math.floor(255 * a), label)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, label) / 2, y + h + 4 * s, r, g, b, math.floor(255 * a), label)
     end
 end)

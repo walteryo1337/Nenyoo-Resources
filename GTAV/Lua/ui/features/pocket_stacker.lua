@@ -16,7 +16,7 @@ features.on_draw("Pocket Stacker", function(f)
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     local gx, gy = x0 + 20 * s, y0 + 60 * s
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 10, 24, 235, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, "STACKER")
+    text.draw(font.hud, x0 + 20 * s, y0 + 18 * s, 245, 245, 250, 255, "STACKER")
     draw.rect(gx, gy, gx + gw, gy + gh, 6, 6, 12, 255, 4 * s)
 
     local function cell(col, row, r, g, b, a)
@@ -29,8 +29,8 @@ features.on_draw("Pocket Stacker", function(f)
     end
     local my = gy + (rows - minor) * c
     draw.line(gx, my, gx + gw, my, 255, 210, 70, 160, 2 * s)
-    text.draw(font.tiny, gx + gw + 8 * s, my - text.height(font.tiny) / 2, 255, 210, 70, 255, "MINOR")
-    text.draw(font.tiny, gx + gw + 8 * s, gy - text.height(font.tiny) / 2, 120, 240, 255, 255, "MAJOR")
+    text.draw(font.hud_tiny, gx + gw + 8 * s, my - text.height(font.hud_tiny) / 2, 255, 210, 70, 255, "MINOR")
+    text.draw(font.hud_tiny, gx + gw + 8 * s, gy - text.height(font.hud_tiny) / 2, 120, 240, 255, 255, "MAJOR")
 
     local row = 0
     for start, width in string.gmatch(f.rows or "", "(%d+),(%d+);") do
@@ -53,12 +53,12 @@ features.on_draw("Pocket Stacker", function(f)
     end
 
     local stats = string.format("BEST %d   TOPS %d   MINORS %d", math.floor(f.best or 0), math.floor(f.wins or 0), math.floor(f.minor_wins or 0))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, stats), y0 + 22 * s, 190, 190, 205, 255, stats)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, stats), y0 + 22 * s, 190, 190, 205, 255, stats)
     local msg, cr, cg, cb = "PRESS E TO DROP THE BLOCK", 220, 220, 232
     if state == 2 then msg, cr, cg, cb = "MAJOR PRIZE!   E TO PLAY AGAIN", 120, 240, 255
     elseif state == 3 then msg, cr, cg, cb = "MISSED!   E TO TRY AGAIN", 255, 100, 100
     elseif (f.minor_age or 99999) < 1500 then msg, cr, cg, cb = "MINOR PRIZE! KEEP GOING", 255, 210, 70 end
     if state ~= 1 or (f.minor_age or 99999) < 1500 or math.floor(t * 2) % 2 == 0 then
-        text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, gy + gh + 16 * s, cr, cg, cb, 255, msg)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, gy + gh + 16 * s, cr, cg, cb, 255, msg)
     end
 end)

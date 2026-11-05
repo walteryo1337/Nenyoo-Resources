@@ -49,27 +49,27 @@ features.on_draw("Day Trader", function(f)
     local w = 330 * s
     local x = 30 * s
     local y = sh * 0.22
-    local lh = text.height(font.small) + 6 * s
+    local lh = text.height(font.hud_small) + 6 * s
     local panel_h = 34 * s + lh * #stocks + 120 * s + lh * 3
     draw.rect(x, y, x + w, y + panel_h, 12, 12, 16, 215, 8 * s)
     draw.rect(x, y, x + w, y + 3 * s, ar, ag, ab, 255, 0)
-    text.draw(font.item, x + 12 * s, y + 8 * s, 245, 245, 250, 255, "LS EXCHANGE")
+    text.draw(font.hud, x + 12 * s, y + 8 * s, 245, 245, 250, 255, "LS EXCHANGE")
 
     local ry = y + 34 * s
     for i, st in ipairs(stocks) do
         local r = rows[i]
         if i == sel then draw.rect(x + 6 * s, ry - 2 * s, x + w - 6 * s, ry + lh - 4 * s, ar, ag, ab, 50, 4 * s) end
-        text.draw(font.small, x + 12 * s, ry, 235, 235, 245, 255, st.sym)
+        text.draw(font.hud_small, x + 12 * s, ry, 235, 235, 245, 255, st.sym)
         if r then
             local price = string.format("$%.2f", r.price)
-            text.draw(font.small, x + 70 * s, ry, 220, 220, 232, 255, price)
+            text.draw(font.hud_small, x + 70 * s, ry, 220, 220, 232, 255, price)
             local pct = string.format("%+.1f%%", r.pct)
             local cr, cg, cb = 120, 220, 120
             if r.pct < 0 then cr, cg, cb = 240, 90, 80 end
-            text.draw(font.small, x + w - 12 * s - text.width(font.small, pct), ry, cr, cg, cb, 255, pct)
+            text.draw(font.hud_small, x + w - 12 * s - text.width(font.hud_small, pct), ry, cr, cg, cb, 255, pct)
             if r.shares > 0 then
                 local own = tostring(r.shares)
-                text.draw(font.tiny, x + 170 * s, ry + 2 * s, 190, 190, 205, 230, own)
+                text.draw(font.hud_tiny, x + 170 * s, ry + 2 * s, 190, 190, 205, 230, own)
             end
         end
         ry = ry + lh
@@ -107,20 +107,20 @@ features.on_draw("Day Trader", function(f)
     local st = stocks[sel]
     local own = math.floor(f.shares or 0)
     local pos = own > 0 and string.format("%s  %d @ $%.2f", st.name, own, f.avg_cost or 0) or string.format("%s  no position", st.name)
-    text.draw(font.small, x + 12 * s, ry, 235, 235, 245, 255, pos)
+    text.draw(font.hud_small, x + 12 * s, ry, 235, 235, 245, 255, pos)
     ry = ry + lh
     local pl = math.floor(f.realized or 0)
     local plr, plg, plb = 120, 220, 120
     if pl < 0 then plr, plg, plb = 240, 90, 80 end
-    text.draw(font.small, x + 12 * s, ry, 200, 200, 214, 240, string.format("PORTFOLIO $%d", math.floor(f.holdings_value or 0)))
+    text.draw(font.hud_small, x + 12 * s, ry, 200, 200, 214, 240, string.format("PORTFOLIO $%d", math.floor(f.holdings_value or 0)))
     local pls = string.format("P/L %+d", pl)
-    text.draw(font.small, x + w - 12 * s - text.width(font.small, pls), ry, plr, plg, plb, 255, pls)
+    text.draw(font.hud_small, x + w - 12 * s - text.width(font.hud_small, pls), ry, plr, plg, plb, 255, pls)
     ry = ry + lh
     local lot = string.format("TRADE SIZE %d", math.floor(f.lot or 1))
-    text.draw(font.tiny, x + 12 * s, ry, 180, 180, 195, 230, lot)
+    text.draw(font.hud_tiny, x + 12 * s, ry, 180, 180, 195, 230, lot)
     if f.cash then
         local c = string.format("CASH $%d", math.floor(f.cash))
-        text.draw(font.tiny, x + w - 12 * s - text.width(font.tiny, c), ry, 180, 180, 195, 230, c)
+        text.draw(font.hud_tiny, x + w - 12 * s - text.width(font.hud_tiny, c), ry, 180, 180, 195, 230, c)
     end
 
     if f.news_stock then
@@ -133,10 +133,10 @@ features.on_draw("Day Trader", function(f)
         local nr, ng, nb = 120, 220, 120
         if not f.news_good then nr, ng, nb = 240, 90, 80 end
         local ny = y + panel_h + 8 * s
-        local nw = math.max(w, text.width(font.small, last_news_line) + 24 * s)
+        local nw = math.max(w, text.width(font.hud_small, last_news_line) + 24 * s)
         draw.rect(x, ny, x + nw, ny + lh + 8 * s, 12, 12, 16, 215, 6 * s)
         draw.rect(x, ny, x + 3 * s, ny + lh + 8 * s, nr, ng, nb, 255, 0)
-        text.draw(font.small, x + 12 * s, ny + 6 * s, 240, 240, 248, 255, last_news_line)
+        text.draw(font.hud_small, x + 12 * s, ny + 6 * s, 240, 240, 248, 255, last_news_line)
     else
         last_news_stock = nil
     end

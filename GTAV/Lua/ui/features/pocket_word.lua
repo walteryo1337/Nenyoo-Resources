@@ -39,7 +39,7 @@ features.on_draw("Pocket Word Guess", function(f)
                 draw.rect(x, y, x + tile, y + tile, 22, 22, 28, 255, 4 * s)
                 draw.rect(x, y, x + tile, y + 2 * s, 80, 80, 95, 255, 0)
             end
-            if ch ~= "" then text.draw(font.title, x + tile / 2 - text.width(font.title, ch) / 2, y + tile / 2 - text.height(font.title) / 2, 245, 245, 250, 255, ch) end
+            if ch ~= "" then text.draw(font.display, x + tile / 2 - text.width(font.display, ch) / 2, y + tile / 2 - text.height(font.display) / 2, 245, 245, 250, 255, ch) end
         end
     end
 
@@ -63,7 +63,7 @@ features.on_draw("Pocket Word Guess", function(f)
         end
         draw.rect(x, y, x + kw, y + kh, col[1], col[2], col[3], 255, 5 * s)
         if k == cur and state == 1 then draw.rect(x, y + kh - 4 * s, x + kw, y + kh, ar, ag, ab, 255, 0) end
-        text.draw(font.item, x + kw / 2 - text.width(font.item, label) / 2, y + kh / 2 - text.height(font.item) / 2, 245, 245, 250, 255, label)
+        text.draw(font.hud, x + kw / 2 - text.width(font.hud, label) / 2, y + kh / 2 - text.height(font.hud) / 2, 245, 245, 250, 255, label)
     end
 
     local foot
@@ -71,5 +71,5 @@ features.on_draw("Pocket Word Guess", function(f)
     elseif state == 3 then foot = "THE WORD WAS " .. (f.answer or "?") .. "   E TO TRY ANOTHER"
     else foot = "W A S D PICK A KEY   E PRESS   Q DELETE" end
     foot = foot .. string.format("   STREAK %d  BEST %d", math.floor(f.streak or 0), math.floor(f.best or 0))
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, ky + 3 * (kh + 6 * s) + 10 * s, 220, 220, 232, 240, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, ky + 3 * (kh + 6 * s) + 10 * s, 220, 220, 232, 240, foot)
 end)

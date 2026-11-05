@@ -80,12 +80,12 @@ features.on_draw("Pocket Tower Defense", function(f)
     local bt = math.floor(f.build_type or 0)
     local col = tcol[bt + 1] or tcol[1]
     local hud = string.format("WAVE %d    LIVES %d    $%d", math.floor(f.wave or 0), math.floor(f.lives or 0), math.floor(f.gold or 0))
-    text.draw(font.small, x0, y0 - 52 * s, 235, 235, 245, 255, hud)
+    text.draw(font.hud_small, x0, y0 - 52 * s, 235, 235, 245, 255, hud)
     local sc = string.format("SCORE %d   BEST %d", math.floor(f.score or 0), math.floor(f.best or 0))
-    text.draw(font.tiny, x0 + fw - text.width(font.tiny, sc), y0 - 48 * s, 190, 190, 205, 230, sc)
+    text.draw(font.hud_tiny, x0 + fw - text.width(font.hud_tiny, sc), y0 - 48 * s, 190, 190, 205, 230, sc)
     local cost = math.floor(f.cost or 0)
     local build = string.format("Q: %s TOWER    E: %s", names[bt + 1] or "", cost > 0 and string.format("BUILD/UPGRADE $%d", cost) or "MAXED")
-    text.draw(font.tiny, x0, y0 - 24 * s, col[1], col[2], col[3], 255, build)
+    text.draw(font.hud_tiny, x0, y0 - 24 * s, col[1], col[2], col[3], 255, build)
 
     local state = math.floor(f.state or 1)
     local foot
@@ -97,9 +97,9 @@ features.on_draw("Pocket Tower Defense", function(f)
         local fr, fg, fb = 255, 230, 120
         if state == 3 then fr, fg, fb = 255, 110, 110 end
         if m == 1 or m == 2 or m == 3 then fr, fg, fb = 255, 140, 120 elseif m >= 4 then fr, fg, fb = 130, 255, 160 end
-        text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + fh + 14 * s, fr, fg, fb, 255, foot)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + fh + 14 * s, fr, fg, fb, 255, foot)
     else
         local hint = "W A S D  MOVE CURSOR"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 + fh + 18 * s, 190, 190, 205, 200, hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 + fh + 18 * s, 190, 190, 205, 200, hint)
     end
 end)

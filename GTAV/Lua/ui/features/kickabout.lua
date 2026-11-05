@@ -5,7 +5,7 @@ features.on_draw("Kickabout", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
 
     local t = math.max(0, f.time_left or 0)
@@ -15,12 +15,12 @@ features.on_draw("Kickabout", function(f)
     draw.rect(x, y, x + w, y + h, 10, 14, 10, 200, 6 * s)
     draw.rect(x, y + h - 3 * s, x + w, y + h, ar, ag, ab, 255, 0)
     local score = string.format("GOALS %d", math.floor(f.goals or 0))
-    text.draw(font.item, x + 12 * s, y + h / 2 - text.height(font.item) / 2, 245, 245, 250, 255, score)
+    text.draw(font.hud, x + 12 * s, y + h / 2 - text.height(font.hud) / 2, 245, 245, 250, 255, score)
     local cr, cg, cb = 245, 245, 250
     if t < 15 and not f.finished then cr, cg, cb = 240, 80, 70 end
-    text.draw(font.item, x + w - 12 * s - text.width(font.item, clock), y + h / 2 - text.height(font.item) / 2, cr, cg, cb, 255, clock)
+    text.draw(font.hud, x + w - 12 * s - text.width(font.hud, clock), y + h / 2 - text.height(font.hud) / 2, cr, cg, cb, 255, clock)
     local sub = string.format("SAVES %d   BEST %d", math.floor(f.saves or 0), math.floor(f.best or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, sub) / 2, y + h + 4 * s, 180, 180, 195, 220, sub)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, sub) / 2, y + h + 4 * s, 180, 180, 195, 220, sub)
 
     local age = f.event_age or 99
     local ev = math.floor(f.event or 0)
@@ -30,7 +30,9 @@ features.on_draw("Kickabout", function(f)
         if ev == 2 then msg, r, g, b = "SAVED!", 240, 90, 70
         elseif ev == 3 then msg, r, g, b = "OUT OF PLAY", 200, 200, 210 end
         local pop = 1 + math.max(0, 0.3 - age) * 0.8
-        text.draw(big, cx - text.width(big, msg) / 2, sh * 0.3 - (pop - 1) * 20 * s, r, g, b, a, msg)
+        -- A goal in the last seconds is still showing when FULL TIME appears; stack it above.
+        local ey = f.finished and sh * 0.3 - text.height(big) - 8 * s or sh * 0.3
+        text.draw(big, cx - text.width(big, msg) / 2, ey - (pop - 1) * 20 * s, r, g, b, a, msg)
     end
     if f.finished then
         local msg = "FULL TIME"

@@ -6,7 +6,7 @@ features.on_draw("Pocket Pong", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cw, ch = 560 * s, 336 * s
     local cx = sw / 2
     local x0, y0 = cx - cw / 2, sh * 0.5 - ch / 2
@@ -38,7 +38,7 @@ features.on_draw("Pocket Pong", function(f)
     draw.rect(bx - 6 * s, by - 6 * s, bx + 6 * s, by + 6 * s, 255, 255, 255, 255, 1 * s)
 
     local hint = string.format("W / S TO MOVE   FIRST TO %d   TURN OFF TO QUIT", math.floor(f.target or 7))
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, y0 + ch + 16 * s, 180, 185, 195, 230, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, y0 + ch + 16 * s, 180, 185, 195, 230, hint)
 
     if state == 3 then
         draw.rect(x0, y0, x0 + cw, y0 + ch, 8, 10, 14, 180, 4 * s)
@@ -48,6 +48,6 @@ features.on_draw("Pocket Pong", function(f)
         if won then r, g, b = ar, ag, ab end
         text.draw(big, cx - text.width(big, msg) / 2, y0 + ch / 2 - text.height(big), r, g, b, 255, msg)
         local again = "PRESS W OR S FOR A REMATCH"
-        text.draw(font.small, cx - text.width(font.small, again) / 2, y0 + ch / 2 + 6 * s, 235, 235, 245, 255, again)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, again) / 2, y0 + ch / 2 + 6 * s, 235, 235, 245, 255, again)
     end
 end)

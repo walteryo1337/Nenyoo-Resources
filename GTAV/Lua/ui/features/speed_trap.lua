@@ -24,16 +24,16 @@ local function world_label(f, sw, sh, now)
     local title = "SPEED TRAP"
     local sub = f.best and string.format("BEST %d km/h", math.floor(f.best + 0.5)) or "NO RECORD YET"
     local dist = string.format("%d m", math.floor(d + 0.5))
-    local w = math.max(text.width(font.small, title), text.width(font.tiny, sub)) + 56
-    local h = text.height(font.small) + text.height(font.tiny) + 16
+    local w = math.max(text.width(font.hud_small, title), text.width(font.hud_tiny, sub)) + 56
+    local h = text.height(font.hud_small) + text.height(font.hud_tiny) + 16
     local x1, y1 = x - w * 0.5, y - h
 
     draw.rect(x1, y1, x1 + w, y1 + h, 12, 10, 4, math.floor(190 * a), 6)
     camera_icon(x1 + 22, y1 + h * 0.5, alpha, 255, 190, 40)
-    text.draw(font.small, x1 + 40, y1 + 6, 255, 255, 255, alpha, title)
-    text.draw(font.tiny, x1 + 40, y1 + 8 + text.height(font.small), 255, 205, 110, alpha, sub)
+    text.draw(font.hud_small, x1 + 40, y1 + 6, 255, 255, 255, alpha, title)
+    text.draw(font.hud_tiny, x1 + 40, y1 + 8 + text.height(font.hud_small), 255, 205, 110, alpha, sub)
     draw.line(x, y1 + h, x, y1 + h + 14, 255, 190, 40, math.floor(alpha * 0.8), 2)
-    centered(font.tiny, x, y1 + h + 16, 220, 220, 230, math.floor(alpha * 0.85), dist)
+    centered(font.hud_tiny, x, y1 + h + 16, 220, 220, 230, math.floor(alpha * 0.85), dist)
 end
 
 local function reading(f, sw, sh, now)
@@ -57,14 +57,14 @@ local function reading(f, sw, sh, now)
     if flash > 0 then draw.rect(0, 0, sw, sh, 255, 255, 255, math.floor(90 * flash), 0) end
 
     camera_icon(x1 + 24, y1 + 18, math.floor(230 * a), hr, hg, hb)
-    text.draw(font.tiny, x1 + 42, y1 + 11, 200, 200, 210, math.floor(235 * a),
+    text.draw(font.hud_tiny, x1 + 42, y1 + 11, 200, 200, 210, math.floor(235 * a),
         f.record and "NEW TRAP RECORD" or "CLOCKED")
 
     draw.with_scale(cx, y1 + 34, 2.0 * pop, function()
         centered(font.display, cx, y1 + 34, 255, 255, 255, math.floor(255 * a),
             string.format("%d", math.floor((f.result or 0) + 0.5)))
     end)
-    centered(font.tiny, cx, y1 + 86, 170, 170, 180, math.floor(230 * a), "km/h")
+    centered(font.hud_tiny, cx, y1 + 86, 170, 170, 180, math.floor(230 * a), "km/h")
 
     local line
     local lr, lg, lb = 235, 80, 70
@@ -75,7 +75,7 @@ local function reading(f, sw, sh, now)
     else
         line = string.format("%d km/h   BEST %d km/h", math.floor((f.delta or 0) + 0.5), math.floor((f.best or 0) + 0.5))
     end
-    centered(font.small, cx, y1 + h - text.height(font.small) - 8, lr, lg, lb, math.floor(245 * a), line)
+    centered(font.hud_small, cx, y1 + h - text.height(font.hud_small) - 8, lr, lg, lb, math.floor(245 * a), line)
 end
 
 features.on_draw("Speed Trap", function(f)

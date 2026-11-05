@@ -11,9 +11,9 @@ features.on_draw("Tightrope Walk", function(f)
     local w, h = 360 * s, 120 * s
     local x0, y0 = sw / 2 - w / 2, sh - h - 110 * s
     draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 215, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "TIGHTROPE")
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 235, 235, 245, 255, "TIGHTROPE")
     local ht = string.format("%dm UP", math.floor(f.height or 0))
-    text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, ht), y0 + 12 * s, 190, 190, 205, 230, ht)
+    text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, ht), y0 + 12 * s, 190, 190, 205, 230, ht)
 
     local tilt = math.max(-1, math.min(1, f.tilt or 0))
     local danger = math.abs(tilt)
@@ -31,9 +31,9 @@ features.on_draw("Tightrope Walk", function(f)
     if math.abs(wind) > 0.1 then
         local arrow = wind > 0 and "WIND  >>" or "<<  WIND"
         if math.abs(wind) < 0.5 then arrow = wind > 0 and "WIND  >" or "<  WIND" end
-        local aw = text.width(font.tiny, arrow)
+        local aw = text.width(font.hud_tiny, arrow)
         local a = math.floor(140 + 100 * math.abs(wind))
-        text.draw(font.tiny, cx - aw / 2, by + bh + 8 * s, 170, 210, 255, a, arrow)
+        text.draw(font.hud_tiny, cx - aw / 2, by + bh + 8 * s, 170, 210, 255, a, arrow)
     end
 
     local px, py, pw = x0 + 14 * s, y0 + h - 22 * s, w - 28 * s
@@ -49,10 +49,10 @@ features.on_draw("Tightrope Walk", function(f)
         banner, br, bg, bb = "YOU FELL", 255, 110, 110
     end
     if banner then
-        text.draw(font.title, sw / 2 - text.width(font.title, banner) / 2, y0 - 60 * s, br, bg, bb, 255, banner)
+        text.draw(font.display, sw / 2 - text.width(font.display, banner) / 2, y0 - 60 * s, br, bg, bb, 255, banner)
     elseif state == 2 then
         local hint = "W  WALK     A / D  BALANCE"
-        text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y0 - 22 * s, 200, 200, 214, math.floor(160 + 60 * math.sin(t * 2)), hint)
+        text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y0 - 22 * s, 200, 200, 214, math.floor(160 + 60 * math.sin(t * 2)), hint)
     end
     if danger > 0.75 and state == 2 then
         draw.rect_outline(0, 0, sw, sh, 255, 70, 60, math.floor(120 * (danger - 0.75) / 0.25), 0, 10 * s)

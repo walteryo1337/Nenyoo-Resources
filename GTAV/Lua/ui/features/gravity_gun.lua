@@ -11,7 +11,7 @@ features.on_draw("Gravity Gun", function(f)
     local hint = f.active
         and ("Holding " .. math.floor(f.count or 1) .. "   Scroll: Distance   Fire: Launch")
         or  "Aim at an entity to grab   Scroll: Distance   Fire: Launch"
-    text.draw(font.item, sw * 0.5 - 190, sh * 0.90, 235, 235, 240, 255, hint)
+    text.draw(font.hud, sw * 0.5 - 190, sh * 0.90, 235, 235, 240, 255, hint)
 
     -- Reticle on the held entity
     if f.active and f.on_screen then

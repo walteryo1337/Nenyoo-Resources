@@ -23,13 +23,13 @@ features.on_draw("Getaway Driver", function(f)
     local px, py = sw - pw - 30 * s, sh * 0.30
     draw.rect(px, py, px + pw, py + ph, 12, 12, 16, 215, 10 * s)
     draw.rect(px, py, px + 4 * s, py + ph, ar or 255, ag or 200, ab or 80, 255, 2 * s)
-    text.draw(font.item, px + 16 * s, py + 10 * s, 245, 245, 250, 255, title)
-    text.draw(font.small, px + 16 * s, py + 40 * s, 200, 200, 212, 255, line)
+    text.draw(font.hud, px + 16 * s, py + 10 * s, 245, 245, 250, 255, title)
+    text.draw(font.hud_small, px + 16 * s, py + 40 * s, 200, 200, 212, 255, line)
 
     if stage >= 1 and stage <= 3 then
         local tl = math.floor(f.time_left or 0)
         local info = string.format("$%d   %d:%02d", math.floor(f.pay or 0), math.floor(tl / 60), tl % 60)
-        text.draw(font.small, px + 16 * s, py + 70 * s, 120, 230, 120, 255, info)
+        text.draw(font.hud_small, px + 16 * s, py + 70 * s, 120, 230, 120, 255, info)
         local crew = math.floor(f.crew_total or 0)
         for i = 1, crew do
             local cx = px + pw - 20 * s - (crew - i) * 22 * s
@@ -45,8 +45,8 @@ features.on_draw("Getaway Driver", function(f)
 
     if f.out_left then
         local msg = string.format("GET THE CREW BACK IN   %ds", math.ceil(f.out_left))
-        local w = text.width(font.item, msg)
-        draw.rect(sw / 2 - w / 2 - 14 * s, sh * 0.18 - 8 * s, sw / 2 + w / 2 + 14 * s, sh * 0.18 + text.height(font.item) + 8 * s, 12, 12, 16, 220, 8 * s)
-        text.draw(font.item, sw / 2 - w / 2, sh * 0.18, 255, 170, 80, 255, msg)
+        local w = text.width(font.hud, msg)
+        draw.rect(sw / 2 - w / 2 - 14 * s, sh * 0.18 - 8 * s, sw / 2 + w / 2 + 14 * s, sh * 0.18 + text.height(font.hud) + 8 * s, 12, 12, 16, 220, 8 * s)
+        text.draw(font.hud, sw / 2 - w / 2, sh * 0.18, 255, 170, 80, 255, msg)
     end
 end)

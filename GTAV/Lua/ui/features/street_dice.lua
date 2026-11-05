@@ -29,7 +29,8 @@ features.on_draw("Street Dice", function(f)
     local t = ctx.time() or 0
     local rolling = state == 1
 
-    local w, h = 420 * s, 150 * s
+    -- Tall enough for the dice, their totals and the footer row below them.
+    local w, h = 420 * s, 102 * s + text.height(font.display) + text.height(font.hud_tiny) + 12 * s
     local x, y = cx - w / 2, sh * 0.68
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 205, 8 * s)
     draw.rect(x, y, x + w, y + 3 * s, ar, ag, ab, 255, 0)
@@ -40,7 +41,7 @@ features.on_draw("Street Dice", function(f)
     local labels = { "YOU", "THEM" }
     for side = 1, 2 do
         local lx = cols[side]
-        text.draw(font.small, lx - text.width(font.small, labels[side]) / 2, y + 12 * s, 210, 210, 222, 240, labels[side])
+        text.draw(font.hud_small, lx - text.width(font.hud_small, labels[side]) / 2, y + 12 * s, 210, 210, 222, 240, labels[side])
         local total = 0
         for k = 1, 2 do
             local i = (side - 1) * 2 + k
@@ -55,7 +56,7 @@ features.on_draw("Street Dice", function(f)
         end
         if not rolling then
             local tot = tostring(total)
-            text.draw(font.title, lx - text.width(font.title, tot) / 2, y + 102 * s, 245, 245, 250, 255, tot)
+            text.draw(font.display, lx - text.width(font.display, tot) / 2, y + 102 * s, 245, 245, 250, 255, tot)
         end
     end
 
@@ -64,17 +65,17 @@ features.on_draw("Street Dice", function(f)
         local msg, r, g, b = "PUSH", 220, 220, 230
         if outcome == 1 then msg, r, g, b = string.format("YOU WIN +$%d", math.floor(f.amount or 0)), 120, 230, 120
         elseif outcome == 2 then msg, r, g, b = string.format("YOU LOSE -$%d", math.floor(f.amount or 0)), 240, 80, 70 end
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, y - text.height(font.title) - 6 * s, r, g, b, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, y - text.height(font.display) - 6 * s, r, g, b, 255, msg)
     end
 
     local net = math.floor(f.net or 0)
     local foot = string.format("SESSION %s$%d", net < 0 and "-" or "+", math.abs(net))
     local fr, fg, fb = 120, 230, 120
     if net < 0 then fr, fg, fb = 240, 80, 70 end
-    text.draw(font.tiny, x + 12 * s, y + h - 8 * s - text.height(font.tiny), fr, fg, fb, 235, foot)
+    text.draw(font.hud_tiny, x + 12 * s, y + h - 8 * s - text.height(font.hud_tiny), fr, fg, fb, 235, foot)
     local left = math.floor(f.opponent_rounds or 0)
     if left > 0 then
         local lstr = string.format("THEY CAN PLAY %d MORE", left)
-        text.draw(font.tiny, x + w - 12 * s - text.width(font.tiny, lstr), y + h - 8 * s - text.height(font.tiny), 200, 200, 212, 220, lstr)
+        text.draw(font.hud_tiny, x + w - 12 * s - text.width(font.hud_tiny, lstr), y + h - 8 * s - text.height(font.hud_tiny), 200, 200, 212, 220, lstr)
     end
 end)

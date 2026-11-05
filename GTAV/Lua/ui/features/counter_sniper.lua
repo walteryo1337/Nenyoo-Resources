@@ -7,7 +7,7 @@ features.on_draw("Counter-Sniper", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx, cy = sw / 2, sh / 2
     local state = math.floor(f.state or 0)
 
@@ -20,17 +20,17 @@ features.on_draw("Counter-Sniper", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.28, r, g, b, 255, msg)
         if result == 1 then
             local sub = string.format("%.1f S   +$%d", f.time or 0, math.floor(f.pay or 0))
-            text.draw(font.item, cx - text.width(font.item, sub) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, sub)
+            text.draw(font.hud, cx - text.width(font.hud, sub) / 2, sh * 0.28 + text.height(big), 245, 245, 250, 255, sub)
         end
         return
     end
 
     local t = f.elapsed or 0
     local head = string.format("SNIPER  %d:%02d", math.floor(t / 60), math.floor(t % 60))
-    text.draw(font.small, cx - text.width(font.small, head) / 2, sh * 0.05, 235, 120, 100, 255, head)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, head) / 2, sh * 0.05, 235, 120, 100, 255, head)
     local info = string.format("SHOTS FIRED %d", math.floor(f.shots or 0))
     if (f.hint_dist or -1) > 0 then info = info .. string.format("   ~%d M AWAY", math.floor(f.hint_dist)) end
-    text.draw(font.tiny, cx - text.width(font.tiny, info) / 2, sh * 0.05 + text.height(font.small), 210, 210, 222, 235, info)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, info) / 2, sh * 0.05 + text.height(font.hud_small), 210, 210, 222, 235, info)
 
     local age = f.shot_age or -1
     if age >= 0 then

@@ -6,7 +6,7 @@ features.on_draw("Burnout Meter", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
 
     local heat = f.heat or 0
@@ -18,7 +18,7 @@ features.on_draw("Burnout Meter", function(f)
         local g = math.floor(200 * (1 - heat))
         draw.rect(x, y, x + w * heat, y + h, r, g, 40, 240, 4 * s)
         local label = heat >= 1 and "TYRES MAXED" or "TYRE HEAT"
-        text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, y - text.height(font.tiny) - 3 * s, 235, 210, 190, 235, label)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, y - text.height(font.hud_tiny) - 3 * s, 235, 210, 190, 235, label)
     end
 
     if f.burning then
@@ -26,7 +26,7 @@ features.on_draw("Burnout Meter", function(f)
         local shake = math.sin(ctx.time() * 30) * 2 * s * math.min(1, (f.multiplier or 1) - 1)
         text.draw(big, cx - text.width(big, n) / 2 + shake, sh * 0.16, 255, 255, 255, 255, n)
         local m = string.format("BURNOUT  x%.1f", f.multiplier or 1)
-        text.draw(font.small, cx - text.width(font.small, m) / 2, sh * 0.16 + text.height(big), ar, ag, ab, 255, m)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, m) / 2, sh * 0.16 + text.height(big), ar, ag, ab, 255, m)
         return
     end
 
@@ -36,10 +36,10 @@ features.on_draw("Burnout Meter", function(f)
         local title = f.result_popped and "TYRES BLOWN" or "BURNOUT"
         local r, g, b = ar, ag, ab
         if f.result_popped then r, g, b = 240, 90, 70 end
-        text.draw(font.small, cx - text.width(font.small, title) / 2, sh * 0.15, r, g, b, a, title)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, title) / 2, sh * 0.15, r, g, b, a, title)
         local n = string.format("%d", math.floor(f.result or 0))
-        text.draw(big, cx - text.width(big, n) / 2, sh * 0.15 + text.height(font.small), 255, 255, 255, a, n)
+        text.draw(big, cx - text.width(big, n) / 2, sh * 0.15 + text.height(font.hud_small), 255, 255, 255, a, n)
         local sub = string.format("%.1f S   BEST %d", f.result_time or 0, math.floor(f.best or 0))
-        text.draw(font.tiny, cx - text.width(font.tiny, sub) / 2, sh * 0.15 + text.height(font.small) + text.height(big), 200, 200, 212, a, sub)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, sub) / 2, sh * 0.15 + text.height(font.hud_small) + text.height(big), 200, 200, 212, a, sub)
     end
 end)

@@ -9,7 +9,7 @@ features.on_draw("Fuel", function(f)
     local h = 8
     local x = sw * 0.015
     local y = sh * 0.785
-    local lh = text.height(font.small)
+    local lh = text.height(font.hud_small)
 
     local r, g, b = 80, 220, 120
     if fuel < 0.05 then
@@ -28,9 +28,9 @@ features.on_draw("Fuel", function(f)
     end
 
     draw.rect(x - 4, y - lh - 8, x + w + 4, y + h + 4, 12, 12, 18, 170, 4)
-    text.draw(font.small, x, y - lh - 4, 230, 230, 235, 255, f.refuelling and "FUEL  +" or "FUEL")
+    text.draw(font.hud_small, x, y - lh - 4, 230, 230, 235, 255, f.refuelling and "FUEL  +" or "FUEL")
     local pct = string.format("%d%%", math.floor(fuel * 100 + 0.5))
-    text.draw(font.small, x + w - text.width(font.small, pct), y - lh - 4, r, g, b, a, pct)
+    text.draw(font.hud_small, x + w - text.width(font.hud_small, pct), y - lh - 4, r, g, b, a, pct)
 
     draw.rect(x, y, x + w, y + h, 40, 40, 48, 220, 3)
     if fuel > 0 then

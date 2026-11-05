@@ -16,7 +16,7 @@ features.on_draw("Vampire", function(f)
     if state == 1 then label, lr, lg, lb = "NIGHT  -  EMPOWERED", 200, 140, 255
     elseif state == 2 then label, lr, lg, lb = "SUNLIGHT  -  FIND SHADE", 255, 190, 80
     elseif state == 3 then label, lr, lg, lb = "STARVING  -  FEED", 255, 90, 90 end
-    text.draw(font.tiny, x0, y0 - 20 * s, lr, lg, lb, 255, label)
+    text.draw(font.hud_tiny, x0, y0 - 20 * s, lr, lg, lb, 255, label)
 
     draw.rect(x0 - 3 * s, y0 - 3 * s, x0 + w + 3 * s, y0 + h + 3 * s, 12, 6, 8, 210, 6 * s)
     if blood > 0 then
@@ -26,7 +26,7 @@ features.on_draw("Vampire", function(f)
         draw.rect_gradient(x0, y0, x0 + w * blood, y0 + h, 110, 0, 10, a, 210, 20, 40, a, 210, 20, 40, a, 110, 0, 10, a)
     end
     local pct = string.format("%d%%", math.floor(blood * 100 + 0.5))
-    text.draw(font.tiny, x0 + w - text.width(font.tiny, pct), y0 - 20 * s, 230, 230, 236, 230, pct)
+    text.draw(font.hud_tiny, x0 + w - text.width(font.hud_tiny, pct), y0 - 20 * s, 230, 230, 236, 230, pct)
 
     if state == 2 then
         local flick = math.floor(60 + 40 * math.abs(math.sin(t * 8)))
@@ -44,6 +44,6 @@ features.on_draw("Vampire", function(f)
             draw.line(cx + math.cos(a1) * r, cy + math.sin(a1) * r, cx + math.cos(a2) * r, cy + math.sin(a2) * r, 220, 20, 40, 255, 5 * s)
         end
         local tx = "FEEDING"
-        text.draw(font.tiny, cx - text.width(font.tiny, tx) / 2, cy + r + 8 * s, 235, 200, 205, 255, tx)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, tx) / 2, cy + r + 8 * s, 235, 200, 205, 255, tx)
     end
 end)

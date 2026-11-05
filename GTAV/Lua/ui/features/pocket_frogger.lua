@@ -91,7 +91,7 @@ features.on_draw("Pocket Frogger", function(f)
     if tl > 0 then draw.rect(x0, y0 + fh + 8 * s, x0 + fw * tl, y0 + fh + 16 * s, tr, tg, 80, 255, 4 * s) end
 
     local hud = string.format("SCORE %d   LEVEL %d", math.floor(f.score or 0), math.floor(f.level or 1))
-    text.draw(font.item, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
     for i = 1, math.floor(f.lives or 0) do
         local lx = x0 + fw - i * 28 * s
         draw.rect(lx, y0 - 34 * s, lx + 20 * s, y0 - 16 * s, 110, 235, 90, 255, 6 * s)
@@ -102,9 +102,9 @@ features.on_draw("Pocket Frogger", function(f)
     elseif state == 2 then msg = causes[math.floor(f.cause or 1)]
     elseif math.floor(f.score or 0) == 0 and math.floor(f.frog_y or 12) == rows - 1 then msg = "W A S D TO HOP" end
     if msg then
-        local w = text.width(font.item, msg)
-        local my = y0 + 6 * c + c / 2 - text.height(font.item) / 2
-        draw.rect(sw / 2 - w / 2 - 12 * s, my - 6 * s, sw / 2 + w / 2 + 12 * s, my + text.height(font.item) + 6 * s, 10, 10, 14, 220, 6 * s)
-        text.draw(font.item, sw / 2 - w / 2, my, 245, 245, 250, 255, msg)
+        local w = text.width(font.hud, msg)
+        local my = y0 + 6 * c + c / 2 - text.height(font.hud) / 2
+        draw.rect(sw / 2 - w / 2 - 12 * s, my - 6 * s, sw / 2 + w / 2 + 12 * s, my + text.height(font.hud) + 6 * s, 10, 10, 14, 220, 6 * s)
+        text.draw(font.hud, sw / 2 - w / 2, my, 245, 245, 250, 255, msg)
     end
 end)

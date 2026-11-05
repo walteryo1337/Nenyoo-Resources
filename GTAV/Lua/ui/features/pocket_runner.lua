@@ -74,9 +74,9 @@ features.on_draw("Pocket Runner", function(f)
     draw.line(rx, ry - rh * 0.3, rx + stride, ry, cr, cg, cb, 255, 4 * s)
 
     local score = string.format("%05d", math.floor(f.score or 0))
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 - 80 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 - 80 * s, 245, 245, 250, 255, score)
     local best = string.format("BEST %05d", math.floor(f.best or 0))
-    text.draw(font.small, sw / 2 - text.width(font.small, best) / 2, y0 - 30 * s, 200, 200, 214, 230, best)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, best) / 2, y0 - 30 * s, 200, 200, 214, 230, best)
     local foot = state == 2 and "CRASHED     W OR SPACE TO RUN AGAIN" or "W OR SPACE JUMP     S DUCK"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + th + 16 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + th + 16 * s, 200, 200, 214, 230, foot)
 end)

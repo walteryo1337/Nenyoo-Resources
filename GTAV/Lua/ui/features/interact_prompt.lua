@@ -16,9 +16,9 @@ features.on_draw("Interaction Prompts", function(f)
     local a = math.floor(255 * shown)
     local pad = 10 * s
     local key = "E"
-    local kh = text.height(font.small) + pad * 0.8
-    local kw = math.max(kh, text.width(font.small, key) + pad)
-    local lw = text.width(font.small, label)
+    local kh = text.height(font.hud_small) + pad * 0.8
+    local kw = math.max(kh, text.width(font.hud_small, key) + pad)
+    local lw = text.width(font.hud_small, label)
     local w = kw + lw + pad * 3
     local h = kh + pad
     local x = (sw - w) / 2
@@ -27,6 +27,6 @@ features.on_draw("Interaction Prompts", function(f)
     draw.rect(x, y, x + w, y + h, 10, 10, 16, math.floor(170 * shown), 6 * s)
     local kx, ky = x + pad, y + (h - kh) / 2
     draw.rect(kx, ky, kx + kw, ky + kh, ar, ag, ab, a, 4 * s)
-    text.draw(font.small, kx + (kw - text.width(font.small, key)) / 2, ky + pad * 0.4, 10, 10, 16, a, key)
-    text.draw(font.small, kx + kw + pad, y + (h - text.height(font.small)) / 2, 240, 240, 245, a, label)
+    text.draw(font.hud_small, kx + (kw - text.width(font.hud_small, key)) / 2, ky + pad * 0.4, 10, 10, 16, a, key)
+    text.draw(font.hud_small, kx + kw + pad, y + (h - text.height(font.hud_small)) / 2, 240, 240, 245, a, label)
 end)

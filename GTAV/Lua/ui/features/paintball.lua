@@ -7,7 +7,7 @@ features.on_draw("Paintball", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -22,7 +22,7 @@ features.on_draw("Paintball", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.26, r, g, b, 255, msg)
         local sub = string.format("%d TAGS", math.floor(f.tags or 0))
         if (f.paid or 0) > 0 then sub = sub .. string.format("   +$%d", math.floor(f.paid)) end
-        text.draw(font.item, cx - text.width(font.item, sub) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, sub)
+        text.draw(font.hud, cx - text.width(font.hud, sub) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, sub)
         return
     end
 
@@ -42,7 +42,7 @@ features.on_draw("Paintball", function(f)
     if state == 2 then
         local t = math.max(0, f.time_left or 0)
         local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
-        text.draw(font.item, cx - text.width(font.item, clock) / 2, top - 4 * s, 245, 245, 250, 255, clock)
+        text.draw(font.hud, cx - text.width(font.hud, clock) / 2, top - 4 * s, 245, 245, 250, 255, clock)
     elseif state == 1 then
         local n = tostring(math.max(1, math.ceil(f.countdown or 0)))
         text.draw(big, cx - text.width(big, n) / 2, sh * 0.3, ar, ag, ab, 255, n)
@@ -53,7 +53,7 @@ features.on_draw("Paintball", function(f)
     local lives = string.format("HITS %d / %d", hits, need)
     local lr, lg, lb = 220, 220, 232
     if hits >= need - 1 and hits > 0 then lr, lg, lb = 240, 110, 80 end
-    text.draw(font.small, cx - text.width(font.small, lives) / 2, top + pip + 10 * s, lr, lg, lb, 255, lives)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, lives) / 2, top + pip + 10 * s, lr, lg, lb, 255, lives)
     local tags = string.format("TAGS %d", math.floor(f.tags or 0))
-    text.draw(font.small, cx - text.width(font.small, tags) / 2, top + pip + 14 * s + text.height(font.small), 200, 200, 214, 230, tags)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, tags) / 2, top + pip + 14 * s + text.height(font.hud_small), 200, 200, 214, 230, tags)
 end)

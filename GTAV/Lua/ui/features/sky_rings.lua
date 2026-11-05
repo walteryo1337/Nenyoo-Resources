@@ -12,7 +12,7 @@ features.on_draw("Sky Rings", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local count = math.floor(f.count or 0)
     local next = math.floor(f.next or 0)
@@ -26,8 +26,8 @@ features.on_draw("Sky Rings", function(f)
     y = y + text.height(big) + 2 * s
     local info = string.format("RING %d / %d    PAR %s", math.min(next + 1, count), count, clock(f.par))
     if f.best then info = info .. "    BEST " .. clock(f.best) end
-    text.draw(font.small, cx - text.width(font.small, info) / 2, y, 200, 200, 212, 235, info)
-    y = y + text.height(font.small) + 6 * s
+    text.draw(font.hud_small, cx - text.width(font.hud_small, info) / 2, y, 200, 200, 212, 235, info)
+    y = y + text.height(font.hud_small) + 6 * s
     local bw = 240 * s
     draw.rect(cx - bw / 2, y, cx + bw / 2, y + 4 * s, 0, 0, 0, 140, 2 * s)
     if count > 0 then draw.rect(cx - bw / 2, y, cx - bw / 2 + bw * next / count, y + 4 * s, ar, ag, ab, 255, 2 * s) end
@@ -36,7 +36,7 @@ features.on_draw("Sky Rings", function(f)
         local x, yy = (f.sx or 0) * sw, (f.sy or 0) * sh
         draw.circle_outline(x, yy, 14 * s, 255, 215, 60, 230, 2 * s)
         local d = string.format("%d M", math.floor(f.distance or 0))
-        text.draw(font.tiny, x - text.width(font.tiny, d) / 2, yy + 18 * s, 255, 235, 160, 235, d)
+        text.draw(font.hud_tiny, x - text.width(font.hud_tiny, d) / 2, yy + 18 * s, 255, 235, 160, 235, d)
     end
 
     local age = f.pass_age or 99

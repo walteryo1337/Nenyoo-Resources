@@ -28,9 +28,9 @@ features.on_draw("RC Car", function(f)
     end
 
     local label = weak and "SIGNAL WEAK" or "RC SIGNAL"
-    text.draw(font.tiny, x + w - text.width(font.tiny, label), base - maxh - text.height(font.tiny) - 4 * s, weak and 240 or 200, weak and 80 or 200, weak and 70 or 210, 240, label)
+    text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, label), base - maxh - text.height(font.hud_tiny) - 4 * s, weak and 240 or 200, weak and 80 or 200, weak and 70 or 210, 240, label)
     local d = string.format("%dM / %dM", math.floor(f.distance or 0), math.floor(f.range or 0))
-    text.draw(font.tiny, x + w - text.width(font.tiny, d), base + 4 * s, 170, 170, 185, 220, d)
+    text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, d), base + 4 * s, 170, 170, 185, 220, d)
     local hint = "HORN  DETONATE     EXIT  RETURN"
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, sh * 0.92, 200, 200, 210, 200, hint)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, sh * 0.92, 200, 200, 210, 200, hint)
 end)

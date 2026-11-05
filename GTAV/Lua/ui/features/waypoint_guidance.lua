@@ -50,11 +50,11 @@ local function draw_callout(x, y, f, ar, ag, ab, alpha, pulse)
 
     local value_w = text.width(font.value, value) * NUM_SCALE
     local value_h = text.height(font.value) * NUM_SCALE
-    local unit_w = text.width(font.small, unit)
-    local sub_w = subtitle and text.width_spaced(font.tiny, subtitle, 1.2) or 0
+    local unit_w = text.width(font.hud_small, unit)
+    local sub_w = subtitle and text.width_spaced(font.hud_tiny, subtitle, 1.2) or 0
     local pad_x, pad_y = 11, 7
     local w = pad_x * 2 + math.max(value_w + 4 + unit_w, sub_w)
-    local h = pad_y * 2 + value_h + (subtitle and (text.height(font.tiny) + 3) or 0)
+    local h = pad_y * 2 + value_h + (subtitle and (text.height(font.hud_tiny) + 3) or 0)
 
     -- Throw the callout towards whichever side still has room for the panel.
     local dir_x = (x + LEG + STUB + w + MARGIN > sw) and -1 or 1
@@ -83,10 +83,10 @@ local function draw_callout(x, y, f, ar, ag, ab, alpha, pulse)
     draw.with_scale(tx, ty, NUM_SCALE, function()
         text.draw(font.value, tx, ty, 244, 248, 252, a8(alpha), value)
     end)
-    text.draw(font.small, tx + value_w + 4, ty + value_h - text.height(font.small) - 1,
+    text.draw(font.hud_small, tx + value_w + 4, ty + value_h - text.height(font.hud_small) - 1,
         ar, ag, ab, a8(alpha * 0.90), unit)
     if subtitle then
-        text.draw_spaced(font.tiny, tx, ty + value_h + 2, 150, 164, 182,
+        text.draw_spaced(font.hud_tiny, tx, ty + value_h + 2, 150, 164, 182,
             a8(alpha * 0.88), subtitle, 1.2)
     end
 

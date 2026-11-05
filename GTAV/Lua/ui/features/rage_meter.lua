@@ -41,13 +41,13 @@ features.on_draw("Rage Meter", function(f)
         label, lr, lg, lb = "PRESS E TO GO BERSERK", 255, 90, 60
         if math.floor(t * 3) % 2 == 1 then lg, lb = 200, 160 end
     end
-    text.draw(font.small, x, y - 26 * s, lr, lg, lb, 255, label)
+    text.draw(font.hud_small, x, y - 26 * s, lr, lg, lb, 255, label)
     local kills = string.format("KILLS %d", math.floor(f.berserk and (f.berserk_kills or 0) or (f.kills or 0)))
-    text.draw(font.small, x + bw - text.width(font.small, kills), y - 26 * s, 230, 200, 200, 255, kills)
+    text.draw(font.hud_small, x + bw - text.width(font.hud_small, kills), y - 26 * s, 230, 200, 200, 255, kills)
     local age = f.kill_age or 999999
     if age < 900 then
         local u = age / 900
         local plus = f.berserk and "+1s" or "+RAGE"
-        text.draw(font.small, x + bw + 18 * s, y - 4 * s - u * 20 * s, 255, 110, 80, math.floor(255 * (1 - u)), plus)
+        text.draw(font.hud_small, x + bw + 18 * s, y - 4 * s - u * 20 * s, 255, 110, 80, math.floor(255 * (1 - u)), plus)
     end
 end)

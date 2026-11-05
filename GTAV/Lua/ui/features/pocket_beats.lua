@@ -43,7 +43,7 @@ features.on_draw("Pocket Beats", function(f)
         arrow(cx, hit_y, 22 * s, i, c[1], c[2], c[3], math.floor(110 + 145 * glow), 4 * s)
         draw.circle_outline(cx, hit_y, 34 * s, c[1], c[2], c[3], math.floor(90 + 165 * glow), 3 * s)
         local key = LANE_KEYS[i + 1]
-        text.draw(font.small, cx - text.width(font.small, key) / 2, y0 + bh - 30 * s, 200, 200, 214, 230, key)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, key) / 2, y0 + bh - 30 * s, 200, 200, 214, 230, key)
     end
     draw.line(x0, hit_y, x0 + bw, hit_y, 240, 240, 250, 60, 2 * s)
 
@@ -65,16 +65,16 @@ features.on_draw("Pocket Beats", function(f)
     draw.rect(x0, y0 - 18 * s, x0 + bw * health, y0 - 8 * s, hr, hg, hb, 255, 5 * s)
 
     local score = string.format("%07d", math.floor(f.score or 0))
-    text.draw(font.title, x0, y0 - 80 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, x0, y0 - 80 * s, 245, 245, 250, 255, score)
     local best = string.format("BEST %07d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + bw - text.width(font.small, best), y0 - 70 * s, 200, 200, 214, 230, best)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, best), y0 - 70 * s, 200, 200, 214, 230, best)
     local lvl = string.format("LEVEL %d", math.floor(f.level or 1))
-    text.draw(font.small, x0 + bw - text.width(font.small, lvl), y0 - 44 * s, 200, 200, 214, 230, lvl)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, lvl), y0 - 44 * s, 200, 200, 214, 230, lvl)
 
     local combo = math.floor(f.combo or 0)
     if combo >= 5 and state == 2 then
         local ct = string.format("%d COMBO", combo)
-        text.draw(font.title, sw / 2 - text.width(font.title, ct) / 2, y0 + bh * 0.3, 255, 255, 255, 200, ct)
+        text.draw(font.display, sw / 2 - text.width(font.display, ct) / 2, y0 + bh * 0.3, 255, 255, 255, 200, ct)
     end
 
     local judge, age = math.floor(f.judge or 0), f.judge_age or 99999
@@ -83,7 +83,7 @@ features.on_draw("Pocket Beats", function(f)
         if judge == 2 then label, r, g, b = "GOOD", 120, 240, 140 elseif judge == 3 then label, r, g, b = "MISS", 240, 80, 80 end
         local a = math.floor(255 * (1 - age / 600))
         local rise = age / 600 * 18 * s
-        text.draw(font.title, sw / 2 - text.width(font.title, label) / 2, hit_y - 110 * s - rise, r, g, b, a, label)
+        text.draw(font.display, sw / 2 - text.width(font.display, label) / 2, hit_y - 110 * s - rise, r, g, b, a, label)
     end
 
     local banner
@@ -94,7 +94,7 @@ features.on_draw("Pocket Beats", function(f)
         banner = "GAME OVER"
     end
     if banner then
-        text.draw(font.title, sw / 2 - text.width(font.title, banner) / 2, y0 + bh * 0.42, 255, 225, 60, 255, banner)
+        text.draw(font.display, sw / 2 - text.width(font.display, banner) / 2, y0 + bh * 0.42, 255, 225, 60, 255, banner)
     end
     local foot
     if state == 3 then
@@ -102,5 +102,5 @@ features.on_draw("Pocket Beats", function(f)
     else
         foot = "HIT A S W D AS THE NOTES REACH THE LINE"
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + bh + 16 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + bh + 16 * s, 200, 200, 214, 230, foot)
 end)

@@ -36,7 +36,7 @@ features.on_draw("Enemy Health Bars", function(f)
             draw.rect(left - 3 * s, y - 3 * s, left - 1 * s, y + h + 3 * s, ar, ag, ab, 255, 0)
             draw.rect(left + w + 1 * s, y - 3 * s, left + w + 3 * s, y + h + 3 * s, ar, ag, ab, 255, 0)
             local label = string.format("%d%%", math.floor(hp * 100 + 0.5))
-            text.draw(font.tiny, x - text.width(font.tiny, label) / 2, y - text.height(font.tiny) - 2 * s, 245, 245, 250, 255, label)
+            text.draw(font.hud_tiny, x - text.width(font.hud_tiny, label) / 2, y - text.height(font.hud_tiny) - 2 * s, 245, 245, 250, 255, label)
         elseif hostile then
             draw.rect(x - 2 * s, y - 6 * s, x + 2 * s, y - 2 * s, 255, 70, 60, alpha, 2 * s)
         end

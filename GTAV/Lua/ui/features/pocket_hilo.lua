@@ -41,7 +41,7 @@ local function card(c, x, y, w, h, s, alpha)
     local cr, cg, cb = 30, 30, 36
     if red then cr, cg, cb = 210, 40, 50 end
     local label = RANKS[rk + 1]
-    text.draw(font.title, x + 10 * s, y + 6 * s, cr, cg, cb, math.floor(255 * alpha), label)
+    text.draw(font.display, x + 10 * s, y + 6 * s, cr, cg, cb, math.floor(255 * alpha), label)
     suit_shape(suit, x + w / 2, y + h / 2 + 8 * s, w * 0.22, cr, cg, cb)
 end
 
@@ -57,7 +57,7 @@ features.on_draw("Pocket Hi-Lo", function(f)
     draw.rect(x0 + 16 * s, y0 + 60 * s, x0 + pw - 16 * s, y0 + ph - 70 * s, 20, 90, 50, 255, 10 * s)
 
     local title = "HI-LO"
-    text.draw(font.title, sw / 2 - text.width(font.title, title) / 2, y0 + 12 * s, 245, 245, 250, 255, title)
+    text.draw(font.display, sw / 2 - text.width(font.display, title) / 2, y0 + 12 * s, 245, 245, 250, 255, title)
 
     local cw, ch = 150 * s, 210 * s
     local cy = y0 + 95 * s
@@ -66,7 +66,7 @@ features.on_draw("Pocket Hi-Lo", function(f)
     if state ~= 4 then card(math.floor(f.card or 0), sw / 2 + (prev >= 0 and 10 * s or -cw / 2), cy, cw, ch, s, 1) end
 
     local pot = string.format("POT $%d", math.floor(f.pot or 0))
-    text.draw(font.item, sw / 2 - text.width(font.item, pot) / 2, cy + ch + 14 * s, 255, 225, 120, 255, pot)
+    text.draw(font.hud, sw / 2 - text.width(font.hud, pot) / 2, cy + ch + 14 * s, 255, 225, 120, 255, pot)
 
     local msg
     if state == 1 then
@@ -78,11 +78,11 @@ features.on_draw("Pocket Hi-Lo", function(f)
     elseif state == 2 then msg = "WRONG - YOU LOST THE POT     SPACE TO DEAL"
     elseif state == 3 then msg = "CASHED OUT     SPACE TO DEAL"
     else msg = "YOU CANNOT AFFORD THE STAKE" end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + ph - 58 * s, 220, 220, 230, 240, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + ph - 58 * s, 220, 220, 230, 240, msg)
 
     local net = math.floor(f.net or 0)
     local ns = string.format("STAKE $%d     SESSION %s$%d", math.floor(f.stake or 0), net < 0 and "-" or "+", math.abs(net))
     local nr, ng = 140, 220
     if net < 0 then nr, ng = 235, 110 end
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, ns) / 2, y0 + ph - 28 * s, nr, ng, 140, 230, ns)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, ns) / 2, y0 + ph - 28 * s, nr, ng, 140, 230, ns)
 end)

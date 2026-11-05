@@ -105,8 +105,8 @@ local function ladder(x, cy, half, value, step, s, r, g, b, a)
             draw.line(x - len, ty, x, ty, r, g, b, major and ta or floor(ta * 0.65), major and 1.5 or 1.0)
             if major then
                 local lbl = string.format("%d", v)
-                text.draw(font.tiny, x - len - 6 * s - text.width(font.tiny, lbl),
-                          ty - text.height(font.tiny) * 0.5, r, g, b, floor(ta * 0.9), lbl)
+                text.draw(font.hud_tiny, x - len - 6 * s - text.width(font.hud_tiny, lbl),
+                          ty - text.height(font.hud_tiny) * 0.5, r, g, b, floor(ta * 0.9), lbl)
             end
         end
     end
@@ -156,7 +156,7 @@ features.on_draw("Nuclear Missile", function(f)
     -- live-feed marker
     local blink = sin(now * 4.0) > 0
     if blink then draw.circle(m * 0.6 + 12 * s, m * 0.6 + 14 * s, 4 * s, RED_R, RED_G, RED_B, A(235)) end
-    text.draw_spaced(font.tiny, m * 0.6 + 22 * s, m * 0.6 + 8 * s, 190, 205, 195, A(190), "LIVE", 2 * s)
+    text.draw_spaced(font.hud_tiny, m * 0.6 + 22 * s, m * 0.6 + 8 * s, 190, 205, 195, A(190), "LIVE", 2 * s)
 
     ------------------------------------------------------------------ phase banner
     local bw, bh = 420 * s, 8 * s
@@ -170,7 +170,7 @@ features.on_draw("Nuclear Missile", function(f)
     -- which is the opposite of what a warning is for.
     local flash = impact and (0.55 + 0.45 * sin(now * 9.0)) or 1
     centre_spaced(font.display, cx, by + bh + 6 * s, 5 * s, ac_r, ac_g, ac_b, A(245 * flash), status)
-    centre_spaced(font.tiny, cx, by + bh + 6 * s + text.height(font.display) - 4 * s, 3 * s,
+    centre_spaced(font.hud_tiny, cx, by + bh + 6 * s + text.height(font.display) - 4 * s, 3 * s,
                   170, 190, 178, A(180), "STRATEGIC GUIDANCE SYSTEM")
 
     ------------------------------------------------------------------ boresight
@@ -215,22 +215,22 @@ features.on_draw("Nuclear Missile", function(f)
     column(col_x, col_bot, 16 * s, col_h, 20, sm_fuel,
            low and RED_R or ac_r, low and RED_G or ac_g, low and RED_B or ac_b, A(255))
     column(col_x + 24 * s, col_bot, 7 * s, col_h, 20, sm_thr, WHT_R, WHT_G, WHT_B, A(200))
-    centre_spaced(font.tiny, col_x + 16 * s, col_bot + 10 * s, 2 * s, ac_r, ac_g, ac_b, A(185), "FUEL / THR")
-    right_text(font.small, col_x + 34 * s, col_bot - col_h - 18 * s,
+    centre_spaced(font.hud_tiny, col_x + 16 * s, col_bot + 10 * s, 2 * s, ac_r, ac_g, ac_b, A(185), "FUEL / THR")
+    right_text(font.hud_small, col_x + 34 * s, col_bot - col_h - 18 * s,
                low and RED_R or ac_r, low and RED_G or ac_g, low and RED_B or ac_b, A(230),
                string.format("%d%%", floor(sm_fuel * 100 + 0.5)))
 
     ------------------------------------------------------------------ altitude ladder (right)
     ladder(sw - m - 26 * s, cy, 200 * s, max(0, sm_alt), 100, s, ac_r, ac_g, ac_b, A(190))
-    centre_spaced(font.tiny, sw - m - 26 * s, cy - 200 * s - 20 * s, 3 * s, ac_r, ac_g, ac_b, A(185), "ALT M")
+    centre_spaced(font.hud_tiny, sw - m - 26 * s, cy - 200 * s - 20 * s, 3 * s, ac_r, ac_g, ac_b, A(185), "ALT M")
 
     ------------------------------------------------------------------ range readout (bottom centre)
     local rng = string.format("%d", floor(sm_dist + 0.5))
     local rh = text.height(font.display)
     local ry = sh - m - 124 * s
-    centre_spaced(font.tiny, cx, ry - 13 * s, 4 * s, ac_r, ac_g, ac_b, A(195), "RANGE TO TARGET")
+    centre_spaced(font.hud_tiny, cx, ry - 13 * s, 4 * s, ac_r, ac_g, ac_b, A(195), "RANGE TO TARGET")
     text.draw_centered(font.display, cx - 200 * s, ry, cx + 200 * s, WHT_R, WHT_G, WHT_B, A(250), rng)
-    text.draw(font.small, cx + text.width(font.display, rng) * 0.5 + 8 * s, ry + rh - text.height(font.small) - 6 * s,
+    text.draw(font.hud_small, cx + text.width(font.display, rng) * 0.5 + 8 * s, ry + rh - text.height(font.hud_small) - 6 * s,
               ac_r, ac_g, ac_b, A(215), "M")
 
     -- closure bar under the range number
@@ -240,12 +240,12 @@ features.on_draw("Nuclear Missile", function(f)
     draw.rect(cx - cbw * 0.5, ry + rh + 2 * s, cx - cbw * 0.5 + cbw * closure, ry + rh + 6 * s,
               ac_r, ac_g, ac_b, A(240), 0)
 
-    text.draw_centered(font.small, cx - 200 * s, ry + rh + 14 * s, cx + 200 * s, 180, 198, 186, A(215),
+    text.draw_centered(font.hud_small, cx - 200 * s, ry + rh + 14 * s, cx + 200 * s, 180, 198, 186, A(215),
                        string.format("SPD %d M/S        ALT %d M", floor(sm_speed + 0.5), floor(max(0, sm_alt) + 0.5)))
 
     ------------------------------------------------------------------ controls
     if not impact then
-        centre_spaced(font.tiny, cx, sh - m - 12 * s, 2 * s, 175, 195, 183, A(180),
+        centre_spaced(font.hud_tiny, cx, sh - m - 12 * s, 2 * s, 175, 195, 183, A(180),
                       "WASD STEER    SHIFT BOOST    CTRL BRAKE    ATTACK DETONATE")
     end
 end)

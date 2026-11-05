@@ -12,9 +12,9 @@ features.on_draw("Follow the Leader", function(f)
         local w, h = 360 * s, 92 * s
         local x0, y0 = cx - w / 2, 40 * s
         draw.rect(x0, y0, x0 + w, y0 + h, 12, 12, 18, 215, 12 * s)
-        text.draw(font.small, x0 + 16 * s, y0 + 8 * s, 235, 235, 245, 255, "FOLLOW THE LEADER")
+        text.draw(font.hud_small, x0 + 16 * s, y0 + 8 * s, 235, 235, 245, 255, "FOLLOW THE LEADER")
         local clock = string.format("%d", math.ceil(f.time_left or 0))
-        text.draw(font.small, x0 + w - 16 * s - text.width(font.small, clock), y0 + 8 * s, 245, 245, 250, 255, clock)
+        text.draw(font.hud_small, x0 + w - 16 * s - text.width(font.hud_small, clock), y0 + 8 * s, 245, 245, 250, 255, clock)
 
         local d = f.distance or 0
         local bx0, bx1, by = x0 + 16 * s, x0 + w - 16 * s, y0 + 44 * s
@@ -24,22 +24,22 @@ features.on_draw("Follow the Leader", function(f)
         if d < 10 then r, g, b = 120, 255, 160 elseif d < 25 then r, g, b = 255, 210, 90 end
         if k > 0 then draw.rect(bx0, by, bx0 + (bx1 - bx0) * k, by + 12 * s, r, g, b, 255, 6 * s) end
         local label = d < 10 and "ON THEIR BUMPER  x2.5" or (d < 25 and "IN RANGE" or "TOO FAR")
-        text.draw(font.tiny, bx0, by + 18 * s, r, g, b, 255, string.format("%s   %.0fm", label, d))
+        text.draw(font.hud_tiny, bx0, by + 18 * s, r, g, b, 255, string.format("%s   %.0fm", label, d))
         local sc = string.format("%d PTS", math.floor(f.score or 0))
-        text.draw(font.tiny, bx1 - text.width(font.tiny, sc), by + 18 * s, 255, 220, 90, 255, sc)
+        text.draw(font.hud_tiny, bx1 - text.width(font.hud_tiny, sc), by + 18 * s, 255, 220, 90, 255, sc)
 
         local lk = f.lose_k or 0
         if lk > 0 then
             local msg = "CATCH UP!"
-            text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.26, 255, 90, 80, math.floor(160 + 95 * math.abs(math.sin(t * 6))), msg)
+            text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.26, 255, 90, 80, math.floor(160 + 95 * math.abs(math.sin(t * 6))), msg)
             draw.rect(cx - 120 * s, sh * 0.26 + 50 * s, cx - 120 * s + 240 * s * (1 - lk), sh * 0.26 + 56 * s, 255, 90, 80, 230, 3 * s)
         end
     elseif f.won or f.lost then
         local msg = f.won and string.format("STUCK WITH THEM!  %d PTS", math.floor(f.score or 0)) or "YOU LOST THEM"
         local r, g, b = 255, 90, 80
         if f.won then r, g, b = 255, 215, 90 end
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.28, r, g, b, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.28, r, g, b, 255, msg)
         local sub = string.format("BEST %d   -   NEXT LEADER IN A MOMENT", math.floor(f.best or 0))
-        text.draw(font.tiny, cx - text.width(font.tiny, sub) / 2, sh * 0.28 + 48 * s, 210, 210, 220, math.floor(170 + 60 * math.sin(t * 3)), sub)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, sub) / 2, sh * 0.28 + 48 * s, 210, 210, 220, math.floor(170 + 60 * math.sin(t * 3)), sub)
     end
 end)

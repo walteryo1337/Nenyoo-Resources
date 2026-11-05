@@ -20,5 +20,5 @@ features.on_draw("Car Grapple", function(f)
     local label
     if f.hooked then label = string.format("HOOKED  %.0fm  -  LET GO OF G TO RELEASE", f.length or 0)
     elseif f.in_range then label = "HOLD G TO HOOK" end
-    if label then text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, cy + 26 * s, r, g, b, a, label) end
+    if label then text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, cy + 26 * s, r, g, b, a, label) end
 end)

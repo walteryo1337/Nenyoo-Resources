@@ -41,10 +41,10 @@ features.on_draw("Metal Detecting", function(f)
     else
         label = "SEARCHING"
     end
-    local lw = text.width(font.small, label)
+    local lw = text.width(font.hud_small, label)
     local lr, lg, lb = 220, 220, 230
     if f.dig_here or progress > 0 then lr, lg, lb = 120, 230, 120 end
-    text.draw(font.small, cx - lw / 2, base - max_h - text.height(font.small) - 6 * s, lr, lg, lb, 255, label)
+    text.draw(font.hud_small, cx - lw / 2, base - max_h - text.height(font.hud_small) - 6 * s, lr, lg, lb, 255, label)
 
     if progress > 0 then
         draw.rect(x, base + 6 * s, x + w, base + 9 * s, 0, 0, 0, 150, 0)
@@ -52,5 +52,5 @@ features.on_draw("Metal Detecting", function(f)
     end
 
     local stats = string.format("FINDS %d   $%d", math.floor(f.finds or 0), math.floor(f.earned or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, stats) / 2, base + 12 * s, 170, 170, 185, 220, stats)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, stats) / 2, base + 12 * s, 170, 170, 185, 220, stats)
 end)

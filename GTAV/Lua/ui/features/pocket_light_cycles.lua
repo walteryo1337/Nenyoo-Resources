@@ -57,11 +57,11 @@ features.on_draw("Pocket Light Cycles", function(f)
 
     local hy = y0 - 46 * s
     local wins, losses, need = math.floor(f.wins or 0), math.floor(f.losses or 0), math.floor(f.win_rounds or 5)
-    text.draw(font.small, x0, hy, 60, 200, 255, 255, string.format("YOU %d", wins))
+    text.draw(font.hud_small, x0, hy, 60, 200, 255, 255, string.format("YOU %d", wins))
     local rr = string.format("ROUND %d   FIRST TO %d", math.floor(f.round or 1), need)
-    text.draw(font.small, x0 + bw / 2 - text.width(font.small, rr) / 2, hy, 200, 200, 212, 255, rr)
+    text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, rr) / 2, hy, 200, 200, 212, 255, rr)
     local ph = string.format("PHONE %d", losses)
-    text.draw(font.small, x0 + bw - text.width(font.small, ph), hy, 255, 150, 40, 255, ph)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, ph), hy, 255, 150, 40, 255, ph)
     local boost = math.max(0, math.min(1, f.boost or 0))
     draw.rect(x0, y0 - 16 * s, x0 + 200 * s, y0 - 9 * s, 30, 40, 60, 255, 3 * s)
     if boost > 0 then
@@ -83,11 +83,11 @@ features.on_draw("Pocket Light Cycles", function(f)
         else banner, br, bg, bb = "THE PHONE WINS", 255, 90, 80 end
     end
     if banner then
-        local w = text.width(font.title, banner)
+        local w = text.width(font.display, banner)
         draw.rect(sw / 2 - w / 2 - 18 * s, y0 + bh / 2 - 32 * s, sw / 2 + w / 2 + 18 * s, y0 + bh / 2 + 32 * s, 6, 8, 14, 220, 8 * s)
-        text.draw(font.title, sw / 2 - w / 2, y0 + bh / 2 - text.height(font.title) / 2, br, bg, bb, 255, banner)
+        text.draw(font.display, sw / 2 - w / 2, y0 + bh / 2 - text.height(font.display) / 2, br, bg, bb, 255, banner)
     end
     local msg = "W A S D TURN   HOLD SHIFT TO BOOST   DON'T HIT ANY TRAIL"
     if state == 4 then msg = "E TO PLAY AGAIN" end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bh + 12 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bh + 12 * s, 220, 220, 232, 255, msg)
 end)

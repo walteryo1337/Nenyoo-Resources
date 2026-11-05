@@ -14,7 +14,7 @@ features.on_draw("Fun Run", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -33,10 +33,10 @@ features.on_draw("Fun Run", function(f)
         if pos == 1 then r, g, b = 255, 205, 60 elseif pos <= 3 then r, g, b = ar, ag, ab end
         local x, y = 28 * s, sh * 0.42
         text.draw(big, x, y, r, g, b, 255, pstr)
-        text.draw(font.small, x + text.width(big, pstr) + 6 * s, y + text.height(big) - text.height(font.small) - 4 * s, 200, 200, 212, 235, "/ " .. field)
+        text.draw(font.hud_small, x + text.width(big, pstr) + 6 * s, y + text.height(big) - text.height(font.hud_small) - 4 * s, 200, 200, 212, 235, "/ " .. field)
         local t = f.elapsed or 0
         local sub = string.format("%d:%04.1f   %d M TO GO", math.floor(t / 60), t % 60, math.floor(f.distance or 0))
-        text.draw(font.small, x, y + text.height(big), 225, 225, 235, 240, sub)
+        text.draw(font.hud_small, x, y + text.height(big), 225, 225, 235, 240, sub)
         return
     end
 
@@ -50,6 +50,6 @@ features.on_draw("Fun Run", function(f)
     if place > 0 then
         local sub = string.format("%.1f S", f.time or 0)
         if f.best then sub = sub .. string.format("   BEST %.1f S", f.best) end
-        text.draw(font.item, cx - text.width(font.item, sub) / 2, sh * 0.28 + text.height(big), 235, 235, 245, 255, sub)
+        text.draw(font.hud, cx - text.width(font.hud, sub) / 2, sh * 0.28 + text.height(big), 235, 235, 245, 255, sub)
     end
 end)

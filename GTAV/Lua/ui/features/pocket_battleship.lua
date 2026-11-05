@@ -52,20 +52,20 @@ features.on_draw("Pocket Battleship", function(f)
     local state = math.floor(f.state or 0)
 
     local lx, rx, gy = x0 + 24 * s, x0 + 24 * s + gw + gap, y0 + 56 * s
-    text.draw(font.small, lx, y0 + 22 * s, 200, 200, 212, 255, string.format("YOUR FLEET   %d AFLOAT", math.floor(f.your_ships or 0)))
-    text.draw(font.small, rx, y0 + 22 * s, 200, 200, 212, 255, string.format("ENEMY WATERS   %d AFLOAT", math.floor(f.enemy_ships or 0)))
+    text.draw(font.hud_small, lx, y0 + 22 * s, 200, 200, 212, 255, string.format("YOUR FLEET   %d AFLOAT", math.floor(f.your_ships or 0)))
+    text.draw(font.hud_small, rx, y0 + 22 * s, 200, 200, 212, 255, string.format("ENEMY WATERS   %d AFLOAT", math.floor(f.enemy_ships or 0)))
     grid(lx, gy, c, n, f.mine or "", t, { show_ships = true, last = f.enemy_last and math.floor(f.enemy_last), last_fresh = (f.enemy_age or 99999) < 1500 })
     grid(rx, gy, c, n, f.theirs or "", t, { cursor = state == 1 and { math.floor(f.cx or 0), math.floor(f.cy or 0) } or nil })
 
     local yr = results[math.floor(f.your_result or 0)]
     if yr and (f.your_age or 99999) < 900 then
-        local w = text.width(font.title, yr[1])
-        text.draw(font.title, rx + gw / 2 - w / 2, gy + gw / 2 - text.height(font.title) / 2, yr[2], yr[3], yr[4], 255, yr[1])
+        local w = text.width(font.display, yr[1])
+        text.draw(font.display, rx + gw / 2 - w / 2, gy + gw / 2 - text.height(font.display) / 2, yr[2], yr[3], yr[4], 255, yr[1])
     end
     local er = results[math.floor(f.enemy_result or 0)]
     if er and (f.enemy_age or 99999) < 900 then
-        local w = text.width(font.title, er[1])
-        text.draw(font.title, lx + gw / 2 - w / 2, gy + gw / 2 - text.height(font.title) / 2, er[2], er[3], er[4], 255, er[1])
+        local w = text.width(font.display, er[1])
+        text.draw(font.display, lx + gw / 2 - w / 2, gy + gw / 2 - text.height(font.display) / 2, er[2], er[3], er[4], 255, er[1])
     end
 
     local msg, cr, cg, cb
@@ -75,7 +75,7 @@ features.on_draw("Pocket Battleship", function(f)
     elseif state == 2 then msg, cr, cg, cb = "ENEMY IS TAKING AIM...", 255, 180, 90
     elseif state == 3 then msg, cr, cg, cb = "VICTORY!   E TO PLAY AGAIN", 120, 240, 120
     else msg, cr, cg, cb = "YOUR FLEET IS SUNK   E TO PLAY AGAIN", 255, 100, 100 end
-    text.draw(font.item, sw / 2 - text.width(font.item, msg) / 2, gy + gw + 28 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud, sw / 2 - text.width(font.hud, msg) / 2, gy + gw + 28 * s, cr, cg, cb, 255, msg)
     local rec = string.format("WINS %d/%d", math.floor(f.wins or 0), math.floor(f.played or 0))
-    text.draw(font.small, x0 + pw - 24 * s - text.width(font.small, rec), y0 + ph - 32 * s, 160, 160, 175, 255, rec)
+    text.draw(font.hud_small, x0 + pw - 24 * s - text.width(font.hud_small, rec), y0 + ph - 32 * s, 160, 160, 175, 255, rec)
 end)

@@ -8,8 +8,8 @@ features.on_draw("Export List", function(f)
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
     local pad = 10 * s
-    local th = text.height(font.tiny)
-    local ih = text.height(font.small)
+    local th = text.height(font.hud_tiny)
+    local ih = text.height(font.hud_small)
     local listed = math.floor(f.listed or 0)
     local wait = f.wait or 0
 
@@ -20,7 +20,7 @@ features.on_draw("Export List", function(f)
 
     local w = 250 * s
     for i = 1, 3 do
-        w = math.max(w, text.width(font.small, rows[i].name) + text.width(font.small, "$0000") + pad * 4 + 14 * s)
+        w = math.max(w, text.width(font.hud_small, rows[i].name) + text.width(font.hud_small, "$0000") + pad * 4 + 14 * s)
     end
     local h = pad * 2 + th + 4 * s + ih * 3 + th + 6 * s
     local x = sw - w - 28 * s
@@ -29,9 +29,9 @@ features.on_draw("Export List", function(f)
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 175, 6 * s)
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, 255, 0)
     local cy = y + pad
-    text.draw(font.tiny, x + pad * 1.5, cy, ar, ag, ab, 255, "EXPORT LIST")
+    text.draw(font.hud_tiny, x + pad * 1.5, cy, ar, ag, ab, 255, "EXPORT LIST")
     local tag = string.format("$%d", math.floor(f.earned or 0))
-    text.draw(font.tiny, x + w - pad - text.width(font.tiny, tag), cy, 170, 170, 185, 230, tag)
+    text.draw(font.hud_tiny, x + w - pad - text.width(font.hud_tiny, tag), cy, 170, 170, 185, 230, tag)
     cy = cy + th + 4 * s
 
     for i = 1, 3 do
@@ -46,9 +46,9 @@ features.on_draw("Export List", function(f)
         else
             draw.rect(bx, by, bx + box, by + box, 80, 80, 92, 220, 2 * s)
         end
-        text.draw(font.small, bx + box + 8 * s, cy, r, g, b, a, row.name)
+        text.draw(font.hud_small, bx + box + 8 * s, cy, r, g, b, a, row.name)
         local price = string.format("$%d", row.price)
-        text.draw(font.small, x + w - pad - text.width(font.small, price), cy, r, g, b, a, price)
+        text.draw(font.hud_small, x + w - pad - text.width(font.hud_small, price), cy, r, g, b, a, price)
         cy = cy + ih
     end
 
@@ -61,5 +61,5 @@ features.on_draw("Export List", function(f)
     else
         foot = "FIND A CAR ON THE LIST"
     end
-    text.draw(font.tiny, x + pad * 1.5, cy + 6 * s, 185, 185, 200, 230, foot)
+    text.draw(font.hud_tiny, x + pad * 1.5, cy + 6 * s, 185, 185, 200, 230, foot)
 end)

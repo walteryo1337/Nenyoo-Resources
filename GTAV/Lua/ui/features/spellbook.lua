@@ -50,9 +50,10 @@ features.on_draw("Spellbook", function(f)
         draw.circle(x + 16 * s, y0 + slot_h / 2, 7 * s, c[1], c[2], c[3], affordable and 255 or 90)
         local name = f["name" .. (i + 1)] or ("Spell " .. (i + 1))
         local a = affordable and 255 or 120
-        text.draw(font.tiny, x + 30 * s, y0 + 10 * s, 240, 240, 248, a, name)
+        -- Translated spell names can outgrow the slot; cut them short instead of running into the next one.
+        text.draw_ellipsis(font.hud_tiny, x + 30 * s, y0 + 10 * s, 240, 240, 248, a, name, slot_w - 38 * s)
         local cost_s = i == 3 and string.format("%d / s", math.floor(cost)) or tostring(math.floor(cost))
-        text.draw(font.tiny, x + 30 * s, y0 + 32 * s, 140, 190, 255, a, cost_s .. " MANA")
+        text.draw(font.hud_tiny, x + 30 * s, y0 + 32 * s, 140, 190, 255, a, cost_s .. " MANA")
     end
 
     local by = y0 + slot_h + 12 * s
@@ -62,7 +63,7 @@ features.on_draw("Spellbook", function(f)
         draw.rect_gradient(x0, by, x0 + total * fill, by + 12 * s, 60, 120, 255, 255, 140, 90, 255, 255, 140, 90, 255, 255, 60, 120, 255, 255)
     end
     local label = f.unlimited and "MANA  UNLIMITED" or string.format("MANA  %d", math.floor(mana * 100 + 0.5))
-    text.draw(font.tiny, x0, by + 16 * s, 200, 210, 240, 230, label)
+    text.draw(font.hud_tiny, x0, by + 16 * s, 200, 210, 240, 230, label)
 
     local status = {}
     if f.draining then status[#status + 1] = "DRAINING" end
@@ -76,5 +77,5 @@ features.on_draw("Spellbook", function(f)
     if wall > 0 then status[#status + 1] = string.format("WALL %ds", wall) end
     local hint = "AIM + CLICK  CAST    SCROLL  SWITCH"
     if #status > 0 then hint = table.concat(status, "   ") .. "      " .. hint end
-    text.draw(font.tiny, x0 + total - text.width(font.tiny, hint), by + 16 * s, 200, 200, 214, 220, hint)
+    text.draw(font.hud_tiny, x0 + total - text.width(font.hud_tiny, hint), by + 16 * s, 200, 200, 214, 220, hint)
 end)

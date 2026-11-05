@@ -23,7 +23,7 @@ local function ball(x, y, r, n, hot, s)
     if hot then br, bg, bb = 255, 205, 60 end
     draw.circle(x, y, r, br, bg, bb, 255)
     local str = tostring(n)
-    text.draw(font.small, x - text.width(font.small, str) / 2, y - text.height(font.small) / 2, 20, 20, 26, 255, str)
+    text.draw(font.hud_small, x - text.width(font.hud_small, str) / 2, y - text.height(font.hud_small) / 2, 20, 20, 26, 255, str)
 end
 
 features.on_draw("Lottery", function(f)
@@ -44,7 +44,7 @@ features.on_draw("Lottery", function(f)
         draw.rect(x, y, x + w, y + h + th, 12, 12, 16, 225, 10 * s)
         draw.rect(x, y, x + w, y + 3 * s, ar, ag, ab, 255, 0)
         local title = "TONIGHT'S DRAW"
-        text.draw(font.item, sw / 2 - text.width(font.item, title) / 2, y + 10 * s, 245, 245, 250, 255, title)
+        text.draw(font.hud, sw / 2 - text.width(font.hud, title) / 2, y + 10 * s, 245, 245, 250, 255, title)
         local r = 24 * s
         for i = 1, #drawn do
             local bx = sw / 2 + (i - 3) * (r * 2 + 14 * s)
@@ -57,7 +57,7 @@ features.on_draw("Lottery", function(f)
             local msg = win > 0 and string.format("YOU WON $%d", win) or "NO WIN THIS TIME"
             local cr, cg, cb = 120, 230, 120
             if win == 0 then cr, cg, cb = 200, 200, 214 end
-            text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y + h - 34 * s, cr, cg, cb, 255, msg)
+            text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y + h - 34 * s, cr, cg, cb, 255, msg)
         end
         local ty = y + h
         for _, t in ipairs(tickets) do
@@ -67,7 +67,7 @@ features.on_draw("Lottery", function(f)
                 local str = tostring(n)
                 local r2, g2, b2 = 170, 170, 185
                 if hot then r2, g2, b2 = 255, 205, 60 end
-                text.draw(font.small, tx + (i - 1) * 34 * s, ty, r2, g2, b2, 255, str)
+                text.draw(font.hud_small, tx + (i - 1) * 34 * s, ty, r2, g2, b2, 255, str)
             end
             ty = ty + 26 * s
         end
@@ -76,18 +76,18 @@ features.on_draw("Lottery", function(f)
 
     local tickets = parse_tickets(f.tickets)
     local w = 260 * s
-    local lh = text.height(font.small) + 4 * s
+    local lh = text.height(font.hud_small) + 4 * s
     local h = 70 * s + lh * #tickets
     local x, y = sw - w - 30 * s, sh * 0.6
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 210, 8 * s)
     draw.rect(x, y, x + 3 * s, y + h, 255, 205, 60, 255, 0)
-    text.draw(font.item, x + 14 * s, y + 8 * s, 255, 220, 100, 255, string.format("JACKPOT $%d", math.floor(f.jackpot or 0)))
+    text.draw(font.hud, x + 14 * s, y + 8 * s, 255, 220, 100, 255, string.format("JACKPOT $%d", math.floor(f.jackpot or 0)))
     local m = math.floor(f.minutes_to_draw or 0)
     local next_str = string.format("DRAW IN %dH %02dM   %d TICKETS", math.floor(m / 60), m % 60, #tickets)
-    text.draw(font.tiny, x + 14 * s, y + 12 * s + text.height(font.item), 200, 200, 214, 230, next_str)
+    text.draw(font.hud_tiny, x + 14 * s, y + 12 * s + text.height(font.hud), 200, 200, 214, 230, next_str)
     local ty = y + 58 * s
     for _, t in ipairs(tickets) do
-        text.draw(font.small, x + 14 * s, ty, 235, 235, 245, 255, table.concat(t, "  "))
+        text.draw(font.hud_small, x + 14 * s, ty, 235, 235, 245, 255, table.concat(t, "  "))
         ty = ty + lh
     end
 end)

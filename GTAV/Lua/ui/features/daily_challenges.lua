@@ -33,7 +33,7 @@ features.on_draw("Daily Challenges", function(f)
     local a = shown
     local pad = 10 * s
     local w = 300 * s
-    local th = text.height(font.tiny)
+    local th = text.height(font.hud_tiny)
     local row_h = th * 2 + 10 * s
     local h = th + pad * 2 + row_h * 3
     local x = sw - w - 28 * s + (1 - shown) * 40 * s
@@ -41,23 +41,23 @@ features.on_draw("Daily Challenges", function(f)
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, math.floor(165 * a), 6 * s)
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, math.floor(255 * a), 0)
-    text.draw(font.tiny, x + pad, y + pad, ar, ag, ab, math.floor(255 * a), "DAILY CHALLENGES")
+    text.draw(font.hud_tiny, x + pad, y + pad, ar, ag, ab, math.floor(255 * a), "DAILY CHALLENGES")
 
     local cy = y + pad + th + 6 * s
     for i = 1, 3 do
         local r = rows[i]
         local cr, cg, cb = 240, 240, 245
         if r.done then cr, cg, cb = 120, 220, 140 end
-        text.draw(font.tiny, x + pad, cy, cr, cg, cb, math.floor(255 * a), r.label)
+        text.draw(font.hud_tiny, x + pad, cy, cr, cg, cb, math.floor(255 * a), r.label)
         local pay = r.done and "DONE" or string.format("$%d", r.reward)
-        text.draw(font.tiny, x + w - pad - text.width(font.tiny, pay), cy, cr, cg, cb, math.floor(230 * a), pay)
+        text.draw(font.hud_tiny, x + w - pad - text.width(font.hud_tiny, pay), cy, cr, cg, cb, math.floor(230 * a), pay)
         local by = cy + th + 3 * s
         local bw = w - pad * 2 - 90 * s
         local p = math.min(1, r.value / r.target)
         draw.rect(x + pad, by + th * 0.35, x + pad + bw, by + th * 0.35 + 4 * s, 0, 0, 0, math.floor(160 * a), 0)
         draw.rect(x + pad, by + th * 0.35, x + pad + bw * p, by + th * 0.35 + 4 * s, r.done and 120 or ar, r.done and 220 or ag, r.done and 140 or ab, math.floor(255 * a), 0)
         local nums = fmt(r.value, r.target)
-        text.draw(font.tiny, x + w - pad - text.width(font.tiny, nums), by, 190, 190, 200, math.floor(220 * a), nums)
+        text.draw(font.hud_tiny, x + w - pad - text.width(font.hud_tiny, nums), by, 190, 190, 200, math.floor(220 * a), nums)
         cy = cy + row_h
     end
 end)

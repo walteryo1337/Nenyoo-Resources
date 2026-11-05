@@ -57,7 +57,7 @@ local function on_screen_mark(m, sw, sh, now)
         pin(x, y - 18 + bob, s, a)
         arc(x, y - 24 * s + bob, 16 * s, m.left, RED[1], RED[2], RED[3], math.floor(150 * fade), 2)
         local d = string.format("%dm", math.floor(m.distance + 0.5))
-        text.draw_outlined(font.tiny, x - text.width(font.tiny, d) * 0.5, y + 2 + bob, 255, 255, 255, a,
+        text.draw_outlined(font.hud_tiny, x - text.width(font.hud_tiny, d) * 0.5, y + 2 + bob, 255, 255, 255, a,
             0, 0, 0, math.floor(a * 0.8), 1.5, d)
     end)
 
@@ -65,7 +65,7 @@ local function on_screen_mark(m, sw, sh, now)
         local p = m.age / 1.2
         local ta = math.floor(255 * math.min(1, (1 - p) / 0.4))
         local label = "TAGGED"
-        text.draw_outlined(font.small, x - text.width(font.small, label) * 0.5, y - 62 - p * 20, RED[1], RED[2], RED[3], ta,
+        text.draw_outlined(font.hud_small, x - text.width(font.hud_small, label) * 0.5, y - 62 - p * 20, RED[1], RED[2], RED[3], ta,
             0, 0, 0, math.floor(ta * 0.8), 2.0, label)
     end
 end
@@ -85,7 +85,7 @@ local function edge_arrow(m, sw, sh, now)
     draw.line(x - px * w, y - py * w, tx, ty, RED[1], RED[2], RED[3], a, 3.5)
     draw.line(x + px * w, y + py * w, tx, ty, RED[1], RED[2], RED[3], a, 3.5)
     local d = string.format("%dm", math.floor(m.distance + 0.5))
-    text.draw_outlined(font.tiny, x - text.width(font.tiny, d) * 0.5, y + 18, 255, 255, 255, a, 0, 0, 0, 180, 1.5, d)
+    text.draw_outlined(font.hud_tiny, x - text.width(font.hud_tiny, d) * 0.5, y + 18, 255, 255, 255, a, 0, 0, 0, 180, 1.5, d)
 end
 
 features.on_draw("Target Marking", function(f)

@@ -43,6 +43,6 @@ features.on_draw("Hash Gun", function(f)
     for i, l in ipairs(lines) do
         local col_r, col_g, col_b = 232, 232, 238
         if i == 1 then col_r, col_g, col_b = ar, ag, ab end        -- title in accent
-        text.draw(font.item, x, y + (i - 1) * lh, col_r, col_g, col_b, 255, l)
+        text.draw(font.hud, x, y + (i - 1) * lh, col_r, col_g, col_b, 255, l)
     end
 end)

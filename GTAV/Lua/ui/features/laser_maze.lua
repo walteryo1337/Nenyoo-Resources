@@ -15,14 +15,14 @@ features.on_draw("Laser Maze", function(f)
     draw.rect(x0, y0, x0 + w, y0 + h, 10, 8, 12, 225, 12 * s)
     draw.rect(x0, y0, x0 + w, y0 + 4 * s, 255, 40, 40, 230, 0)
     local title = string.format("LASER MAZE  LEVEL %d", math.floor(f.level or 1))
-    text.draw(font.tiny, x0 + 14 * s, y0 + 12 * s, 255, 150, 150, 240, title)
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + 12 * s, 255, 150, 150, 240, title)
     local t = f.time_left or 0
     local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
     local cr, cg, cb = 245, 245, 250
     if f.running and t < 10 then cr, cg, cb = 255, 90, 80 end
-    text.draw(font.small, x0 + w - 14 * s - text.width(font.small, clock), y0 + 8 * s, cr, cg, cb, 255, clock)
+    text.draw(font.hud_small, x0 + w - 14 * s - text.width(font.hud_small, clock), y0 + 8 * s, cr, cg, cb, 255, clock)
     local goal = f.has_loot and "GET BACK PAST THE GREEN LINE" or "GRAB THE CASE  (E)"
-    text.draw(font.tiny, x0 + 14 * s, y0 + 40 * s, 235, 235, 245, 235, goal)
+    text.draw(font.hud_tiny, x0 + 14 * s, y0 + 40 * s, 235, 235, 245, 235, goal)
     local lives, maxl = math.floor(f.lives or 0), math.floor(f.max_lives or 3)
     for i = 1, maxl do
         local px = x0 + 20 * s + (i - 1) * 22 * s
@@ -31,17 +31,17 @@ features.on_draw("Laser Maze", function(f)
     end
     if (f.best or 0) > 0 then
         local best = string.format("BEST LEVEL %d", math.floor(f.best))
-        text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, best), y0 + 58 * s, 190, 190, 205, 210, best)
+        text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, best), y0 + 58 * s, 190, 190, 205, 210, best)
     end
 
     if f.ready then
         local n = string.format("%d", math.max(1, math.ceil(f.count or 0)))
-        text.draw(font.title, cx - text.width(font.title, n) / 2, sh * 0.32, 255, 90, 90, 255, n)
+        text.draw(font.display, cx - text.width(font.display, n) / 2, sh * 0.32, 255, 90, 90, 255, n)
     elseif f.won then
         local msg = "CLEAN GETAWAY"
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.3, 120, 255, 160, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.3, 120, 255, 160, 255, msg)
     elseif f.failed then
         local msg = "ALARM TRIPPED"
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.3, 255, 80, 70, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.3, 255, 80, 70, 255, msg)
     end
 end)

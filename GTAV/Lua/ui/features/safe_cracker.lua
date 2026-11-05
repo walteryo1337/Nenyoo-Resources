@@ -18,9 +18,9 @@ features.on_draw("Safe Cracker", function(f)
             draw.circle(x, y, 9 * s, 255, 200, 60, 230)
             draw.circle(x, y, 4 * s, 20, 20, 24, 255)
             local label = f.near_safe and "E  CRACK THE SAFE" or "SAFE"
-            local w = text.width(font.small, label)
+            local w = text.width(font.hud_small, label)
             draw.rect(x - w / 2 - 8 * s, y - 40 * s, x + w / 2 + 8 * s, y - 16 * s, 10, 10, 14, 200, 5 * s)
-            text.draw(font.small, x - w / 2, y - 38 * s, 255, 220, 120, 255, label)
+            text.draw(font.hud_small, x - w / 2, y - 38 * s, 255, 220, 120, 255, label)
         end
         return
     end
@@ -39,13 +39,13 @@ features.on_draw("Safe Cracker", function(f)
         if n % 10 == 0 then
             local label = tostring(n)
             local tx, ty = cx + c1 * (R - 36 * s), cy + s1 * (R - 36 * s)
-            text.draw(font.small, tx - text.width(font.small, label) / 2, ty - text.height(font.small) / 2, 230, 230, 236, 255, label)
+            text.draw(font.hud_small, tx - text.width(font.hud_small, label) / 2, ty - text.height(font.hud_small) / 2, 230, 230, 236, 255, label)
         end
     end
     draw.circle(cx, cy, R * 0.42, 55, 55, 62, 255)
     draw.circle(cx, cy, R * 0.34, 80, 80, 90, 255)
     local num = string.format("%02d", math.floor(f.number or 0))
-    text.draw(font.title, cx - text.width(font.title, num) / 2, cy - text.height(font.title) / 2, 255, 220, 120, 255, num)
+    text.draw(font.display, cx - text.width(font.display, num) / 2, cy - text.height(font.display) / 2, 255, 220, 120, 255, num)
     draw.line(cx, cy - R - 22 * s, cx - 9 * s, cy - R - 38 * s, 255, 80, 60, 255, 3 * s)
     draw.line(cx, cy - R - 22 * s, cx + 9 * s, cy - R - 38 * s, 255, 80, 60, 255, 3 * s)
     draw.line(cx - 9 * s, cy - R - 38 * s, cx + 9 * s, cy - R - 38 * s, 255, 80, 60, 255, 3 * s)
@@ -60,13 +60,13 @@ features.on_draw("Safe Cracker", function(f)
         if listen > 0.9 then p = listen * (0.85 + 0.15 * math.abs(math.sin(t * 18))) end
         draw.rect(lx, ly + lh * (1 - p), lx + 26 * s, ly + lh, 60 + math.floor(195 * listen), 220 - math.floor(60 * listen), 90, 255, 6 * s)
     end
-    text.draw(font.tiny, lx + 13 * s - text.width(font.tiny, "LISTEN") / 2, ly + lh + 8 * s, 200, 200, 210, 255, "LISTEN")
+    text.draw(font.hud_tiny, lx + 13 * s - text.width(font.hud_tiny, "LISTEN") / 2, ly + lh + 8 * s, 200, 200, 210, 255, "LISTEN")
 
     local nx = cx + R + 64 * s
     local noise = math.max(0, math.min(1, f.noise or 0))
     draw.rect(nx, ly, nx + 26 * s, ly + lh, 40, 40, 48, 255, 6 * s)
     if noise > 0 then draw.rect(nx, ly + lh * (1 - noise), nx + 26 * s, ly + lh, 255, 80, 60, 255, 6 * s) end
-    text.draw(font.tiny, nx + 13 * s - text.width(font.tiny, "NOISE") / 2, ly + lh + 8 * s, 200, 200, 210, 255, "NOISE")
+    text.draw(font.hud_tiny, nx + 13 * s - text.width(font.hud_tiny, "NOISE") / 2, ly + lh + 8 * s, 200, 200, 210, 255, "NOISE")
 
     local sets = { f.set1, f.set2, f.set3 }
     local stage = math.floor(f.stage or 0)
@@ -78,7 +78,7 @@ features.on_draw("Safe Cracker", function(f)
         if on then r, g, b = 90, 220, 120 elseif i == stage + 1 and state == 2 then r, g, b = 200, 170, 60 end
         draw.rect(bx - 28 * s, by - 14 * s, bx + 28 * s, by + 14 * s, r, g, b, 255, 6 * s)
         local label = on and string.format("%02d", math.floor(sets[i])) or "--"
-        text.draw(font.small, bx - text.width(font.small, label) / 2, by - text.height(font.small) / 2, 20, 20, 24, 255, label)
+        text.draw(font.hud_small, bx - text.width(font.hud_small, label) / 2, by - text.height(font.hud_small) / 2, 20, 20, 24, 255, label)
     end
 
     local msg, mr, mg, mb = "", 230, 230, 236
@@ -93,5 +93,5 @@ features.on_draw("Safe Cracker", function(f)
     elseif state == 4 then
         msg, mr, mg, mb = "ALARM!   RUN", 255, 80, 60
     end
-    text.draw(font.small, cx - text.width(font.small, msg) / 2, cy + R + 22 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, cy + R + 22 * s, mr, mg, mb, 255, msg)
 end)

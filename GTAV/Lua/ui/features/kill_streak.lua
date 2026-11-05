@@ -29,19 +29,19 @@ features.on_draw("Kill Streak", function(f)
         sub = "ALL REWARDS EARNED"
     end
 
-    local tw = text.width(font.item, title)
-    local sw2 = text.width(font.tiny, sub)
+    local tw = text.width(font.hud, title)
+    local sw2 = text.width(font.hud_tiny, sub)
     local pad = 10 * s
     local w = math.max(tw, sw2) + pad * 2
-    local h = text.height(font.item) + text.height(font.tiny) + pad * 2 + 2 * s
+    local h = text.height(font.hud) + text.height(font.hud_tiny) + pad * 2 + 2 * s
     local x = sw - w - 28 * s
     local y = sh * 0.30
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 160, 6 * s)
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, 255, 0)
     local glow = math.floor(255 * pulse)
-    text.draw(font.item, x + w - pad - tw, y + pad, 255, 255 - math.floor(glow * 0.4), 255 - glow, 255, title)
+    text.draw(font.hud, x + w - pad - tw, y + pad, 255, 255 - math.floor(glow * 0.4), 255 - glow, 255, title)
     local r, g, b = 170, 170, 180
     if f.invincible then r, g, b = 255, 215, 90 end
-    text.draw(font.tiny, x + w - pad - sw2, y + pad + text.height(font.item) + 2 * s, r, g, b, 230, sub)
+    text.draw(font.hud_tiny, x + w - pad - sw2, y + pad + text.height(font.hud) + 2 * s, r, g, b, 230, sub)
 end)

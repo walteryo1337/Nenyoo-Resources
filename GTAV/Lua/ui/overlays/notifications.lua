@@ -99,17 +99,19 @@ overlay.on_draw("notifications", function()
             next_positions[n.index] = { y = y, created = n.create_time }
             cursor = cursor + (h + GAP) * space
 
+            -- A closing card shrinks with its slot so the cards below never slide over its text.
+            local vh = h * space
             local alpha = math.floor(opacity * 255)
-            if alpha > 0 then
+            if alpha > 0 and vh > 2 then
                 local cr, cg, cb = ar, ag, ab
                 if n.color_type == 2 then cr, cg, cb = er, eg, eb end
                 local x = sw - w - MARGIN + offset
-                draw.rect(x, y, x + w, y + h, 11, 11, 14, alpha, 0)
+                draw.rect(x, y, x + w, y + vh, 11, 11, 14, alpha, 0)
                 local timer_age = n.closing and math.max(0, n.close_time - n.create_time) or age
                 local progress = clamp(timer_age / math.max(0.001, n.duration - EXIT), 0, 1)
-                timed_accent(x, y, w, h, progress, cr, cg, cb, alpha)
+                timed_accent(x, y, w, vh, progress, cr, cg, cb, alpha)
 
-                draw.push_clip(x + 1, y + 1, x + w - 1, y + h - 1)
+                draw.push_clip(x + 1, y + 1, x + w - 1, y + vh - 1)
                 for li, line in ipairs(lines) do
                     text.draw(MFONT, x + text_pad, y + 11 + (li - 1) * line_h,
                         238, 238, 242, alpha, line)

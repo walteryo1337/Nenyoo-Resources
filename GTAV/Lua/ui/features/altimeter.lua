@@ -18,7 +18,7 @@ features.on_draw("Altimeter", function(f)
     }
 
     local pad = 10 * s
-    local lh = text.height(font.small) + 4 * s
+    local lh = text.height(font.hud_small) + 4 * s
     local w = 170 * s
     local h = lh * #lines + pad * 2
     local x = 24 * s
@@ -32,16 +32,16 @@ features.on_draw("Altimeter", function(f)
 
     for i, l in ipairs(lines) do
         local ly = y + pad + (i - 1) * lh
-        text.draw(font.tiny, x + pad, ly + 2 * s, 170, 170, 180, 230, l[1])
-        local vw = text.width(font.small, l[2])
+        text.draw(font.hud_tiny, x + pad, ly + 2 * s, 170, 170, 180, 230, l[1])
+        local vw = text.width(font.hud_small, l[2])
         local r, g, b = 240, 240, 245
         if danger and i > 1 then r, g, b = 235, 80, 80 end
-        text.draw(font.small, x + w - pad - vw, ly, r, g, b, 255, l[2])
+        text.draw(font.hud_small, x + w - pad - vw, ly, r, g, b, 255, l[2])
     end
 
     if danger then
         local label = "PULL UP"
-        local lw = text.width(font.item, label)
-        text.draw(font.item, x + (w - lw) * 0.5, y + h + 6 * s, 235, 60, 60, 255, label)
+        local lw = text.width(font.hud, label)
+        text.draw(font.hud, x + (w - lw) * 0.5, y + h + 6 * s, 235, 60, 60, 255, label)
     end
 end)

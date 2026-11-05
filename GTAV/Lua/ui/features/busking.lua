@@ -20,9 +20,9 @@ features.on_draw("Busking", function(f)
     draw.rect(px, py, px + 4 * s, py + ph, acc[1] or 255, acc[2] or 255, acc[3] or 255, 255, 2 * s)
 
     local title = string.upper(f.act_name or "Busking")
-    text.draw(font.item, px + 16 * s, py + 10 * s, 245, 245, 250, 255, title)
+    text.draw(font.hud, px + 16 * s, py + 10 * s, 245, 245, 250, 255, title)
     local cash = string.format("$%d", math.floor(f.total or 0))
-    text.draw(font.item, px + pw - 16 * s - text.width(font.item, cash), py + 10 * s, 120, 230, 120, 255, cash)
+    text.draw(font.hud, px + pw - 16 * s - text.width(font.hud, cash), py + 10 * s, 120, 230, 120, 255, cash)
 
     local hype = f.hype or 0
     local bx1, by1, bx2 = px + 16 * s, py + 44 * s, px + pw - 16 * s
@@ -35,7 +35,7 @@ features.on_draw("Busking", function(f)
     local info = string.format("HYPE %d%%   CROWD %d", math.floor(hype * 100 + 0.5), crowd)
     local combo = math.floor(f.combo or 0)
     if combo >= 2 then info = info .. string.format("   COMBO x%d", combo) end
-    text.draw(font.small, bx1, py + 62 * s, 200, 200, 210, 255, info)
+    text.draw(font.hud_small, bx1, py + 62 * s, 200, 200, 210, 255, info)
 
     local cx, cy = sw / 2, py - 70 * s
     if f.beat then
@@ -48,17 +48,17 @@ features.on_draw("Busking", function(f)
         if inside then draw.circle(cx, cy, target, 120, 240, 120, 90) end
         draw.circle_outline(cx, cy, target, 245, 245, 250, 255, 3 * s)
         draw.circle_outline(cx, cy, r, acc[1] or 255, acc[2] or 200, acc[3] or 80, 230, 3 * s)
-        text.draw(font.item, cx - text.width(font.item, "E") / 2, cy - text.height(font.item) / 2, 245, 245, 250, 255, "E")
+        text.draw(font.hud, cx - text.width(font.hud, "E") / 2, cy - text.height(font.hud) / 2, 245, 245, 250, 255, "E")
     else
         local msg, cr, cg, cb = "HOLD STILL", 220, 220, 232
         if f.scare_window then
             msg, cr, cg, cb = "PRESS E - SCARE THEM!", 255, 220, 80
             local pulse = 1 + 0.08 * math.sin(t * 20)
-            local w = text.width(font.title, msg) * pulse
+            local w = text.width(font.display, msg) * pulse
             draw.rect(cx - w / 2 - 14 * s, cy - 24 * s, cx + w / 2 + 14 * s, cy + 24 * s, 12, 12, 16, 220, 8 * s)
-            text.draw(font.title, cx - text.width(font.title, msg) / 2, cy - text.height(font.title) / 2, cr, cg, cb, 255, msg)
+            text.draw(font.display, cx - text.width(font.display, msg) / 2, cy - text.height(font.display) / 2, cr, cg, cb, 255, msg)
         else
-            text.draw(font.item, cx - text.width(font.item, msg) / 2, cy - text.height(font.item) / 2, cr, cg, cb, 200, msg)
+            text.draw(font.hud, cx - text.width(font.hud, msg) / 2, cy - text.height(font.hud) / 2, cr, cg, cb, 200, msg)
         end
     end
 
@@ -67,14 +67,14 @@ features.on_draw("Busking", function(f)
     if judgments[j] and jage < 700 then
         local jd = judgments[j]
         local a = math.floor(255 * (1 - jage / 700))
-        local w = text.width(font.title, jd[1])
-        text.draw(font.title, cx - w / 2, cy - 74 * s - jage / 700 * 20 * s, jd[2], jd[3], jd[4], a, jd[1])
+        local w = text.width(font.display, jd[1])
+        text.draw(font.display, cx - w / 2, cy - 74 * s - jage / 700 * 20 * s, jd[2], jd[3], jd[4], a, jd[1])
     end
 
     local tage = f.tip_age or 99999
     if f.last_tip and tage < 1500 then
         local a = math.floor(255 * (1 - tage / 1500))
         local msg = string.format("+$%d", math.floor(f.last_tip))
-        text.draw(font.item, px + pw - 16 * s - text.width(font.item, msg), py - 30 * s - tage / 1500 * 30 * s, 120, 230, 120, a, msg)
+        text.draw(font.hud, px + pw - 16 * s - text.width(font.hud, msg), py - 30 * s - tage / 1500 * 30 * s, 120, 230, 120, a, msg)
     end
 end)

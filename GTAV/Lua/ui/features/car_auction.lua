@@ -13,7 +13,7 @@ features.on_draw("Car Auction", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local pad = 12 * s
     local w, h = 300 * s, 190 * s
     local x, y = sw - w - 28 * s, sh * 0.3
@@ -21,22 +21,22 @@ features.on_draw("Car Auction", function(f)
     draw.rect(x, y, x + w, y + h, 12, 10, 8, 205, 8 * s)
     draw.rect(x, y, x + w, y + 3 * s, 220, 180, 90, 255, 0)
     local cy = y + pad
-    text.draw(font.tiny, x + pad, cy, 220, 180, 90, 255, string.format("LOT %d", math.floor(f.lot or 0)))
+    text.draw(font.hud_tiny, x + pad, cy, 220, 180, 90, 255, string.format("LOT %d", math.floor(f.lot or 0)))
     local est = "EST. " .. money(f.value)
-    text.draw(font.tiny, x + w - pad - text.width(font.tiny, est), cy, 190, 180, 160, 230, est)
-    cy = cy + text.height(font.tiny) + 2 * s
-    text.draw(font.item, x + pad, cy, 245, 240, 230, 255, f.name or "MYSTERY LOT")
-    cy = cy + text.height(font.item) + 8 * s
+    text.draw(font.hud_tiny, x + w - pad - text.width(font.hud_tiny, est), cy, 190, 180, 160, 230, est)
+    cy = cy + text.height(font.hud_tiny) + 2 * s
+    text.draw(font.hud, x + pad, cy, 245, 240, 230, 255, f.name or "MYSTERY LOT")
+    cy = cy + text.height(font.hud) + 8 * s
 
     local leader = math.floor(f.leader or -1)
     local who = "OPENING BID"
     local lr, lg, lb = 200, 200, 210
     if leader == 0 then who, lr, lg, lb = "YOU LEAD", 90, 230, 110
     elseif leader > 0 then who, lr, lg, lb = string.format("BIDDER %d LEADS", leader), 240, 140, 80 end
-    text.draw(font.tiny, x + pad, cy, lr, lg, lb, 255, who)
-    cy = cy + text.height(font.tiny)
-    text.draw(font.title, x + pad, cy, 255, 255, 255, 255, money(f.bid))
-    cy = cy + text.height(font.title) + 6 * s
+    text.draw(font.hud_tiny, x + pad, cy, lr, lg, lb, 255, who)
+    cy = cy + text.height(font.hud_tiny)
+    text.draw(font.display, x + pad, cy, 255, 255, 255, 255, money(f.bid))
+    cy = cy + text.height(font.display) + 6 * s
 
     local state = math.floor(f.state or 1)
     if state == 1 then
@@ -48,7 +48,7 @@ features.on_draw("Car Auction", function(f)
         draw.rect(x + pad, cy, x + pad + (w - pad * 2) * frac, cy + 4 * s, 220, 180, 90, 255, 2 * s)
         cy = cy + 10 * s
         local nb = "NEXT " .. money(f.next_bid) .. "   CASH " .. money(f.cash)
-        text.draw(font.tiny, x + pad, cy, 190, 190, 200, 230, nb)
+        text.draw(font.hud_tiny, x + pad, cy, 190, 190, 200, 230, nb)
         if call ~= "" then
             local pulse = 160 + math.floor(95 * math.abs(math.sin(ctx.time() * 5)))
             text.draw(big, sw / 2 - text.width(big, call) / 2, sh * 0.22, 240, 200, 90, pulse, call)

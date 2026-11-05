@@ -17,11 +17,11 @@ features.on_draw("Bullfighting", function(f)
     draw.rect(x0, y0, x0 + w, y0 + h, 24, 10, 10, 220, 12 * s)
     draw.rect(x0, y0, x0 + w, y0 + 4 * s, 220, 40, 40, 230, 0)
     local score = string.format("%d", math.floor(f.score or 0))
-    text.draw(font.title, x0 + 16 * s, y0 + 10 * s, 255, 255, 255, 255, score)
+    text.draw(font.display, x0 + 16 * s, y0 + 10 * s, 255, 255, 255, 255, score)
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.tiny, x0 + 70 * s, y0 + 14 * s, 210, 200, 200, 220, best)
+    text.draw(font.hud_tiny, x0 + 70 * s, y0 + 14 * s, 210, 200, 200, 220, best)
     local passes = string.format("%d PASSES", math.floor(f.passes or 0))
-    text.draw(font.tiny, x0 + 70 * s, y0 + 36 * s, 210, 200, 200, 220, passes)
+    text.draw(font.hud_tiny, x0 + 70 * s, y0 + 36 * s, 210, 200, 200, 220, passes)
     local lives, maxl = math.floor(f.lives or 0), math.floor(f.max_lives or 3)
     for i = 1, maxl do
         local px = x0 + w - 16 * s - (maxl - i) * 22 * s
@@ -40,10 +40,10 @@ features.on_draw("Bullfighting", function(f)
         draw.circle(cx, cy, r, cr, cg, cb, inside and 200 or 90)
         draw.circle(cx, cy, 22 * s, 20, 20, 24, 200)
         local hint = "E"
-        text.draw(font.small, cx - text.width(font.small, hint) / 2, cy - 11 * s, cr, cg, cb, 255, hint)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, hint) / 2, cy - 11 * s, cr, cg, cb, 255, hint)
     elseif f.pawing then
         local hint = "THE BULL IS PAWING THE GROUND"
-        text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, sh * 0.66, 235, 225, 225, 220, hint)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, sh * 0.66, 235, 225, 225, 220, hint)
     end
 
     local c = math.floor(f.call or 0)
@@ -51,10 +51,10 @@ features.on_draw("Bullfighting", function(f)
     if c > 0 and ck > 0 and calls[c] then
         local col = cols[c]
         local word = calls[c]
-        text.draw(font.title, cx - text.width(font.title, word) / 2, sh * 0.30 - 24 * s * (1 - ck), col[1], col[2], col[3], math.floor(255 * ck), word)
+        text.draw(font.display, cx - text.width(font.display, word) / 2, sh * 0.30 - 24 * s * (1 - ck), col[1], col[2], col[3], math.floor(255 * ck), word)
     end
     if f.done then
         local msg = "THE BULL WINS"
-        text.draw(font.title, cx - text.width(font.title, msg) / 2, sh * 0.36, 255, 90, 80, 255, msg)
+        text.draw(font.display, cx - text.width(font.display, msg) / 2, sh * 0.36, 255, 90, 80, 255, msg)
     end
 end)

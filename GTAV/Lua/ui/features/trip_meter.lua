@@ -78,11 +78,11 @@ local function stat(x, y, w, label, value, unit, r, g, b, glow)
     if glow > 0 then
         draw.rect(x, y, x + w, y + 44, r, g, b, math.floor(60 * glow), 5)
     end
-    text.draw(font.tiny, x + 8, y + 4, 160, 160, 175, 255, label)
-    local vy = y + 6 + text.height(font.tiny)
-    text.draw(font.item, x + 8, vy, r, g, b, 255, value)
-    local vw = text.width(font.item, value)
-    text.draw(font.tiny, x + 12 + vw, vy + text.height(font.item) - text.height(font.tiny) - 1, 150, 150, 165, 255, unit)
+    text.draw(font.hud_tiny, x + 8, y + 4, 160, 160, 175, 255, label)
+    local vy = y + 6 + text.height(font.hud_tiny)
+    text.draw(font.hud, x + 8, vy, r, g, b, 255, value)
+    local vw = text.width(font.hud, value)
+    text.draw(font.hud_tiny, x + 12 + vw, vy + text.height(font.hud) - text.height(font.hud_tiny) - 1, 150, 150, 165, 255, unit)
 end
 
 local function graph(x, y, w, h, hist, top, ar, ag, ab)
@@ -131,13 +131,13 @@ features.on_draw("Trip Meter", function(f)
         draw.rect_outline(x, y, x + W, y + h, ar, ag, ab, math.floor(255 * mile_glow * pulse), 8, 2.5)
     end
 
-    text.draw(font.small, x + 16, y + 12, 255, 255, 255, 255, "TRIP")
+    text.draw(font.hud_small, x + 16, y + 12, 255, 255, 255, 255, "TRIP")
     local t = clock(f.seconds)
-    text.draw(font.small, x + W - 16 - text.width(font.small, t), y + 12, 200, 200, 210, 255, t)
+    text.draw(font.hud_small, x + W - 16 - text.width(font.hud_small, t), y + 12, 200, 200, 210, 255, t)
 
-    local oy = y + 20 + text.height(font.small)
+    local oy = y + 20 + text.height(font.hud_small)
     local used = odometer(x + 16, oy, f.distance or 0, ar, ag, ab, mile_glow)
-    text.draw(font.small, x + 18 + used, oy + 40 - text.height(font.small) - 2, 170, 170, 185, 255, unit)
+    text.draw(font.hud_small, x + 18 + used, oy + 40 - text.height(font.hud_small) - 2, 170, 170, 185, 255, unit)
 
     local sy = oy + 54
     local cw = (W - 32) / 3
@@ -164,8 +164,8 @@ features.on_draw("Trip Meter", function(f)
         local alpha = math.floor(255 * math.min(1, ba / 0.3))
         local bx, by = x + W * 0.5, y - 26 - p * 10
         draw.with_scale(bx, by, pop, function()
-            local tw = text.width(font.item, banner)
-            text.draw_outlined(font.item, bx - tw * 0.5, by, br, bg, bb, alpha, 0, 0, 0, math.floor(alpha * 0.8), 2.0, banner)
+            local tw = text.width(font.hud, banner)
+            text.draw_outlined(font.hud, bx - tw * 0.5, by, br, bg, bb, alpha, 0, 0, 0, math.floor(alpha * 0.8), 2.0, banner)
         end)
     end
 end)

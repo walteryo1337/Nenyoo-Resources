@@ -40,12 +40,12 @@ local function draw_controls(f)
     add(key_name(f.spawn_key), "Spawn test pedestrian")
 
     local pad, gap = 12, 14
-    local title_h = text.height(font.item)
-    local row_h = text.height(font.tiny) + 8
+    local title_h = text.height(font.hud)
+    local row_h = text.height(font.hud_tiny) + 8
     local key_w, action_w = 0, 0
     for _, row in ipairs(rows) do
-        key_w = math.max(key_w, text.width(font.tiny, row.key))
-        action_w = math.max(action_w, text.width(font.tiny, row.action))
+        key_w = math.max(key_w, text.width(font.hud_tiny, row.key))
+        action_w = math.max(action_w, text.width(font.hud_tiny, row.action))
     end
     local w = math.max(330, pad * 2 + key_w + gap + action_w)
     local h = pad * 2 + title_h + 8 + row_h * #rows
@@ -57,7 +57,7 @@ local function draw_controls(f)
     draw.rect(x + w * 0.5, y, x + w, y + 3, blue[1], blue[2], blue[3], 255, 7)
     draw.circle(x + pad + 5, y + pad + title_h * 0.5, 5, orange[1], orange[2], orange[3], 255)
     draw.circle(x + pad + 17, y + pad + title_h * 0.5, 5, blue[1], blue[2], blue[3], 255)
-    text.draw(font.item, x + pad + 30, y + pad, 245, 245, 250, 255, "PORTAL GUN")
+    text.draw(font.hud, x + pad + 30, y + pad, 245, 245, 250, 255, "PORTAL GUN")
 
     local row_y = y + pad + title_h + 8
     for i, row in ipairs(rows) do
@@ -65,8 +65,8 @@ local function draw_controls(f)
             draw.rect(x + 5, row_y - 2, x + w - 5, row_y + row_h - 2, 255, 255, 255, 8, 3)
         end
         local c = row.colour
-        text.draw(font.tiny, x + pad, row_y, c[1], c[2], c[3], 255, row.key)
-        text.draw(font.tiny, x + pad + key_w + gap, row_y, 224, 226, 234, 245, row.action)
+        text.draw(font.hud_tiny, x + pad, row_y, c[1], c[2], c[3], 255, row.key)
+        text.draw(font.hud_tiny, x + pad + key_w + gap, row_y, 224, 226, 234, 245, row.action)
         row_y = row_y + row_h
     end
 end
@@ -93,6 +93,6 @@ features.on_draw("Portal Gun", function(f)
 
     local state = (f.orange and f.blue) and "PORTALS LINKED"
         or (f.orange and "ORANGE READY") or (f.blue and "BLUE READY") or "PLACE BOTH PORTALS"
-    local w = text.width(font.tiny, state)
-    text.draw(font.tiny, cx - w * 0.5, cy + 34, 225, 225, 235, 210, state)
+    local w = text.width(font.hud_tiny, state)
+    text.draw(font.hud_tiny, cx - w * 0.5, cy + 34, 225, 225, 235, 210, state)
 end)

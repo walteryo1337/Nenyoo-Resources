@@ -8,7 +8,7 @@ features.on_draw("Hostage Negotiation", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local t = ctx.time() or 0
     local state = math.floor(f.state or 0)
@@ -23,7 +23,7 @@ features.on_draw("Hostage Negotiation", function(f)
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.26, r, g, b, 255, msg)
         if (f.paid or 0) > 0 then
             local p = string.format("+$%d", math.floor(f.paid))
-            text.draw(font.item, cx - text.width(font.item, p) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, p)
+            text.draw(font.hud, cx - text.width(font.hud, p) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, p)
         end
         return
     end
@@ -34,15 +34,15 @@ features.on_draw("Hostage Negotiation", function(f)
     local x = sw - w - 30 * s
     local y = sh * 0.30
     local bar_h = 8 * s
-    local lh = text.height(font.small)
+    local lh = text.height(font.hud_small)
     local panel_h = 22 * s + lh * 2 + bar_h * 2 + 14 * s
     draw.rect(x, y, x + w, y + panel_h, 12, 12, 16, 210, 6 * s)
     draw.rect(x, y, x + 3 * s, y + panel_h, 240, 80, 70, 255, 0)
 
     local function meter(label, v, by, r, g, b)
-        text.draw(font.small, x + 14 * s, by, 215, 215, 228, 240, label)
+        text.draw(font.hud_small, x + 14 * s, by, 215, 215, 228, 240, label)
         local val = string.format("%d", math.floor(v + 0.5))
-        text.draw(font.small, x + w - 14 * s - text.width(font.small, val), by, 215, 215, 228, 240, val)
+        text.draw(font.hud_small, x + w - 14 * s - text.width(font.hud_small, val), by, 215, 215, 228, 240, val)
         local bx1, bx2 = x + 14 * s, x + w - 14 * s
         local bty = by + lh + 2 * s
         draw.rect(bx1, bty, bx2, bty + bar_h, 40, 40, 50, 220, 3 * s)
@@ -59,15 +59,15 @@ features.on_draw("Hostage Negotiation", function(f)
 
     local below = y + panel_h + 8 * s
     if f.mood then
-        text.draw(font.tiny, x, below, 200, 200, 214, 230, f.mood)
-        below = below + text.height(font.tiny) + 4 * s
+        text.draw(font.hud_tiny, x, below, 200, 200, 214, 230, f.mood)
+        below = below + text.height(font.hud_tiny) + 4 * s
     end
 
     if state == 1 then
         local d = string.format("GUNMAN %d M", math.floor(f.distance or 0))
-        text.draw(font.small, x, below, 230, 230, 240, 240, d)
+        text.draw(font.hud_small, x, below, 230, 230, 240, 240, d)
         if state == 1 and (f.distance or 99) < 6 then
-            text.draw(font.small, x, below + lh + 2 * s, ar, ag, ab, 255, "E  TALK TO HIM")
+            text.draw(font.hud_small, x, below + lh + 2 * s, ar, ag, ab, 255, "E  TALK TO HIM")
         end
         return
     end
@@ -80,7 +80,7 @@ features.on_draw("Hostage Negotiation", function(f)
 
     local bw = math.min(sw - 60 * s, 760 * s)
     local bx = cx - bw / 2
-    local row = text.height(font.item) + 12 * s
+    local row = text.height(font.hud) + 12 * s
     local bh = row * 3 + 40 * s
     local by = sh * 0.70
     draw.rect(bx, by, bx + bw, by + bh, 10, 10, 14, 220, 8 * s)
@@ -95,14 +95,14 @@ features.on_draw("Hostage Negotiation", function(f)
             local ry = by + 14 * s + (i - 1) * row
             if sel == i - 1 then
                 draw.rect(bx + 10 * s, ry - 4 * s, bx + bw - 10 * s, ry + row - 8 * s, ar, ag, ab, 60, 4 * s)
-                text.draw(font.item, bx + 22 * s, ry, 255, 255, 255, 255, line)
+                text.draw(font.hud, bx + 22 * s, ry, 255, 255, 255, 255, line)
             else
-                text.draw(font.item, bx + 22 * s, ry, 190, 190, 205, 230, line)
+                text.draw(font.hud, bx + 22 * s, ry, 190, 190, 205, 230, line)
             end
         end
         local hint = "W / S  CHOOSE     E  SAY IT     BACKSPACE  STEP BACK"
-        text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, by + bh - text.height(font.tiny) - 8 * s, 170, 170, 185, 220, hint)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, by + bh - text.height(font.hud_tiny) - 8 * s, 170, 170, 185, 220, hint)
     elseif state == 3 and f.reply then
-        text.draw(font.item, cx - text.width(font.item, f.reply) / 2, by + bh / 2 - text.height(font.item) / 2, 240, 240, 248, 255, f.reply)
+        text.draw(font.hud, cx - text.width(font.hud, f.reply) / 2, by + bh / 2 - text.height(font.hud) / 2, 240, 240, 248, 255, f.reply)
     end
 end)

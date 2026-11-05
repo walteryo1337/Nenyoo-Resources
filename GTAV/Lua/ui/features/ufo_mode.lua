@@ -55,11 +55,11 @@ end
 
 -- Small status chip, right-anchored. Returns the height consumed so callers can stack upward.
 local function chip(x2, y, s, label, r, g, b)
-    local w = text.width(font.tiny, label) + 16 * s
+    local w = text.width(font.hud_tiny, label) + 16 * s
     local h = 15 * s
     draw.rect(x2 - w, y, x2, y + h, r, g, b, A(40), 2)
     draw.rect(x2 - w, y, x2 - w + 2.5 * s, y + h, r, g, b, A(255), 0)
-    text.draw(font.tiny, x2 - w + 9 * s, y + 3 * s, r, g, b, A(240), label)
+    text.draw(font.hud_tiny, x2 - w + 9 * s, y + 3 * s, r, g, b, A(240), label)
     return h + 5 * s
 end
 
@@ -78,7 +78,7 @@ local function cooldown_row(x, y, w, h, ready_frac, label, r, g, b, s)
             draw.rect(bx, y, bx + bw, y + h, DEEP_R, DEEP_G, DEEP_B, A(150), 1)
         end
     end
-    text.draw_spaced(font.tiny, x, y - 12 * s, 168, 200, 180, A(200), label, 2 * s)
+    text.draw_spaced(font.hud_tiny, x, y - 12 * s, 168, 200, 180, A(200), label, 2 * s)
 end
 
 local hint_sig, hint_1 = -1, ""
@@ -128,7 +128,7 @@ features.on_draw("UFO Mode", function(f)
     local tth = text.height(font.display)
     local ty0 = m - 6 * s
     text.draw_spaced(font.display, cx0 - tw * 0.5, ty0, GRN_R, GRN_G, GRN_B, A(240), title, tsp)
-    centre_spaced(font.small, cx0, ty0 + tth - 4 * s, 4 * s, 168, 200, 180, A(190), "SAUCER CONTROL")
+    centre_spaced(font.hud_small, cx0, ty0 + tth - 4 * s, 4 * s, 168, 200, 180, A(190), "SAUCER CONTROL")
 
     ------------------------------------------------------------------ saucer gauge (bottom-left)
     -- A ring, because the craft is one. Outer arc = throttle-ish speed against a nominal ceiling,
@@ -162,9 +162,9 @@ features.on_draw("UFO Mode", function(f)
     local alt_txt = string.format("%d", floor(max(0, sm_alt) + 0.5))
     text.draw_centered(font.display, ox - r_in, oy - text.height(font.display) * 0.5 - 2 * s, ox + r_in,
                        WHT_R, WHT_G, WHT_B, A(250), alt_txt)
-    centre_spaced(font.tiny, ox, oy + text.height(font.display) * 0.5 - 4 * s, 2 * s,
+    centre_spaced(font.hud_tiny, ox, oy + text.height(font.display) * 0.5 - 4 * s, 2 * s,
                   168, 200, 180, A(190), "ALT M")
-    centre_spaced(font.tiny, ox, oy + r_out + 22 * s, 3 * s, GRN_R, GRN_G, GRN_B, A(180),
+    centre_spaced(font.hud_tiny, ox, oy + r_out + 22 * s, 3 * s, GRN_R, GRN_G, GRN_B, A(180),
                   string.format("SPD %d M/S", floor(sm_speed + 0.5)))
 
     ------------------------------------------------------------------ tractor beam (centre)
@@ -178,10 +178,10 @@ features.on_draw("UFO Mode", function(f)
                                 A(150 * sm_beam * (1 - t)), 1.6)
         end
         draw.circle_outline(cx0, cy0, rr, bm_r, bm_g, bm_b, A(210 * sm_beam), 2.0)
-        centre_spaced(font.small, cx0, cy0 + rr + 14 * s, 4 * s, bm_r, bm_g, bm_b, A(235 * sm_beam),
+        centre_spaced(font.hud_small, cx0, cy0 + rr + 14 * s, 4 * s, bm_r, bm_g, bm_b, A(235 * sm_beam),
                       BEAM_NAME[beam_mode] or "BEAM")
         if targets > 0 then
-            centre_spaced(font.item, cx0, cy0 - text.height(font.item) * 0.5, 2 * s,
+            centre_spaced(font.hud, cx0, cy0 - text.height(font.hud) * 0.5, 2 * s,
                           WHT_R, WHT_G, WHT_B, A(245 * sm_beam),
                           string.format("%d LOCKED", targets))
         end
@@ -209,7 +209,7 @@ features.on_draw("UFO Mode", function(f)
     if f.shield then chy = chy - chip(tx2, chy, s, "SHIELD", GRN_R, GRN_G, GRN_B) end
 
     -- weapon state sits above the chips
-    right_text(font.small, tx2, chy - 4 * s,
+    right_text(font.hud_small, tx2, chy - 4 * s,
                f.firing and RED_R or 150, f.firing and RED_G or 180, f.firing and RED_B or 165,
                A(225), f.firing and "LASERS FIRING" or "LASERS IDLE")
 
@@ -226,5 +226,5 @@ features.on_draw("UFO Mode", function(f)
             if f.pulse_on then hint_1 = hint_1 .. "   B PULSE" end
         end
     end
-    centre_spaced(font.tiny, cx0, sh - m - 10 * s, 2 * s, 168, 196, 180, A(180), hint_1)
+    centre_spaced(font.hud_tiny, cx0, sh - m - 10 * s, 2 * s, 168, 196, 180, A(180), hint_1)
 end)

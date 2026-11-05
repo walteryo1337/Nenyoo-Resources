@@ -29,8 +29,8 @@ features.on_draw("Launch Control", function(f)
     end
 
     local pad = 8 * s
-    local tw = text.width(font.small, label)
-    local th = text.height(font.small)
+    local tw = text.width(font.hud_small, label)
+    local th = text.height(font.hud_small)
     local w = math.max(tw + pad * 2, 150 * s)
     local h = th + pad * 2
     local x = (sw - w) / 2
@@ -41,5 +41,5 @@ features.on_draw("Launch Control", function(f)
         local p = math.min(1, math.max(0, f.progress or 0))
         draw.rect(x + pad, y + h - 4 * s, x + pad + (w - pad * 2) * p, y + h - 2 * s, ar, ag, ab, math.floor(255 * a), 0)
     end
-    text.draw(font.small, x + (w - tw) / 2, y + pad, r, g, b, math.floor(255 * a), label)
+    text.draw(font.hud_small, x + (w - tw) / 2, y + pad, r, g, b, math.floor(255 * a), label)
 end)

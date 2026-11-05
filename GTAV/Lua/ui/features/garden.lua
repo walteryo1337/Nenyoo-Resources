@@ -15,9 +15,9 @@ features.on_draw("Garden Plot", function(f)
     local h = chh * 2 + gap + 62 * s
     local x0, y0 = sw - w - 24 * s, sh * 0.5 - h / 2
     draw.rect(x0, y0, x0 + w, y0 + h, 14, 12, 10, 215, 12 * s)
-    text.draw(font.small, x0 + 14 * s, y0 + 8 * s, 235, 235, 225, 255, "GARDEN")
+    text.draw(font.hud_small, x0 + 14 * s, y0 + 8 * s, 235, 235, 225, 255, "GARDEN")
     local earned = string.format("$%d", math.floor(f.earned or 0))
-    text.draw(font.tiny, x0 + w - 14 * s - text.width(font.tiny, earned), y0 + 12 * s, 130, 255, 160, 240, earned)
+    text.draw(font.hud_tiny, x0 + w - 14 * s - text.width(font.hud_tiny, earned), y0 + 12 * s, 130, 255, 160, 240, earned)
 
     local i = 0
     for stage, crop, growth, water in string.gmatch(f.slots or "", "(%d+),(%d+),([%d%.]+),([%d%.]+);") do
@@ -28,10 +28,10 @@ features.on_draw("Garden Plot", function(f)
         local col = crop_col[crop + 1] or crop_col[1]
         if stage == 0 then
             local e = "EMPTY"
-            text.draw(font.tiny, cx + cw / 2 - text.width(font.tiny, e) / 2, cy + chh / 2 - 8 * s, 170, 150, 120, 220, e)
+            text.draw(font.hud_tiny, cx + cw / 2 - text.width(font.hud_tiny, e) / 2, cy + chh / 2 - 8 * s, 170, 150, 120, 220, e)
         else
             local name = crop_names[crop + 1] or ""
-            text.draw(font.tiny, cx + 8 * s, cy + 6 * s, col[1], col[2], col[3], 255, name)
+            text.draw(font.hud_tiny, cx + 8 * s, cy + 6 * s, col[1], col[2], col[3], 255, name)
             if stage == 1 then
                 local bx, by, bw = cx + 8 * s, cy + chh - 34 * s, cw - 16 * s
                 draw.rect(bx, by, bx + bw, by + 8 * s, 30, 24, 18, 255, 4 * s)
@@ -43,19 +43,19 @@ features.on_draw("Garden Plot", function(f)
                 draw.rect(bx, wy, bx + bw * math.max(0, math.min(1, water)), wy + 6 * s, 80, 160, 255, wa, 3 * s)
                 if water <= 0 then
                     local dry = "DRY!"
-                    text.draw(font.tiny, cx + cw - 8 * s - text.width(font.tiny, dry), cy + 6 * s, 255, 120, 100, wa, dry)
+                    text.draw(font.hud_tiny, cx + cw - 8 * s - text.width(font.hud_tiny, dry), cy + 6 * s, 255, 120, 100, wa, dry)
                 end
             elseif stage == 2 then
                 local r = "RIPE"
                 local a = math.floor(180 + 75 * math.sin(t * 5))
-                text.draw(font.small, cx + cw / 2 - text.width(font.small, r) / 2, cy + chh / 2 - 4 * s, 130, 255, 160, a, r)
+                text.draw(font.hud_small, cx + cw / 2 - text.width(font.hud_small, r) / 2, cy + chh / 2 - 4 * s, 130, 255, 160, a, r)
             else
                 local r = "ROTTEN"
-                text.draw(font.small, cx + cw / 2 - text.width(font.small, r) / 2, cy + chh / 2 - 4 * s, 150, 120, 90, 230, r)
+                text.draw(font.hud_small, cx + cw / 2 - text.width(font.hud_small, r) / 2, cy + chh / 2 - 4 * s, 150, 120, 90, 230, r)
             end
         end
         i = i + 1
     end
     local hint = "GROWTH  /  WATER"
-    text.draw(font.tiny, x0 + w / 2 - text.width(font.tiny, hint) / 2, y0 + h - 20 * s, 170, 170, 160, 200, hint)
+    text.draw(font.hud_tiny, x0 + w / 2 - text.width(font.hud_tiny, hint) / 2, y0 + h - 20 * s, 170, 170, 160, 200, hint)
 end)

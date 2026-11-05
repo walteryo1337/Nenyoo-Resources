@@ -47,13 +47,13 @@ features.on_draw("Pocket Whack-a-Mole", function(f)
             bomb(cx, cy, r * 0.7, s, t)
         elseif v == "4" then
             draw.circle_outline(cx, cy, r * 0.9, 255, 255, 255, 220, 4 * s)
-            text.draw(font.title, cx - text.width(font.title, "POW") / 2, cy - text.height(font.title) / 2, 255, 230, 90, 255, "POW")
+            text.draw(font.display, cx - text.width(font.display, "POW") / 2, cy - text.height(font.display) / 2, 255, 230, 90, 255, "POW")
         elseif v == "5" then
             draw.circle(cx, cy, r * 1.05, 255, 140, 40, 200)
             draw.circle(cx, cy, r * 0.6, 255, 230, 120, 230)
         end
         local key = KEYS[i + 1]
-        text.draw(font.small, cx - r - 6 * s, cy - r - 4 * s, 235, 235, 240, 210, key)
+        text.draw(font.hud_small, cx - r - 6 * s, cy - r - 4 * s, 235, 235, 240, 210, key)
     end
 
     local tl = f.time_left or 0
@@ -65,12 +65,12 @@ features.on_draw("Pocket Whack-a-Mole", function(f)
     draw.rect(x0, by, x0 + gw * frac, by + 8 * s, r, g, 90, 255, 4 * s)
 
     local score = string.format("%d", math.floor(f.score or 0))
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 - 120 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 - 120 * s, 245, 245, 250, 255, score)
     local streak = math.floor(f.streak or 0)
     local info = string.format("BEST %d", math.floor(f.best or 0))
     if streak >= 3 then info = info .. string.format("     STREAK x%d", streak) end
-    text.draw(font.small, sw / 2 - text.width(font.small, info) / 2, y0 - 66 * s, 200, 200, 214, 230, info)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, info) / 2, y0 - 66 * s, 200, 200, 214, 230, info)
 
     local foot = state == 2 and "TIME UP     SPACE TO PLAY AGAIN" or "HIT THE KEY FOR EACH HOLE     AVOID THE BOMBS"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + gw + 26 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + gw + 26 * s, 200, 200, 214, 230, foot)
 end)

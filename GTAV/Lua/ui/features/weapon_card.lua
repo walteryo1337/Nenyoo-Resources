@@ -10,7 +10,7 @@ features.on_draw("Weapon Card", function(f)
     t = math.max(0, t)
     local a = math.floor(255 * t)
     local ar, ag, ab = theme.accent()
-    local fnt = font.display or font.item
+    local fnt = font.display
 
     local name = f.name or ""
     if name == "" then name = "WEAPON" end
@@ -23,8 +23,8 @@ features.on_draw("Weapon Card", function(f)
     }
 
     local pad = 14 * s
-    local th = text.height(font.tiny)
-    local label_w = text.width(font.tiny, "FIRE RATE") + 10 * s
+    local th = text.height(font.hud_tiny)
+    local label_w = text.width(font.hud_tiny, "FIRE RATE") + 10 * s
     local bar_w = 160 * s
     local w = math.max(text.width(fnt, name) + pad * 2, label_w + bar_w + pad * 2)
     local h = text.height(fnt) + th * 2 + (#stats) * (th + 3 * s) + pad * 1.6
@@ -38,10 +38,10 @@ features.on_draw("Weapon Card", function(f)
     text.draw(fnt, x + pad, ty, 245, 245, 250, a, name)
     ty = ty + text.height(fnt)
     local clip = math.floor(f.clip or 0)
-    if clip > 0 then text.draw(font.tiny, x + pad, ty, 190, 190, 200, a, string.format("CLIP %d", clip)) end
+    if clip > 0 then text.draw(font.hud_tiny, x + pad, ty, 190, 190, 200, a, string.format("CLIP %d", clip)) end
     ty = ty + th + 4 * s
     for _, st in ipairs(stats) do
-        text.draw(font.tiny, x + pad, ty, 200, 200, 210, a, st[1])
+        text.draw(font.hud_tiny, x + pad, ty, 200, 200, 210, a, st[1])
         local bx = x + pad + label_w
         local by = ty + th * 0.35
         local p = math.min(1, math.max(0, st[2] / 100))

@@ -67,12 +67,12 @@ local function label(p, f, sw, sh, ar, ag, ab)
     else
         sub = "Finding the ramp's direction..."
     end
-    local w = math.max(text.width(font.small, title), text.width(font.tiny, sub)) + 28
-    local h = text.height(font.small) + text.height(font.tiny) + 14
+    local w = math.max(text.width(font.hud_small, title), text.width(font.hud_tiny, sub)) + 28
+    local h = text.height(font.hud_small) + text.height(font.hud_tiny) + 14
     local x1, y1 = x - w * 0.5, y - h
     draw.rect(x1, y1, x1 + w, y1 + h, 10, 10, 16, 200, 6)
-    text.draw(font.small, x1 + 14, y1 + 5, 255, 255, 255, 245, title)
-    text.draw(font.tiny, x1 + 14, y1 + 7 + text.height(font.small), 200, 200, 210, 235, sub)
+    text.draw(font.hud_small, x1 + 14, y1 + 5, 255, 255, 255, 245, title)
+    text.draw(font.hud_tiny, x1 + 14, y1 + 7 + text.height(font.hud_small), 200, 200, 210, 235, sub)
 end
 
 features.on_draw("Stunt Ramps", function(f)

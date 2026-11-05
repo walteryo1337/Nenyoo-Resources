@@ -400,8 +400,8 @@ features.on_draw("ESP", function(f)
                 draw.rect(x, bottom - (bottom - top) * bar.value, x + thick, bottom, c[1], c[2], c[3], c[4], 0)
                 if cfg.bar_values then
                     local value = string.format("%d", math.floor(bar.value * 100 + 0.5))
-                    local txp = on_left and (x - text.width(font.small, value) - 2) or (x + thick + 2)
-                    text.draw(font.small, txp, bottom - text.height(font.small), c[1], c[2], c[3], c[4], value)
+                    local txp = on_left and (x - text.width(font.hud_small, value) - 2) or (x + thick + 2)
+                    text.draw(font.hud_small, txp, bottom - text.height(font.hud_small), c[1], c[2], c[3], c[4], value)
                 end
             else
                 local y = bottom + gap + (i - 1) * (thick + 2)
@@ -410,7 +410,7 @@ features.on_draw("ESP", function(f)
                 draw.rect(left, y, left + (right - left) * bar.value, y + thick, c[1], c[2], c[3], c[4], 0)
                 if cfg.bar_values then
                     local value = string.format("%d", math.floor(bar.value * 100 + 0.5))
-                    text.draw(font.small, right + 3, y - 1, c[1], c[2], c[3], c[4], value)
+                    text.draw(font.hud_small, right + 3, y - 1, c[1], c[2], c[3], c[4], value)
                 end
             end
         end
@@ -419,7 +419,7 @@ features.on_draw("ESP", function(f)
     local function labels(e, left, top, right, bottom, c, factor, full_detail)
         local function label(value, y, gradient, first, last, primary)
             label_jobs[#label_jobs+1] = {value=value, y=y,
-                x=(left+right-text.width(font.small,value))*0.5,
+                x=(left+right-text.width(font.hud_small,value))*0.5,
                 gradient=gradient, first=first, last=last, c=c, factor=factor,
                 primary=primary, priority=e.mission and 2 or e.friend and 1 or 0,
                 distance=e.distance, order=#label_jobs+1, avoid_overlap=cfg.avoid_overlap}
@@ -432,7 +432,7 @@ features.on_draw("ESP", function(f)
         end
         if cfg.speaking and e.speaking then above = above .. (above ~= "" and "  MIC" or "MIC") end
         if above ~= "" then
-            label(above, top - text.height(font.small) - 3, cfg.name_gradient, cfg.name_start, cfg.name_end, true)
+            label(above, top - text.height(font.hud_small) - 3, cfg.name_gradient, cfg.name_start, cfg.name_end, true)
         end
 
         if not full_detail then return end
@@ -461,7 +461,7 @@ features.on_draw("ESP", function(f)
         for i = 1, #rows do
             local row = rows[i]
             label(row, y, cfg.label_gradient, cfg.label_start, cfg.label_end, false)
-            y = y + text.height(font.small) + 1
+            y = y + text.height(font.hud_small) + 1
         end
     end
 
@@ -475,7 +475,7 @@ features.on_draw("ESP", function(f)
         for _, job in ipairs(label_jobs) do
             local value, gradient, first, last = job.value, job.gradient, job.first, job.last
             local c, factor = job.c, job.factor
-            local width, height = text.width(font.small,value), text.height(font.small)
+            local width, height = text.width(font.hud_small,value), text.height(font.hud_small)
             local x = clamp(job.x, 4, math.max(4, sw-width-4))
             local y, placed = job.y, not job.avoid_overlap
             if job.avoid_overlap and width <= sw-8 then
@@ -492,19 +492,19 @@ features.on_draw("ESP", function(f)
             end
             if placed then
                 occupied[#occupied+1] = {x-2,y-2,x+width+2,y+height+2}
-            text.draw(font.small, x + 1, y + 1, 0, 0, 0, c[4], value)
-            local width = text.width(font.small, value)
+            text.draw(font.hud_small, x + 1, y + 1, 0, 0, 0, c[4], value)
+            local width = text.width(font.hud_small, value)
             if gradient and width > 0 then
                 -- Clip the whole shaped string instead of splitting UTF-8 characters.
                 local slices = math.max(2, math.min(24, math.ceil(width / 6)))
                 for i = 1, slices do
                     local col = blend(first, last, (i-1)/(slices-1), factor)
-                    draw.push_clip(x + width*(i-1)/slices, y-2, x + width*i/slices, y+text.height(font.small)+2)
-                    text.draw(font.small, x, y, col[1], col[2], col[3], col[4], value)
+                    draw.push_clip(x + width*(i-1)/slices, y-2, x + width*i/slices, y+text.height(font.hud_small)+2)
+                    text.draw(font.hud_small, x, y, col[1], col[2], col[3], col[4], value)
                     draw.pop_clip()
                 end
             else
-            text.draw(font.small, x, y, c[1], c[2], c[3], c[4], value)
+            text.draw(font.hud_small, x, y, c[1], c[2], c[3], c[4], value)
             end
 
             end

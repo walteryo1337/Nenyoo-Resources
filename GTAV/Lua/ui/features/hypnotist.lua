@@ -24,31 +24,31 @@ features.on_draw("Hypnotist", function(f)
         end
         draw.circle_outline(cx, cy, r * 1.3, 255, 255, 255, 80, 2 * s)
         local pct = string.format("%d%%", math.floor(p * 100))
-        text.draw(font.small, cx - text.width(font.small, pct) / 2, cy + r * 1.4, 230, 210, 255, 255, pct)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, pct) / 2, cy + r * 1.4, 230, 210, 255, 255, pct)
     end
 
     local n = math.floor(f.minions or 0)
     if n == 0 then return end
     local w = 230 * s
-    local lh = text.height(font.small) + 6 * s
+    local lh = text.height(font.hud_small) + 6 * s
     local h = 40 * s + lh * 3
     local x, y = 30 * s, sh * 0.4
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 205, 8 * s)
     draw.rect(x, y, x + 3 * s, y + h, 170, 90, 240, 255, 0)
     local m = modes[math.floor(f.mode or 0) + 1] or ""
-    text.draw(font.item, x + 14 * s, y + 8 * s, 230, 210, 255, 255, m)
+    text.draw(font.hud, x + 14 * s, y + 8 * s, 230, 210, 255, 255, m)
     local lefts = { f.left1 or 0, f.left2 or 0, f.left3 or 0 }
     for i = 1, 3 do
-        local ly = y + 16 * s + text.height(font.item) + (i - 1) * lh
+        local ly = y + 16 * s + text.height(font.hud) + (i - 1) * lh
         local left = lefts[i]
         if left > 0 then
             local bx1, bx2 = x + 14 * s, x + w - 60 * s
             draw.rect(bx1, ly + 4 * s, bx2, ly + 10 * s, 40, 40, 50, 220, 3 * s)
             draw.rect(bx1, ly + 4 * s, bx1 + (bx2 - bx1) * math.min(1, left / 120), ly + 10 * s, 170, 90, 240, 255, 3 * s)
             local tl = string.format("%ds", math.ceil(left))
-            text.draw(font.small, x + w - 14 * s - text.width(font.small, tl), ly, 220, 220, 232, 240, tl)
+            text.draw(font.hud_small, x + w - 14 * s - text.width(font.hud_small, tl), ly, 220, 220, 232, 240, tl)
         else
-            text.draw(font.tiny, x + 14 * s, ly, 140, 140, 155, 200, "EMPTY SLOT")
+            text.draw(font.hud_tiny, x + 14 * s, ly, 140, 140, 155, 200, "EMPTY SLOT")
         end
     end
 end)

@@ -12,21 +12,21 @@ features.on_draw("Shooting Stats", function(f)
     local acc = shots > 0 and math.min(100, hits * 100 / shots) or 0
     local hs = hits > 0 and heads * 100 / hits or 0
 
-    local lh = text.height(font.tiny) + 2 * s
+    local lh = text.height(font.hud_tiny) + 2 * s
     local w = 190 * s
-    local h = 24 * s + text.height(font.tiny) + text.height(font.title) + 4 * lh
+    local h = 24 * s + text.height(font.hud_tiny) + text.height(font.display) + 4 * lh
     local x, y = sw - w - 30 * s, sh * 0.62
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 190, 6 * s)
     local flash = f.hit_flash or 0
     draw.rect(x, y, x + 3 * s, y + h, ar, ag, ab, math.floor(160 + 95 * flash), 0)
 
-    text.draw(font.tiny, x + 14 * s, y + 8 * s, 190, 190, 205, 230, "ACCURACY")
+    text.draw(font.hud_tiny, x + 14 * s, y + 8 * s, 190, 190, 205, 230, "ACCURACY")
     local pct = string.format("%d%%", math.floor(acc + 0.5))
     local r, g, b = 245, 245, 250
     if shots >= 10 then
         if acc >= 50 then r, g, b = 120, 230, 120 elseif acc < 20 then r, g, b = 240, 120, 90 end
     end
-    text.draw(font.title, x + 14 * s, y + 10 * s + text.height(font.tiny), r, g, b, 255, pct)
+    text.draw(font.display, x + 14 * s, y + 10 * s + text.height(font.hud_tiny), r, g, b, 255, pct)
 
     local rows = {
         { "SHOTS", tostring(shots) },
@@ -34,10 +34,10 @@ features.on_draw("Shooting Stats", function(f)
         { "HEADSHOTS", string.format("%d  (%d%%)", heads, math.floor(hs + 0.5)) },
         { "LONGEST", string.format("%d M", math.floor(f.longest or 0)) },
     }
-    local ry = y + 14 * s + text.height(font.tiny) + text.height(font.title)
+    local ry = y + 14 * s + text.height(font.hud_tiny) + text.height(font.display)
     for i, row in ipairs(rows) do
         local yy = ry + (i - 1) * lh
-        text.draw(font.tiny, x + 14 * s, yy, 180, 180, 195, 230, row[1])
-        text.draw(font.tiny, x + w - 12 * s - text.width(font.tiny, row[2]), yy, 235, 235, 245, 255, row[2])
+        text.draw(font.hud_tiny, x + 14 * s, yy, 180, 180, 195, 230, row[1])
+        text.draw(font.hud_tiny, x + w - 12 * s - text.width(font.hud_tiny, row[2]), yy, 235, 235, 245, 255, row[2])
     end
 end)

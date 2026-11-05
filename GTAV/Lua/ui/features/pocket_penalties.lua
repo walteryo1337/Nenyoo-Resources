@@ -114,13 +114,13 @@ features.on_draw("Pocket Penalties", function(f)
         if phase == 5 then
             if res == 1 then r, g, b = 235, 70, 70 else r, g, b = 90, 225, 120 end
         end
-        text.draw(font.title, sw / 2 - text.width(font.title, label) / 2, y0 + 30 * s, r, g, b, 255, label)
+        text.draw(font.display, sw / 2 - text.width(font.display, label) / 2, y0 + 30 * s, r, g, b, 255, label)
     end
 
     draw.rect(x0, y0 - 64 * s, x0 + bw, y0 - 8 * s, 10, 10, 16, 235, 10 * s)
     local you, cpu = math.floor(f.you_goals or 0), math.floor(f.cpu_goals or 0)
     local score = string.format("YOU %d - %d CPU", you, cpu)
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 - 58 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 - 58 * s, 245, 245, 250, 255, score)
     dots(x0 + 14 * s, y0 - 36 * s, s, f.you or "", false)
     dots(x0 + bw - 14 * s, y0 - 36 * s, s, f.cpu or "", true)
 
@@ -134,7 +134,7 @@ features.on_draw("Pocket Penalties", function(f)
     elseif phase == 4 then hint = "YOU ARE IN GOAL: A OR D TO DIVE, W TO STAY CENTRAL"
     else hint = "" end
     if hint ~= "" then
-        text.draw(font.small, sw / 2 - text.width(font.small, hint) / 2, y0 + bh + 14 * s, 220, 220, 232, 235, hint)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, hint) / 2, y0 + bh + 14 * s, 220, 220, 232, 235, hint)
     end
     if phase == 4 then
         local left = math.max(0, 1700 - pms)

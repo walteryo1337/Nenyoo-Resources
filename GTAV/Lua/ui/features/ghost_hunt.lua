@@ -10,7 +10,7 @@ features.on_draw("Ghost Hunt", function(f)
     local w, h = 170 * s, 74 * s
     local x, y = 28 * s, sh * 0.30
     draw.rect(x, y, x + w, y + h, 8, 12, 10, 190, 6 * s)
-    text.draw(font.tiny, x + 10 * s, y + 6 * s, 140, 255, 170, 230, "EMF METER")
+    text.draw(font.hud_tiny, x + 10 * s, y + 6 * s, 140, 255, 170, 230, "EMF METER")
 
     local jitter = emf > 0 and (math.sin(now * 23) * 0.04 + math.sin(now * 9) * 0.03) * emf or 0
     local level = math.max(0, math.min(1, emf + jitter))
@@ -38,9 +38,9 @@ features.on_draw("Ghost Hunt", function(f)
     else
         status = "SOMETHING NEARBY"
     end
-    text.draw(font.tiny, x + 10 * s, ly + 18 * s, 200, 220, 205, 230, status)
+    text.draw(font.hud_tiny, x + 10 * s, ly + 18 * s, 200, 220, 205, 230, status)
     local tally = string.format("%d  $%d", math.floor(f.captured or 0), math.floor(f.earned or 0))
-    text.draw(font.tiny, x + w - 10 * s - text.width(font.tiny, tally), y + 6 * s, 170, 190, 175, 220, tally)
+    text.draw(font.hud_tiny, x + w - 10 * s - text.width(font.hud_tiny, tally), y + 6 * s, 170, 190, 175, 220, tally)
 
     local cap = f.capture or 0
     if cap > 0 then
@@ -49,6 +49,6 @@ features.on_draw("Ghost Hunt", function(f)
         draw.rect(cx, cy, cx + cw, cy + 6 * s, 0, 0, 0, 160, 3 * s)
         draw.rect(cx, cy, cx + cw * cap, cy + 6 * s, 140, 255, 170, 255, 3 * s)
         local msg = "CAPTURING"
-        text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, cy - text.height(font.small) - 4 * s, 140, 255, 170, 240, msg)
+        text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, cy - text.height(font.hud_small) - 4 * s, 140, 255, 170, 240, msg)
     end
 end)

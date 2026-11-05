@@ -16,7 +16,7 @@ features.on_draw("Freerun Score", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local y = sh * 0.14
 
@@ -27,7 +27,7 @@ features.on_draw("Freerun Score", function(f)
         local vw = text.width(big, value)
         text.draw(big, cx - vw / 2, y, 245, 245, 250, 255, value)
         local tag = string.format("x%d", mult)
-        text.draw(font.item, cx + vw / 2 + 8 * s, y + text.height(big) * 0.2, ar, ag, ab, 255, tag)
+        text.draw(font.hud, cx + vw / 2 + 8 * s, y + text.height(big) * 0.2, ar, ag, ab, 255, tag)
         y = y + text.height(big) + 4 * s
 
         local bw = 140 * s
@@ -41,7 +41,7 @@ features.on_draw("Freerun Score", function(f)
         if name and age < 1.2 then
             local a = math.floor(255 * (1 - age / 1.2))
             local msg = string.format("%s +%d", name, math.floor(f.trick_points or 0))
-            text.draw(font.small, cx - text.width(font.small, msg) / 2, y + age * 10 * s, 255, 210, 90, a, msg)
+            text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, y + age * 10 * s, 255, 210, 90, a, msg)
         end
     else
         local rage = f.result_age or 1
@@ -56,5 +56,5 @@ features.on_draw("Freerun Score", function(f)
     end
 
     local foot = string.format("FREERUN %s   BEST %s", commas(f.total or 0), commas(f.best or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, foot) / 2, sh * 0.14 - text.height(font.tiny) - 4 * s, 180, 180, 195, 210, foot)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, foot) / 2, sh * 0.14 - text.height(font.hud_tiny) - 4 * s, 180, 180, 195, 210, foot)
 end)

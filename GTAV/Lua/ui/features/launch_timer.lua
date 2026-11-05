@@ -76,9 +76,9 @@ local function draw_rev_meter(x, y, w, h, f, ar, ag, ab, now)
         draw.rect_outline(x + w * lo - 2, y - 3, x + w * hi + 2, y + h + 3, 60, 235, 100,
             math.floor(140 + 110 * math.sin(now * 16)), 3, 2)
     end
-    text.draw(font.tiny, x, y + h + 6, 150, 150, 160, 220, "RPM")
+    text.draw(font.hud_tiny, x, y + h + 6, 150, 150, 160, 220, "RPM")
     local label = string.format("%d%%", math.floor(c * 100 + 0.5))
-    text.draw(font.tiny, x + w - text.width(font.tiny, label), y + h + 6, 220, 220, 230, 235, label)
+    text.draw(font.hud_tiny, x + w - text.width(font.hud_tiny, label), y + h + 6, 220, 220, 230, 235, label)
 end
 
 local function draw_staged(f, sw, sh, ar, ag, ab, now)
@@ -89,13 +89,13 @@ local function draw_staged(f, sw, sh, ar, ag, ab, now)
     draw.rect(x1, y1, x1 + w, y1 + 3, ar, ag, ab, 255, 0)
 
     local title = f.launch_control and "LAUNCH CONTROL" or "STAGED"
-    text.draw(font.small, x1 + 16, y1 + 12, 255, 255, 255, 245, title)
+    text.draw(font.hud_small, x1 + 16, y1 + 12, 255, 255, 255, 245, title)
     if f.best then
         local b = string.format("BEST %.2f s", f.best)
-        text.draw(font.small, x1 + w - 16 - text.width(font.small, b), y1 + 12, ar, ag, ab, 245, b)
+        text.draw(font.hud_small, x1 + w - 16 - text.width(font.hud_small, b), y1 + 12, ar, ag, ab, 245, b)
     end
     local target = string.format("0 - %d km/h", math.floor(f.target or 100))
-    text.draw(font.tiny, x1 + 16, y1 + 12 + text.height(font.small) + 2, 160, 160, 170, 230, target)
+    text.draw(font.hud_tiny, x1 + 16, y1 + 12 + text.height(font.hud_small) + 2, 160, 160, 170, 230, target)
 
     local ly = y1 + 64
     if f.start_lights then draw_lights(cx, ly, f.charging and (f.lights or 0) or 0, now) end
@@ -115,9 +115,9 @@ local function draw_staged(f, sw, sh, ar, ag, ab, now)
 
     if f.launch_control and f.charging then
         draw_rev_meter(x1 + 24, y1 + 92, w - 48, 14, f, ar, ag, ab, now)
-        centered(font.tiny, cx, y1 + h - text.height(font.tiny) - 8, 235, 235, 240, 245, hint)
+        centered(font.hud_tiny, cx, y1 + h - text.height(font.hud_tiny) - 8, 235, 235, 240, 245, hint)
     else
-        centered(font.small, cx, y1 + 100, 220, 220, 230, 235, hint)
+        centered(font.hud_small, cx, y1 + 100, 220, 220, 230, 235, hint)
     end
 end
 
@@ -136,14 +136,14 @@ local function draw_running(f, sw, sh, ar, ag, ab, now)
     draw.rect(x1 + 18, by, x1 + w - 18, by + 6, 40, 40, 48, 230, 3)
     draw.rect(x1 + 18, by, x1 + 18 + (w - 36) * p, by + 6, ar, ag, ab, 255, 3)
     local label = string.format("%d / %d km/h", speed, target)
-    centered(font.tiny, cx, by + 9, 210, 210, 220, 240, label)
+    centered(font.hud_tiny, cx, by + 9, 210, 210, 220, 240, label)
 
     local name, gr, gg, gb = grade_color(f.grade or 0, ar, ag, ab)
     if name and (f.elapsed or 0) < 2.5 then
         local a = math.floor(255 * math.min(1, (2.5 - f.elapsed) / 0.5))
         local tag = name
         if f.reaction then tag = string.format("%s   REACTION %.3f s", name, f.reaction) end
-        centered(font.small, cx, y1 + h + 8, gr, gg, gb, a, tag)
+        centered(font.hud_small, cx, y1 + h + 8, gr, gg, gb, a, tag)
     end
 end
 
@@ -161,17 +161,17 @@ local function draw_result(f, sw, sh, ar, ag, ab, now)
     if f.new_best then hr, hg, hb = 255, 200, 60 end
     draw.rect(x1, y1, x1 + w, y1 + 3, hr, hg, hb, math.floor(255 * a), 0)
 
-    centered(font.tiny, cx, y1 + 10, 170, 170, 180, math.floor(235 * a),
+    centered(font.hud_tiny, cx, y1 + 10, 170, 170, 180, math.floor(235 * a),
         string.format("0 - %d km/h", math.floor(f.target or 100)))
     big_number(cx, y1 + 28, 1.8, 255, 255, 255, math.floor(255 * a), string.format("%.2f s", f.result or 0))
 
     local line_y = y1 + 96
     if f.new_best then
         local pulse = 0.75 + 0.25 * math.sin(now * 8)
-        centered(font.small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
+        centered(font.hud_small, cx, line_y, 255, 200, 60, math.floor(255 * a * pulse), "NEW BEST")
     else
         local d = f.delta or 0
-        centered(font.small, cx, line_y, 235, 80, 70, math.floor(245 * a),
+        centered(font.hud_small, cx, line_y, 235, 80, 70, math.floor(245 * a),
             string.format("+%.2f s   BEST %.2f s", d, f.best or 0))
     end
 
@@ -179,7 +179,7 @@ local function draw_result(f, sw, sh, ar, ag, ab, now)
     if name then
         local tag = name
         if f.reaction then tag = string.format("%s   REACTION %.3f s", name, f.reaction) end
-        centered(font.tiny, cx, y1 + h - text.height(font.tiny) - 10, gr, gg, gb, math.floor(230 * a), tag)
+        centered(font.hud_tiny, cx, y1 + h - text.height(font.hud_tiny) - 10, gr, gg, gb, math.floor(230 * a), tag)
     end
 end
 

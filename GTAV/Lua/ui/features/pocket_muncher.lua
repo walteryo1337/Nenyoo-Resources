@@ -91,24 +91,24 @@ features.on_draw("Pocket Muncher", function(f)
     end
 
     local score = string.format("%06d", math.floor(f.score or 0))
-    text.draw(font.title, x0, y0 - 64 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, x0, y0 - 64 * s, 245, 245, 250, 255, score)
     local best = string.format("BEST %06d", math.floor(f.best or 0))
-    text.draw(font.small, x0 + bw - text.width(font.small, best), y0 - 52 * s, 200, 200, 214, 230, best)
+    text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, best), y0 - 52 * s, 200, 200, 214, 230, best)
     for i = 1, math.floor(f.lives or 0) do
         local lx = x0 + bw - (i - 0.5) * 26 * s
         draw.circle(lx, y0 - 16 * s, 9 * s, 255, 225, 40, 255)
     end
-    text.draw(font.small, x0, y0 - 26 * s, 200, 200, 214, 230, string.format("LEVEL %d", math.floor(f.level or 1)))
+    text.draw(font.hud_small, x0, y0 - 26 * s, 200, 200, 214, 230, string.format("LEVEL %d", math.floor(f.level or 1)))
 
     local banner
     if state == 1 then banner = "READY!"
     elseif state == 4 then banner = "LEVEL CLEAR"
     elseif state == 5 then banner = "GAME OVER" end
     if banner then
-        local bx = sw / 2 - text.width(font.title, banner) / 2
-        local by = y0 + 11 * cell - text.height(font.title) / 2
-        text.draw(font.title, bx, by, 255, 225, 40, 255, banner)
+        local bx = sw / 2 - text.width(font.display, banner) / 2
+        local by = y0 + 11 * cell - text.height(font.display) / 2
+        text.draw(font.display, bx, by, 255, 225, 40, 255, banner)
     end
     local foot = state == 5 and "W A S D TO PLAY AGAIN" or "W A S D TO MOVE     EAT A BIG PELLET TO TURN THE TABLES"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + bh + 16 * s, 200, 200, 214, 230, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + bh + 16 * s, 200, 200, 214, 230, foot)
 end)

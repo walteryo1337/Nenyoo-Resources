@@ -21,13 +21,13 @@ features.on_draw("Health Readout", function(f)
     local y = sh - 252 * s
     local pad = 6 * s
     local gap = 14 * s
-    local hw = text.width(font.tiny, hp_text)
-    local aw = text.width(font.tiny, ar_text)
-    local h = text.height(font.tiny) + pad * 2
+    local hw = text.width(font.hud_tiny, hp_text)
+    local aw = text.width(font.hud_tiny, ar_text)
+    local h = text.height(font.hud_tiny) + pad * 2
     local w = hw + gap + aw + pad * 2
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 150, 4 * s)
     local r, g, b = colour(hp / hp_max)
-    text.draw(font.tiny, x + pad, y + pad, r, g, b, 255, hp_text)
-    text.draw(font.tiny, x + pad + hw + gap, y + pad, 90, 170, 255, 255, ar_text)
+    text.draw(font.hud_tiny, x + pad, y + pad, r, g, b, 255, hp_text)
+    text.draw(font.hud_tiny, x + pad + hw + gap, y + pad, 90, 170, 255, 255, ar_text)
 end)

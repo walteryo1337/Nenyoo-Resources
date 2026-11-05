@@ -46,15 +46,15 @@ features.on_draw("Pocket Air Hockey", function(f)
     local you, phone = math.floor(f.you or 0), math.floor(f.phone or 0)
     local sx = x0 + tw + rail + 55 * s
     local ys = tostring(phone)
-    text.draw(font.title, sx - text.width(font.title, ys) / 2, y0 + th * 0.25, 230, 70, 70, 255, ys)
-    text.draw(font.tiny, sx - text.width(font.tiny, "PHONE") / 2, y0 + th * 0.25 - 20 * s, 200, 200, 210, 255, "PHONE")
+    text.draw(font.display, sx - text.width(font.display, ys) / 2, y0 + th * 0.25, 230, 70, 70, 255, ys)
+    text.draw(font.hud_tiny, sx - text.width(font.hud_tiny, "PHONE") / 2, y0 + th * 0.25 - 20 * s, 200, 200, 210, 255, "PHONE")
     local yy = tostring(you)
-    text.draw(font.title, sx - text.width(font.title, yy) / 2, y0 + th * 0.7, 60, 130, 240, 255, yy)
-    text.draw(font.tiny, sx - text.width(font.tiny, "YOU") / 2, y0 + th * 0.7 - 20 * s, 200, 200, 210, 255, "YOU")
+    text.draw(font.display, sx - text.width(font.display, yy) / 2, y0 + th * 0.7, 60, 130, 240, 255, yy)
+    text.draw(font.hud_tiny, sx - text.width(font.hud_tiny, "YOU") / 2, y0 + th * 0.7 - 20 * s, 200, 200, 210, 255, "YOU")
     local rec = string.format("%d/%d", math.floor(f.wins or 0), math.floor(f.played or 0))
     local lx = x0 - rail - 55 * s
-    text.draw(font.tiny, lx - text.width(font.tiny, "WINS") / 2, y0 + th / 2 - 30 * s, 200, 200, 210, 255, "WINS")
-    text.draw(font.item, lx - text.width(font.item, rec) / 2, y0 + th / 2 - 10 * s, 245, 245, 250, 255, rec)
+    text.draw(font.hud_tiny, lx - text.width(font.hud_tiny, "WINS") / 2, y0 + th / 2 - 30 * s, 200, 200, 210, 255, "WINS")
+    text.draw(font.hud, lx - text.width(font.hud, rec) / 2, y0 + th / 2 - 10 * s, 245, 245, 250, 255, rec)
 
     local banner, br, bg, bb
     if state == 2 then
@@ -65,10 +65,10 @@ features.on_draw("Pocket Air Hockey", function(f)
         else banner, br, bg, bb = "YOU LOSE", 255, 100, 100 end
     end
     if banner then
-        local w = text.width(font.title, banner)
+        local w = text.width(font.display, banner)
         draw.rect(sw / 2 - w / 2 - 18 * s, y0 + th / 2 - 32 * s, sw / 2 + w / 2 + 18 * s, y0 + th / 2 + 32 * s, 12, 12, 18, 220, 8 * s)
-        text.draw(font.title, sw / 2 - w / 2, y0 + th / 2 - text.height(font.title) / 2, br, bg, bb, 255, banner)
+        text.draw(font.display, sw / 2 - w / 2, y0 + th / 2 - text.height(font.display) / 2, br, bg, bb, 255, banner)
     end
     local msg = state == 3 and "E TO PLAY AGAIN" or string.format("W A S D MOVE YOUR MALLET   FIRST TO %d", math.floor(f.win_score or 7))
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + th + rail + 10 * s, 220, 220, 232, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + th + rail + 10 * s, 220, 220, 232, 255, msg)
 end)

@@ -39,7 +39,7 @@ features.on_draw("Pocket Hangman", function(f)
     -- phrase
     local masked = f.masked or ""
     local spaced = masked:gsub(".", function(ch) return ch .. " " end)
-    local big = font.title
+    local big = font.display
     local tx = x0 + 280 * s
     local word_r, word_g, word_b = 245, 245, 250
     if state == 2 then word_r, word_g, word_b = 120, 230, 120 elseif state == 3 then word_r, word_g, word_b = 240, 120, 100 end
@@ -47,7 +47,7 @@ features.on_draw("Pocket Hangman", function(f)
     if tx + ww > x0 + w - 20 * s then tx = x0 + w - 20 * s - ww end
     text.draw(big, tx, y0 + 130 * s, word_r, word_g, word_b, 255, spaced)
     local lives = string.format("%d GUESSES LEFT", math.max(0, math.floor(f.max_wrong or 6) - wrong))
-    text.draw(font.small, x0 + 280 * s, y0 + 190 * s, 200, 200, 214, 230, lives)
+    text.draw(font.hud_small, x0 + 280 * s, y0 + 190 * s, 200, 200, 214, 230, lives)
 
     -- alphabet
     local used = math.floor(f.used or 0)
@@ -66,7 +66,7 @@ features.on_draw("Pocket Hangman", function(f)
         draw.rect(kx + 3 * s, yy, kx + kw - 3 * s, yy + kw, br, bg, bb, ba, 6 * s)
         local lr, lg, lb, la = 245, 245, 250, 255
         if taken then lr, lg, lb, la = 110, 110, 120, 200 end
-        text.draw(font.item, kx + kw / 2 - text.width(font.item, letter) / 2, yy + kw / 2 - text.height(font.item) / 2, lr, lg, lb, la, letter)
+        text.draw(font.hud, kx + kw / 2 - text.width(font.hud, letter) / 2, yy + kw / 2 - text.height(font.hud) / 2, lr, lg, lb, la, letter)
     end
 
     local foot
@@ -74,5 +74,5 @@ features.on_draw("Pocket Hangman", function(f)
     elseif state == 2 then foot = "SOLVED!   E FOR THE NEXT WORD"
     else foot = "HANGED   E TO TRY ANOTHER" end
     foot = foot .. string.format("     STREAK %d  BEST %d", math.floor(f.streak or 0), math.floor(f.best or 0))
-    text.draw(font.small, cx - text.width(font.small, foot) / 2, y0 + h - 40 * s, 210, 210, 222, 240, foot)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, foot) / 2, y0 + h - 40 * s, 210, 210, 222, 240, foot)
 end)

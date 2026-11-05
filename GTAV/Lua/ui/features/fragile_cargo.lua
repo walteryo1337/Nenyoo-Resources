@@ -28,14 +28,14 @@ features.on_draw("Fragile Cargo", function(f)
 
     local name = string.upper(f.cargo or "")
     if f.explosive then name = name .. "  !" end
-    text.draw(font.item, x + 14 * s, y + 10 * s, 245, 245, 250, 255, name)
+    text.draw(font.hud, x + 14 * s, y + 10 * s, 245, 245, 250, 255, name)
 
     local r, g, b = 120, 230, 120
     if cond < 35 then r, g, b = 240, 80, 70 elseif cond < 70 then r, g, b = 245, 200, 70 end
     local pct = string.format("%d%%", math.floor(cond + 0.5))
-    text.draw(font.item, x + w - 14 * s - text.width(font.item, pct), y + 10 * s, r, g, b, 255, pct)
+    text.draw(font.hud, x + w - 14 * s - text.width(font.hud, pct), y + 10 * s, r, g, b, 255, pct)
 
-    local bx1, by1 = x + 14 * s, y + 14 * s + text.height(font.item)
+    local bx1, by1 = x + 14 * s, y + 14 * s + text.height(font.hud)
     local bx2, by2 = x + w - 14 * s, by1 + 8 * s
     draw.rect(bx1, by1, bx2, by2, 255, 255, 255, 30, 4 * s)
     if cond > 0 then draw.rect(bx1, by1, bx1 + (bx2 - bx1) * cond / 100, by2, r, g, b, 235, 4 * s) end
@@ -53,10 +53,10 @@ features.on_draw("Fragile Cargo", function(f)
     end
     local sr, sg, sb = 215, 215, 228
     if f.out_of_vehicle and state == 1 then sr, sg, sb = 245, 120, 90 end
-    text.draw(font.small, x + 14 * s, by2 + 6 * s, sr, sg, sb, 240, sub)
+    text.draw(font.hud_small, x + 14 * s, by2 + 6 * s, sr, sg, sb, 240, sub)
     local done = math.floor(f.deliveries or 0)
     if done > 0 then
         local dstr = string.format("x%d", done)
-        text.draw(font.small, x + w - 14 * s - text.width(font.small, dstr), by2 + 6 * s, 190, 190, 205, 220, dstr)
+        text.draw(font.hud_small, x + w - 14 * s - text.width(font.hud_small, dstr), by2 + 6 * s, 190, 190, 205, 220, dstr)
     end
 end)

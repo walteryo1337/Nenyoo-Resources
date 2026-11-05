@@ -28,7 +28,7 @@ features.on_draw("Cooked Grenades", function(f)
     end
 
     local label = string.format("%.1f", left)
-    text.draw(font.small, cx - text.width(font.small, label) / 2, cy - text.height(font.small) / 2, 245, 245, 250, 255, label)
+    text.draw(font.hud_small, cx - text.width(font.hud_small, label) / 2, cy - text.height(font.hud_small) / 2, 245, 245, 250, 255, label)
     local hint = "RELEASE TO THROW"
-    text.draw(font.tiny, cx - text.width(font.tiny, hint) / 2, cy + radius + 8 * s, 220, 220, 230, 220, hint)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, hint) / 2, cy + radius + 8 * s, 220, 220, 230, 220, hint)
 end)

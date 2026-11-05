@@ -9,15 +9,15 @@ features.on_draw("Vehicle Card", function(f)
     local t = age < 0.1 and age / 0.1 or (age > 0.8 and (1 - age) / 0.2 or 1)
     local a = math.floor(255 * math.max(0, t))
     local ar, ag, ab = theme.accent()
-    local fnt = font.display or font.item
+    local fnt = font.display
 
     local make = string.upper(f.make or "")
     local model = f.model or ""
     local info = string.format("%s  |  %d seats  |  %d km/h", f.class or "", math.floor(f.seats or 1), math.floor(f.top_speed or 0))
 
     local pad = 14 * s
-    local w = math.max(text.width(fnt, model), text.width(font.small, info), text.width(font.tiny, make)) + pad * 2
-    local h = text.height(font.tiny) + text.height(fnt) + text.height(font.small) + pad * 1.6
+    local w = math.max(text.width(fnt, model), text.width(font.hud_small, info), text.width(font.hud_tiny, make)) + pad * 2
+    local h = text.height(font.hud_tiny) + text.height(fnt) + text.height(font.hud_small) + pad * 1.6
     local x = sw * 0.5 - w * 0.5
     local y = sh - h - 120 * s + (1 - t) * 16 * s
 
@@ -26,10 +26,10 @@ features.on_draw("Vehicle Card", function(f)
 
     local ty = y + pad * 0.6
     if make ~= "" then
-        text.draw(font.tiny, x + pad, ty, ar, ag, ab, a, make)
+        text.draw(font.hud_tiny, x + pad, ty, ar, ag, ab, a, make)
     end
-    ty = ty + text.height(font.tiny)
+    ty = ty + text.height(font.hud_tiny)
     text.draw(fnt, x + pad, ty, 245, 245, 250, a, model)
     ty = ty + text.height(fnt)
-    text.draw(font.small, x + pad, ty, 190, 190, 200, a, info)
+    text.draw(font.hud_small, x + pad, ty, 190, 190, 200, a, info)
 end)

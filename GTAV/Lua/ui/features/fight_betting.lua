@@ -6,7 +6,7 @@ features.on_draw("Fight Betting", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
     local pick = math.floor(f.pick or -1)
@@ -17,7 +17,7 @@ features.on_draw("Fight Betting", function(f)
     draw.rect(x, y, x + w, y + h, 12, 12, 16, 205, 8 * s)
     draw.rect(x, y, x + w, y + 3 * s, 220, 50, 45, 255, 0)
     local vs = "VS"
-    text.draw(font.title, cx - text.width(font.title, vs) / 2, y + 14 * s, 230, 60, 55, 255, vs)
+    text.draw(font.display, cx - text.width(font.display, vs) / 2, y + 14 * s, 230, 60, 55, 255, vs)
 
     local names = { f.name1 or "", f.name2 or "" }
     local odds = { f.odds1 or 0, f.odds2 or 0 }
@@ -33,11 +33,11 @@ features.on_draw("Fight Betting", function(f)
         local ostr = string.format("%.1fx", odds[i])
         if pick == idx then ostr = ostr .. "  YOUR PICK" end
         if left then
-            text.draw(font.item, nx, y + 12 * s, nr, ng, nb, 255, name)
-            text.draw(font.tiny, nx, y + 14 * s + text.height(font.item), 200, 200, 212, 230, ostr)
+            text.draw(font.hud, nx, y + 12 * s, nr, ng, nb, 255, name)
+            text.draw(font.hud_tiny, nx, y + 14 * s + text.height(font.hud), 200, 200, 212, 230, ostr)
         else
-            text.draw(font.item, nx - text.width(font.item, name), y + 12 * s, nr, ng, nb, 255, name)
-            text.draw(font.tiny, nx - text.width(font.tiny, ostr), y + 14 * s + text.height(font.item), 200, 200, 212, 230, ostr)
+            text.draw(font.hud, nx - text.width(font.hud, name), y + 12 * s, nr, ng, nb, 255, name)
+            text.draw(font.hud_tiny, nx - text.width(font.hud_tiny, ostr), y + 14 * s + text.height(font.hud), 200, 200, 212, 230, ostr)
         end
         local bw = w / 2 - 40 * s
         local by = y + h - 22 * s
@@ -76,6 +76,6 @@ features.on_draw("Fight Betting", function(f)
     end
     if msg then
         if f.interfered and state ~= 4 then msg, r, g, b = "YOU GOT INVOLVED", 240, 80, 70 end
-        text.draw(font.small, cx - text.width(font.small, msg) / 2, y + h + 6 * s, r, g, b, 255, msg)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, msg) / 2, y + h + 6 * s, r, g, b, 255, msg)
     end
 end)

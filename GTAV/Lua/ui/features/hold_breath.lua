@@ -29,5 +29,5 @@ features.on_draw("Hold Breath", function(f)
     if f.winded then hint = "CATCHING YOUR BREATH"
     elseif f.holding then hint = "HOLDING BREATH"
     else hint = "HOLD SHIFT TO STEADY YOUR AIM" end
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, hint) / 2, y + h + 6 * s, 230, 230, 240, math.floor(220 * a), hint)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, hint) / 2, y + h + 6 * s, 230, 230, 240, math.floor(220 * a), hint)
 end)

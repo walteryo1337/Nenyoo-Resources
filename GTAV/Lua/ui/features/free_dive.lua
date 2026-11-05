@@ -7,7 +7,7 @@ features.on_draw("Free Dive", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
 
     if f.diving then
@@ -25,15 +25,15 @@ features.on_draw("Free Dive", function(f)
         local y = gy + gh * math.min(1, d / scale)
         draw.circle(gx + gw / 2, y, 9 * s, ar, ag, ab, 255)
         local dstr = string.format("%.1f M", d)
-        text.draw(font.title, gx - 14 * s - text.width(font.title, dstr), y - text.height(font.title) / 2, 245, 245, 250, 255, dstr)
+        text.draw(font.display, gx - 14 * s - text.width(font.display, dstr), y - text.height(font.display) / 2, 245, 245, 250, 255, dstr)
         local air = math.max(0, f.air or 0)
         local astr = string.format("AIR %d S", math.floor(air))
         local r, g, b = 210, 225, 240
         if air < 5 then r, g, b = 240, 80, 70 end
-        text.draw(font.small, gx + gw / 2 - text.width(font.small, astr) / 2, gy + gh + 10 * s, r, g, b, 255, astr)
+        text.draw(font.hud_small, gx + gw / 2 - text.width(font.hud_small, astr) / 2, gy + gh + 10 * s, r, g, b, 255, astr)
         if f.best then
             local bstr = string.format("BEST %.1f", f.best)
-            text.draw(font.tiny, gx + gw / 2 - text.width(font.tiny, bstr) / 2, gy - text.height(font.tiny) - 8 * s, 255, 205, 60, 235, bstr)
+            text.draw(font.hud_tiny, gx + gw / 2 - text.width(font.hud_tiny, bstr) / 2, gy - text.height(font.hud_tiny) - 8 * s, 255, 205, 60, 235, bstr)
         end
     end
 
@@ -57,5 +57,5 @@ features.on_draw("Free Dive", function(f)
     y = y + text.height(big)
     local sub = string.format("%s%.1f S UNDERWATER", record and "NEW RECORD   " or "", f.last_time or 0)
     if (f.last_pay or 0) > 0 then sub = sub .. string.format("   +$%d", math.floor(f.last_pay)) end
-    text.draw(font.item, cx - text.width(font.item, sub) / 2, y, 240, 240, 248, alpha, sub)
+    text.draw(font.hud, cx - text.width(font.hud, sub) / 2, y, 240, 240, 248, alpha, sub)
 end)

@@ -9,7 +9,7 @@ features.on_draw("Chase Info", function(f)
     local s = sh / 1080
     local pad = 10 * s
     local w = 230 * s
-    local lh = text.height(font.small) + 4 * s
+    local lh = text.height(font.hud_small) + 4 * s
     local h = lh * 3 + pad * 2
     local x = 24 * s
     local y = sh * 0.22
@@ -28,13 +28,13 @@ features.on_draw("Chase Info", function(f)
         if filled then draw.circle(cxs, cys, rad, 240, 240, 245, 255)
         else draw.circle_outline(cxs, cys, rad, 240, 240, 245, 120, 1.2) end
     end
-    local sl = text.width(font.small, status)
-    text.draw(font.small, x + w - pad - sl, y + pad, r, g, b, 255, status)
+    local sl = text.width(font.hud_small, status)
+    text.draw(font.hud_small, x + w - pad - sl, y + pad, r, g, b, 255, status)
 
     local zd = f.zone_distance or 0
     local zone = zd > 0 and string.format("%d m to zone edge", math.floor(zd)) or "Outside search zone"
-    text.draw(font.small, x + pad, y + pad + lh, 220, 220, 228, 235, zone)
+    text.draw(font.hud_small, x + pad, y + pad + lh, 220, 220, 228, 235, zone)
 
     local d = math.floor(f.duration or 0)
-    text.draw(font.small, x + pad, y + pad + lh * 2, 170, 170, 180, 230, string.format("Chase %d:%02d", math.floor(d / 60), d % 60))
+    text.draw(font.hud_small, x + pad, y + pad + lh * 2, 170, 170, 180, 230, string.format("Chase %d:%02d", math.floor(d / 60), d % 60))
 end)

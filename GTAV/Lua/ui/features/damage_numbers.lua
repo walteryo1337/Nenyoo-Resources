@@ -17,7 +17,7 @@ features.on_draw("Damage Numbers", function(f)
         local a = math.floor(255 * (1 - p * p))
         local label = amt
         if ty == "1" then label = amt .. "!" elseif ty == "2" then label = "x " .. amt end
-        local fnt = ty == "0" and font.small or font.item
+        local fnt = ty == "0" and font.hud_small or font.hud
         local w = text.width(fnt, label)
         text.draw(fnt, x - w * 0.5 + 1, y + 1, 0, 0, 0, math.floor(a * 0.7), label)
         text.draw(fnt, x - w * 0.5, y, c[1], c[2], c[3], a, label)

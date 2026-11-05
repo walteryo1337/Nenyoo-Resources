@@ -70,7 +70,7 @@ features.on_draw("Charged Jump", function(f)
         draw.line(tx - w, ty + w * 0.6, tx, ty, cr, cg, cb, 245, 2.5)
         draw.line(tx, ty, tx + w, ty + w * 0.6, cr, cg, cb, 245, 2.5)
         local label = string.format("%d m", math.floor((f.height or 0) + 0.5))
-        text.draw_outlined(font.small, tx + w + 6, ty - text.height(font.small) * 0.5,
+        text.draw_outlined(font.hud_small, tx + w + 6, ty - text.height(font.hud_small) * 0.5,
             255, 255, 255, 240, 0, 0, 0, 170, 1.0, label)
     end
 
@@ -96,6 +96,6 @@ features.on_draw("Charged Jump", function(f)
             draw.circle_outline(x, y, r + 7 + 5 * pulse, cr, cg, cb, math.floor(160 * (1 - pulse)), 2)
         end
         local label = f.full and "MAX" or string.format("%d%%", math.floor(c * 100 + 0.5))
-        text.draw_centered(font.tiny, x - r, y - text.height(font.tiny) * 0.5, x + r, 255, 255, 255, 245, label)
+        text.draw_centered(font.hud_tiny, x - r, y - text.height(font.hud_tiny) * 0.5, x + r, 255, 255, 255, 245, label)
     end
 end)

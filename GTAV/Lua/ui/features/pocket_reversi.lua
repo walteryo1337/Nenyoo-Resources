@@ -39,9 +39,9 @@ features.on_draw("Pocket Reversi", function(f)
     end
 
     local you, cpu = math.floor(f.you or 0), math.floor(f.cpu or 0)
-    text.draw(font.title, x0, y0 - 60 * s, 245, 245, 250, 255, string.format("YOU %d", you))
+    text.draw(font.display, x0, y0 - 60 * s, 245, 245, 250, 255, string.format("YOU %d", you))
     local ct = string.format("%d CPU", cpu)
-    text.draw(font.title, x0 + size - text.width(font.title, ct), y0 - 60 * s, 245, 245, 250, 255, ct)
+    text.draw(font.display, x0 + size - text.width(font.display, ct), y0 - 60 * s, 245, 245, 250, 255, ct)
 
     local state = math.floor(f.state or 0)
     local foot
@@ -51,5 +51,5 @@ features.on_draw("Pocket Reversi", function(f)
     elseif state == 2 then foot = "CPU IS THINKING"
     else foot = "W A S D MOVE     E PLACE" end
     if f.passed then foot = "NO MOVE, TURN PASSED   " .. foot end
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + size + 18 * s, 220, 220, 232, 240, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + size + 18 * s, 220, 220, 232, 240, foot)
 end)

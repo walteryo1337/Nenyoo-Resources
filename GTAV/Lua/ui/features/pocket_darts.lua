@@ -19,7 +19,7 @@ features.on_draw("Pocket Darts", function(f)
     local cx, cy = sw / 2, sh / 2 + 10 * s
     local R = 300 * s
 
-    draw.rect(cx - R - 40 * s, cy - R - 80 * s, cx + R + 40 * s, cy + R + 50 * s, 12, 12, 16, 225, 12 * s)
+    draw.rect(cx - R - 40 * s, cy - R - 80 * s, cx + R + 40 * s, cy + R + 66 * s, 12, 12, 16, 225, 12 * s)
     draw.circle(cx, cy, R * 1.12, 20, 20, 24, 255)
     draw.circle(cx, cy, R, 220, 50, 50, 255)
     draw.circle(cx, cy, R * 0.953, 30, 30, 34, 255)
@@ -34,7 +34,7 @@ features.on_draw("Pocket Darts", function(f)
         local na = i * math.pi / 10
         local n = tostring(order[i + 1])
         local nx, ny = cx + math.sin(na) * R * 1.06, cy - math.cos(na) * R * 1.06
-        text.draw(font.small, nx - text.width(font.small, n) / 2, ny - text.height(font.small) / 2, 245, 245, 250, 255, n)
+        text.draw(font.hud_small, nx - text.width(font.hud_small, n) / 2, ny - text.height(font.hud_small) / 2, 245, 245, 250, 255, n)
     end
 
     local throws = {}
@@ -61,14 +61,14 @@ features.on_draw("Pocket Darts", function(f)
     local yr, yg, yb = 245, 245, 250
     local tr, tg, tb = 180, 180, 195
     if f.ai_turn then yr, yg, yb, tr, tg, tb = 180, 180, 195, 245, 245, 250 end
-    text.draw(font.title, cx - R, top, yr, yg, yb, 255, you)
-    text.draw(font.title, cx + R - text.width(font.title, them), top, tr, tg, tb, 255, them)
+    text.draw(font.display, cx - R, top, yr, yg, yb, 255, you)
+    text.draw(font.display, cx + R - text.width(font.display, them), top, tr, tg, tb, 255, them)
 
     local parts = {}
     for _, d in ipairs(throws) do parts[#parts + 1] = label(d.v, d.m) end
     local line = table.concat(parts, "  ")
     if f.bust then line = line .. "  BUST" end
-    if line ~= "" then text.draw(font.item, cx - text.width(font.item, line) / 2, top + 6 * s, f.bust and 240 or 235, f.bust and 90 or 235, f.bust and 80 or 245, 255, line) end
+    if line ~= "" then text.draw(font.hud, cx - text.width(font.hud, line) / 2, top + 6 * s, f.bust and 240 or 235, f.bust and 90 or 235, f.bust and 80 or 245, 255, line) end
 
     local foot
     if state == 4 then
@@ -79,5 +79,6 @@ features.on_draw("Pocket Darts", function(f)
     elseif f.ai_turn then
         foot = "CPU IS THROWING"
     end
-    if foot then text.draw(font.small, cx - text.width(font.small, foot) / 2, cy + R + 18 * s, 220, 220, 232, 240, foot) end
+    -- Below the board rim: the bottom sector number sits at R * 1.06.
+    if foot then text.draw(font.hud_small, cx - text.width(font.hud_small, foot) / 2, cy + R * 1.12 + 10 * s, 220, 220, 232, 240, foot) end
 end)

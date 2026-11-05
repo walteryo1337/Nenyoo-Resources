@@ -39,17 +39,17 @@ features.on_draw("Trick Shots", function(f)
         if a > 0 then
             local rise = math.min(age, 0.3) * 40 * s
             local pts = string.format("+%d", p[2])
-            local big = (i == #list) and (font.title) or font.item
+            local big = (i == #list) and (font.display) or font.hud
             local pw = text.width(big, pts)
             text.draw(big, cx - pw / 2, y - rise, ar, ag, ab, a, pts)
             local l = label(p[1], p[3])
             local ly = y - rise + text.height(big)
-            text.draw(font.small, cx - text.width(font.small, l) / 2, ly, 245, 245, 250, a, l)
-            y = y + text.height(big) + text.height(font.small) + 6 * s
+            text.draw(font.hud_small, cx - text.width(font.hud_small, l) / 2, ly, 245, 245, 250, a, l)
+            y = y + text.height(big) + text.height(font.hud_small) + 6 * s
         end
     end
 
     local stats = string.format("TRICK POINTS %d", math.floor(f.total or 0))
-    local tw = text.width(font.tiny, stats)
-    text.draw(font.tiny, sw - tw - 28 * s, sh * 0.16, 220, 220, 230, 220, stats)
+    local tw = text.width(font.hud_tiny, stats)
+    text.draw(font.hud_tiny, sw - tw - 28 * s, sh * 0.16, 220, 220, 230, 220, stats)
 end)

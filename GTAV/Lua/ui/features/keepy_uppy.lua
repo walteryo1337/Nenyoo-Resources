@@ -11,21 +11,21 @@ features.on_draw("Keepy Uppy", function(f)
     local cx = sw / 2
 
     local streak = string.format("%d", math.floor(f.streak or 0))
-    text.draw(font.title, cx - text.width(font.title, streak) / 2, 50 * s, 255, 255, 255, 255, streak)
+    text.draw(font.display, cx - text.width(font.display, streak) / 2, 50 * s, 255, 255, 255, 255, streak)
     local best = string.format("BEST %d", math.floor(f.best or 0))
-    text.draw(font.tiny, cx - text.width(font.tiny, best) / 2, 100 * s, 200, 200, 214, 220, best)
+    text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, best) / 2, 100 * s, 200, 200, 214, 220, best)
 
     local g = math.floor(f.grade or 0)
     local k = f.grade_k or 0
     if g > 0 and k > 0 then
         local c = cols[g]
         local w = words[g]
-        text.draw(font.small, cx - text.width(font.small, w) / 2, sh * 0.34 - 20 * s * (1 - k), c[1], c[2], c[3], math.floor(255 * k), w)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, w) / 2, sh * 0.34 - 20 * s * (1 - k), c[1], c[2], c[3], math.floor(255 * k), w)
     end
     if f.reach then
         local hint = "E"
         local r = 18 * s
         draw.circle(cx, sh * 0.58, r, 255, 220, 90, 220)
-        text.draw(font.small, cx - text.width(font.small, hint) / 2, sh * 0.58 - 11 * s, 20, 20, 24, 255, hint)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, hint) / 2, sh * 0.58 - 11 * s, 20, 20, 24, 255, hint)
     end
 end)

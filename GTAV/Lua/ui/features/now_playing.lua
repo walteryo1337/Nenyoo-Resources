@@ -23,12 +23,12 @@ features.on_draw("Now Playing", function(f)
 
     local pad = 12 * s
     local eq_w = 26 * s
-    local th = text.height(font.tiny)
-    local lines_w = math.max(text.width(font.tiny, station), text.width(font.item, song), text.width(font.small, artist))
+    local th = text.height(font.hud_tiny)
+    local lines_w = math.max(text.width(font.hud_tiny, station), text.width(font.hud, song), text.width(font.hud_small, artist))
     local w = math.max(220 * s, lines_w + eq_w + pad * 3)
     local h = pad * 2 + th
-    if song ~= "" then h = h + text.height(font.item) + 2 * s end
-    if artist ~= "" then h = h + text.height(font.small) end
+    if song ~= "" then h = h + text.height(font.hud) + 2 * s end
+    if artist ~= "" then h = h + text.height(font.hud_small) end
 
     local x = 28 * s - (1 - t) * 40 * s
     local y = sh * 0.66 - h
@@ -49,13 +49,13 @@ features.on_draw("Now Playing", function(f)
 
     local tx = x + pad * 2 + eq_w
     local ty = y + pad
-    text.draw(font.tiny, tx, ty, ar, ag, ab, a, station ~= "" and station or "NOW PLAYING")
+    text.draw(font.hud_tiny, tx, ty, ar, ag, ab, a, station ~= "" and station or "NOW PLAYING")
     ty = ty + th + 2 * s
     if song ~= "" then
-        text.draw(font.item, tx, ty, 245, 245, 250, a, song)
-        ty = ty + text.height(font.item)
+        text.draw(font.hud, tx, ty, 245, 245, 250, a, song)
+        ty = ty + text.height(font.hud)
     end
     if artist ~= "" then
-        text.draw(font.small, tx, ty, 185, 185, 200, a, artist)
+        text.draw(font.hud_small, tx, ty, 185, 185, 200, a, artist)
     end
 end)

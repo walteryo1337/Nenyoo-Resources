@@ -38,8 +38,8 @@ end
 local function bar(cx, cy, z, a)
     draw.rect(cx - 0.38 * z, cy - 0.2 * z, cx + 0.38 * z, cy + 0.2 * z, 230, 180, 50, a, 0.05 * z)
     draw.rect(cx - 0.34 * z, cy - 0.16 * z, cx + 0.34 * z, cy + 0.16 * z, 20, 20, 28, a, 0.04 * z)
-    local w = text.width(font.item, "BAR")
-    text.draw(font.item, cx - w / 2, cy - text.height(font.item, "BAR") / 2, 255, 255, 255, a, "BAR")
+    local w = text.width(font.hud, "BAR")
+    text.draw(font.hud, cx - w / 2, cy - text.height(font.hud, "BAR") / 2, 255, 255, 255, a, "BAR")
 end
 
 local function seven(cx, cy, z, a)
@@ -92,12 +92,12 @@ features.on_draw("Pocket Slots", function(f)
     draw.rect(x0 - 24 * s, wy - 110 * s, x0 + total + 24 * s, wy + cell * 3 + 90 * s, 40, 8, 16, 240, 16 * s)
     draw.rect_gradient(x0 - 12 * s, wy - 98 * s, x0 + mw + 12 * s, wy + cell * 3 + 12 * s, 180, 30, 50, 255, 180, 30, 50, 255, 90, 10, 30, 255, 90, 10, 30, 255)
     local title = "LUCKY POCKET"
-    local tw = text.width(font.title, title)
+    local tw = text.width(font.display, title)
     for k = 0, 9 do
         local on = math.floor(t * 6 + k) % 2 == 0
         draw.circle(x0 + mw / 2 - tw / 2 - 30 * s + k * (tw + 60 * s) / 9, wy - 86 * s, 3.5 * s, 255, on and 230 or 120, on and 120 or 60, 255)
     end
-    text.draw(font.title, x0 + mw / 2 - tw / 2, wy - 72 * s, 255, 220, 120, 255, title)
+    text.draw(font.display, x0 + mw / 2 - tw / 2, wy - 72 * s, 255, 220, 120, 255, title)
 
     for r = 1, 3 do
         local rx = x0 + (r - 1) * (rw + gap)
@@ -133,12 +133,12 @@ features.on_draw("Pocket Slots", function(f)
 
     local by = wy + cell * 3 + 26 * s
     local cash = string.format("CASH %s", money(f.cash or 0))
-    text.draw(font.item, x0, by, 245, 245, 250, 255, cash)
+    text.draw(font.hud, x0, by, 245, 245, 250, 255, cash)
     local bet = string.format("<  BET %s  >", money(f.bet or 0))
-    text.draw(font.item, x0 + mw / 2 - text.width(font.item, bet) / 2, by, 255, 210, 90, 255, bet)
+    text.draw(font.hud, x0 + mw / 2 - text.width(font.hud, bet) / 2, by, 255, 210, 90, 255, bet)
     local net = f.net or 0
     local nets = string.format("NET %s%s", net < 0 and "-" or "+", money(net))
-    text.draw(font.item, x0 + mw - text.width(font.item, nets), by, net < 0 and 255 or 120, net < 0 and 110 or 235, net < 0 and 100 or 140, 255, nets)
+    text.draw(font.hud, x0 + mw - text.width(font.hud, nets), by, net < 0 and 255 or 120, net < 0 and 110 or 235, net < 0 and 100 or 140, 255, nets)
 
     local msg, mr, mg, mb = "A / D CHANGE BET   E SPIN", 225, 225, 240
     if state == 2 then msg = "GOOD LUCK..."
@@ -146,12 +146,12 @@ features.on_draw("Pocket Slots", function(f)
         msg, mr, mg, mb = string.format("WIN %s  (x%d)", money(win), math.floor(f.multiple or 0)), 120, 245, 140
         if (f.multiple or 0) >= 10 then mr, mg, mb = 255, 220, 80 end
     elseif state == 3 then msg = "NO WIN   E TO SPIN AGAIN" end
-    text.draw(font.small, x0 + mw / 2 - text.width(font.small, msg) / 2, by + 34 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, x0 + mw / 2 - text.width(font.hud_small, msg) / 2, by + 34 * s, mr, mg, mb, 255, msg)
 
     local px = x0 + mw + 40 * s
     local py = wy - 98 * s
     draw.rect(px, py, px + pw, wy + cell * 3 + 12 * s, 20, 16, 30, 245, 10 * s)
-    text.draw(font.small, px + 14 * s, py + 12 * s, 255, 220, 120, 255, "PAYS (TIMES BET)")
+    text.draw(font.hud_small, px + 14 * s, py + 12 * s, 255, 220, 120, 255, "PAYS (TIMES BET)")
     local rows = { { 4, 4, 4, 50 }, { 5, 5, 5, 25 }, { 3, 3, 3, 15 }, { 2, 2, 2, 10 }, { 1, 1, 1, 5 }, { 0, 0, 0, 4 }, { 0, 0, -1, 2 }, { 0, -1, -1, 1 } }
     local rh = (wy + cell * 3 - py - 40 * s) / #rows
     for i, row in ipairs(rows) do
@@ -159,11 +159,11 @@ features.on_draw("Pocket Slots", function(f)
         for k = 1, 3 do
             local sx = px + 30 * s + (k - 1) * 44 * s
             if row[k] >= 0 then symbol(row[k], sx, cy, 40 * s, 255)
-            else text.draw(font.small, sx - text.width(font.small, "ANY") / 2, cy - 8 * s, 150, 150, 170, 255, "ANY") end
+            else text.draw(font.hud_small, sx - text.width(font.hud_small, "ANY") / 2, cy - 8 * s, 150, 150, 170, 255, "ANY") end
         end
         local pay = string.format("x%d", row[4])
-        text.draw(font.item, px + pw - 18 * s - text.width(font.item, pay), cy - 10 * s, 245, 245, 250, 255, pay)
+        text.draw(font.hud, px + pw - 18 * s - text.width(font.hud, pay), cy - 10 * s, 245, 245, 250, 255, pay)
     end
     local stats = string.format("SPINS %d   BEST %s", math.floor(f.spins or 0), money(f.biggest or 0))
-    text.draw(font.tiny, px + 14 * s, wy + cell * 3 - 10 * s, 170, 170, 190, 255, stats)
+    text.draw(font.hud_tiny, px + 14 * s, wy + cell * 3 - 10 * s, 170, 170, 190, 255, stats)
 end)

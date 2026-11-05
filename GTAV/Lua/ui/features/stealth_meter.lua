@@ -35,15 +35,15 @@ features.on_draw("Stealth Meter", function(f)
     local pad = 6 * s
     local bar_w = 150 * s
     local bar_h = 4 * s
-    local th = text.height(font.tiny)
+    local th = text.height(font.hud_tiny)
     local w = bar_w + pad * 2
     local h = th + bar_h + pad * 3
 
     draw.rect(x, y, x + w, y + h, 10, 10, 16, math.floor(150 * a), 4 * s)
-    text.draw(font.tiny, x + pad, y + pad, r, g, b, math.floor(255 * a), label)
+    text.draw(font.hud_tiny, x + pad, y + pad, r, g, b, math.floor(255 * a), label)
     if f.sneaking then
         local tag = "SNEAKING"
-        text.draw(font.tiny, x + w - pad - text.width(font.tiny, tag), y + pad, 180, 180, 195, math.floor(200 * a), tag)
+        text.draw(font.hud_tiny, x + w - pad - text.width(font.hud_tiny, tag), y + pad, 180, 180, 195, math.floor(200 * a), tag)
     end
     local by = y + pad * 2 + th
     draw.rect(x + pad, by, x + pad + bar_w, by + bar_h, 0, 0, 0, math.floor(160 * a), 0)

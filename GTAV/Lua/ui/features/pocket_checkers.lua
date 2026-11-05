@@ -14,9 +14,9 @@ features.on_draw("Pocket Checkers", function(f)
     local x0, y0 = sw / 2 - pw / 2, sh / 2 - ph / 2
     local bx, by = x0 + 20 * s, y0 + 56 * s
     draw.rect(x0, y0, x0 + pw, y0 + ph, 14, 12, 12, 230, 12 * s)
-    text.draw(font.item, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "CHECKERS")
+    text.draw(font.hud, x0 + 20 * s, y0 + 16 * s, 245, 245, 250, 255, "CHECKERS")
     local tally = string.format("YOU %d   PHONE %d", math.floor(f.yours or 0), math.floor(f.theirs or 0))
-    text.draw(font.small, x0 + pw - 20 * s - text.width(font.small, tally), y0 + 20 * s, 200, 200, 212, 255, tally)
+    text.draw(font.hud_small, x0 + pw - 20 * s - text.width(font.hud_small, tally), y0 + 20 * s, 200, 200, 212, 255, tally)
 
     local board, marks = f.board or "", f.marks or ""
     local state = math.floor(f.state or 0)
@@ -66,7 +66,7 @@ features.on_draw("Pocket Checkers", function(f)
     elseif state == 3 then msg, cr, cg, cb = "YOU WIN!   E TO PLAY AGAIN", 120, 240, 120
     elseif state == 4 then msg, cr, cg, cb = "YOU LOSE   E TO PLAY AGAIN", 255, 100, 100
     else msg, cr, cg, cb = "DRAW   E TO PLAY AGAIN", 220, 220, 120 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, by + bw + 16 * s, cr, cg, cb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, by + bw + 16 * s, cr, cg, cb, 255, msg)
     local rec = string.format("WINS %d/%d", math.floor(f.wins or 0), math.floor(f.played or 0))
-    text.draw(font.small, sw / 2 - text.width(font.small, rec) / 2, by + bw + 42 * s, 160, 160, 175, 255, rec)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, rec) / 2, by + bw + 42 * s, 160, 160, 175, 255, rec)
 end)

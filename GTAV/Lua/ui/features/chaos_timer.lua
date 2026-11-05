@@ -37,19 +37,19 @@ local function panel(f, sw, sh, now, ar, ag, ab)
     draw.rect(x, y, x + w, y + h, 10, 10, 16, 210, 8)
 
     draw.circle(x + 16, y + 15, 4, br, bg, bb, math.floor(255 * pulse))
-    text.draw(font.tiny, x + 26, y + 8, 165, 165, 180, 255, "CHAOS TIMER")
+    text.draw(font.hud_tiny, x + 26, y + 8, 165, 165, 180, 255, "CHAOS TIMER")
     local label = "NEXT EVENT"
-    text.draw(font.tiny, x + w - 14 - text.width(font.tiny, label), y + 8, 165, 165, 180, 255, label)
+    text.draw(font.hud_tiny, x + w - 14 - text.width(font.hud_tiny, label), y + 8, 165, 165, 180, 255, label)
 
     local current = f.effect or f.last1 or "Get ready"
     local sub_r, sub_g, sub_b = 240, 240, 245
     if f.effect then sub_r, sub_g, sub_b = 255, 190, 70 end
-    text.draw(font.item, x + 14, y + 26, sub_r, sub_g, sub_b, 255, current)
+    text.draw(font.hud, x + 14, y + 26, sub_r, sub_g, sub_b, 255, current)
 
     local secs = string.format("%.1fs", left)
-    local tw = text.width(font.item, secs)
+    local tw = text.width(font.hud, secs)
     draw.with_scale(x + w - 14 - tw * 0.5, y + 34, urgent and (1 + 0.12 * pulse) or 1, function()
-        text.draw(font.item, x + w - 14 - tw, y + 26, br, bg, bb, 255, secs)
+        text.draw(font.hud, x + w - 14 - tw, y + 26, br, bg, bb, 255, secs)
     end)
 
     local bx1, bx2, by = x + 14, x + w - 14, y + h - 12
@@ -68,8 +68,8 @@ local function panel(f, sw, sh, now, ar, ag, ab)
         local ey = bottom + 4
         draw.rect(x, ey, x + w, ey + 24, 10, 10, 16, 190, 6)
         local tag = string.format("%s  %ds", string.upper(f.effect), math.ceil(f.effect_left or 0))
-        text.draw(font.tiny, x + 14, ey + 5, 255, 190, 70, 255, tag)
-        local ex1 = x + 14 + text.width(font.tiny, tag) + 12
+        text.draw(font.hud_tiny, x + 14, ey + 5, 255, 190, 70, 255, tag)
+        local ex1 = x + 14 + text.width(font.hud_tiny, tag) + 12
         draw.rect(ex1, ey + 10, x + w - 14, ey + 14, 45, 45, 55, 230, 2)
         draw.rect(ex1, ey + 10, ex1 + (x + w - 14 - ex1) * ef, ey + 14, 255, 190, 70, 255, 2)
         bottom = ey + 24
@@ -77,7 +77,7 @@ local function panel(f, sw, sh, now, ar, ag, ab)
 
     if f.last2 then
         local hist = "BEFORE  " .. string.upper(f.last2) .. (f.last3 and ("  /  " .. string.upper(f.last3)) or "")
-        centred(font.tiny, sw * 0.5, bottom + 6, hist, 140, 140, 155, 200)
+        centred(font.hud_tiny, sw * 0.5, bottom + 6, hist, 140, 140, 155, 200)
     end
 end
 
@@ -96,7 +96,7 @@ local function roulette(f, sw, sh, now, ar, ag, ab)
             255, 255, 255, 255, 0, 0, 0, 200, 2.0, s)
     end)
 
-    local rowh = text.height(font.item) + 10
+    local rowh = text.height(font.hud) + 10
     local w = 300
     local x1, x2 = cx - w * 0.5, cx + w * 0.5
     local y1, y2 = cy, cy + rowh * 3
@@ -115,7 +115,7 @@ local function roulette(f, sw, sh, now, ar, ag, ab)
         local mid = ry + rowh * 0.5
         local d = math.abs(mid - (y1 + rowh * 1.5)) / rowh
         local a = math.floor(255 * clamp(1 - d * 0.6, 0.15, 1))
-        centred(font.item, cx, ry + 5, string.upper(name), 240, 240, 245, a)
+        centred(font.hud, cx, ry + 5, string.upper(name), 240, 240, 245, a)
     end
     draw.pop_clip()
     draw.rect_gradient(x1, y1, x2, y1 + rowh, 10, 10, 16, 220, 10, 10, 16, 220, 10, 10, 16, 0, 10, 10, 16, 0)
@@ -138,7 +138,7 @@ local function reveal(f, sw, sh, now, ar, ag, ab)
     local th = text.height(font.display)
     draw.rect_gradient(cx - spread, cy - 14, cx, cy - 12, ar, ag, ab, 0, ar, ag, ab, a, ar, ag, ab, a, ar, ag, ab, 0)
     draw.rect_gradient(cx, cy - 14, cx + spread, cy - 12, ar, ag, ab, a, ar, ag, ab, 0, ar, ag, ab, 0, ar, ag, ab, a)
-    centred(font.tiny, cx, cy - 34, "CHAOS EVENT", ar, ag, ab, a)
+    centred(font.hud_tiny, cx, cy - 34, "CHAOS EVENT", ar, ag, ab, a)
 
     local name = string.upper(f.event or "")
     local pop = 1 + 0.6 * clamp(1 - age / 0.18, 0, 1)
@@ -149,7 +149,7 @@ local function reveal(f, sw, sh, now, ar, ag, ab)
     end)
 
     if f.blurb then
-        centred(font.item, cx, cy + th + 8, f.blurb, 220, 220, 230, math.floor(a * clamp((age - 0.2) / 0.3, 0, 1)))
+        centred(font.hud, cx, cy + th + 8, f.blurb, 220, 220, 230, math.floor(a * clamp((age - 0.2) / 0.3, 0, 1)))
     end
     draw.rect_gradient(cx - spread, cy + th + 36, cx, cy + th + 38, ar, ag, ab, 0, ar, ag, ab, a, ar, ag, ab, a, ar, ag, ab, 0)
     draw.rect_gradient(cx, cy + th + 36, cx + spread, cy + th + 38, ar, ag, ab, a, ar, ag, ab, 0, ar, ag, ab, 0, ar, ag, ab, a)

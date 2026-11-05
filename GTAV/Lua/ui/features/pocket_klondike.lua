@@ -72,7 +72,7 @@ features.on_draw("Pocket Solitaire", function(f)
         local red = suit == 1 or suit == 2
         local r, g, b = 20, 20, 26
         if red then r, g, b = 210, 30, 40 end
-        text.draw(font.item, x + 7 * s, y + 3 * s, r, g, b, 255, RANKS[rank])
+        text.draw(font.hud, x + 7 * s, y + 3 * s, r, g, b, 255, RANKS[rank])
         suit_icon(x + cw - 18 * s, y + 18 * s, 9 * s, suit)
         suit_icon(x + cw / 2, y + ch * 0.6, 20 * s, suit)
     end
@@ -153,12 +153,12 @@ features.on_draw("Pocket Solitaire", function(f)
     end
 
     local hy = y0 - 56 * s
-    text.draw(font.item, x0, hy, 245, 245, 235, 255, clock(f.elapsed))
+    text.draw(font.hud, x0, hy, 245, 245, 235, 255, clock(f.elapsed))
     local mid = string.format("MOVES %d   WINS %d", math.floor(f.moves or 0), math.floor(f.wins or 0))
-    text.draw(font.small, x0 + bw / 2 - text.width(font.small, mid) / 2, hy + 4 * s, 220, 235, 220, 255, mid)
+    text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, mid) / 2, hy + 4 * s, 220, 235, 220, 255, mid)
     if f.best then
         local b = "BEST " .. clock(f.best)
-        text.draw(font.small, x0 + bw - text.width(font.small, b), hy + 4 * s, 255, 210, 90, 255, b)
+        text.draw(font.hud_small, x0 + bw - text.width(font.hud_small, b), hy + 4 * s, 255, 210, 90, 255, b)
     end
     local hold = f.restart_hold or 0
     if hold > 0 then
@@ -169,5 +169,5 @@ features.on_draw("Pocket Solitaire", function(f)
     local msg, mr, mg, mb = "W A S D MOVE   E PICK UP / DROP / DRAW   Q SEND TO FOUNDATION   HOLD Q REDEAL", 230, 240, 230
     if state == 2 then msg = "FINISHING UP..."
     elseif state == 3 then msg, mr, mg, mb = string.format("SOLVED IN %s, %d MOVES!   E TO DEAL AGAIN", clock(f.elapsed), math.floor(f.moves or 0)), 255, 230, 120 end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, bottom + 24 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, bottom + 24 * s, mr, mg, mb, 255, msg)
 end)

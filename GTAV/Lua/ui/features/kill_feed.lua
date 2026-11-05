@@ -12,7 +12,7 @@ features.on_draw("Kill Feed", function(f)
     local right = sw - 18 * s
     local y = 96 * s
     local pad = 8 * s
-    local lh = text.height(font.small) + pad
+    local lh = text.height(font.hud_small) + pad
 
     for i = 1, math.floor(f.count or 0) do
         local age = f["age" .. i] or 0
@@ -24,17 +24,17 @@ features.on_draw("Kill Feed", function(f)
             local weapon = f["weapon" .. i] or ""
             local victim = f["victim" .. i] or ""
             local hs = f["headshot" .. i]
-            local ww = text.width(font.small, weapon)
-            local vw = text.width(font.small, victim)
-            local hw = hs and (text.width(font.tiny, "HS") + pad) or 0
+            local ww = text.width(font.hud_small, weapon)
+            local vw = text.width(font.hud_small, victim)
+            local hw = hs and (text.width(font.hud_tiny, "HS") + pad) or 0
             local w = ww + vw + hw + pad * 3
             local x = right - w + slide
 
             draw.rect(x, y, x + w, y + lh, 10, 10, 16, math.floor(150 * t), 5 * s)
-            text.draw(font.small, x + pad, y + pad * 0.5, ar, ag, ab, a, weapon)
-            text.draw(font.small, x + pad * 2 + ww, y + pad * 0.5, 240, 240, 245, a, victim)
+            text.draw(font.hud_small, x + pad, y + pad * 0.5, ar, ag, ab, a, weapon)
+            text.draw(font.hud_small, x + pad * 2 + ww, y + pad * 0.5, 240, 240, 245, a, victim)
             if hs then
-                text.draw(font.tiny, x + pad * 3 + ww + vw, y + pad * 0.5 + 2 * s, 235, 80, 80, a, "HS")
+                text.draw(font.hud_tiny, x + pad * 3 + ww + vw, y + pad * 0.5 + 2 * s, 235, 80, 80, a, "HS")
             end
             y = y + lh + 4 * s
         end

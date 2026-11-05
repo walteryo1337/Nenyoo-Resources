@@ -8,23 +8,27 @@ features.on_draw("Crop Duster", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local state = math.floor(f.state or 0)
 
     if state == 3 then
         local msg = string.format("%d%% COVERED", math.floor(f.coverage or 0))
         text.draw(big, sw / 2 - text.width(big, msg) / 2, sh * 0.26, 120, 230, 120, 255, msg)
         local p = string.format("+$%d", math.floor(f.paid or 0))
-        text.draw(font.item, sw / 2 - text.width(font.item, p) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, p)
+        text.draw(font.hud, sw / 2 - text.width(font.hud, p) / 2, sh * 0.26 + text.height(big), 245, 245, 250, 255, p)
         return
     end
 
     local gl, gw = math.floor(f.grid_l or 16), math.floor(f.grid_w or 8)
     local cell = 13 * s
+    -- The 8-cell-wide map is narrower than "100%" next to the clock (and ALT next to FIELD), so the panel
+    -- gets its own width and the map sits centred in it.
+    local panel_w = math.max(gw * cell, 150 * s)
     local mw, mh = gw * cell, gl * cell
-    local x = sw - mw - 50 * s
+    local px0 = sw - panel_w - 50 * s
+    local x = px0 + (panel_w - mw) / 2
     local y = sh * 0.24
-    draw.rect(x - 14 * s, y - 50 * s, x + mw + 14 * s, y + mh + 92 * s, 12, 12, 16, 215, 8 * s)
+    draw.rect(px0 - 14 * s, y - 50 * s, px0 + panel_w + 14 * s, y + mh + 92 * s, 12, 12, 16, 215, 8 * s)
     local grid = f.grid or ""
     for i = 0, gl - 1 do
         for j = 0, gw - 1 do
@@ -45,30 +49,33 @@ features.on_draw("Crop Duster", function(f)
     end
 
     local cov = string.format("%d%%", math.floor(f.coverage or 0))
-    text.draw(font.title, x, y - 44 * s, 245, 245, 250, 255, cov)
+    text.draw(font.display, px0, y - 44 * s, 245, 245, 250, 255, cov)
     local t = f.time_left or 0
     local clock = string.format("%d:%02d", math.floor(t / 60), math.floor(t % 60))
-    text.draw(font.item, x + mw - text.width(font.item, clock), y - 40 * s, 220, 220, 232, 255, clock)
+    local dh = text.height(font.display)
+    text.draw(font.hud, px0 + panel_w - text.width(font.hud, clock), y - 44 * s + dh / 2 - text.height(font.hud) / 2, 220, 220, 232, 255, clock)
 
     local by = y + mh + 12 * s
-    draw.rect(x, by, x + mw, by + 8 * s, 40, 40, 50, 220, 3 * s)
+    draw.rect(px0, by, px0 + panel_w, by + 8 * s, 40, 40, 50, 220, 3 * s)
     local tank = math.max(0, math.min(100, f.tank or 0))
     local tr, tg, tb = ar, ag, ab
     if tank < 20 then tr, tg, tb = 240, 90, 80 end
-    draw.rect(x, by, x + mw * tank / 100, by + 8 * s, tr, tg, tb, 255, 3 * s)
-    text.draw(font.tiny, x, by + 12 * s, 190, 190, 205, 230, "TANK")
+    draw.rect(px0, by, px0 + panel_w * tank / 100, by + 8 * s, tr, tg, tb, 255, 3 * s)
+    text.draw(font.hud_tiny, px0, by + 12 * s, 190, 190, 205, 230, "TANK")
+    local tp = string.format("%d%%", math.floor(tank))
+    text.draw(font.hud_tiny, px0 + panel_w - text.width(font.hud_tiny, tp), by + 12 * s, 190, 190, 205, 230, tp)
 
     local agl = math.floor(f.agl or 0)
     local alt = string.format("ALT %d M", agl)
     local cr, cg, cb = 200, 200, 214
     if f.too_high then cr, cg, cb = 240, 90, 80 elseif agl <= 12 then cr, cg, cb = 120, 230, 120 end
-    text.draw(font.small, x, by + 30 * s, cr, cg, cb, 255, alt)
+    text.draw(font.hud_small, px0, by + 30 * s, cr, cg, cb, 255, alt)
     if state == 1 then
         local d = string.format("FIELD %d M", math.floor(f.distance or 0))
-        text.draw(font.small, x + mw - text.width(font.small, d), by + 30 * s, 200, 200, 214, 240, d)
+        text.draw(font.hud_small, px0 + panel_w - text.width(font.hud_small, d), by + 30 * s, 200, 200, 214, 240, d)
     end
     if f.too_high then
         local msg = "TOO HIGH, GET UNDER 12 M"
-        text.draw(font.title, sw / 2 - text.width(font.title, msg) / 2, sh * 0.2, 240, 90, 80, 255, msg)
+        text.draw(font.display, sw / 2 - text.width(font.display, msg) / 2, sh * 0.2, 240, 90, 80, 255, msg)
     end
 end)

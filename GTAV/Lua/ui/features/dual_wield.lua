@@ -18,7 +18,7 @@ features.on_draw("Dual Wield", function(f)
         local fill = bh * k
         if fill > 0 then draw.rect(x, top + bh - fill, x + bw, top + bh, r + 60, g + 60, 40, 235, 3 * s) end
         local label = string.format("%d", math.floor(n))
-        text.draw(font.small, x + bw / 2 - text.width(font.small, label) / 2, top + bh + 6 * s, 240, 240, 245, 245, label)
+        text.draw(font.hud_small, x + bw / 2 - text.width(font.hud_small, label) / 2, top + bh + 6 * s, 240, 240, 245, 245, label)
     end
 
     local xr = right_edge - bw
@@ -26,13 +26,13 @@ features.on_draw("Dual Wield", function(f)
     bar(xl, f.left or 0)
     bar(xr, f.right or 0)
     local spare = string.format("%d", math.floor(f.reserve or 0))
-    text.draw(font.tiny, right_edge - text.width(font.tiny, spare), top - 22 * s, 190, 190, 200, 220, spare)
+    text.draw(font.hud_tiny, right_edge - text.width(font.hud_tiny, spare), top - 22 * s, 190, 190, 200, 220, spare)
 
     local msg
     if f.reloading then msg = "RELOADING"
     elseif f.empty and (math.floor((ctx.time() or 0) * 1.4) % 2 == 0) then msg = "RELOAD" end
     if msg then
-        local w = text.width(font.tiny, msg)
-        text.draw(font.tiny, (xl + right_edge) / 2 - w / 2, top + bh + 34 * s, 255, 200, 90, 240, msg)
+        local w = text.width(font.hud_tiny, msg)
+        text.draw(font.hud_tiny, (xl + right_edge) / 2 - w / 2, top + bh + 34 * s, 255, 200, 90, 240, msg)
     end
 end)

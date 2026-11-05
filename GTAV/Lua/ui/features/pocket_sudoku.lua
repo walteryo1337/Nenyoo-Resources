@@ -44,17 +44,17 @@ features.on_draw("Pocket Sudoku", function(f)
             local tr, tg, tb = 40, 70, 170
             if fixed then tr, tg, tb = 25, 25, 30 end
             if bad then tr, tg, tb = 220, 50, 50 end
-            text.draw(font.title, x + cell / 2 - text.width(font.title, ch) / 2, y + cell / 2 - text.height(font.title) / 2, tr, tg, tb, 255, ch)
+            text.draw(font.display, x + cell / 2 - text.width(font.display, ch) / 2, y + cell / 2 - text.height(font.display) / 2, tr, tg, tb, 255, ch)
         end
     end
 
     local t = f.seconds or 0
     local head = string.format("%s   %d:%02d", levels[math.floor(f.level or 1)] or "", math.floor(t / 60), math.floor(t % 60))
-    text.draw(font.item, x0, y0 - 54 * s, 245, 245, 250, 255, head)
+    text.draw(font.hud, x0, y0 - 54 * s, 245, 245, 250, 255, head)
     if f.best then
         local b = string.format("BEST %d:%02d", math.floor(f.best / 60), math.floor(f.best % 60))
-        text.draw(font.item, x0 + size - text.width(font.item, b), y0 - 54 * s, 200, 200, 214, 240, b)
+        text.draw(font.hud, x0 + size - text.width(font.hud, b), y0 - 54 * s, 200, 200, 214, 240, b)
     end
     local foot = math.floor(f.state or 0) == 2 and "SOLVED!   E FOR A NEW PUZZLE" or "W A S D MOVE     E NUMBER UP     Q NUMBER DOWN"
-    text.draw(font.small, sw / 2 - text.width(font.small, foot) / 2, y0 + size + 18 * s, 220, 220, 232, 240, foot)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, foot) / 2, y0 + size + 18 * s, 220, 220, 232, 240, foot)
 end)

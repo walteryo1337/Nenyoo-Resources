@@ -80,7 +80,7 @@ features.on_draw("Pocket Backgammon", function(f)
                 if d == "2" and state == 2 then draw.circle(cx, cy, r * 0.22, 255, 200, 60, 255) end
                 if cnt > 5 then
                     local label = tostring(cnt)
-                    text.draw(font.small, cx - text.width(font.small, label) / 2, cy - text.height(font.small) / 2, mine and 40 or 255, mine and 40 or 255, mine and 40 or 255, 255, label)
+                    text.draw(font.hud_small, cx - text.width(font.hud_small, label) / 2, cy - text.height(font.hud_small) / 2, mine and 40 or 255, mine and 40 or 255, mine and 40 or 255, 255, label)
                 end
             end
         end
@@ -151,11 +151,11 @@ features.on_draw("Pocket Backgammon", function(f)
 
     local hy = y0 - 56 * s
     local need = math.floor(f.match_to or 5)
-    text.draw(font.item, x0, hy, 235, 230, 218, 255, string.format("YOU %d", math.floor(f.score_you or 0)))
+    text.draw(font.hud, x0, hy, 235, 230, 218, 255, string.format("YOU %d", math.floor(f.score_you or 0)))
     local mid = string.format("FIRST TO %d   PIPS %d : %d", need, math.floor(f.pip_you or 0), math.floor(f.pip_phone or 0))
-    text.draw(font.small, x0 + bw / 2 - text.width(font.small, mid) / 2, hy + 4 * s, 220, 210, 190, 255, mid)
+    text.draw(font.hud_small, x0 + bw / 2 - text.width(font.hud_small, mid) / 2, hy + 4 * s, 220, 210, 190, 255, mid)
     local ph = string.format("PHONE %d", math.floor(f.score_phone or 0))
-    text.draw(font.item, x0 + bw - text.width(font.item, ph), hy, 230, 90, 90, 255, ph)
+    text.draw(font.hud, x0 + bw - text.width(font.hud, ph), hy, 230, 90, 90, 255, ph)
 
     local msg, mr, mg, mb = "", 235, 230, 218
     local pts = math.floor(f.game_points or 1)
@@ -172,5 +172,5 @@ features.on_draw("Pocket Backgammon", function(f)
         if you_won then msg, mr, mg, mb = string.format("YOU WIN THE %s (+%d)%s", kind, pts, tail), 120, 240, 140
         else msg, mr, mg, mb = string.format("THE PHONE WINS THE %s (+%d)%s", kind, pts, tail), 255, 110, 100 end
     end
-    text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + bh + 22 * s, mr, mg, mb, 255, msg)
+    text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + bh + 22 * s, mr, mg, mb, 255, msg)
 end)

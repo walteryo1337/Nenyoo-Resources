@@ -5,9 +5,9 @@ local function row(x, y, w, label, value, lead, colour, s)
     local frac = math.min(1, value / math.max(1, lead))
     draw.rect(x, y, x + w, y + 18 * s, 0, 0, 0, 140, 4 * s)
     draw.rect(x, y, x + w * frac, y + 18 * s, colour[1], colour[2], colour[3], 230, 4 * s)
-    text.draw(font.tiny, x + 6 * s, y + 9 * s - text.height(font.tiny) / 2, 255, 255, 255, 255, label)
+    text.draw(font.hud_tiny, x + 6 * s, y + 9 * s - text.height(font.hud_tiny) / 2, 255, 255, 255, 255, label)
     local n = string.format("%d", math.floor(value))
-    text.draw(font.small, x + w + 8 * s, y + 9 * s - text.height(font.small) / 2, 245, 245, 250, 255, n)
+    text.draw(font.hud_small, x + w + 8 * s, y + 9 * s - text.height(font.hud_small) / 2, 245, 245, 250, 255, n)
 end
 
 features.on_draw("Eating Contest", function(f)
@@ -15,7 +15,7 @@ features.on_draw("Eating Contest", function(f)
     local sw, sh = ctx.screen_w(), ctx.screen_h()
     local s = sh / 1080
     local ar, ag, ab = theme.accent()
-    local big = font.display or font.title
+    local big = font.display
     local cx = sw / 2
     local state = math.floor(f.state or 0)
 
@@ -57,6 +57,6 @@ features.on_draw("Eating Contest", function(f)
         if place == 1 then r, g, b = ar, ag, ab end
         text.draw(big, cx - text.width(big, msg) / 2, sh * 0.3, r, g, b, 255, msg)
         local sub = string.format("BEST %d   WINS %d", math.floor(f.best or 0), math.floor(f.wins or 0))
-        text.draw(font.small, cx - text.width(font.small, sub) / 2, sh * 0.3 + text.height(big), 210, 210, 222, 240, sub)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, sub) / 2, sh * 0.3 + text.height(big), 210, 210, 222, 240, sub)
     end
 end)

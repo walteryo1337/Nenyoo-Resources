@@ -55,7 +55,7 @@ features.on_draw("Pocket Invaders", function(f)
     end
 
     local hud = string.format("SCORE %d   WAVE %d", math.floor(f.score or 0), math.floor(f.wave or 1))
-    text.draw(font.item, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
+    text.draw(font.hud, x0, y0 - 40 * s, 245, 245, 250, 255, hud)
     for i = 1, math.floor(f.lives or 0) do
         local lx = x0 + fw - i * 30 * s
         draw.rect(lx, y0 - 26 * s, lx + 22 * s, y0 - 18 * s, 90, 230, 140, 255, 2 * s)
@@ -64,5 +64,5 @@ features.on_draw("Pocket Invaders", function(f)
     local msg
     if state == 3 then msg = string.format("GAME OVER   BEST %d   W TO PLAY AGAIN", math.floor(f.best or 0))
     elseif math.floor(f.score or 0) == 0 then msg = "A / D MOVE     W OR E FIRE" end
-    if msg then text.draw(font.small, sw / 2 - text.width(font.small, msg) / 2, y0 + fh * 0.55, 220, 220, 232, 240, msg) end
+    if msg then text.draw(font.hud_small, sw / 2 - text.width(font.hud_small, msg) / 2, y0 + fh * 0.55, 220, 220, 232, 240, msg) end
 end)

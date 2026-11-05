@@ -13,18 +13,18 @@ features.on_draw("Graffiti", function(f)
         draw.rect(x0, y0, x0 + w, y0 + 10 * s, 30, 30, 40, 220, 5 * s)
         draw.rect(x0, y0, x0 + w * math.max(0, math.min(1, f.progress or 0)), y0 + 10 * s, 255, 80, 190, 255, 5 * s)
         local label = "SPRAYING..."
-        text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, y0 + 16 * s, 235, 235, 245, 230, label)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, y0 + 16 * s, 235, 235, 245, 230, label)
     elseif f.aim_ok then
         local label = "HOLD E TO TAG THIS WALL"
-        text.draw(font.tiny, cx - text.width(font.tiny, label) / 2, sh * 0.62, 235, 235, 245, 230, label)
+        text.draw(font.hud_tiny, cx - text.width(font.hud_tiny, label) / 2, sh * 0.62, 235, 235, 245, 230, label)
     end
 
     local tally = string.format("%d TAGS", math.floor(f.tags or 0))
     if (f.tags or 0) > 0 or f.aim_ok then
-        text.draw(font.tiny, sw - 30 * s - text.width(font.tiny, tally), sh * 0.5, 255, 80, 190, 220, tally)
+        text.draw(font.hud_tiny, sw - 30 * s - text.width(font.hud_tiny, tally), sh * 0.5, 255, 80, 190, 220, tally)
     end
     if f.spotted then
         local warn = "BUSTED BY A COP"
-        text.draw(font.small, cx - text.width(font.small, warn) / 2, sh * 0.56, 255, 90, 80, 255, warn)
+        text.draw(font.hud_small, cx - text.width(font.hud_small, warn) / 2, sh * 0.56, 255, 90, 80, 255, warn)
     end
 end)

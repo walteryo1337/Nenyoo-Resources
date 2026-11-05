@@ -16,15 +16,15 @@ features.on_draw("Car Soccer", function(f)
     draw.rect(x0, y0, x0 + w * 0.5, y0 + 4 * s, 80, 150, 255, 255)
     draw.rect(x0 + w * 0.5, y0, x0 + w, y0 + 4 * s, 255, 80, 70, 255)
 
-    text.draw(font.tiny, x0 + 16 * s, y0 + 12 * s, 150, 190, 255, 255, "YOU")
+    text.draw(font.hud_tiny, x0 + 16 * s, y0 + 12 * s, 150, 190, 255, 255, "YOU")
     local rv = "RIVAL"
-    text.draw(font.tiny, x0 + w - 16 * s - text.width(font.tiny, rv), y0 + 12 * s, 255, 150, 140, 255, rv)
+    text.draw(font.hud_tiny, x0 + w - 16 * s - text.width(font.hud_tiny, rv), y0 + 12 * s, 255, 150, 140, 255, rv)
 
     local score = string.format("%d  -  %d", mine, theirs)
-    text.draw(font.title, sw / 2 - text.width(font.title, score) / 2, y0 + 10 * s, 245, 245, 250, 255, score)
+    text.draw(font.display, sw / 2 - text.width(font.display, score) / 2, y0 + 10 * s, 245, 245, 250, 255, score)
 
     local sub = string.format("%d:%02d   FIRST TO %d", math.floor(secs / 60), secs % 60, math.floor(f.target or 3))
-    text.draw(font.tiny, sw / 2 - text.width(font.tiny, sub) / 2, y0 + h - 20 * s, 190, 190, 205, 220, sub)
+    text.draw(font.hud_tiny, sw / 2 - text.width(font.hud_tiny, sub) / 2, y0 + h - 20 * s, 190, 190, 205, 220, sub)
 
     local banner, r, g, b
     if state == 1 then
@@ -43,7 +43,7 @@ features.on_draw("Car Soccer", function(f)
         local pulse = 1.0 + 0.06 * math.sin(t * 8)
         local a = math.floor(200 + 55 * math.sin(t * 6))
         draw.with_scale(sw / 2, sh * 0.3, pulse, function()
-            text.draw(font.title, sw / 2 - text.width(font.title, banner) / 2, sh * 0.3, r, g, b, a, banner)
+            text.draw(font.display, sw / 2 - text.width(font.display, banner) / 2, sh * 0.3, r, g, b, a, banner)
         end)
     end
 end)
