@@ -1605,10 +1605,6 @@
       "s": "将所有豪宅加速设置为 50 倍并持续 7 天"
     },
     {
-      "hash": "103061219",
-      "s": "Dirty"
-    },
-    {
       "hash": "103122914",
       "s": "每次随机选择 X"
     },
@@ -2185,6 +2181,10 @@
       "s": "操控幸运轮盘"
     },
     {
+      "hash": "137544089",
+      "s": "Ragdoll & Falling"
+    },
+    {
       "hash": "137667755",
       "s": "退出"
     },
@@ -2651,10 +2651,6 @@
     {
       "hash": "168508343",
       "s": "武装加长礼宾车"
-    },
-    {
-      "hash": "168676929",
-      "s": "Claim filed; a replacement is on its way"
     },
     {
       "hash": "168774403",
@@ -3901,10 +3897,6 @@
       "s": "最大巡航速度"
     },
     {
-      "hash": "248735863",
-      "s": "Damaged doors"
-    },
-    {
       "hash": "248927832",
       "s": "英里"
     },
@@ -4661,6 +4653,10 @@
       "s": "赌场操控"
     },
     {
+      "hash": "294111888",
+      "s": "Arcade, puzzle, board, sports and casino games on your phone screen"
+    },
+    {
       "hash": "294537028",
       "s": "显示HUD界面"
     },
@@ -4811,6 +4807,10 @@
     {
       "hash": "306257927",
       "s": "NPC模型"
+    },
+    {
+      "hash": "306519530",
+      "s": "Rain people, cars and animals, bend gravity and turn the crowd around you into a show"
     },
     {
       "hash": "306710136",
@@ -5453,10 +5453,6 @@
       "s": "任务开始延迟（秒）"
     },
     {
-      "hash": "345296367",
-      "s": "Get in or stand next to your vehicle"
-    },
-    {
       "hash": "345486711",
       "s": "尾迹渐变"
     },
@@ -5981,20 +5977,12 @@
       "s": "Food & Drink"
     },
     {
-      "hash": "381260446",
-      "s": "Vehicle Insurance"
-    },
-    {
       "hash": "381340780",
       "s": "Shark"
     },
     {
       "hash": "381494649",
       "s": "输入有效位置名称。"
-    },
-    {
-      "hash": "381544973",
-      "s": "你的枪"
     },
     {
       "hash": "381547507",
@@ -6595,10 +6583,6 @@
     {
       "hash": "416674902",
       "s": "念力抓取距离"
-    },
-    {
-      "hash": "416994530",
-      "s": "Your replacement vehicle has been dropped off nearby"
     },
     {
       "hash": "417516564",
@@ -7419,10 +7403,6 @@
     {
       "hash": "465912338",
       "s": "显示标记"
-    },
-    {
-      "hash": "465965332",
-      "s": "手榴弹"
     },
     {
       "hash": "466034469",
@@ -8981,6 +8961,10 @@
       "s": "将放置吸附到网格（位置）与角度（旋转）"
     },
     {
+      "hash": "563623024",
+      "s": "Bet on races, fights, dice and cards, or take on the locals in street contests"
+    },
+    {
       "hash": "563674343",
       "s": "Traffic Accidents"
     },
@@ -8995,10 +8979,6 @@
     {
       "hash": "564610124",
       "s": "Hunting"
-    },
-    {
-      "hash": "564767307",
-      "s": "Windows intact"
     },
     {
       "hash": "564776517",
@@ -9587,10 +9567,6 @@
     {
       "hash": "605727941",
       "s": "飞行中爆炸"
-    },
-    {
-      "hash": "605805502",
-      "s": "Paid repairs are for Story Mode; use Repair instead"
     },
     {
       "hash": "606344475",
@@ -10187,6 +10163,10 @@
     {
       "hash": "643766095",
       "s": "火焰吐息必须冷却前的最大热量上限"
+    },
+    {
+      "hash": "643995558",
+      "s": "Video poker, solitaire, keno, plinko, craps, slots and roulette"
     },
     {
       "hash": "644487613",
@@ -12829,6 +12809,10 @@
       "s": "Nearby Services"
     },
     {
+      "hash": "815634141",
+      "s": "Street Hustles"
+    },
+    {
       "hash": "816262982",
       "s": "藏匿屋"
     },
@@ -12859,10 +12843,6 @@
     {
       "hash": "818679306",
       "s": "Pocket Sudoku"
-    },
-    {
-      "hash": "818832468",
-      "s": "请按下一或两个手柄按键进行绑定；按 Start 键取消"
     },
     {
       "hash": "818988914",
@@ -13473,10 +13453,6 @@
       "s": "You defeated the sorcerer and claimed"
     },
     {
-      "hash": "858389816",
-      "s": "Repair estimate"
-    },
-    {
       "hash": "858522919",
       "s": "按比例缩放镜头震动幅度与施加的冲击力"
     },
@@ -13651,6 +13627,10 @@
     {
       "hash": "872010004",
       "s": "循环已停止。"
+    },
+    {
+      "hash": "872239334",
+      "s": "Courier runs, taxi fares, bus routes, trucking, towing and flying passengers"
     },
     {
       "hash": "872327265",
@@ -14063,10 +14043,6 @@
     {
       "hash": "899707641",
       "s": "This mod is no longer in your DLC library."
-    },
-    {
-      "hash": "899931346",
-      "s": "注册"
     },
     {
       "hash": "900270334",
@@ -15737,6 +15713,10 @@
       "s": "在每个回合之后让观战者反应"
     },
     {
+      "hash": "1017574797",
+      "s": "Swim speed, breath, diving, surfing and walking on water"
+    },
+    {
       "hash": "1017651569",
       "s": "撒丁岛天蓝 — 帕加尼"
     },
@@ -16793,10 +16773,6 @@
       "s": "恢复激活平板拖车模型的原始货物偏移"
     },
     {
-      "hash": "1077257876",
-      "s": "常规任务"
-    },
-    {
       "hash": "1077381773",
       "s": "Swimmer saved"
     },
@@ -17621,6 +17597,10 @@
       "s": "Del Perro Pier"
     },
     {
+      "hash": "1128960433",
+      "s": "Skydiving, wingsuit, parachutes, bungee, zipline and walking on air"
+    },
+    {
       "hash": "1129034721",
       "s": "载具内饰/车牌/仪表盘/车门灯与霓虹灯"
     },
@@ -17735,10 +17715,6 @@
     {
       "hash": "1134902168",
       "s": "金属日晒沙色"
-    },
-    {
-      "hash": "1135126417",
-      "s": "Flat tyres"
     },
     {
       "hash": "1135653589",
@@ -18077,6 +18053,10 @@
       "s": "持续烟花秀"
     },
     {
+      "hash": "1157477837",
+      "s": "2048, Minesweeper, Sudoku, word and logic puzzles"
+    },
+    {
       "hash": "1158901920",
       "s": "以公里/小时 (km/h) 为单位显示载具速度"
     },
@@ -18283,6 +18263,10 @@
     {
       "hash": "1170724148",
       "s": "可见性"
+    },
+    {
+      "hash": "1171108289",
+      "s": "Darts, penalties, bowling, pool, minigolf and air hockey"
     },
     {
       "hash": "1171244160",
@@ -20369,10 +20353,6 @@
       "s": "踢出反应"
     },
     {
-      "hash": "1300732780",
-      "s": "Body"
-    },
-    {
       "hash": "1300778504",
       "s": "搜索中..."
     },
@@ -20391,6 +20371,10 @@
     {
       "hash": "1302505067",
       "s": "佩里科岛"
+    },
+    {
+      "hash": "1302527406",
+      "s": "Arcade Games"
     },
     {
       "hash": "1302744854",
@@ -22149,6 +22133,10 @@
       "s": "飞行"
     },
     {
+      "hash": "1419296267",
+      "s": "Repossessions, bounties, smuggling, safe cracking and stealing cars to order"
+    },
+    {
       "hash": "1420961807",
       "s": "高山套装，面具与连体衣已解锁。"
     },
@@ -23279,10 +23267,6 @@
     {
       "hash": "1492584064",
       "s": "刷新计划板"
-    },
-    {
-      "hash": "1492607383",
-      "s": "Fuel Tank"
     },
     {
       "hash": "1492799248",
@@ -26833,10 +26817,6 @@
       "s": "衣柜读取功能当前不可用"
     },
     {
-      "hash": "1724189037",
-      "s": "Get a mechanic's report on your car: engine, body and fuel tank condition, flat tyres, damaged doors, broken windows, dirt and a repair estimate"
-    },
-    {
       "hash": "1724585786",
       "s": "船只加速度"
     },
@@ -26939,10 +26919,6 @@
     {
       "hash": "1731090335",
       "s": "你的 Social Club 帮会与帮会搜索：查看成员、加入/退出、设为当前帮会 (ROS)"
-    },
-    {
-      "hash": "1731184905",
-      "s": "信息"
     },
     {
       "hash": "1731266457",
@@ -30461,6 +30437,10 @@
       "s": "以 3D 形式展示在你正前方"
     },
     {
+      "hash": "1943952461",
+      "s": "Driving, flying and boating challenges, from car bowling and cone slalom to sky rings and crop dusting"
+    },
+    {
       "hash": "1944226543",
       "s": "覆盖项"
     },
@@ -32521,6 +32501,10 @@
       "s": "当前色调"
     },
     {
+      "hash": "2072121564",
+      "s": "Super jumps, double jumps, wall jumps, air dashes, gliding and freerunning"
+    },
+    {
       "hash": "2072616434",
       "s": "飞向建筑物或地形前自动降低前进速度"
     },
@@ -32755,10 +32739,6 @@
     {
       "hash": "2089402737",
       "s": "补充所有类型货物的库存"
-    },
-    {
-      "hash": "2089859066",
-      "s": "Rig your own zipline: aim at a rooftop, cliff or spot below you up to 400 m away and press E to string a cable to it from where you stand. Walk to the top end, press E to hook on and fly down it, picking up speed on the steep parts and braking at the end. Press E mid-ride to let go, or Q to rig a new line"
     },
     {
       "hash": "2090327244",
@@ -33371,10 +33351,6 @@
     {
       "hash": "2125063186",
       "s": "Ghost Car"
-    },
-    {
-      "hash": "2125454790",
-      "s": "All fixed, drive safe"
     },
     {
       "hash": "2125643189",
@@ -34893,6 +34869,10 @@
       "s": "Speedtail 爱马仕特别版 — 迈凯伦"
     },
     {
+      "hash": "2222891373",
+      "s": "Minigames you play on foot, from dodgeball and hoop shot to prop hunt and the laser maze"
+    },
+    {
       "hash": "2223109657",
       "s": "Above 55 km/h, beep and rumble when you are about to hit something ahead; Warn & Brake also slows you down at the last moment"
     },
@@ -35795,10 +35775,6 @@
     {
       "hash": "2280285534",
       "s": "飞碟灯光颜色"
-    },
-    {
-      "hash": "2280336047",
-      "s": "Zipline rigged. Climb to the top end to ride it down"
     },
     {
       "hash": "2280547295",
@@ -37477,6 +37453,10 @@
       "s": "随机女性"
     },
     {
+      "hash": "2384227076",
+      "s": "Valet, food truck, lawn mowing, pest and animal control, escorting VIPs and working the door"
+    },
+    {
       "hash": "2384593895",
       "s": "显示转速条"
     },
@@ -37977,6 +37957,10 @@
       "s": "引擎扭矩倍率"
     },
     {
+      "hash": "2420639695",
+      "s": "Sky & Parachute"
+    },
+    {
       "hash": "2420808654",
       "s": "清除设施抢劫冷却时间"
     },
@@ -38229,10 +38213,6 @@
       "s": "将每个所选玩家移动到你，你的导航点或另一名玩家"
     },
     {
-      "hash": "2441622906",
-      "s": "Roadside Assistance"
-    },
-    {
       "hash": "2442384595",
       "s": "Weave through the cones: pass the first on its left, the next on its right, and so on. The clock starts at the first cone, and every cone you hit or pass on the wrong side adds time"
     },
@@ -38287,10 +38267,6 @@
     {
       "hash": "2445683587",
       "s": "Shove every rival out of the ring and stay inside it yourself. Leave the ring or your car and you are out"
-    },
-    {
-      "hash": "2445799495",
-      "s": "Driving Work"
     },
     {
       "hash": "2446172016",
@@ -38971,6 +38947,10 @@
     {
       "hash": "2488620089",
       "s": "托尼亚正在赶来！"
+    },
+    {
+      "hash": "2488975706",
+      "s": "Board Games"
     },
     {
       "hash": "2489001967",
@@ -39885,10 +39865,6 @@
       "s": "About every this many minutes, while you are on foot in a busy area, a thief snatches someone's wallet and runs; tackle, shoot or ram them before they get away for a reward"
     },
     {
-      "hash": "2547576850",
-      "s": "Pay for Repairs"
-    },
-    {
       "hash": "2547965119",
       "s": "被你射中的 NPC 不会受到永久伤害，而是被击倒在地持续指定秒数"
     },
@@ -39963,6 +39939,10 @@
     {
       "hash": "2551252475",
       "s": "传送到事件"
+    },
+    {
+      "hash": "2551469461",
+      "s": "Press a key; Escape or Start cancels"
     },
     {
       "hash": "2552027493",
@@ -40861,10 +40841,6 @@
       "s": "Hold to hypnotize"
     },
     {
-      "hash": "2610195353",
-      "s": "Broken windows"
-    },
-    {
       "hash": "2610281641",
       "s": "抓稳扶好"
     },
@@ -41251,6 +41227,10 @@
     {
       "hash": "2635751099",
       "s": "检测范围"
+    },
+    {
+      "hash": "2635856615",
+      "s": "Jumping & Parkour"
     },
     {
       "hash": "2635921873",
@@ -42191,6 +42171,10 @@
     {
       "hash": "2698174649",
       "s": "名钻赌场豪劫 — $3,619,000"
+    },
+    {
+      "hash": "2698523576",
+      "s": "On-Foot Games"
     },
     {
       "hash": "2698631090",
@@ -44005,10 +43989,6 @@
       "s": "Mahi-Mahi"
     },
     {
-      "hash": "2816637641",
-      "s": "Clean"
-    },
-    {
       "hash": "2817179614",
       "s": "根据与爆炸中心的距离产生相应强度的镜头震动"
     },
@@ -44685,10 +44665,6 @@
       "s": "车牌灯光"
     },
     {
-      "hash": "2859828431",
-      "s": "In perfect condition"
-    },
-    {
       "hash": "2859914047",
       "s": "当前游戏版本中此类别下没有可解析的条目"
     },
@@ -44959,6 +44935,10 @@
     {
       "hash": "2878569621",
       "s": "枪械激光瞄准具"
+    },
+    {
+      "hash": "2878979499",
+      "s": "Hold a second copy of your gun in your other hand. Left mouse fires the left gun, right mouse the right; R reloads both. Online your own shots do the damage"
     },
     {
       "hash": "2879108840",
@@ -45459,6 +45439,10 @@
     {
       "hash": "2909925149",
       "s": "禁用自然动作物理(NM)坠落"
+    },
+    {
+      "hash": "2910609395",
+      "s": "Sports Games"
     },
     {
       "hash": "2911036879",
@@ -46095,10 +46079,6 @@
     {
       "hash": "2950245173",
       "s": "Vending Machine"
-    },
-    {
-      "hash": "2950525709",
-      "s": "Hold a second copy of your gun in your other hand. Left mouse fires the left gun, right mouse the right; R reloads both. Story Mode only"
     },
     {
       "hash": "2950554203",
@@ -46769,10 +46749,6 @@
       "s": "将时间流速固定为 0（完全静止）"
     },
     {
-      "hash": "2996852447",
-      "s": "Repaired for"
-    },
-    {
       "hash": "2997085631",
       "s": "一架失事飞机从你前方的天空中坠落并在撞击地面时爆炸"
     },
@@ -47173,12 +47149,20 @@
       "s": "抓取距离"
     },
     {
+      "hash": "3021287703",
+      "s": "Swimming"
+    },
+    {
       "hash": "3021712811",
       "s": "拉满地堡升级"
     },
     {
       "hash": "3021869258",
       "s": "优先级"
+    },
+    {
+      "hash": "3022119625",
+      "s": "Ragdoll control, knockdowns, recovery and fall behaviour"
     },
     {
       "hash": "3022465289",
@@ -47319,6 +47303,10 @@
     {
       "hash": "3036201073",
       "s": "再生延迟"
+    },
+    {
+      "hash": "3036336470",
+      "s": "Snake, Tetris, Breakout, Invaders, Flappy, pinball and more quick arcade games"
     },
     {
       "hash": "3036438817",
@@ -47837,10 +47825,6 @@
       "s": "紧凑型"
     },
     {
-      "hash": "3072161181",
-      "s": "A mechanic is on the way"
-    },
-    {
       "hash": "3072373482",
       "s": "玩家：远程干扰"
     },
@@ -47871,10 +47855,6 @@
     {
       "hash": "3073997300",
       "s": "宠物伙伴"
-    },
-    {
-      "hash": "3074633972",
-      "s": "Dual Wield works in Story Mode only."
     },
     {
       "hash": "3074744851",
@@ -48115,10 +48095,6 @@
     {
       "hash": "3089595495",
       "s": "Tightrope Walk"
-    },
-    {
-      "hash": "3089680792",
-      "s": "You cannot afford the repairs"
     },
     {
       "hash": "3090094613",
@@ -48649,6 +48625,10 @@
       "s": "燃烧NPC"
     },
     {
+      "hash": "3123328162",
+      "s": "Rig your own zipline: aim at a rooftop, cliff or spot below you up to 400 m away and press E to string a cable to it from where you stand. Stand at either end and press E to hook on: from the top you fly down it, picking up speed on the steep parts and braking at the end, and from the bottom a winch hauls you up. Press E mid-ride to let go, or Q to rig a new line"
+    },
+    {
       "hash": "3124407955",
       "s": "选择在此玩家周围生成的拾取物类型"
     },
@@ -48899,6 +48879,10 @@
     {
       "hash": "3140964248",
       "s": "生命值充能"
+    },
+    {
+      "hash": "3141292386",
+      "s": "No hangar owned"
     },
     {
       "hash": "3141311701",
@@ -49509,6 +49493,10 @@
       "s": "追随者"
     },
     {
+      "hash": "3178876870",
+      "s": "Press one or two buttons; Start or Escape cancels"
+    },
+    {
       "hash": "3178955328",
       "s": "汗水"
     },
@@ -49955,6 +49943,10 @@
     {
       "hash": "3207454753",
       "s": "燕尾服黑 — 雪佛兰"
+    },
+    {
+      "hash": "3207496500",
+      "s": "Casino & Cards"
     },
     {
       "hash": "3207532529",
@@ -52873,6 +52865,10 @@
       "s": "静音你的角色的痛苦音效与语音"
     },
     {
+      "hash": "3394835232",
+      "s": "World Effects"
+    },
+    {
       "hash": "3395152774",
       "s": "停止瞄准或射击达到此秒数后自动收起武器"
     },
@@ -53549,6 +53545,10 @@
       "s": "The EMP is still recharging"
     },
     {
+      "hash": "3433742135",
+      "s": "Timed out"
+    },
+    {
       "hash": "3434121911",
       "s": "Car Meet"
     },
@@ -53785,10 +53785,6 @@
       "s": "箭头大小"
     },
     {
-      "hash": "3450795657",
-      "s": "请按任意键绑定；按 Esc 键取消"
-    },
-    {
       "hash": "3450924635",
       "s": "远程打开保镖事务所"
     },
@@ -53971,10 +53967,6 @@
     {
       "hash": "3461051023",
       "s": "Play reversi against the computer on your phone screen: place a disc to trap a line of the other colour between yours and flip them all. Whoever has more discs when the board fills up wins. Move with W, A, S and D and place with E. The value sets how far ahead the computer looks"
-    },
-    {
-      "hash": "3461603396",
-      "s": "When the car you were driving is wrecked, an identical replacement is dropped off near you after this many seconds; Story Mode only"
     },
     {
       "hash": "3461644308",
@@ -54621,6 +54613,10 @@
       "s": "面向实体"
     },
     {
+      "hash": "3504519609",
+      "s": "Sprint, stamina, sneaking, collisions and how your character walks"
+    },
+    {
       "hash": "3504805326",
       "s": "自动降落伞"
     },
@@ -54695,6 +54691,10 @@
     {
       "hash": "3511083729",
       "s": "佩里科岛单人"
+    },
+    {
+      "hash": "3511188885",
+      "s": "Puzzle Games"
     },
     {
       "hash": "3511794739",
@@ -55651,6 +55651,14 @@
     {
       "hash": "3572883333",
       "s": "观战 & 追踪"
+    },
+    {
+      "hash": "3573342898",
+      "s": "Vehicle Challenges"
+    },
+    {
+      "hash": "3573344696",
+      "s": "Walking & Running"
     },
     {
       "hash": "3573376758",
@@ -57335,10 +57343,6 @@
     {
       "hash": "3672894094",
       "s": "俯冲跳跃"
-    },
-    {
-      "hash": "3672905552",
-      "s": "Inspect Vehicle"
     },
     {
       "hash": "3672956744",
@@ -59681,6 +59685,10 @@
       "s": "升降速度"
     },
     {
+      "hash": "3814152366",
+      "s": "Paramedic, firefighter, lifeguard and police work, plus bomb disposal and hostage calls"
+    },
+    {
       "hash": "3814304955",
       "s": "跳过保金追讨办公室开场动画"
     },
@@ -59897,16 +59905,16 @@
       "s": "请先离开当前载具"
     },
     {
+      "hash": "3828304341",
+      "s": "Driving Jobs"
+    },
+    {
       "hash": "3828501585",
       "s": "玩家：副手支援"
     },
     {
       "hash": "3829036351",
       "s": "Press E to open the hatch for business"
-    },
-    {
-      "hash": "3829069076",
-      "s": "Pay the repair estimate from your cash to get the car fully fixed, cleaned and its tank patched; Story Mode only"
     },
     {
       "hash": "3829462067",
@@ -60405,10 +60413,6 @@
       "s": "移除每个已捕获巡逻检查点"
     },
     {
-      "hash": "3859581685",
-      "s": "Stand next to your damaged vehicle and a mechanic walks over, fixes it up and goes on his way"
-    },
-    {
       "hash": "3859797889",
       "s": "You left the tow truck; the job went to another driver"
     },
@@ -60551,6 +60555,10 @@
     {
       "hash": "3868362027",
       "s": "强制闪电"
+    },
+    {
+      "hash": "3868664037",
+      "s": "Chess, checkers, reversi, backgammon and more against your phone"
     },
     {
       "hash": "3868785052",
@@ -62425,10 +62433,6 @@
       "s": "对角线"
     },
     {
-      "hash": "3984090681",
-      "s": "Filthy"
-    },
-    {
       "hash": "3984194680",
       "s": "使用所需的特殊载具启动“囤积居奇”任务"
     },
@@ -63507,10 +63511,6 @@
     {
       "hash": "4051413255",
       "s": "Raid repelled"
-    },
-    {
-      "hash": "4051570377",
-      "s": "解锁与前置准备"
     },
     {
       "hash": "4051590690",
@@ -64635,6 +64635,10 @@
     {
       "hash": "4125467414",
       "s": "出口点位索引 (value-1)"
+    },
+    {
+      "hash": "4125485598",
+      "s": "Pocket Games"
     },
     {
       "hash": "4125691445",
@@ -67323,290 +67327,6 @@
     {
       "hash": "4294570699",
       "s": "新"
-    },
-    {
-      "hash": "13059",
-      "s": "派车队追击玩家"
-    },
-    {
-      "hash": "32521996",
-      "s": "请仅安装适配当前运行游戏版本的文件；版本不匹配的文件可能导致游戏崩溃。"
-    },
-    {
-      "hash": "95738146",
-      "s": "派车队追击你所选玩家列表中的所有人"
-    },
-    {
-      "hash": "134095567",
-      "s": "光柱"
-    },
-    {
-      "hash": "275747826",
-      "s": "使车组/船组乘员无敌"
-    },
-    {
-      "hash": "453520049",
-      "s": "来接我"
-    },
-    {
-      "hash": "458021922",
-      "s": "设置飞身俯冲期间的时间减慢倍率"
-    },
-    {
-      "hash": "475899316",
-      "s": "当体力或水下氧气消耗与恢复时，在屏幕底部显示对应的进度条"
-    },
-    {
-      "hash": "575356134",
-      "s": "驾驶员应对路况车流的方式"
-    },
-    {
-      "hash": "620895648",
-      "s": "尖锥魅影"
-    },
-    {
-      "hash": "738717765",
-      "s": "呼叫护卫车队或派车队追击某人"
-    },
-    {
-      "hash": "762796869",
-      "s": "你的所选玩家列表中没有任何玩家。"
-    },
-    {
-      "hash": "891482138",
-      "s": "钻石"
-    },
-    {
-      "hash": "940296673",
-      "s": "DLC武器"
-    },
-    {
-      "hash": "950327389",
-      "s": "保持距离"
-    },
-    {
-      "hash": "1014886095",
-      "s": "提供起步计时器、测速陷阱与单圈计时器，带有游戏世界检查门与实时数据读数"
-    },
-    {
-      "hash": "1093240380",
-      "s": "此 mod 已经在你的 DLC 库中；使用它请打开自定义 DLC"
-    },
-    {
-      "hash": "1140149334",
-      "s": "检查并管理单独车队载具"
-    },
-    {
-      "hash": "1189775900",
-      "s": "浏览这些包"
-    },
-    {
-      "hash": "1259724471",
-      "s": "DLC 地图"
-    },
-    {
-      "hash": "1289290867",
-      "s": "DLC 音效"
-    },
-    {
-      "hash": "1374670487",
-      "s": "专职司机"
-    },
-    {
-      "hash": "1536739681",
-      "s": "零散的添加式人物模型需将其 .ydd、.yft、.ymt 与 .ytd 文件直接放在该文件夹内。"
-    },
-    {
-      "hash": "1693613286",
-      "s": "车队攻击"
-    },
-    {
-      "hash": "1740469021",
-      "s": "车队自身的行动模式"
-    },
-    {
-      "hash": "1744374358",
-      "s": "车队在前方道路多远处生成并驶来"
-    },
-    {
-      "hash": "1828932733",
-      "s": "召回追击车队并让其重新护卫你"
-    },
-    {
-      "hash": "1936289827",
-      "s": "在小地图上显示车队"
-    },
-    {
-      "hash": "1966599818",
-      "s": "攻击战局选择"
-    },
-    {
-      "hash": "2051991324",
-      "s": "攻击"
-    },
-    {
-      "hash": "2135705662",
-      "s": "攻击所选玩家"
-    },
-    {
-      "hash": "2174656071",
-      "s": "车队已解散。"
-    },
-    {
-      "hash": "2238571085",
-      "s": "单位与你保持驻守的距离"
-    },
-    {
-      "hash": "2243861515",
-      "s": "应用于新生成成员的生命值"
-    },
-    {
-      "hash": "2271640385",
-      "s": "车队正在向目标推进。"
-    },
-    {
-      "hash": "2351463851",
-      "s": "预打包的模组需要将 dlc.rpf 直接放在其文件夹内。"
-    },
-    {
-      "hash": "2379431545",
-      "s": "车队已召回。"
-    },
-    {
-      "hash": "2383884681",
-      "s": "车队正在前往追击你所选列表中的第一名玩家。"
-    },
-    {
-      "hash": "2462359332",
-      "s": "派车队追击你当前打开选中的玩家"
-    },
-    {
-      "hash": "2463669890",
-      "s": "应用于新生成成员的防弹衣"
-    },
-    {
-      "hash": "2487746412",
-      "s": "横排并列编队"
-    },
-    {
-      "hash": "2540707903",
-      "s": "当前运行的游戏版本尚未安装任何此类资源包"
-    },
-    {
-      "hash": "2585421466",
-      "s": "上车与自动乘车 —— 设置导航点与它带你前往目的地"
-    },
-    {
-      "hash": "2638275634",
-      "s": "骑乘沿着 —— 将导航点设置为自动乘车该处。"
-    },
-    {
-      "hash": "2726485084",
-      "s": "使车队载具无敌"
-    },
-    {
-      "hash": "2736882479",
-      "s": "车队巡航速度"
-    },
-    {
-      "hash": "2820493401",
-      "s": "在地图上设置导航点，车队便会自动载你前往目的地。"
-    },
-    {
-      "hash": "2866084229",
-      "s": "在最近的道路上生成车队"
-    },
-    {
-      "hash": "2932244776",
-      "s": "解散车队"
-    },
-    {
-      "hash": "3010789706",
-      "s": "正在进行下载。"
-    },
-    {
-      "hash": "3016200727",
-      "s": "请将每个模组放入 DLC\\_inbox 下各自独立的文件夹中。"
-    },
-    {
-      "hash": "3219910066",
-      "s": "生命值，无敌模式，驾驶与地图图标"
-    },
-    {
-      "hash": "3350948702",
-      "s": "传送到或移除此载具"
-    },
-    {
-      "hash": "3417783002",
-      "s": "随车同行中 —— 正在自动驾驶前往你的导航点。"
-    },
-    {
-      "hash": "3425621907",
-      "s": "防守我"
-    },
-    {
-      "hash": "3499748071",
-      "s": "未选择玩家。"
-    },
-    {
-      "hash": "3555398207",
-      "s": "车队已到达。"
-    },
-    {
-      "hash": "3562969387",
-      "s": "已安装"
-    },
-    {
-      "hash": "3574297461",
-      "s": "打开此包"
-    },
-    {
-      "hash": "3663357505",
-      "s": "DLC 人物模型"
-    },
-    {
-      "hash": "3751458703",
-      "s": "护卫车队中包含的载具数量"
-    },
-    {
-      "hash": "3845848318",
-      "s": "当前没有可解散的车队。"
-    },
-    {
-      "hash": "3922093632",
-      "s": "框"
-    },
-    {
-      "hash": "4000154045",
-      "s": "单位如何围绕你排列"
-    },
-    {
-      "hash": "4003835735",
-      "s": "DLC覆盖项"
-    },
-    {
-      "hash": "4036992069",
-      "s": "DLC载具"
-    },
-    {
-      "hash": "4051986478",
-      "s": "护送我"
-    },
-    {
-      "hash": "4087823706",
-      "s": "遣散车队并将其清理"
-    },
-    {
-      "hash": "4090115761",
-      "s": "请等待自动安装完成，随后直接生成条目或重启游戏以自动加载。"
-    },
-    {
-      "hash": "4152529128",
-      "s": "下载大于 128 MB，已拒绝。"
-    },
-    {
-      "hash": "4191874268",
-      "s": "随车乘行期间自动载你前往地图导航点"
     }
   ]
 }

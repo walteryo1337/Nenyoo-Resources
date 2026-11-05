@@ -1605,10 +1605,6 @@
       "s": "Tüm malikane güçlendirmelerini yedi gün boyunca 50x'e ayarla"
     },
     {
-      "hash": "103061219",
-      "s": "Dirty"
-    },
-    {
       "hash": "103122914",
       "s": "Her seferinde rastgele bir X seç"
     },
@@ -2185,6 +2181,10 @@
       "s": "Şans Çarkı Donanımı"
     },
     {
+      "hash": "137544089",
+      "s": "Ragdoll & Falling"
+    },
+    {
       "hash": "137667755",
       "s": "Çıkış"
     },
@@ -2651,10 +2651,6 @@
     {
       "hash": "168508343",
       "s": "Taretli Limuzin"
-    },
-    {
-      "hash": "168676929",
-      "s": "Claim filed; a replacement is on its way"
     },
     {
       "hash": "168774403",
@@ -3901,10 +3897,6 @@
       "s": "Maksimum seyir hızı"
     },
     {
-      "hash": "248735863",
-      "s": "Damaged doors"
-    },
-    {
       "hash": "248927832",
       "s": "Mil"
     },
@@ -4661,6 +4653,10 @@
       "s": "Kumarhane Rig'i"
     },
     {
+      "hash": "294111888",
+      "s": "Arcade, puzzle, board, sports and casino games on your phone screen"
+    },
+    {
       "hash": "294537028",
       "s": "HUD'u göster"
     },
@@ -4811,6 +4807,10 @@
     {
       "hash": "306257927",
       "s": "Yaya Modeli"
+    },
+    {
+      "hash": "306519530",
+      "s": "Rain people, cars and animals, bend gravity and turn the crowd around you into a show"
     },
     {
       "hash": "306710136",
@@ -5453,10 +5453,6 @@
       "s": "Görev Başlangıç Gecikmesi (Saniye)"
     },
     {
-      "hash": "345296367",
-      "s": "Get in or stand next to your vehicle"
-    },
-    {
       "hash": "345486711",
       "s": "İz Solması"
     },
@@ -5981,20 +5977,12 @@
       "s": "Food & Drink"
     },
     {
-      "hash": "381260446",
-      "s": "Vehicle Insurance"
-    },
-    {
       "hash": "381340780",
       "s": "Shark"
     },
     {
       "hash": "381494649",
       "s": "Geçerli bir konum adı girin."
-    },
-    {
-      "hash": "381544973",
-      "s": "Silahınız"
     },
     {
       "hash": "381547507",
@@ -6595,10 +6583,6 @@
     {
       "hash": "416674902",
       "s": "Telekinez Tutma Mesafesi"
-    },
-    {
-      "hash": "416994530",
-      "s": "Your replacement vehicle has been dropped off nearby"
     },
     {
       "hash": "417516564",
@@ -7419,10 +7403,6 @@
     {
       "hash": "465912338",
       "s": "İşaret Göster"
-    },
-    {
-      "hash": "465965332",
-      "s": "El Bombaları"
     },
     {
       "hash": "466034469",
@@ -8981,6 +8961,10 @@
       "s": "Yerleştirmeyi bir ızgaraya (konum) ve açıya (döndürme) sabitle"
     },
     {
+      "hash": "563623024",
+      "s": "Bet on races, fights, dice and cards, or take on the locals in street contests"
+    },
+    {
       "hash": "563674343",
       "s": "Traffic Accidents"
     },
@@ -8995,10 +8979,6 @@
     {
       "hash": "564610124",
       "s": "Hunting"
-    },
-    {
-      "hash": "564767307",
-      "s": "Windows intact"
     },
     {
       "hash": "564776517",
@@ -9587,10 +9567,6 @@
     {
       "hash": "605727941",
       "s": "Uçuş sırasında patlamalar"
-    },
-    {
-      "hash": "605805502",
-      "s": "Paid repairs are for Story Mode; use Repair instead"
     },
     {
       "hash": "606344475",
@@ -10187,6 +10163,10 @@
     {
       "hash": "643766095",
       "s": "Alev nefesi soğumadan önce maksimum ısı"
+    },
+    {
+      "hash": "643995558",
+      "s": "Video poker, solitaire, keno, plinko, craps, slots and roulette"
     },
     {
       "hash": "644487613",
@@ -12829,6 +12809,10 @@
       "s": "Nearby Services"
     },
     {
+      "hash": "815634141",
+      "s": "Street Hustles"
+    },
+    {
       "hash": "816262982",
       "s": "Saklı Ev"
     },
@@ -12859,10 +12843,6 @@
     {
       "hash": "818679306",
       "s": "Pocket Sudoku"
-    },
-    {
-      "hash": "818832468",
-      "s": "Bir veya iki tuşa basın; Başlat iptal eder"
     },
     {
       "hash": "818988914",
@@ -13473,10 +13453,6 @@
       "s": "You defeated the sorcerer and claimed"
     },
     {
-      "hash": "858389816",
-      "s": "Repair estimate"
-    },
-    {
       "hash": "858522919",
       "s": "Kamera sarsıntısını ve uygulanan kuvveti ölçeklendirir"
     },
@@ -13651,6 +13627,10 @@
     {
       "hash": "872010004",
       "s": "Döngü durduruldu."
+    },
+    {
+      "hash": "872239334",
+      "s": "Courier runs, taxi fares, bus routes, trucking, towing and flying passengers"
     },
     {
       "hash": "872327265",
@@ -14063,10 +14043,6 @@
     {
       "hash": "899707641",
       "s": "This mod is no longer in your DLC library."
-    },
-    {
-      "hash": "899931346",
-      "s": "Kayıt"
     },
     {
       "hash": "900270334",
@@ -15737,6 +15713,10 @@
       "s": "Her turdan sonra izleyicilerin tepki vermesine izin ver"
     },
     {
+      "hash": "1017574797",
+      "s": "Swim speed, breath, diving, surfing and walking on water"
+    },
+    {
       "hash": "1017651569",
       "s": "Azzurro Sardegna — Pagani"
     },
@@ -16793,10 +16773,6 @@
       "s": "Aktif düz yatağın orijinal yük taşıma ofsetini geri yükle"
     },
     {
-      "hash": "1077257876",
-      "s": "Genel Görevler"
-    },
-    {
       "hash": "1077381773",
       "s": "Swimmer saved"
     },
@@ -17621,6 +17597,10 @@
       "s": "Del Perro Pier"
     },
     {
+      "hash": "1128960433",
+      "s": "Skydiving, wingsuit, parachutes, bungee, zipline and walking on air"
+    },
+    {
       "hash": "1129034721",
       "s": "Araç içi/plaka/göğüs/kapı ışıkları ve neonlar"
     },
@@ -17735,10 +17715,6 @@
     {
       "hash": "1134902168",
       "s": "Metalik Güneşten Ağarmış Kum"
-    },
-    {
-      "hash": "1135126417",
-      "s": "Flat tyres"
     },
     {
       "hash": "1135653589",
@@ -18077,6 +18053,10 @@
       "s": "Sürekli havai fişek gösterisi"
     },
     {
+      "hash": "1157477837",
+      "s": "2048, Minesweeper, Sudoku, word and logic puzzles"
+    },
+    {
       "hash": "1158901920",
       "s": "Araç hızını saatte kilometre cinsinden göster"
     },
@@ -18283,6 +18263,10 @@
     {
       "hash": "1170724148",
       "s": "Görünürlük"
+    },
+    {
+      "hash": "1171108289",
+      "s": "Darts, penalties, bowling, pool, minigolf and air hockey"
     },
     {
       "hash": "1171244160",
@@ -20369,10 +20353,6 @@
       "s": "Tekme Reaksiyonları"
     },
     {
-      "hash": "1300732780",
-      "s": "Body"
-    },
-    {
       "hash": "1300778504",
       "s": "Aranıyor..."
     },
@@ -20391,6 +20371,10 @@
     {
       "hash": "1302505067",
       "s": "Cayo Perico"
+    },
+    {
+      "hash": "1302527406",
+      "s": "Arcade Games"
     },
     {
       "hash": "1302744854",
@@ -22149,6 +22133,10 @@
       "s": "Uçuş"
     },
     {
+      "hash": "1419296267",
+      "s": "Repossessions, bounties, smuggling, safe cracking and stealing cars to order"
+    },
+    {
       "hash": "1420961807",
       "s": "Alpine kıyafetleri, maskeler ve tulumlar açıldı."
     },
@@ -23279,10 +23267,6 @@
     {
       "hash": "1492584064",
       "s": "Planlama panosunu yenileyin"
-    },
-    {
-      "hash": "1492607383",
-      "s": "Fuel Tank"
     },
     {
       "hash": "1492799248",
@@ -26833,10 +26817,6 @@
       "s": "Gardırop yükleme işlevi kullanılamadı"
     },
     {
-      "hash": "1724189037",
-      "s": "Get a mechanic's report on your car: engine, body and fuel tank condition, flat tyres, damaged doors, broken windows, dirt and a repair estimate"
-    },
-    {
       "hash": "1724585786",
       "s": "Tekne Hızlanması"
     },
@@ -26939,10 +26919,6 @@
     {
       "hash": "1731090335",
       "s": "Sosyal Kulüp mürettebatlarınız + mürettebat arama: üyeler, katıl/ayrıl, etkin olarak ayarla (ROS)"
-    },
-    {
-      "hash": "1731184905",
-      "s": "Bilgi"
     },
     {
       "hash": "1731266457",
@@ -30461,6 +30437,10 @@
       "s": "Sizin önünüzde 3D olarak gösterilir"
     },
     {
+      "hash": "1943952461",
+      "s": "Driving, flying and boating challenges, from car bowling and cone slalom to sky rings and crop dusting"
+    },
+    {
       "hash": "1944226543",
       "s": "Üst Yazmalar"
     },
@@ -32521,6 +32501,10 @@
       "s": "Mevcut renk tonu"
     },
     {
+      "hash": "2072121564",
+      "s": "Super jumps, double jumps, wall jumps, air dashes, gliding and freerunning"
+    },
+    {
       "hash": "2072616434",
       "s": "Geometriye uçmadan önce ileri hızı azalt"
     },
@@ -32755,10 +32739,6 @@
     {
       "hash": "2089402737",
       "s": "Her türlü eşyanın stoğunu ekle"
-    },
-    {
-      "hash": "2089859066",
-      "s": "Rig your own zipline: aim at a rooftop, cliff or spot below you up to 400 m away and press E to string a cable to it from where you stand. Walk to the top end, press E to hook on and fly down it, picking up speed on the steep parts and braking at the end. Press E mid-ride to let go, or Q to rig a new line"
     },
     {
       "hash": "2090327244",
@@ -33371,10 +33351,6 @@
     {
       "hash": "2125063186",
       "s": "Ghost Car"
-    },
-    {
-      "hash": "2125454790",
-      "s": "All fixed, drive safe"
     },
     {
       "hash": "2125643189",
@@ -34893,6 +34869,10 @@
       "s": "Speedtail Hermès Edition — McLaren"
     },
     {
+      "hash": "2222891373",
+      "s": "Minigames you play on foot, from dodgeball and hoop shot to prop hunt and the laser maze"
+    },
+    {
       "hash": "2223109657",
       "s": "Above 55 km/h, beep and rumble when you are about to hit something ahead; Warn & Brake also slows you down at the last moment"
     },
@@ -35795,10 +35775,6 @@
     {
       "hash": "2280285534",
       "s": "Tabak ışık rengi"
-    },
-    {
-      "hash": "2280336047",
-      "s": "Zipline rigged. Climb to the top end to ride it down"
     },
     {
       "hash": "2280547295",
@@ -37477,6 +37453,10 @@
       "s": "Rastgele Kadın"
     },
     {
+      "hash": "2384227076",
+      "s": "Valet, food truck, lawn mowing, pest and animal control, escorting VIPs and working the door"
+    },
+    {
       "hash": "2384593895",
       "s": "Devir Barını Göster"
     },
@@ -37977,6 +37957,10 @@
       "s": "Motor tork çarpanı"
     },
     {
+      "hash": "2420639695",
+      "s": "Sky & Parachute"
+    },
+    {
       "hash": "2420808654",
       "s": "Tesis soygunu soğuma süresini temizle"
     },
@@ -38229,10 +38213,6 @@
       "s": "Her seçilen oyuncuyu size, işaretinize veya başka bir oyuncuya taşı"
     },
     {
-      "hash": "2441622906",
-      "s": "Roadside Assistance"
-    },
-    {
       "hash": "2442384595",
       "s": "Weave through the cones: pass the first on its left, the next on its right, and so on. The clock starts at the first cone, and every cone you hit or pass on the wrong side adds time"
     },
@@ -38287,10 +38267,6 @@
     {
       "hash": "2445683587",
       "s": "Shove every rival out of the ring and stay inside it yourself. Leave the ring or your car and you are out"
-    },
-    {
-      "hash": "2445799495",
-      "s": "Driving Work"
     },
     {
       "hash": "2446172016",
@@ -38971,6 +38947,10 @@
     {
       "hash": "2488620089",
       "s": "Tonya yolda!"
+    },
+    {
+      "hash": "2488975706",
+      "s": "Board Games"
     },
     {
       "hash": "2489001967",
@@ -39885,10 +39865,6 @@
       "s": "About every this many minutes, while you are on foot in a busy area, a thief snatches someone's wallet and runs; tackle, shoot or ram them before they get away for a reward"
     },
     {
-      "hash": "2547576850",
-      "s": "Pay for Repairs"
-    },
-    {
       "hash": "2547965119",
       "s": "Vurduğunuz NPC'ler kalıcı hasar almaz ve yerine bu kadar saniye boyunca yere düşerler"
     },
@@ -39963,6 +39939,10 @@
     {
       "hash": "2551252475",
       "s": "Olay'a Teleport"
+    },
+    {
+      "hash": "2551469461",
+      "s": "Press a key; Escape or Start cancels"
     },
     {
       "hash": "2552027493",
@@ -40861,10 +40841,6 @@
       "s": "Hold to hypnotize"
     },
     {
-      "hash": "2610195353",
-      "s": "Broken windows"
-    },
-    {
       "hash": "2610281641",
       "s": "Sıkıca tutunun"
     },
@@ -41251,6 +41227,10 @@
     {
       "hash": "2635751099",
       "s": "Algılama Menzili"
+    },
+    {
+      "hash": "2635856615",
+      "s": "Jumping & Parkour"
     },
     {
       "hash": "2635921873",
@@ -42191,6 +42171,10 @@
     {
       "hash": "2698174649",
       "s": "Diamond Casino — $3.619M"
+    },
+    {
+      "hash": "2698523576",
+      "s": "On-Foot Games"
     },
     {
       "hash": "2698631090",
@@ -44005,10 +43989,6 @@
       "s": "Mahi-Mahi"
     },
     {
-      "hash": "2816637641",
-      "s": "Clean"
-    },
-    {
       "hash": "2817179614",
       "s": "Patlamadan uzaklığa göre kamerayı sars"
     },
@@ -44685,10 +44665,6 @@
       "s": "Plaka Işığı"
     },
     {
-      "hash": "2859828431",
-      "s": "In perfect condition"
-    },
-    {
       "hash": "2859914047",
       "s": "Bu kategori, mevcut oyun sürümünde çözülmüş girişlere sahip değil"
     },
@@ -44959,6 +44935,10 @@
     {
       "hash": "2878569621",
       "s": "Silah Lazer Nişangahı"
+    },
+    {
+      "hash": "2878979499",
+      "s": "Hold a second copy of your gun in your other hand. Left mouse fires the left gun, right mouse the right; R reloads both. Online your own shots do the damage"
     },
     {
       "hash": "2879108840",
@@ -45459,6 +45439,10 @@
     {
       "hash": "2909925149",
       "s": "NM Düşüşünü devre dışı bırakın"
+    },
+    {
+      "hash": "2910609395",
+      "s": "Sports Games"
     },
     {
       "hash": "2911036879",
@@ -46095,10 +46079,6 @@
     {
       "hash": "2950245173",
       "s": "Vending Machine"
-    },
-    {
-      "hash": "2950525709",
-      "s": "Hold a second copy of your gun in your other hand. Left mouse fires the left gun, right mouse the right; R reloads both. Story Mode only"
     },
     {
       "hash": "2950554203",
@@ -46769,10 +46749,6 @@
       "s": "Zaman ölçeğini sıfıra sabitle"
     },
     {
-      "hash": "2996852447",
-      "s": "Repaired for"
-    },
-    {
       "hash": "2997085631",
       "s": "Önünüzde bir uçak düşüyor ve yere çarptığında patlıyor"
     },
@@ -47173,12 +47149,20 @@
       "s": "Seçme Mesafesi"
     },
     {
+      "hash": "3021287703",
+      "s": "Swimming"
+    },
+    {
       "hash": "3021712811",
       "s": "Maksimum Sığınak Yükseltmeleri"
     },
     {
       "hash": "3021869258",
       "s": "Öncelik"
+    },
+    {
+      "hash": "3022119625",
+      "s": "Ragdoll control, knockdowns, recovery and fall behaviour"
     },
     {
       "hash": "3022465289",
@@ -47319,6 +47303,10 @@
     {
       "hash": "3036201073",
       "s": "Yenilenme Gecikmesi"
+    },
+    {
+      "hash": "3036336470",
+      "s": "Snake, Tetris, Breakout, Invaders, Flappy, pinball and more quick arcade games"
     },
     {
       "hash": "3036438817",
@@ -47837,10 +47825,6 @@
       "s": "Kompakt"
     },
     {
-      "hash": "3072161181",
-      "s": "A mechanic is on the way"
-    },
-    {
       "hash": "3072373482",
       "s": "P Uzak Müdahaleler"
     },
@@ -47871,10 +47855,6 @@
     {
       "hash": "3073997300",
       "s": "Evcil Hayvan arkadaş"
-    },
-    {
-      "hash": "3074633972",
-      "s": "Dual Wield works in Story Mode only."
     },
     {
       "hash": "3074744851",
@@ -48115,10 +48095,6 @@
     {
       "hash": "3089595495",
       "s": "Tightrope Walk"
-    },
-    {
-      "hash": "3089680792",
-      "s": "You cannot afford the repairs"
     },
     {
       "hash": "3090094613",
@@ -48649,6 +48625,10 @@
       "s": "Yaya Yakma"
     },
     {
+      "hash": "3123328162",
+      "s": "Rig your own zipline: aim at a rooftop, cliff or spot below you up to 400 m away and press E to string a cable to it from where you stand. Stand at either end and press E to hook on: from the top you fly down it, picking up speed on the steep parts and braking at the end, and from the bottom a winch hauls you up. Press E mid-ride to let go, or Q to rig a new line"
+    },
+    {
       "hash": "3124407955",
       "s": "Bu oyuncunun etrafında oluşturulan nesneyi seçin"
     },
@@ -48899,6 +48879,10 @@
     {
       "hash": "3140964248",
       "s": "Sağlık Şarjı"
+    },
+    {
+      "hash": "3141292386",
+      "s": "No hangar owned"
     },
     {
       "hash": "3141311701",
@@ -49509,6 +49493,10 @@
       "s": "Takipçiler"
     },
     {
+      "hash": "3178876870",
+      "s": "Press one or two buttons; Start or Escape cancels"
+    },
+    {
       "hash": "3178955328",
       "s": "Terleme"
     },
@@ -49955,6 +49943,10 @@
     {
       "hash": "3207454753",
       "s": "Tuxeado Siyahı — Chevrolet"
+    },
+    {
+      "hash": "3207496500",
+      "s": "Casino & Cards"
     },
     {
       "hash": "3207532529",
@@ -52873,6 +52865,10 @@
       "s": "| Karakterinizin acı seslerini ve konuşmasını sessize al"
     },
     {
+      "hash": "3394835232",
+      "s": "World Effects"
+    },
+    {
       "hash": "3395152774",
       "s": "| Nişan almadan veya ateş etmeden sonra bu kadar saniye sonra silahınızı kaldır"
     },
@@ -53549,6 +53545,10 @@
       "s": "The EMP is still recharging"
     },
     {
+      "hash": "3433742135",
+      "s": "Timed out"
+    },
+    {
       "hash": "3434121911",
       "s": "Car Meet"
     },
@@ -53785,10 +53785,6 @@
       "s": "Ok Boyutu"
     },
     {
-      "hash": "3450795657",
-      "s": "Bir tuşa basın; Escape iptal eder"
-    },
-    {
       "hash": "3450924635",
       "s": "SecuroServ'i Uzaktan Aç"
     },
@@ -53971,10 +53967,6 @@
     {
       "hash": "3461051023",
       "s": "Play reversi against the computer on your phone screen: place a disc to trap a line of the other colour between yours and flip them all. Whoever has more discs when the board fills up wins. Move with W, A, S and D and place with E. The value sets how far ahead the computer looks"
-    },
-    {
-      "hash": "3461603396",
-      "s": "When the car you were driving is wrecked, an identical replacement is dropped off near you after this many seconds; Story Mode only"
     },
     {
       "hash": "3461644308",
@@ -54621,6 +54613,10 @@
       "s": "Yüz Varlığı"
     },
     {
+      "hash": "3504519609",
+      "s": "Sprint, stamina, sneaking, collisions and how your character walks"
+    },
+    {
       "hash": "3504805326",
       "s": "Otomatik Paraşüt"
     },
@@ -54695,6 +54691,10 @@
     {
       "hash": "3511083729",
       "s": "Cayo Perico Solo"
+    },
+    {
+      "hash": "3511188885",
+      "s": "Puzzle Games"
     },
     {
       "hash": "3511794739",
@@ -55651,6 +55651,14 @@
     {
       "hash": "3572883333",
       "s": "Seyret ve İzle"
+    },
+    {
+      "hash": "3573342898",
+      "s": "Vehicle Challenges"
+    },
+    {
+      "hash": "3573344696",
+      "s": "Walking & Running"
     },
     {
       "hash": "3573376758",
@@ -57335,10 +57343,6 @@
     {
       "hash": "3672894094",
       "s": "Dalış Zıplaması"
-    },
-    {
-      "hash": "3672905552",
-      "s": "Inspect Vehicle"
     },
     {
       "hash": "3672956744",
@@ -59681,6 +59685,10 @@
       "s": "Yükseklik Hızı"
     },
     {
+      "hash": "3814152366",
+      "s": "Paramedic, firefighter, lifeguard and police work, plus bomb disposal and hostage calls"
+    },
+    {
       "hash": "3814304955",
       "s": "Kefalet Ofisi Girişini Atla"
     },
@@ -59897,16 +59905,16 @@
       "s": "| Önce aracınızı terk edin"
     },
     {
+      "hash": "3828304341",
+      "s": "Driving Jobs"
+    },
+    {
       "hash": "3828501585",
       "s": "P Ortak Desteği"
     },
     {
       "hash": "3829036351",
       "s": "Press E to open the hatch for business"
-    },
-    {
-      "hash": "3829069076",
-      "s": "Pay the repair estimate from your cash to get the car fully fixed, cleaned and its tank patched; Story Mode only"
     },
     {
       "hash": "3829462067",
@@ -60405,10 +60413,6 @@
       "s": "Yakalanan tüm devriye kontrol noktalarını kaldır"
     },
     {
-      "hash": "3859581685",
-      "s": "Stand next to your damaged vehicle and a mechanic walks over, fixes it up and goes on his way"
-    },
-    {
       "hash": "3859797889",
       "s": "You left the tow truck; the job went to another driver"
     },
@@ -60551,6 +60555,10 @@
     {
       "hash": "3868362027",
       "s": "Yıldırımı Zorla"
+    },
+    {
+      "hash": "3868664037",
+      "s": "Chess, checkers, reversi, backgammon and more against your phone"
     },
     {
       "hash": "3868785052",
@@ -62425,10 +62433,6 @@
       "s": "Çaprazlar"
     },
     {
-      "hash": "3984090681",
-      "s": "Filthy"
-    },
-    {
       "hash": "3984194680",
       "s": "Gerekli özel araçla Stockpiling'i başlat"
     },
@@ -63507,10 +63511,6 @@
     {
       "hash": "4051413255",
       "s": "Raid repelled"
-    },
-    {
-      "hash": "4051570377",
-      "s": "Kilitlemeler ve Kurulum"
     },
     {
       "hash": "4051590690",
@@ -64635,6 +64635,10 @@
     {
       "hash": "4125467414",
       "s": "Çıkış noktası indeksi (değer-1)"
+    },
+    {
+      "hash": "4125485598",
+      "s": "Pocket Games"
     },
     {
       "hash": "4125691445",
