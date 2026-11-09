@@ -421,6 +421,10 @@
       "s": "Wash the car"
     },
     {
+      "hash": "27165618",
+      "s": "Special Vehicle Warehouse"
+    },
+    {
       "hash": "27248372",
       "s": "Pulse"
     },
@@ -583,6 +587,10 @@
     {
       "hash": "35739371",
       "s": "Fade in aggressive animals that hunt this player"
+    },
+    {
+      "hash": "36025360",
+      "s": "Randomize Entire Garage"
     },
     {
       "hash": "36086719",
@@ -853,6 +861,10 @@
       "s": "Clear robbery status slot 1"
     },
     {
+      "hash": "51513635",
+      "s": "Off-Road"
+    },
+    {
       "hash": "51695094",
       "s": "the Stalker"
     },
@@ -903,6 +915,10 @@
     {
       "hash": "54011828",
       "s": "You are starting to smell; a swim, a downpour or some sleep will freshen you up"
+    },
+    {
+      "hash": "54482262",
+      "s": "Repair & Clean"
     },
     {
       "hash": "55056251",
@@ -2409,6 +2425,10 @@
       "s": "You must be in a vehicle to save it"
     },
     {
+      "hash": "152037360",
+      "s": "Import"
+    },
+    {
       "hash": "152321796",
       "s": "Return the wallet"
     },
@@ -2821,6 +2841,10 @@
       "s": "Search dictionaries or particles"
     },
     {
+      "hash": "183541902",
+      "s": "Saved garage vehicles"
+    },
+    {
       "hash": "183593183",
       "s": "Remove tugboat waves from selected players"
     },
@@ -2911,6 +2935,10 @@
     {
       "hash": "189849597",
       "s": "Falloff Exponent"
+    },
+    {
+      "hash": "189861302",
+      "s": "No matching saved files"
     },
     {
       "hash": "189881713",
@@ -3773,6 +3801,10 @@
       "s": "Protect the companion from damage"
     },
     {
+      "hash": "240729237",
+      "s": "Garage export failed"
+    },
+    {
       "hash": "240730256",
       "s": "S Party"
     },
@@ -3929,6 +3961,10 @@
       "s": "This vehicle rejoins the column"
     },
     {
+      "hash": "250174008",
+      "s": "Garage Spaces"
+    },
+    {
       "hash": "250297596",
       "s": "Mechanic-deliver this saved vehicle (sets the active PV slot + calls it)"
     },
@@ -3943,6 +3979,10 @@
     {
       "hash": "251381435",
       "s": "This song is my jam"
+    },
+    {
+      "hash": "251619335",
+      "s": "Choose Paint in Customs"
     },
     {
       "hash": "251803720",
@@ -4621,6 +4661,10 @@
       "s": "Persistent in-game name for this slot (15 characters maximum)"
     },
     {
+      "hash": "291934537",
+      "s": "Backup failed; garage was not changed"
+    },
+    {
       "hash": "291952236",
       "s": "Vehicles held in the flame catch fire and explode"
     },
@@ -4639,6 +4683,10 @@
     {
       "hash": "292658964",
       "s": "Emblem"
+    },
+    {
+      "hash": "292691603",
+      "s": "Garage changed; Customs save cancelled"
     },
     {
       "hash": "293042091",
@@ -5753,6 +5801,10 @@
       "s": "Boost Velocity"
     },
     {
+      "hash": "364631318",
+      "s": "Commercial"
+    },
+    {
       "hash": "365316700",
       "s": "Super-speed sprint & flight"
     },
@@ -6817,6 +6869,10 @@
       "s": "Dialling Digits"
     },
     {
+      "hash": "431013527",
+      "s": "Replace Entire Garage"
+    },
+    {
       "hash": "431126540",
       "s": "Util Bright Blue"
     },
@@ -7093,6 +7149,10 @@
       "s": "Energy used by a dual-palm burst"
     },
     {
+      "hash": "448114002",
+      "s": "Garage backup does not match this garage"
+    },
+    {
       "hash": "448295813",
       "s": "Script Modes"
     },
@@ -7313,6 +7373,10 @@
       "s": "Remove every player from the Chernobog target list"
     },
     {
+      "hash": "459536808",
+      "s": "Garage ownership or character changed; refresh garages"
+    },
+    {
       "hash": "459641114",
       "s": "Enemy Count"
     },
@@ -7327,6 +7391,10 @@
     {
       "hash": "460167009",
       "s": "Camera field of view while boosting"
+    },
+    {
+      "hash": "460545281",
+      "s": "Vehicle Class"
     },
     {
       "hash": "460796734",
@@ -7801,6 +7869,10 @@
       "s": "Unlock all supported Kortz and 2026 rewards"
     },
     {
+      "hash": "492719451",
+      "s": "Choose a saved vehicle XML"
+    },
+    {
       "hash": "493300337",
       "s": "Beacon and Beam"
     },
@@ -8097,6 +8169,10 @@
       "s": "Chrome"
     },
     {
+      "hash": "508383247",
+      "s": "Service"
+    },
+    {
       "hash": "509158895",
       "s": "Get out and press E at the flat tyre to change it"
     },
@@ -8191,6 +8267,10 @@
     {
       "hash": "515158938",
       "s": "Type to filter the list"
+    },
+    {
+      "hash": "515372113",
+      "s": "Entered the selected garage"
     },
     {
       "hash": "515564650",
@@ -8501,6 +8581,10 @@
       "s": "The closest hospital"
     },
     {
+      "hash": "534248400",
+      "s": "Choose vehicles for several garage spaces"
+    },
+    {
       "hash": "534483301",
       "s": "About every this many minutes an ambulance, fire engine or police car races past you with its siren on to a scene just ahead: medics tend to a collapsed man, firefighters put out a burning car, or cops arrest a dealer and drive off with him"
     },
@@ -8803,6 +8887,10 @@
     {
       "hash": "554921234",
       "s": "Override moon cycle to 100%"
+    },
+    {
+      "hash": "554929364",
+      "s": "Export every vehicle and empty space to one garage backup"
     },
     {
       "hash": "555920792",
@@ -9405,6 +9493,10 @@
       "s": "House Party Cost"
     },
     {
+      "hash": "595559898",
+      "s": "Apply paint and upgrades to stored vehicles"
+    },
+    {
       "hash": "595684605",
       "s": "Unlock every supported property trophy for the selected recovery target"
     },
@@ -9805,6 +9897,10 @@
       "s": "Enable Ragdoll"
     },
     {
+      "hash": "622310208",
+      "s": "Sports Classics"
+    },
+    {
       "hash": "622615440",
       "s": "Skip Heist Cooldown"
     },
@@ -9917,6 +10013,10 @@
       "s": "Metallic Candy Red"
     },
     {
+      "hash": "627721605",
+      "s": "The game did not register this model, so the pack did not mount correctly."
+    },
+    {
       "hash": "628029733",
       "s": "Tow their vehicle with a tow truck"
     },
@@ -9991,6 +10091,10 @@
     {
       "hash": "634021886",
       "s": "Timecycle Modifier"
+    },
+    {
+      "hash": "634179872",
+      "s": "Capture colours from a parked vehicle for new garage vehicles"
     },
     {
       "hash": "634506915",
@@ -10889,6 +10993,10 @@
       "s": "Marker attached."
     },
     {
+      "hash": "688965224",
+      "s": "Choose one vehicle for all empty spaces"
+    },
+    {
       "hash": "689022916",
       "s": "Enter a valid number."
     },
@@ -11085,6 +11193,10 @@
       "s": "Mark As Modder"
     },
     {
+      "hash": "701082842",
+      "s": "Export Vehicle"
+    },
+    {
       "hash": "701637017",
       "s": "I left my lucky bandana at home"
     },
@@ -11219,6 +11331,10 @@
     {
       "hash": "709695284",
       "s": "Unlock all Auto Shop modification flags"
+    },
+    {
+      "hash": "709916192",
+      "s": "Import Full Garage"
     },
     {
       "hash": "710120312",
@@ -12457,6 +12573,10 @@
       "s": "None of the selected players are inside a vehicle"
     },
     {
+      "hash": "791532487",
+      "s": "Nightclub Delivery Vehicles"
+    },
+    {
       "hash": "791953487",
       "s": "Free Look"
     },
@@ -12659,6 +12779,10 @@
     {
       "hash": "803005274",
       "s": "Work Out"
+    },
+    {
+      "hash": "804036080",
+      "s": "Garage Defaults"
     },
     {
       "hash": "805315652",
@@ -12875,6 +12999,10 @@
     {
       "hash": "820545318",
       "s": "Seconds between joinable checks for each monitored player"
+    },
+    {
+      "hash": "820555512",
+      "s": "Super"
     },
     {
       "hash": "820593048",
@@ -13889,6 +14017,10 @@
       "s": "Continuously submit synchronized freemode drops at the selected location"
     },
     {
+      "hash": "888781722",
+      "s": "Full garage exported"
+    },
+    {
       "hash": "888962670",
       "s": "Blue / White 2"
     },
@@ -13971,6 +14103,10 @@
     {
       "hash": "893751245",
       "s": "Tornado Players"
+    },
+    {
+      "hash": "894019776",
+      "s": "Keep Existing Paint"
     },
     {
       "hash": "894717074",
@@ -15117,6 +15253,10 @@
       "s": "Invalid object model"
     },
     {
+      "hash": "978077727",
+      "s": "Garage editing is unavailable or already in progress"
+    },
+    {
       "hash": "978315719",
       "s": "Rank Boost"
     },
@@ -15147,6 +15287,10 @@
     {
       "hash": "980979335",
       "s": "Grant one crate (packed stat)"
+    },
+    {
+      "hash": "981631210",
+      "s": "Add-on models cannot be stored in garages"
     },
     {
       "hash": "982091567",
@@ -16453,6 +16597,10 @@
       "s": "Delete Vehicles"
     },
     {
+      "hash": "1058185470",
+      "s": "Back up and apply this preset to every stored vehicle"
+    },
+    {
       "hash": "1058196014",
       "s": "Tornado Settings"
     },
@@ -16771,6 +16919,10 @@
     {
       "hash": "1076904599",
       "s": "Restore the active flatbed model's original cargo offset"
+    },
+    {
+      "hash": "1077350307",
+      "s": "Vehicle changed; select it again"
     },
     {
       "hash": "1077381773",
@@ -17139,6 +17291,10 @@
     {
       "hash": "1102476886",
       "s": "Paint both coats the same colour"
+    },
+    {
+      "hash": "1102560806",
+      "s": "Helicopters"
     },
     {
       "hash": "1102567839",
@@ -19169,6 +19325,10 @@
       "s": "You are already in your car"
     },
     {
+      "hash": "1230015681",
+      "s": "Sports"
+    },
+    {
       "hash": "1230203175",
       "s": "Train Track"
     },
@@ -20909,6 +21069,10 @@
       "s": "Front Sensors"
     },
     {
+      "hash": "1335450470",
+      "s": "Garage Transfer"
+    },
+    {
       "hash": "1335454568",
       "s": "Boat Cannons"
     },
@@ -21769,6 +21933,10 @@
       "s": "Push every tick"
     },
     {
+      "hash": "1392071049",
+      "s": "Garage context changed; remaining edits were cancelled"
+    },
+    {
       "hash": "1392080170",
       "s": "Spawn box depth"
     },
@@ -21903,6 +22071,10 @@
     {
       "hash": "1402060374",
       "s": "Writhe And Die"
+    },
+    {
+      "hash": "1402426357",
+      "s": "The game did not confirm garage entry"
     },
     {
       "hash": "1402822317",
@@ -23593,6 +23765,10 @@
       "s": "Personal Vehicle Controls"
     },
     {
+      "hash": "1513168951",
+      "s": "Garage Files"
+    },
+    {
       "hash": "1513464168",
       "s": "Pistol Style"
     },
@@ -24317,6 +24493,10 @@
       "s": "Props cleared."
     },
     {
+      "hash": "1559422831",
+      "s": "Open this garage"
+    },
+    {
       "hash": "1559493257",
       "s": "Event score signature did not resolve"
     },
@@ -24443,6 +24623,10 @@
     {
       "hash": "1567271700",
       "s": "Join GTA Online before inspecting the lobby"
+    },
+    {
+      "hash": "1567331295",
+      "s": "Garage Delivery"
     },
     {
       "hash": "1567365095",
@@ -24699,6 +24883,10 @@
     {
       "hash": "1584038551",
       "s": "You feel clean again"
+    },
+    {
+      "hash": "1584224798",
+      "s": "Keep Original Paint"
     },
     {
       "hash": "1584887052",
@@ -25249,6 +25437,10 @@
       "s": "No driver nearby to recruit."
     },
     {
+      "hash": "1620530994",
+      "s": "Trains"
+    },
+    {
       "hash": "1620536022",
       "s": "Mark every selected hitbox"
     },
@@ -25303,6 +25495,10 @@
     {
       "hash": "1623231167",
       "s": "An Ongoing Riot All Over San Andreas"
+    },
+    {
+      "hash": "1623442900",
+      "s": "Use this class for randomization and class-based filling"
     },
     {
       "hash": "1623558815",
@@ -25737,6 +25933,10 @@
       "s": "Sell value per unit"
     },
     {
+      "hash": "1647889574",
+      "s": "Install the best available performance upgrades"
+    },
+    {
       "hash": "1647945067",
       "s": "Override the projectile impact color"
     },
@@ -26081,6 +26281,10 @@
       "s": "Object attached."
     },
     {
+      "hash": "1675104312",
+      "s": "Could not export garage vehicle"
+    },
+    {
       "hash": "1675439441",
       "s": "Freeze All"
     },
@@ -26307,6 +26511,10 @@
     {
       "hash": "1689518176",
       "s": "Allow the neck as a target point"
+    },
+    {
+      "hash": "1690007020",
+      "s": "Customizer garage save failed"
     },
     {
       "hash": "1690114614",
@@ -26873,6 +27081,10 @@
       "s": "Recolour weapon-impact decals"
     },
     {
+      "hash": "1727166435",
+      "s": "Preview colours on a parked vehicle and capture them for this workshop"
+    },
+    {
       "hash": "1727579352",
       "s": "Delete All Objects In World"
     },
@@ -27109,6 +27321,10 @@
       "s": "Join a crew session"
     },
     {
+      "hash": "1745768648",
+      "s": "Fill Empty Spaces by Class"
+    },
+    {
       "hash": "1746586620",
       "s": "Fifteen bottles are launched across in front of you, alternating sides and sometimes two at once; shoot them out of the air before they land. You get a shotgun if you need one, and a new round starts after each one"
     },
@@ -27221,6 +27437,10 @@
       "s": "Add every vehicle in this group to the traffic set"
     },
     {
+      "hash": "1754449860",
+      "s": "Planes"
+    },
+    {
       "hash": "1754696586",
       "s": "Hide in / climb out of the dumpster"
     },
@@ -27247,6 +27467,10 @@
     {
       "hash": "1756155073",
       "s": "Emit a particle effect at each trail step"
+    },
+    {
+      "hash": "1756917099",
+      "s": "Industrial"
     },
     {
       "hash": "1757324062",
@@ -28177,6 +28401,10 @@
       "s": "Monitor this player's joinable status (notify / auto-join)"
     },
     {
+      "hash": "1813019367",
+      "s": "No matching garage spaces"
+    },
+    {
       "hash": "1813271197",
       "s": "Press Jump near the ground while stationary to land"
     },
@@ -28539,6 +28767,10 @@
     {
       "hash": "1833608388",
       "s": "You dropped a cash bag where you died; get back to it within 10 minutes to recover"
+    },
+    {
+      "hash": "1833912241",
+      "s": "Enter an owned garage to preview paint"
     },
     {
       "hash": "1833921699",
@@ -29065,6 +29297,14 @@
       "s": "Stressed"
     },
     {
+      "hash": "1869359410",
+      "s": "Choose a vehicle from Spooner's browser"
+    },
+    {
+      "hash": "1869544960",
+      "s": "Cycles"
+    },
+    {
       "hash": "1869775883",
       "s": "Wave"
     },
@@ -29315,6 +29555,10 @@
     {
       "hash": "1882787474",
       "s": "Basic"
+    },
+    {
+      "hash": "1883094873",
+      "s": "Back up and replace every garage space with one chosen vehicle"
     },
     {
       "hash": "1883445157",
@@ -30073,6 +30317,10 @@
       "s": "Make this your active (primary) crew"
     },
     {
+      "hash": "1926904451",
+      "s": "Import this saved file"
+    },
+    {
       "hash": "1926905617",
       "s": "Host requested; try again after migration, or use an invite-only session"
     },
@@ -30107,6 +30355,10 @@
     {
       "hash": "1928483564",
       "s": "Your car lost; better luck next race"
+    },
+    {
+      "hash": "1928929542",
+      "s": "Boats"
     },
     {
       "hash": "1929425812",
@@ -30925,6 +31177,10 @@
       "s": "Random-event runtime tables did not resolve"
     },
     {
+      "hash": "1974816307",
+      "s": "Customizer changes saved"
+    },
+    {
       "hash": "1974879937",
       "s": "Magic Bullet targeting radius in screen pixels"
     },
@@ -30971,6 +31227,14 @@
     {
       "hash": "1977069905",
       "s": "Infinite Black Screen"
+    },
+    {
+      "hash": "1977573269",
+      "s": "No compatible vehicles found for this class and garage"
+    },
+    {
+      "hash": "1977642938",
+      "s": "Emergency"
     },
     {
       "hash": "1977917886",
@@ -31071,6 +31335,10 @@
     {
       "hash": "1984379439",
       "s": "A rival in the same car as you is roped to your back bumper. After the countdown, floor it and drag them over the green line before they drag you over the red one. Stronger rivals pull harder and pay more in Story Mode; a new round starts after each result until you turn this off"
+    },
+    {
+      "hash": "1984583755",
+      "s": "Garage Workshop"
     },
     {
       "hash": "1984740408",
@@ -31295,6 +31563,10 @@
     {
       "hash": "1996252532",
       "s": "Cut Glass"
+    },
+    {
+      "hash": "1996522424",
+      "s": "Garage changed; select the vehicle again"
     },
     {
       "hash": "1996940612",
@@ -31691,6 +31963,10 @@
     {
       "hash": "2020441316",
       "s": "Newer DLC Unlocks"
+    },
+    {
+      "hash": "2020540287",
+      "s": "Vehicle catalog is loading; try again shortly"
     },
     {
       "hash": "2020669354",
@@ -32477,6 +32753,10 @@
       "s": "Input Binding"
     },
     {
+      "hash": "2071262948",
+      "s": "Choose random colours when applying the workshop"
+    },
+    {
       "hash": "2071281244",
       "s": "Neon Mode"
     },
@@ -32731,6 +33011,10 @@
     {
       "hash": "2088620749",
       "s": "How many kilometres a full tank lasts"
+    },
+    {
+      "hash": "2088700264",
+      "s": "Randomize Paint"
     },
     {
       "hash": "2088774030",
@@ -33007,6 +33291,10 @@
     {
       "hash": "2102380749",
       "s": "Ride a deer, cow or mountain lion"
+    },
+    {
+      "hash": "2102442773",
+      "s": "Select a garage space to highlight or edit its vehicle"
     },
     {
       "hash": "2102647430",
@@ -34149,6 +34437,10 @@
       "s": "Rosso Magma — Ferrari"
     },
     {
+      "hash": "2174780745",
+      "s": "Add From Spooner"
+    },
+    {
       "hash": "2174972429",
       "s": "Fly San Andreas style on a strapped-on jetpack"
     },
@@ -34273,6 +34565,10 @@
       "s": "Electromancer"
     },
     {
+      "hash": "2181714962",
+      "s": "Choose paint, upgrades or repairs before applying"
+    },
+    {
       "hash": "2181846870",
       "s": "Save the current feature settings and hotkeys now"
     },
@@ -34315,6 +34611,10 @@
     {
       "hash": "2183888221",
       "s": "Love Bomb"
+    },
+    {
+      "hash": "2184162385",
+      "s": "Save this vehicle to an XML file"
     },
     {
       "hash": "2184237009",
@@ -34383,6 +34683,10 @@
     {
       "hash": "2190241073",
       "s": "Press E in the aisles to pocket something; sneak and keep out of the clerk's sight"
+    },
+    {
+      "hash": "2190400348",
+      "s": "Randomize colours on newly added vehicles"
     },
     {
       "hash": "2190425534",
@@ -34769,6 +35073,10 @@
       "s": "Go Back"
     },
     {
+      "hash": "2216482258",
+      "s": "Fill / Replace"
+    },
+    {
       "hash": "2216798879",
       "s": "Select a saved favourite"
     },
@@ -34899,6 +35207,10 @@
     {
       "hash": "2224322649",
       "s": "Show your kills, headshots, deaths, distance travelled and top speed for this session; turn it off and on to start a fresh count"
+    },
+    {
+      "hash": "2224557364",
+      "s": "Remember paint and upgrade choices for new vehicles"
     },
     {
       "hash": "2225096851",
@@ -35067,6 +35379,10 @@
     {
       "hash": "2237251236",
       "s": "Direct Kick"
+    },
+    {
+      "hash": "2237551506",
+      "s": "Select an owned garage first"
     },
     {
       "hash": "2237672131",
@@ -36073,6 +36389,10 @@
       "s": "Clear the Money Fronts tycoon cooldown"
     },
     {
+      "hash": "2297879026",
+      "s": "Restore this garage from a matching backup"
+    },
+    {
       "hash": "2297971957",
       "s": "A fresh sudoku puzzle on your phone screen. Move with W, A, S and D, and change the number in a square with E and Q. Clashing numbers turn red. The value sets the difficulty"
     },
@@ -36147,6 +36467,10 @@
     {
       "hash": "2304216344",
       "s": "Revive Gun"
+    },
+    {
+      "hash": "2304262112",
+      "s": "Request, recover or organize personal vehicles"
     },
     {
       "hash": "2304514941",
@@ -36381,6 +36705,10 @@
       "s": "Skip Contract"
     },
     {
+      "hash": "2316236059",
+      "s": "Performance Upgrades"
+    },
+    {
       "hash": "2316368580",
       "s": "Necromancer"
     },
@@ -36461,6 +36789,10 @@
       "s": "Swap the engine sound to another model"
     },
     {
+      "hash": "2321137482",
+      "s": "Vehicle export failed"
+    },
+    {
       "hash": "2321300918",
       "s": "Zombie Outbreak"
     },
@@ -36509,6 +36841,10 @@
       "s": "Custom Camera"
     },
     {
+      "hash": "2323981665",
+      "s": "Any Class"
+    },
+    {
       "hash": "2324152318",
       "s": "Skip Jenette Dialogues"
     },
@@ -36535,6 +36871,10 @@
     {
       "hash": "2325824898",
       "s": "War carrier deployed in an armed hover."
+    },
+    {
+      "hash": "2325927451",
+      "s": "A backup empty space is occupied; restore cancelled"
     },
     {
       "hash": "2326674961",
@@ -36597,8 +36937,16 @@
       "s": "Disable nearby Oppressor MK2 engines"
     },
     {
+      "hash": "2328778841",
+      "s": "Import Vehicle"
+    },
+    {
       "hash": "2329148557",
       "s": "Follower Model"
+    },
+    {
+      "hash": "2329318568",
+      "s": "Fill empty spaces with random vehicles from the class selected in Spawn Settings"
     },
     {
       "hash": "2329386202",
@@ -37217,6 +37565,10 @@
       "s": "Relock supported awards, trophies and collectible rewards"
     },
     {
+      "hash": "2368982911",
+      "s": "Exit your vehicle before entering the garage"
+    },
+    {
       "hash": "2369348854",
       "s": "Weapon Weight"
     },
@@ -37387,6 +37739,10 @@
     {
       "hash": "2377681198",
       "s": "EMP Pulse"
+    },
+    {
+      "hash": "2377781192",
+      "s": "Use all vehicle classes supported by this garage"
     },
     {
       "hash": "2378849624",
@@ -37607,6 +37963,10 @@
     {
       "hash": "2395742690",
       "s": "The thief got away"
+    },
+    {
+      "hash": "2397071699",
+      "s": "Refresh Garages"
     },
     {
       "hash": "2397841413",
@@ -38435,6 +38795,10 @@
     {
       "hash": "2457548960",
       "s": "Sale settlement verified from inventory evidence"
+    },
+    {
+      "hash": "2459367348",
+      "s": "Filter random vehicles and class-based filling"
     },
     {
       "hash": "2459433278",
@@ -39435,6 +39799,10 @@
     {
       "hash": "2521504016",
       "s": "Smoggy"
+    },
+    {
+      "hash": "2521977944",
+      "s": "Choose paint, upgrades and vehicle class for garage spawning"
     },
     {
       "hash": "2522039450",
@@ -40813,6 +41181,10 @@
       "s": "Join Player"
     },
     {
+      "hash": "2607984942",
+      "s": "Keep the original paint when applying upgrades"
+    },
+    {
       "hash": "2608008943",
       "s": "Particle layout and effects"
     },
@@ -40835,6 +41207,10 @@
     {
       "hash": "2609075689",
       "s": "Cloud Overall Strength"
+    },
+    {
+      "hash": "2609368780",
+      "s": "This vehicle class is not supported by this garage"
     },
     {
       "hash": "2609680873",
@@ -40949,6 +41325,10 @@
       "s": "Make Them Tiny"
     },
     {
+      "hash": "2615390779",
+      "s": "Cosmetic Upgrades"
+    },
+    {
       "hash": "2617195731",
       "s": "Night falls. The beast wakes up"
     },
@@ -40959,6 +41339,10 @@
     {
       "hash": "2618092064",
       "s": "Reverse/brake boost while braking"
+    },
+    {
+      "hash": "2618169185",
+      "s": "Exit this interior before entering another garage"
     },
     {
       "hash": "2618203222",
@@ -40999,6 +41383,10 @@
     {
       "hash": "2620261365",
       "s": "Weapon Wheel Slow-Mo"
+    },
+    {
+      "hash": "2620309801",
+      "s": "Vehicle Services"
     },
     {
       "hash": "2620447213",
@@ -41043,6 +41431,10 @@
     {
       "hash": "2623090192",
       "s": "Hold on for eight seconds! Use A and D to stay balanced as it bucks"
+    },
+    {
+      "hash": "2623597001",
+      "s": "Apply to Entire Garage"
     },
     {
       "hash": "2623739095",
@@ -41585,6 +41977,14 @@
       "s": "Tracers"
     },
     {
+      "hash": "2655831757",
+      "s": "Could not open Customs"
+    },
+    {
+      "hash": "2655836614",
+      "s": "Join GTA Online to manage owned garages"
+    },
+    {
       "hash": "2656031198",
       "s": "Plate Type"
     },
@@ -41959,6 +42359,10 @@
     {
       "hash": "2684388265",
       "s": "Send genuine support drops to the selected associate"
+    },
+    {
+      "hash": "2684480362",
+      "s": "Replace every space with a random vehicle"
     },
     {
       "hash": "2685080895",
@@ -42521,6 +42925,10 @@
       "s": "Damage Flash"
     },
     {
+      "hash": "2723800709",
+      "s": "Import / Export"
+    },
+    {
       "hash": "2724026522",
       "s": "Hear a crack and feel a jolt the moment your armor is shot away"
     },
@@ -42703,6 +43111,10 @@
     {
       "hash": "2734864131",
       "s": "Steam Proof"
+    },
+    {
+      "hash": "2735060916",
+      "s": "Garage operation failed; existing backups were retained"
     },
     {
       "hash": "2735412210",
@@ -43171,6 +43583,10 @@
     {
       "hash": "2762956569",
       "s": "Apply Properties"
+    },
+    {
+      "hash": "2763094755",
+      "s": "SUVs"
     },
     {
       "hash": "2763190481",
@@ -44177,6 +44593,10 @@
       "s": "Chernobog defense dismissed."
     },
     {
+      "hash": "2830016598",
+      "s": "Repair and clean each vehicle before saving"
+    },
+    {
       "hash": "2830117076",
       "s": "Engine stays on after you exit"
     },
@@ -44523,6 +44943,10 @@
     {
       "hash": "2851338367",
       "s": "Clear Particle Effects"
+    },
+    {
+      "hash": "2851723593",
+      "s": "Open Customs & Save"
     },
     {
       "hash": "2852039083",
@@ -45085,6 +45509,10 @@
       "s": "Area affected when an airborne slam reaches the ground"
     },
     {
+      "hash": "2886898780",
+      "s": "Vans"
+    },
+    {
       "hash": "2887346059",
       "s": "Add New Task"
     },
@@ -45187,6 +45615,10 @@
     {
       "hash": "2892576845",
       "s": "RC Car"
+    },
+    {
+      "hash": "2892742768",
+      "s": "Apply paint and upgrades to all additions, replacements, fills and randomization"
     },
     {
       "hash": "2892809939",
@@ -46097,6 +46529,10 @@
       "s": "Moon Mode"
     },
     {
+      "hash": "2951516103",
+      "s": "Randomize Occupied Vehicles"
+    },
+    {
       "hash": "2951582912",
       "s": "Choose the pickup created around selected players"
     },
@@ -46107,6 +46543,10 @@
     {
       "hash": "2951726971",
       "s": "Awards and collectibles relocked."
+    },
+    {
+      "hash": "2951811838",
+      "s": "Vehicle selected from Spooner"
     },
     {
       "hash": "2952289603",
@@ -46209,6 +46649,10 @@
       "s": "Vogue Silver — Honda"
     },
     {
+      "hash": "2959578999",
+      "s": "Vehicle XML exported"
+    },
+    {
       "hash": "2960072337",
       "s": "Heist Mission Manager"
     },
@@ -46259,6 +46703,10 @@
     {
       "hash": "2964145667",
       "s": "Homing Micro-Missiles"
+    },
+    {
+      "hash": "2964346967",
+      "s": "Randomize stored vehicles and keep empty spaces"
     },
     {
       "hash": "2964374480",
@@ -47349,6 +47797,10 @@
       "s": "Could not hook on, try again"
     },
     {
+      "hash": "3038688580",
+      "s": "Back up and replace this space with a random vehicle"
+    },
+    {
       "hash": "3039004400",
       "s": "Keep Speed"
     },
@@ -47549,6 +48001,10 @@
       "s": "Scout Ship"
     },
     {
+      "hash": "3053037388",
+      "s": "Motorcycles"
+    },
+    {
       "hash": "3053157126",
       "s": "Instant Start Engine"
     },
@@ -47743,6 +48199,10 @@
     {
       "hash": "3066329010",
       "s": "Challenge a nearby pedestrian to a call-and-response dance-off"
+    },
+    {
+      "hash": "3066634805",
+      "s": "Garage backup is invalid or incomplete"
     },
     {
       "hash": "3066822363",
@@ -49085,6 +49545,10 @@
       "s": "Drop source images (.png/.gif) here -- auto-scans on any change"
     },
     {
+      "hash": "3151880585",
+      "s": "Restored garage vehicles"
+    },
+    {
       "hash": "3152095476",
       "s": "Styles"
     },
@@ -49731,6 +50195,10 @@
     {
       "hash": "3192720123",
       "s": "Not in session"
+    },
+    {
+      "hash": "3192865002",
+      "s": "Coupes"
     },
     {
       "hash": "3193479096",
@@ -50897,6 +51365,10 @@
       "s": "Stop you from taking damage while riding"
     },
     {
+      "hash": "3271974548",
+      "s": "Select this garage space"
+    },
+    {
       "hash": "3272013890",
       "s": "Fixed blackhole X coordinate"
     },
@@ -51849,6 +52321,10 @@
       "s": "Weather B"
     },
     {
+      "hash": "3332479557",
+      "s": "Garage Batch"
+    },
+    {
       "hash": "3332900970",
       "s": "Shadow Snatch"
     },
@@ -51907,6 +52383,10 @@
     {
       "hash": "3336564269",
       "s": "How fast the weather eases in (0 = instant-ish)"
+    },
+    {
+      "hash": "3336749053",
+      "s": "Garage Services"
     },
     {
       "hash": "3336774088",
@@ -54261,8 +54741,16 @@
       "s": "Spooner Settings"
     },
     {
+      "hash": "3480256164",
+      "s": "Spawn / Delivery"
+    },
+    {
       "hash": "3480330607",
       "s": "Request / call in the Kosatka submarine"
+    },
+    {
+      "hash": "3480525548",
+      "s": "Spawn or request this stored vehicle"
     },
     {
       "hash": "3481230689",
@@ -54447,6 +54935,10 @@
     {
       "hash": "3493408130",
       "s": "Disarm"
+    },
+    {
+      "hash": "3493661089",
+      "s": "Garage Vehicle Classes"
     },
     {
       "hash": "3493961608",
@@ -54887,6 +55379,10 @@
     {
       "hash": "3523350753",
       "s": "Every vehicle around you has been knocked out"
+    },
+    {
+      "hash": "3523374466",
+      "s": "Select for garage | F favourites"
     },
     {
       "hash": "3523441712",
@@ -55355,6 +55851,10 @@
     {
       "hash": "3553338568",
       "s": "Start Duel"
+    },
+    {
+      "hash": "3553462331",
+      "s": "Keep the chosen vehicle's original paint"
     },
     {
       "hash": "3553749314",
@@ -56361,10 +56861,6 @@
       "s": "Azimuth East"
     },
     {
-      "hash": "3614388636",
-      "s": "Duplicate menu page identity -- one of them is unreachable"
-    },
-    {
       "hash": "3614475682",
       "s": "Change your outfit while the police have lost sight of you and they stop looking for you"
     },
@@ -57305,6 +57801,10 @@
       "s": "Bounty, wanted, off-radar, CEO and kick events"
     },
     {
+      "hash": "3671486565",
+      "s": "Spawn With Saved Mods"
+    },
+    {
       "hash": "3671808764",
       "s": "Radius affected by moon suction"
     },
@@ -57501,6 +58001,10 @@
       "s": "A gunslinger squares up in front of you. Keep your hands off your gun until DRAW, then aim and shoot before they do; this sets their reaction time in milliseconds. Drawing early is a foul, and win streaks pay more"
     },
     {
+      "hash": "3681581261",
+      "s": "Compacts"
+    },
+    {
       "hash": "3681630193",
       "s": "Boost Strength"
     },
@@ -57519,6 +58023,10 @@
     {
       "hash": "3682369017",
       "s": "You are not leading an organization"
+    },
+    {
+      "hash": "3682588833",
+      "s": "Fill Empty Spaces"
     },
     {
       "hash": "3682694871",
@@ -58087,6 +58595,10 @@
     {
       "hash": "3711507400",
       "s": "Move the custom camera to the current gameplay view"
+    },
+    {
+      "hash": "3713163212",
+      "s": "Could not save garage presets"
     },
     {
       "hash": "3713225893",
@@ -58753,6 +59265,10 @@
       "s": "Blast yourself out of your vehicle high into the air with a parachute"
     },
     {
+      "hash": "3759176025",
+      "s": "Export Full Garage"
+    },
+    {
       "hash": "3760330032",
       "s": "Use the trunk"
     },
@@ -58915,6 +59431,10 @@
     {
       "hash": "3767343450",
       "s": "Boom. You slowed down."
+    },
+    {
+      "hash": "3767673684",
+      "s": "Repair and clean new vehicles"
     },
     {
       "hash": "3767912157",
@@ -59095,6 +59615,10 @@
     {
       "hash": "3779130443",
       "s": "Queue GTA's Bull Shark drop at this associate"
+    },
+    {
+      "hash": "3779243494",
+      "s": "Use this property's owned garage entrance"
     },
     {
       "hash": "3779654312",
@@ -59955,6 +60479,10 @@
     {
       "hash": "3832209784",
       "s": "Vertical particle layers -- effectively the height"
+    },
+    {
+      "hash": "3832238546",
+      "s": "Settings are remembered; enable again after restarting"
     },
     {
       "hash": "3832315369",
@@ -61131,6 +61659,10 @@
     {
       "hash": "3899955981",
       "s": "Cash Creation"
+    },
+    {
+      "hash": "3899987382",
+      "s": "Apply Spawn Settings"
     },
     {
       "hash": "3900017820",
@@ -63093,6 +63625,10 @@
       "s": "Size of the head marker"
     },
     {
+      "hash": "4027163333",
+      "s": "Customizer did not open"
+    },
+    {
       "hash": "4027319160",
       "s": "Browse ped categories to recruit from"
     },
@@ -63239,6 +63775,10 @@
     {
       "hash": "4035474634",
       "s": "Vintage"
+    },
+    {
+      "hash": "4035576372",
+      "s": "Back up or restore the whole garage"
     },
     {
       "hash": "4035587994",
@@ -63557,6 +64097,10 @@
       "s": "On-Screen Only"
     },
     {
+      "hash": "4054364588",
+      "s": "Install the last available body and interior parts"
+    },
+    {
       "hash": "4054664866",
       "s": "Cut the tow rope and leave the towed vehicle where it is"
     },
@@ -63731,6 +64275,10 @@
     {
       "hash": "4065716223",
       "s": "Join timed out"
+    },
+    {
+      "hash": "4065812243",
+      "s": "Enter this garage so its parked vehicle can be matched"
     },
     {
       "hash": "4065899930",
@@ -64909,6 +65457,10 @@
       "s": "Hood Camera"
     },
     {
+      "hash": "4139647310",
+      "s": "Hangar"
+    },
+    {
       "hash": "4140224062",
       "s": "Cycle the line color over time"
     },
@@ -65141,6 +65693,10 @@
       "s": "Drag to rotate, right-click to reset"
     },
     {
+      "hash": "4154747102",
+      "s": "Garage changed during export"
+    },
+    {
       "hash": "4154763004",
       "s": "Force Cloud Save"
     },
@@ -65279,6 +65835,10 @@
     {
       "hash": "4164957235",
       "s": "Start the genuine Criminal Mischief Club Challenge"
+    },
+    {
+      "hash": "4165416901",
+      "s": "Customize this parked vehicle without entering it; save on leaving Customs"
     },
     {
       "hash": "4165875761",
@@ -65993,6 +66553,10 @@
       "s": "Glide back down and land as close to the centre of the target as you can"
     },
     {
+      "hash": "4212586710",
+      "s": "A garage edit is already in progress"
+    },
+    {
       "hash": "4212663395",
       "s": "Huge"
     },
@@ -66099,6 +66663,10 @@
     {
       "hash": "4218285132",
       "s": "Turn on while on foot: an enemy sniper takes up a high perch somewhere nearby and starts shooting at you. Watch for the glint of their scope and the direction of incoming shots, find them and take them out. Faster kills and tougher snipers pay more"
+    },
+    {
+      "hash": "4218453409",
+      "s": "Sedans"
     },
     {
       "hash": "4218630541",
@@ -66479,6 +67047,10 @@
     {
       "hash": "4242962192",
       "s": "When it rains and you are outside on foot with empty hands, your character puts up an umbrella and carries it as you walk; it goes away when the rain stops, you head indoors, get in a vehicle or pull out a weapon"
+    },
+    {
+      "hash": "4243446191",
+      "s": "Randomize Vehicle"
     },
     {
       "hash": "4243521089",
@@ -67109,6 +67681,10 @@
       "s": "No Auto Helmet"
     },
     {
+      "hash": "4283264170",
+      "s": "Scan owned garages and saved vehicles"
+    },
+    {
       "hash": "4283348636",
       "s": "Random Events"
     },
@@ -67323,6 +67899,10 @@
     {
       "hash": "4294273272",
       "s": "Footstep Radius"
+    },
+    {
+      "hash": "4294554888",
+      "s": "Teleport Inside"
     },
     {
       "hash": "4294570699",
