@@ -567,7 +567,8 @@
           "d": "Hold right mouse to track the closest ped inside the FOV",
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Show Aim FOV",
@@ -576,7 +577,8 @@
           "on": 1,
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Aim FOV",
@@ -590,7 +592,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Aim Smoothing",
@@ -604,7 +607,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Aim Distance",
@@ -618,7 +622,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Target Priority",
@@ -632,7 +637,8 @@
           "i": 0,
           "group": "Target Selection",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Aim Bone",
@@ -646,7 +652,8 @@
           "i": 0,
           "group": "Target Selection",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Aim Key",
@@ -655,7 +662,8 @@
           "k": 2,
           "group": "Target Selection",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Activation Mode",
@@ -668,7 +676,8 @@
           "i": 0,
           "group": "Target Selection",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Target Filter",
@@ -682,7 +691,8 @@
           "i": 0,
           "group": "Target Selection",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Sticky Lock",
@@ -691,7 +701,8 @@
           "on": 1,
           "group": "Lock Behavior",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Dynamic FOV",
@@ -699,7 +710,8 @@
           "d": "Shrink acquisition radius for distant targets",
           "group": "Lock Behavior",
           "groupOrder": 3,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Far FOV Scale",
@@ -713,7 +725,8 @@
           ],
           "group": "Lock Behavior",
           "groupOrder": 3,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Velocity Prediction",
@@ -721,7 +734,8 @@
           "d": "Lead moving peds using raw velocity",
           "group": "Prediction",
           "groupOrder": 4,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Prediction Time",
@@ -735,7 +749,8 @@
           ],
           "group": "Prediction",
           "groupOrder": 4,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Dead Zone",
@@ -749,7 +764,8 @@
           ],
           "group": "Response",
           "groupOrder": 5,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Maximum Aim Speed",
@@ -763,7 +779,8 @@
           ],
           "group": "Response",
           "groupOrder": 5,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Switch Delay",
@@ -777,7 +794,8 @@
           ],
           "group": "Response",
           "groupOrder": 5,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Horizontal Response",
@@ -791,7 +809,8 @@
           ],
           "group": "Response",
           "groupOrder": 5,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Vertical Response",
@@ -805,7 +824,8 @@
           ],
           "group": "Response",
           "groupOrder": 5,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Skip Friends",
@@ -814,7 +834,8 @@
           "on": 1,
           "group": "Friends & Overlay",
           "groupOrder": 6,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Target Line",
@@ -823,7 +844,8 @@
           "on": 1,
           "group": "Friends & Overlay",
           "groupOrder": 6,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Target Marker",
@@ -832,7 +854,8 @@
           "on": 1,
           "group": "Friends & Overlay",
           "groupOrder": 6,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Friend Key",
@@ -846,7 +869,8 @@
           "i": 0,
           "group": "Friends & Overlay",
           "groupOrder": 6,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ]
     },
@@ -859,7 +883,8 @@
           "d": "Redirect FireDelayedHit endpoints to the selected bone",
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Show FOV",
@@ -868,7 +893,8 @@
           "on": 1,
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "FOV",
@@ -882,7 +908,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Distance",
@@ -896,7 +923,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Bone",
@@ -910,7 +938,8 @@
           "i": 0,
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Skip Friends",
@@ -919,7 +948,8 @@
           "on": 1,
           "group": "Shot Behavior",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Only While Aiming",
@@ -927,7 +957,8 @@
           "d": "Acquire silent targets only while right mouse is held",
           "group": "Shot Behavior",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Hit Chance",
@@ -941,7 +972,8 @@
           ],
           "group": "Shot Behavior",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Damage Multiplier",
@@ -955,7 +987,8 @@
           ],
           "group": "Shot Behavior",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ]
     },
@@ -968,7 +1001,8 @@
           "d": "Move the redirected shot segment beside its target",
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "FOV",
@@ -982,7 +1016,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Distance",
@@ -996,7 +1031,8 @@
           ],
           "group": "Aim",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Bone",
@@ -1010,7 +1046,8 @@
           "i": 0,
           "group": "Targeting",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Skip Friends",
@@ -1019,7 +1056,8 @@
           "on": 1,
           "group": "Targeting",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ]
     },
@@ -1143,7 +1181,8 @@
           "p": "lightning",
           "group": "Weather Lighting",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Fog",
@@ -1152,7 +1191,8 @@
           "p": "fog",
           "group": "Weather Lighting",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Ped Light",
@@ -1161,7 +1201,8 @@
           "p": "ped-light",
           "group": "World Lighting",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Traffic Signals",
@@ -1170,7 +1211,8 @@
           "p": "traffic-signals",
           "group": "Weather Lighting",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Street Light",
@@ -1179,7 +1221,8 @@
           "p": "street-light",
           "group": "World Lighting",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Scene Lights",
@@ -1188,7 +1231,8 @@
           "p": "scene-lights",
           "group": "World Lighting",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -1203,7 +1247,8 @@
           "d": "Draw story-mode peds from the replay pool",
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Enable Boxes",
@@ -1212,7 +1257,8 @@
           "on": 1,
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Box Style",
@@ -1226,7 +1272,8 @@
           "i": 0,
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Health Bars",
@@ -1235,7 +1282,8 @@
           "on": 1,
           "group": "Markers & Bars",
           "groupOrder": 4,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Basic Skeleton",
@@ -1243,7 +1291,8 @@
           "d": "Draw the nine directly stored ped bone points",
           "group": "Markers & Bars",
           "groupOrder": 4,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Distance Text",
@@ -1252,7 +1301,8 @@
           "on": 1,
           "group": "Labels",
           "groupOrder": 3,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Model Names",
@@ -1261,7 +1311,8 @@
           "on": 1,
           "group": "Labels",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Weapon Names",
@@ -1270,7 +1321,8 @@
           "on": 1,
           "group": "Labels",
           "groupOrder": 3,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Armor Bars",
@@ -1279,7 +1331,8 @@
           "on": 1,
           "group": "Markers & Bars",
           "groupOrder": 4,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Enable Snaplines",
@@ -1287,7 +1340,8 @@
           "d": "Draw lines to peds from the selected screen position",
           "group": "Snaplines",
           "groupOrder": 5,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Show Friends",
@@ -1296,7 +1350,8 @@
           "on": 1,
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Head Dot",
@@ -1304,7 +1359,8 @@
           "d": "Draw the direct-memory head position",
           "group": "Markers & Bars",
           "groupOrder": 4,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Off-screen Indicators",
@@ -1313,7 +1369,8 @@
           "on": 1,
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Vitals Text",
@@ -1321,7 +1378,8 @@
           "d": "Show health and armor percentages",
           "group": "Labels",
           "groupOrder": 3,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "ESP Distance",
@@ -1335,7 +1393,8 @@
           ],
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Color Mode",
@@ -1349,7 +1408,8 @@
           "i": 0,
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow Speed",
@@ -1363,7 +1423,8 @@
           ],
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Thickness",
@@ -1377,7 +1438,8 @@
           ],
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Snapline Origin",
@@ -1391,7 +1453,8 @@
           "i": 0,
           "group": "Snaplines",
           "groupOrder": 5,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Snapline End",
@@ -1405,7 +1468,8 @@
           "i": 0,
           "group": "Snaplines",
           "groupOrder": 5,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Snapline Thickness",
@@ -1419,7 +1483,8 @@
           ],
           "group": "Snaplines",
           "groupOrder": 5,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Enable Vehicle ESP",
@@ -1427,7 +1492,8 @@
           "d": "Draw vehicles from the replay vehicle pool",
           "group": "Vehicles",
           "groupOrder": 6,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Vehicle Health",
@@ -1436,7 +1502,8 @@
           "on": 1,
           "group": "Vehicles",
           "groupOrder": 6,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Vehicle Names",
@@ -1445,7 +1512,8 @@
           "on": 1,
           "group": "Vehicles",
           "groupOrder": 6,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Vehicle Distance",
@@ -1459,7 +1527,8 @@
           ],
           "group": "Vehicles",
           "groupOrder": 6,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Enable Object ESP",
@@ -1467,7 +1536,8 @@
           "d": "Draw nearby replay-pool objects",
           "group": "Objects",
           "groupOrder": 7,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Object Names",
@@ -1476,7 +1546,8 @@
           "on": 1,
           "group": "Objects",
           "groupOrder": 7,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Object Distance",
@@ -1490,7 +1561,8 @@
           ],
           "group": "Objects",
           "groupOrder": 7,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Box Color",
@@ -1504,7 +1576,8 @@
           "d": "Outline and top of gradient boxes",
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Gradient End",
@@ -1518,7 +1591,8 @@
           "d": "Bottom of gradient boxes",
           "group": "Boxes",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Friend Color",
@@ -1532,7 +1606,8 @@
           "d": "Marked friends",
           "group": "Ped Display",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Marker Color",
@@ -1546,7 +1621,8 @@
           "d": "Head dots, skeletons, and edge markers",
           "group": "Markers & Bars",
           "groupOrder": 4,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Snapline Color",
@@ -1560,7 +1636,8 @@
           "d": "Line color in static mode",
           "group": "Snaplines",
           "groupOrder": 5,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "flattenChildren": true
@@ -1574,7 +1651,8 @@
           "d": "Cycle the sky through animated colours",
           "group": "Rainbow Sky",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Sky Intensity",
@@ -1582,7 +1660,8 @@
           "d": "Override Legacy sky brightness",
           "group": "Sky Override",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Intensity",
@@ -1596,7 +1675,8 @@
           ],
           "group": "Sky Override",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Sky Colors",
@@ -1655,7 +1735,8 @@
           "d": "Animated sky colour speed",
           "group": "Rainbow Sky",
           "groupOrder": 3,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Sky Alpha",
@@ -1669,7 +1750,8 @@
           "d": "Animated sky colour opacity",
           "group": "Rainbow Sky",
           "groupOrder": 3,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Color Rainbow Speed",
@@ -1683,7 +1765,8 @@
           "d": "Per-field colour cycle speed",
           "group": "Field Colour Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         }
       ],
       "columns": 4,
@@ -1698,7 +1781,8 @@
           "d": "Override this visual setting",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Shadow Light Strength",
@@ -1712,7 +1796,8 @@
           "d": "Visual setting multiplier",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Reflection",
@@ -1720,7 +1805,8 @@
           "d": "Override this visual setting",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Reflection Strength",
@@ -1734,7 +1820,8 @@
           "d": "Visual setting multiplier",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Gamma",
@@ -1742,7 +1829,8 @@
           "d": "Override this visual setting",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Gamma Strength",
@@ -1756,7 +1844,8 @@
           "d": "Visual setting multiplier",
           "group": "Lighting & Reflection",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Blur",
@@ -1764,7 +1853,8 @@
           "d": "Override this visual setting",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Blur Strength",
@@ -1778,7 +1868,8 @@
           "d": "Visual setting multiplier",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Blur 2",
@@ -1786,7 +1877,8 @@
           "d": "Override this visual setting",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Blur 2 Strength",
@@ -1800,7 +1892,8 @@
           "d": "Visual setting multiplier",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Saturation",
@@ -1808,7 +1901,8 @@
           "d": "Override this visual setting",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Saturation Strength",
@@ -1822,7 +1916,8 @@
           "d": "Visual setting multiplier",
           "group": "Image Effects",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -1838,7 +1933,8 @@
           "d": "Edit this weather effect",
           "group": "Rain & Snow",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Thunder",
@@ -1847,7 +1943,8 @@
           "d": "Edit this weather effect",
           "group": "Rain & Snow",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Snow Light",
@@ -1856,7 +1953,8 @@
           "d": "Edit this weather effect",
           "group": "Rain & Snow",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Snow Heavy",
@@ -1865,7 +1963,8 @@
           "d": "Edit this weather effect",
           "group": "Rain & Snow",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Blizzard",
@@ -1874,7 +1973,8 @@
           "d": "Edit this weather effect",
           "group": "Rain & Snow",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Underwater",
@@ -1883,7 +1983,8 @@
           "d": "Edit this weather effect",
           "group": "Ambient Effects",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Lake Fog",
@@ -1892,7 +1993,8 @@
           "d": "Edit this weather effect",
           "group": "Ambient Effects",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Woodland Pollen",
@@ -1901,7 +2003,8 @@
           "d": "Edit this weather effect",
           "group": "Ambient Effects",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Woodland Firefly",
@@ -1910,7 +2013,8 @@
           "d": "Edit this weather effect",
           "group": "Ambient Effects",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Wetland Flies",
@@ -1919,7 +2023,8 @@
           "d": "Edit this weather effect",
           "group": "Ambient Effects",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -1934,7 +2039,8 @@
           "d": "Override gameplay and current weapon camera FOV",
           "group": "FOV Editor",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Field of View",
@@ -1948,7 +2054,8 @@
           ],
           "group": "FOV Editor",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         }
       ]
     },
@@ -2298,7 +2405,8 @@
           "d": "Apply this sky override",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth East Mode",
@@ -2312,7 +2420,8 @@
           "d": "Static or animated colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth East Color",
@@ -2326,7 +2435,8 @@
           "d": "Sky field colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth East Intensity",
@@ -2340,7 +2450,8 @@
           "d": "Override strength",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Override Azimuth West",
@@ -2348,7 +2459,8 @@
           "d": "Apply this sky override",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth West Mode",
@@ -2362,7 +2474,8 @@
           "d": "Static or animated colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth West Color",
@@ -2376,7 +2489,8 @@
           "d": "Sky field colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth West Intensity",
@@ -2390,7 +2504,8 @@
           "d": "Override strength",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Override Azimuth Transition",
@@ -2398,7 +2513,8 @@
           "d": "Apply this sky override",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth Transition Mode",
@@ -2412,7 +2528,8 @@
           "d": "Static or animated colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 10
+          "groupItemOrder": 10,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth Transition Color",
@@ -2426,7 +2543,8 @@
           "d": "Sky field colour",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 11
+          "groupItemOrder": 11,
+          "groupSide": "left"
         },
         {
           "n": "Azimuth Transition Intensity",
@@ -2440,7 +2558,8 @@
           "d": "Override strength",
           "group": "Sky Colors Colours",
           "groupOrder": 1,
-          "groupItemOrder": 12
+          "groupItemOrder": 12,
+          "groupSide": "left"
         },
         {
           "n": "Override Zenith",
@@ -2448,7 +2567,8 @@
           "d": "Apply this sky override",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Mode",
@@ -2462,7 +2582,8 @@
           "d": "Static or animated colour",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Color",
@@ -2476,7 +2597,8 @@
           "d": "Sky field colour",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Intensity",
@@ -2490,7 +2612,8 @@
           "d": "Override strength",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Override Zenith Transition",
@@ -2498,7 +2621,8 @@
           "d": "Apply this sky override",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Transition Mode",
@@ -2512,7 +2636,8 @@
           "d": "Static or animated colour",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Transition Color",
@@ -2526,7 +2651,8 @@
           "d": "Sky field colour",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Zenith Transition Intensity",
@@ -2540,7 +2666,8 @@
           "d": "Override strength",
           "group": "Sky Colors Properties",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -2554,7 +2681,8 @@
           "d": "Apply this sky override",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Sun Mode",
@@ -2568,7 +2696,8 @@
           "d": "Static or animated colour",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Sun Color",
@@ -2582,7 +2711,8 @@
           "d": "Sky field colour",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Override Sun Disc",
@@ -2590,7 +2720,8 @@
           "d": "Apply this sky override",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Sun Disc Mode",
@@ -2604,7 +2735,8 @@
           "d": "Static or animated colour",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Sun Disc Color",
@@ -2618,7 +2750,8 @@
           "d": "Sky field colour",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Override Sun Disc Size",
@@ -2626,7 +2759,8 @@
           "d": "Apply this sky override",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Sun Disc Size Value",
@@ -2640,7 +2774,8 @@
           "d": "Override strength",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Override Sun HDR",
@@ -2648,7 +2783,8 @@
           "d": "Apply this sky override",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "left"
         },
         {
           "n": "Sun HDR Value",
@@ -2662,7 +2798,8 @@
           "d": "Override strength",
           "group": "Sun Colours",
           "groupOrder": 1,
-          "groupItemOrder": 10
+          "groupItemOrder": 10,
+          "groupSide": "left"
         },
         {
           "n": "Override Sun Mie Intensity",
@@ -2670,7 +2807,8 @@
           "d": "Apply this sky override",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Sun Mie Intensity Value",
@@ -2684,7 +2822,8 @@
           "d": "Override strength",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Override Sun Scatter Intensity",
@@ -2692,7 +2831,8 @@
           "d": "Apply this sky override",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Sun Scatter Intensity Value",
@@ -2706,7 +2846,8 @@
           "d": "Override strength",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Override Sun Influence Radius",
@@ -2714,7 +2855,8 @@
           "d": "Apply this sky override",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Sun Influence Radius Value",
@@ -2728,7 +2870,8 @@
           "d": "Override strength",
           "group": "Sun Properties",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -2742,7 +2885,8 @@
           "d": "Apply this sky override",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Moon Mode",
@@ -2756,7 +2900,8 @@
           "d": "Static or animated colour",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Moon Color",
@@ -2770,7 +2915,8 @@
           "d": "Sky field colour",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Override Moon Intensity",
@@ -2778,7 +2924,8 @@
           "d": "Apply this sky override",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Moon Intensity Value",
@@ -2792,7 +2939,8 @@
           "d": "Override strength",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Override Moon Disc Size",
@@ -2800,7 +2948,8 @@
           "d": "Apply this sky override",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Moon Disc Size Value",
@@ -2814,7 +2963,8 @@
           "d": "Override strength",
           "group": "Moon Colours",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Override Moon Influence Radius",
@@ -2822,7 +2972,8 @@
           "d": "Apply this sky override",
           "group": "Moon Properties",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Moon Influence Radius Value",
@@ -2836,7 +2987,8 @@
           "d": "Override strength",
           "group": "Moon Properties",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Override Moon Scatter Intensity",
@@ -2844,7 +2996,8 @@
           "d": "Apply this sky override",
           "group": "Moon Properties",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Moon Scatter Intensity Value",
@@ -2858,7 +3011,8 @@
           "d": "Override strength",
           "group": "Moon Properties",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -2872,7 +3026,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Cloud Base Mode",
@@ -2886,7 +3041,8 @@
           "d": "Static or animated colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Cloud Base Color",
@@ -2900,7 +3056,8 @@
           "d": "Sky field colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Override Cloud Mid",
@@ -2908,7 +3065,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Cloud Mid Mode",
@@ -2922,7 +3080,8 @@
           "d": "Static or animated colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Cloud Mid Color",
@@ -2936,7 +3095,8 @@
           "d": "Sky field colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Override Small Cloud",
@@ -2944,7 +3104,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Small Cloud Mode",
@@ -2958,7 +3119,8 @@
           "d": "Static or animated colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Small Cloud Color",
@@ -2972,7 +3134,8 @@
           "d": "Sky field colour",
           "group": "Clouds Colours",
           "groupOrder": 1,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "left"
         },
         {
           "n": "Override Cloud HDR",
@@ -2980,7 +3143,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Cloud HDR Value",
@@ -2994,7 +3158,8 @@
           "d": "Override strength",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Override Cloud Density Mult",
@@ -3002,7 +3167,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Cloud Density Mult Value",
@@ -3016,7 +3182,8 @@
           "d": "Override strength",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Override Cloud Overall Strength",
@@ -3024,7 +3191,8 @@
           "d": "Apply this sky override",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Cloud Overall Strength Value",
@@ -3038,7 +3206,8 @@
           "d": "Override strength",
           "group": "Clouds Properties",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -3052,7 +3221,8 @@
           "d": "Apply this sky override",
           "group": "Atmosphere Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Atmosphere HDR Value",
@@ -3066,7 +3236,8 @@
           "d": "Override strength",
           "group": "Atmosphere Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Override Plane Intensity",
@@ -3074,7 +3245,8 @@
           "d": "Apply this sky override",
           "group": "Atmosphere Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Plane Intensity Value",
@@ -3088,7 +3260,8 @@
           "d": "Override strength",
           "group": "Atmosphere Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Override Stars Intensity",
@@ -3096,7 +3269,8 @@
           "d": "Apply this sky override",
           "group": "Atmosphere Properties",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Stars Intensity Value",
@@ -3110,7 +3284,8 @@
           "d": "Override strength",
           "group": "Atmosphere Properties",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -3124,7 +3299,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -3138,7 +3314,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -3152,7 +3329,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -3166,7 +3344,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -3180,7 +3359,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -3194,7 +3374,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -3208,7 +3389,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -3222,7 +3404,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -3236,7 +3419,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -3250,7 +3434,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -3264,7 +3449,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -3278,7 +3464,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -3292,7 +3479,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -3306,7 +3494,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -3320,7 +3509,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -3334,7 +3524,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -3342,7 +3533,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -3356,7 +3548,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -3370,7 +3563,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -3384,7 +3578,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -3398,7 +3593,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -3412,7 +3608,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -3426,7 +3623,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -3440,7 +3638,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -3454,7 +3653,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -3468,7 +3668,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -3482,7 +3683,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -3496,7 +3698,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -3510,7 +3713,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -3524,7 +3728,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -3538,7 +3743,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -3552,7 +3758,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -3566,7 +3773,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -3574,7 +3782,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -3588,7 +3797,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -3602,7 +3812,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -3616,7 +3827,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -3630,7 +3842,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -3644,7 +3857,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -3658,7 +3872,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -3672,7 +3887,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -3686,7 +3902,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -3700,7 +3917,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -3714,7 +3932,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -3728,7 +3947,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -3742,7 +3962,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -3756,7 +3977,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -3770,7 +3992,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -3784,7 +4007,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -3798,7 +4022,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -3806,7 +4031,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -3820,7 +4046,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -3834,7 +4061,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -3848,7 +4076,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -3862,7 +4091,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -3876,7 +4106,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -3890,7 +4121,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -3904,7 +4136,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -3918,7 +4151,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -3932,7 +4166,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -3946,7 +4181,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -3960,7 +4196,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -3974,7 +4211,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -3988,7 +4226,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -4002,7 +4241,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -4016,7 +4256,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -4030,7 +4271,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -4038,7 +4280,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -4052,7 +4295,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -4066,7 +4310,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -4080,7 +4325,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -4094,7 +4340,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -4108,7 +4355,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -4122,7 +4370,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -4136,7 +4385,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -4150,7 +4400,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -4164,7 +4415,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -4178,7 +4430,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -4192,7 +4445,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -4206,7 +4460,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -4220,7 +4475,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -4234,7 +4490,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -4248,7 +4505,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -4262,7 +4520,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -4270,7 +4529,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -4284,7 +4544,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -4298,7 +4559,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -4312,7 +4574,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -4326,7 +4589,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -4340,7 +4604,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -4354,7 +4619,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -4368,7 +4634,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -4382,7 +4649,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -4396,7 +4664,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -4410,7 +4679,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -4424,7 +4694,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -4438,7 +4709,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -4452,7 +4724,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -4466,7 +4739,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -4480,7 +4754,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -4494,7 +4769,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -4502,7 +4778,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -4516,7 +4793,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -4530,7 +4808,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -4544,7 +4823,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -4558,7 +4838,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -4572,7 +4853,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -4586,7 +4868,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -4600,7 +4883,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -4614,7 +4898,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -4628,7 +4913,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -4642,7 +4928,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -4656,7 +4943,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -4670,7 +4958,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -4684,7 +4973,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -4698,7 +4988,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -4712,7 +5003,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -4726,7 +5018,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -4734,7 +5027,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -4748,7 +5042,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -4762,7 +5057,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -4776,7 +5072,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -4790,7 +5087,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -4804,7 +5102,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -4818,7 +5117,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -4832,7 +5132,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -4846,7 +5147,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -4860,7 +5162,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -4874,7 +5177,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -4888,7 +5192,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -4902,7 +5207,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -4916,7 +5222,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -4930,7 +5237,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -4944,7 +5252,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -4958,7 +5267,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -4966,7 +5276,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -4980,7 +5291,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -4994,7 +5306,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -5008,7 +5321,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -5022,7 +5336,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -5036,7 +5351,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -5050,7 +5366,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -5064,7 +5381,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -5078,7 +5396,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -5092,7 +5411,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -5106,7 +5426,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -5120,7 +5441,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -5134,7 +5456,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -5148,7 +5471,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -5162,7 +5486,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -5176,7 +5501,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -5190,7 +5516,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -5198,7 +5525,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -5212,7 +5540,8 @@
           "d": "Apply this weather override",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Velocity",
@@ -5226,7 +5555,8 @@
           "d": "Particle fall velocity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Gravity",
@@ -5240,7 +5570,8 @@
           "d": "Particle gravity",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Box Size X",
@@ -5254,7 +5585,8 @@
           "d": "Particle spawn width",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Y",
@@ -5268,7 +5600,8 @@
           "d": "Particle spawn depth",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Box Size Z",
@@ -5282,7 +5615,8 @@
           "d": "Particle spawn height",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Life Min",
@@ -5296,7 +5630,8 @@
           "d": "Minimum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Life Max",
@@ -5310,7 +5645,8 @@
           "d": "Maximum particle lifetime",
           "group": "Particle Motion",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         },
         {
           "n": "Size Min",
@@ -5324,7 +5660,8 @@
           "d": "Minimum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Size Max",
@@ -5338,7 +5675,8 @@
           "d": "Maximum particle size",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Edge Softness",
@@ -5352,7 +5690,8 @@
           "d": "Particle edge softness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Local Lights",
@@ -5366,7 +5705,8 @@
           "d": "Particle light multiplier",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Particle Color %",
@@ -5380,7 +5720,8 @@
           "d": "Particle colour blend",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Luminance",
@@ -5394,7 +5735,8 @@
           "d": "Particle colour brightness",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -5408,7 +5750,8 @@
           "d": "Colour cycle speed",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "groupSide": "right"
         },
         {
           "n": "Color",
@@ -5422,7 +5765,8 @@
           "d": "Weather particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -5430,7 +5774,8 @@
           "d": "Cycle the particle colour",
           "group": "Particle Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -5444,7 +5789,8 @@
           "d": "Override lightning colour and frequency",
           "group": "Strike Control",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Force Lightning",
@@ -5452,7 +5798,8 @@
           "d": "Trigger a lightning strike while enabled",
           "group": "Strike Control",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Strike Frequency",
@@ -5466,7 +5813,8 @@
           "d": "Per-frame strike chance threshold",
           "group": "Strike Control",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Main Color",
@@ -5480,7 +5828,8 @@
           "d": "Lightning tint",
           "group": "Lightning Colours",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Corona Color",
@@ -5494,7 +5843,8 @@
           "d": "Lightning tint",
           "group": "Lightning Colours",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -5502,7 +5852,8 @@
           "d": "Cycle lightning colours",
           "group": "Lightning Colours",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -5516,7 +5867,8 @@
           "d": "Colour cycle speed",
           "group": "Lightning Colours",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -5530,7 +5882,8 @@
           "d": "Apply the colour override",
           "group": "Fog Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -5544,7 +5897,8 @@
           "d": "Global light or fog colour",
           "group": "Fog Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -5552,7 +5906,8 @@
           "d": "Cycle the colour continuously",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -5566,7 +5921,8 @@
           "d": "Colour cycle speed",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -5580,7 +5936,8 @@
           "d": "Apply the colour override",
           "group": "Ped Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -5594,7 +5951,8 @@
           "d": "Global light or fog colour",
           "group": "Ped Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -5602,7 +5960,8 @@
           "d": "Cycle the colour continuously",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -5616,7 +5975,8 @@
           "d": "Colour cycle speed",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -5630,7 +5990,8 @@
           "d": "Override this world light path",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Mode",
@@ -5644,7 +6005,8 @@
           "d": "Rainbow, static rainbow or custom colour",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Hue",
@@ -5658,7 +6020,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Saturation",
@@ -5672,7 +6035,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Intensity",
@@ -5686,7 +6050,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Frequency",
@@ -5700,7 +6065,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Update Delay",
@@ -5714,7 +6080,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Update Value",
@@ -5728,7 +6095,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Min Value",
@@ -5742,7 +6110,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Max Value",
@@ -5756,7 +6125,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Custom Color",
@@ -5770,7 +6140,8 @@
           "d": "Static light colour",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         }
       ],
       "columns": 4
@@ -5784,7 +6155,8 @@
           "d": "Override this world light path",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Mode",
@@ -5798,7 +6170,8 @@
           "d": "Rainbow, static rainbow or custom colour",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Hue",
@@ -5812,7 +6185,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Saturation",
@@ -5826,7 +6200,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Intensity",
@@ -5840,7 +6215,8 @@
           "d": "Legacy light colour parameter",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Frequency",
@@ -5854,7 +6230,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Update Delay",
@@ -5868,7 +6245,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Update Value",
@@ -5882,7 +6260,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Min Value",
@@ -5896,7 +6275,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Max Value",
@@ -5910,7 +6290,8 @@
           "d": "Legacy light colour parameter",
           "group": "Rainbow Motion",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         },
         {
           "n": "Custom Color",
@@ -5924,7 +6305,8 @@
           "d": "Static light colour",
           "group": "Light Colour",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         }
       ],
       "columns": 4
@@ -5938,7 +6320,8 @@
           "d": "Override the ocean surface height",
           "group": "Ocean",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Height",
@@ -5952,7 +6335,8 @@
           "d": "Ocean surface height",
           "group": "Ocean",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Transparent Ocean",
@@ -5960,7 +6344,8 @@
           "d": "See through the ocean surface",
           "group": "Ocean",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Puddles",
@@ -5968,7 +6353,8 @@
           "d": "Override water wetness on the map",
           "group": "Wetness",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Puddle Amount",
@@ -5982,7 +6368,8 @@
           "d": "Water wetness multiplier",
           "group": "Wetness",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Water Color",
@@ -6006,7 +6393,8 @@
           "d": "Override water shader colours",
           "group": "Directional Water",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Override Directional",
@@ -6015,7 +6403,8 @@
           "on": 1,
           "group": "Directional Water",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Directional Color",
@@ -6029,7 +6418,8 @@
           "d": "Water shader colour",
           "group": "Directional Water",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Directional Intensity",
@@ -6043,7 +6433,8 @@
           "d": "Water light multiplier",
           "group": "Directional Water",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Override Ambient",
@@ -6052,7 +6443,8 @@
           "on": 1,
           "group": "Ambient Water",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Ambient Color",
@@ -6066,7 +6458,8 @@
           "d": "Water shader colour",
           "group": "Ambient Water",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Ambient Intensity",
@@ -6080,7 +6473,8 @@
           "d": "Water light multiplier",
           "group": "Ambient Water",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -6094,7 +6488,8 @@
           "d": "Override petrol liquid effects",
           "group": "Petrol Duration",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Foot Duration",
@@ -6108,7 +6503,8 @@
           "d": "Petrol effect timing",
           "group": "Petrol Duration",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Wheel Duration",
@@ -6122,7 +6518,8 @@
           "d": "Petrol effect timing",
           "group": "Petrol Duration",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Foot Lifetime",
@@ -6136,7 +6533,8 @@
           "d": "Petrol effect timing",
           "group": "Petrol Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Wheel Lifetime",
@@ -6150,7 +6548,8 @@
           "d": "Petrol effect timing",
           "group": "Petrol Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Petrol Color",
@@ -6164,7 +6563,8 @@
           "d": "Petrol effect colour",
           "group": "Petrol Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -6172,7 +6572,8 @@
           "d": "Cycle petrol colour",
           "group": "Petrol Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -6186,7 +6587,8 @@
           "d": "Colour cycle speed",
           "group": "Petrol Appearance",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -6201,7 +6603,8 @@
           "d": "Recolour matching particle effects",
           "group": "Particle Tint",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -6215,7 +6618,8 @@
           "d": "Particle tint",
           "group": "Particle Tint",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -6223,7 +6627,8 @@
           "d": "Cycle the tint colour",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -6237,7 +6642,8 @@
           "d": "Colour cycle speed",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -6252,7 +6658,8 @@
           "d": "Recolour matching particle effects",
           "group": "Fire Tint",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -6266,7 +6673,8 @@
           "d": "Particle tint",
           "group": "Fire Tint",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -6274,7 +6682,8 @@
           "d": "Cycle the tint colour",
           "group": "Fire Tint",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow Speed",
@@ -6288,7 +6697,8 @@
           "d": "Colour cycle speed",
           "group": "Fire Tint",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Petrol Tank Fires",
@@ -6297,7 +6707,8 @@
           "on": 1,
           "group": "Fire Types",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Vehicle Wreck Fires",
@@ -6306,7 +6717,8 @@
           "on": 1,
           "group": "Fire Types",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Peds On Fire",
@@ -6315,7 +6727,8 @@
           "on": 1,
           "group": "Fire Types",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Environmental Fires",
@@ -6324,7 +6737,8 @@
           "on": 1,
           "group": "Fire Types",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -6364,7 +6778,8 @@
           "d": "Recolour this decal type",
           "group": "Footprint Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -6378,7 +6793,8 @@
           "d": "Decal colour",
           "group": "Footprint Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -6386,7 +6802,8 @@
           "d": "Cycle the decal colour",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -6400,7 +6817,8 @@
           "d": "Colour cycle speed",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -6414,7 +6832,8 @@
           "d": "Recolour this decal type",
           "group": "Impact Colour",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Color",
@@ -6428,7 +6847,8 @@
           "d": "Decal colour",
           "group": "Impact Colour",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow",
@@ -6436,7 +6856,8 @@
           "d": "Cycle the decal colour",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -6450,7 +6871,8 @@
           "d": "Colour cycle speed",
           "group": "Animation",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -6465,7 +6887,8 @@
           "d": "Global neon renderer settings",
           "group": "Neon Lighting",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Vehicle Lights",
@@ -6474,7 +6897,8 @@
           "d": "Interior, plate, dash and door colours",
           "group": "Vehicle Lights",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         }
       ],
       "columns": 4,
@@ -6489,7 +6913,8 @@
           "d": "Override global neon light settings",
           "group": "Neon Glow",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Intensity",
@@ -6503,7 +6928,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Glow",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Radius",
@@ -6517,7 +6943,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Glow",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Falloff Exponent",
@@ -6531,7 +6958,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Glow",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Capsule Sides",
@@ -6545,7 +6973,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Shape",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Capsule Front/Back",
@@ -6559,7 +6988,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Shape",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Clip Plane Height",
@@ -6573,7 +7003,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Shape",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Bike Clip Height",
@@ -6587,7 +7018,8 @@
           "d": "Legacy neon light parameter",
           "group": "Neon Shape",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -6601,7 +7033,8 @@
           "d": "Override vehicle light colours",
           "group": "Cabin & Plate",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Interior Light",
@@ -6615,7 +7048,8 @@
           "d": "Vehicle light colour",
           "group": "Cabin & Plate",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Plate Light",
@@ -6629,7 +7063,8 @@
           "d": "Vehicle light colour",
           "group": "Cabin & Plate",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Dash Light",
@@ -6643,7 +7078,8 @@
           "d": "Vehicle light colour",
           "group": "Dash & Door",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Door Light",
@@ -6657,7 +7093,8 @@
           "d": "Vehicle light colour",
           "group": "Dash & Door",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -6665,7 +7102,8 @@
           "d": "Cycle vehicle light colours",
           "group": "Dash & Door",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow Speed",
@@ -6679,7 +7117,8 @@
           "d": "Colour cycle speed",
           "group": "Dash & Door",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         }
       ],
       "columns": 4
@@ -6693,7 +7132,8 @@
           "d": "Override traffic signals",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "left"
         },
         {
           "n": "Red",
@@ -6707,7 +7147,8 @@
           "d": "Traffic signal colour",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "left"
         },
         {
           "n": "Amber",
@@ -6721,7 +7162,8 @@
           "d": "Traffic signal colour",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "left"
         },
         {
           "n": "Green",
@@ -6735,7 +7177,8 @@
           "d": "Traffic signal colour",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "left"
         },
         {
           "n": "Walk",
@@ -6749,7 +7192,8 @@
           "d": "Traffic signal colour",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "groupSide": "left"
         },
         {
           "n": "Don't Walk",
@@ -6763,7 +7207,8 @@
           "d": "Traffic signal colour",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "groupSide": "left"
         },
         {
           "n": "Far Fade Start",
@@ -6777,7 +7222,8 @@
           "d": "Traffic signal fade distance",
           "group": "Fade Distances",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "groupSide": "right"
         },
         {
           "n": "Far Fade End",
@@ -6791,7 +7237,8 @@
           "d": "Traffic signal fade distance",
           "group": "Fade Distances",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "groupSide": "right"
         },
         {
           "n": "Near Fade Start",
@@ -6805,7 +7252,8 @@
           "d": "Traffic signal fade distance",
           "group": "Fade Distances",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "groupSide": "right"
         },
         {
           "n": "Near Fade End",
@@ -6819,7 +7267,8 @@
           "d": "Traffic signal fade distance",
           "group": "Fade Distances",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "groupSide": "right"
         },
         {
           "n": "Rainbow",
@@ -6827,7 +7276,8 @@
           "d": "Cycle traffic light colours",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "groupSide": "left"
         },
         {
           "n": "Rainbow Speed",
@@ -6841,7 +7291,8 @@
           "d": "Colour cycle speed",
           "group": "Signal Colours",
           "groupOrder": 1,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "groupSide": "left"
         }
       ],
       "columns": 4
