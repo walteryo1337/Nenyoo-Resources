@@ -1,0 +1,124 @@
+{
+  "items": [
+    {
+      "code": "en",
+      "name": "LANG_EN.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_EN.json"
+    },
+    {
+      "code": "ar",
+      "name": "LANG_AR.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_AR.json"
+    },
+    {
+      "code": "br",
+      "name": "LANG_BR.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_BR.json"
+    },
+    {
+      "code": "cn",
+      "name": "LANG_CN.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_CN.json"
+    },
+    {
+      "code": "tw",
+      "name": "LANG_TW.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TW.json"
+    },
+    {
+      "code": "cs",
+      "name": "LANG_CS.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_CS.json"
+    },
+    {
+      "code": "de",
+      "name": "LANG_DE.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_DE.json"
+    },
+    {
+      "code": "es",
+      "name": "LANG_ES.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_ES.json"
+    },
+    {
+      "code": "fr",
+      "name": "LANG_FR.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_FR.json"
+    },
+    {
+      "code": "hi",
+      "name": "LANG_HI.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_HI.json"
+    },
+    {
+      "code": "id",
+      "name": "LANG_ID.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_ID.json"
+    },
+    {
+      "code": "it",
+      "name": "LANG_IT.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_IT.json"
+    },
+    {
+      "code": "jp",
+      "name": "LANG_JP.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_JP.json"
+    },
+    {
+      "code": "kr",
+      "name": "LANG_KR.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_KR.json"
+    },
+    {
+      "code": "nl",
+      "name": "LANG_NL.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_NL.json"
+    },
+    {
+      "code": "pl",
+      "name": "LANG_PL.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_PL.json"
+    },
+    {
+      "code": "pt",
+      "name": "LANG_PT.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_PT.json"
+    },
+    {
+      "code": "ro",
+      "name": "LANG_RO.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_RO.json"
+    },
+    {
+      "code": "ru",
+      "name": "LANG_RU.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_RU.json"
+    },
+    {
+      "code": "sv",
+      "name": "LANG_SV.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_SV.json"
+    },
+    {
+      "code": "th",
+      "name": "LANG_TH.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TH.json"
+    },
+    {
+      "code": "tr",
+      "name": "LANG_TR.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TR.json"
+    },
+    {
+      "code": "uk",
+      "name": "LANG_UK.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_UK.json"
+    },
+    {
+      "code": "vi",
+      "name": "LANG_VI.json",
+      "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_VI.json"
+    }
+  ]
+}
