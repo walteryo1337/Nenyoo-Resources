@@ -1,5 +1,5 @@
 {
-  "version": "preview-b317973df383360c",
+  "version": "preview-b9f901181a958484",
   "games": {
     "gtav": {
       "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/gtav-menu.json",
@@ -234,7 +234,123 @@
       ]
     },
     "fivem": {
-      "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/fivem-menu.json"
+      "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/fivem-menu.json",
+      "assets": [
+        {
+          "name": "Inter-Regular.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Fonts/Inter-Regular.ttf"
+        },
+        {
+          "name": "Inter-Medium.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Fonts/Inter-Medium.ttf"
+        },
+        {
+          "name": "Inter-SemiBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Fonts/Inter-SemiBold.ttf"
+        },
+        {
+          "name": "Inter-Bold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Fonts/Inter-Bold.ttf"
+        }
+      ],
+      "languages": [
+        {
+          "hash": "LANG_EN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_EN.json"
+        },
+        {
+          "hash": "LANG_AR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_AR.json"
+        },
+        {
+          "hash": "LANG_BR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_BR.json"
+        },
+        {
+          "hash": "LANG_CN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_CN.json"
+        },
+        {
+          "hash": "LANG_TW",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TW.json"
+        },
+        {
+          "hash": "LANG_CS",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_CS.json"
+        },
+        {
+          "hash": "LANG_DE",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_DE.json"
+        },
+        {
+          "hash": "LANG_ES",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_ES.json"
+        },
+        {
+          "hash": "LANG_FR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_FR.json"
+        },
+        {
+          "hash": "LANG_HI",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_HI.json"
+        },
+        {
+          "hash": "LANG_ID",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_ID.json"
+        },
+        {
+          "hash": "LANG_IT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_IT.json"
+        },
+        {
+          "hash": "LANG_JP",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_JP.json"
+        },
+        {
+          "hash": "LANG_KR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_KR.json"
+        },
+        {
+          "hash": "LANG_NL",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_NL.json"
+        },
+        {
+          "hash": "LANG_PL",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_PL.json"
+        },
+        {
+          "hash": "LANG_PT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_PT.json"
+        },
+        {
+          "hash": "LANG_RO",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_RO.json"
+        },
+        {
+          "hash": "LANG_RU",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_RU.json"
+        },
+        {
+          "hash": "LANG_SV",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_SV.json"
+        },
+        {
+          "hash": "LANG_TH",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TH.json"
+        },
+        {
+          "hash": "LANG_TR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_TR.json"
+        },
+        {
+          "hash": "LANG_UK",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_UK.json"
+        },
+        {
+          "hash": "LANG_VI",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/FiveM/Translations/LANG_VI.json"
+        }
+      ]
     },
     "rdr2": {
       "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/rdr2-menu.json",
@@ -498,7 +614,7 @@
   "sha256": {
     "Site/Previews/gtav-menu.json": "f8572e29501be783fc2d6b121feccb7e0fc850f1a6165acaec636f0a68667693",
     "Site/Previews/gtav-catalogs.json": "f1ca65198edf5d5155ff9d12bcf0fb2b1ae435ae84c01237586273b4a734aad8",
-    "Site/Previews/fivem-menu.json": "33f3bce578678152350b3e6c83fb8418d04ea11c840df37948d5e35f46d0a43e",
+    "Site/Previews/fivem-menu.json": "7a89769eb970c9f8b1efab1e62a79b65c38dead3f5fd07aeabb1b9779436b32d",
     "Site/Previews/rdr2-menu.json": "496f19fdf2d0a4b55b496d2bef0ae61e639c0b4ae6e728dd3ff617086a74e329",
     "Site/Fonts/inter-regular.woff": "e89e9b8de5a9c1641b472d0b4c496c48c88b65d46a36ab172832cbc69c33853b",
     "Site/Fonts/inter-semibold.woff": "24c6dd8201996a60c36121cc9f0e2994e6010f1f848e5b0fe8fe671843ffc49e",

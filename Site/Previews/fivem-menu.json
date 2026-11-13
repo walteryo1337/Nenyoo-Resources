@@ -2,9 +2,9 @@
   "game": "fivem",
   "name": "Nenyoo FiveM",
   "root": "home",
-  "version": "Source catalog 5d93b4391ef1",
+  "version": "Source catalog 35442179f321",
   "layout": "tabs",
-  "accent": "#BA86FF",
+  "accent": "#A88BFF",
   "nativeSize": [
     1000,
     680
@@ -16,6 +16,7 @@
     "FiveM/src/core/draw.hpp",
     "FiveM/src/core/settings_store.hpp",
     "FiveM/src/streamer/streamer_mode.hpp",
+    "FiveM/src/i18n/i18n.hpp",
     "FiveM/src/features/story_features.hpp",
     "FiveM/src/features/misc_fov.hpp",
     "FiveM/src/features/visual_vfx.hpp",
@@ -29,7 +30,381 @@
     "FiveM/src/features/world_light_vfx.hpp",
     "FiveM/src/features/sky_vfx.cpp"
   ],
-  "sourceFingerprint": "5d93b4391ef14fc0726da4c296a4fa53d8ee25519d2ad6dc74347b18d6b16968",
+  "sourceFingerprint": "35442179f321ec5c0b5f417a74023a051ef7738fc347151eddbde2e18a827a9b",
+  "ui": {
+    "revision": "halo_1",
+    "themeVersion": 9,
+    "startup": "welcome",
+    "headerHeight": 100,
+    "sidebarWidth": 216,
+    "compactSidebarWidth": 68,
+    "cornerRadius": 10,
+    "cardHeaderHeight": 36,
+    "cardPadding": 14,
+    "cardBottomPadding": 10,
+    "palette": {
+      "bg": [
+        17,
+        17,
+        22,
+        250
+      ],
+      "panel": [
+        23,
+        23,
+        30,
+        255
+      ],
+      "card": [
+        23,
+        23,
+        30,
+        255
+      ],
+      "input": [
+        14,
+        14,
+        19,
+        255
+      ],
+      "side": [
+        34,
+        33,
+        44,
+        255
+      ],
+      "border": [
+        255,
+        255,
+        255,
+        16
+      ],
+      "text": [
+        233,
+        232,
+        240,
+        255
+      ],
+      "dim": [
+        138,
+        136,
+        152,
+        255
+      ],
+      "faint": [
+        104,
+        102,
+        118,
+        255
+      ],
+      "accent": [
+        168,
+        139,
+        255,
+        255
+      ],
+      "accentHi": [
+        194,
+        176,
+        255,
+        255
+      ],
+      "accentLo": [
+        124,
+        95,
+        235,
+        255
+      ],
+      "green": [
+        168,
+        139,
+        255,
+        255
+      ],
+      "logoNen": [
+        168,
+        139,
+        255,
+        255
+      ],
+      "logoYoo": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "sidebar": [
+        12,
+        12,
+        17,
+        250
+      ],
+      "header": [
+        17,
+        17,
+        22,
+        250
+      ],
+      "groupHeader": [
+        23,
+        23,
+        30,
+        255
+      ]
+    },
+    "languages": [
+      {
+        "code": "en",
+        "n": "English"
+      },
+      {
+        "code": "ar",
+        "n": "Arabic"
+      },
+      {
+        "code": "br",
+        "n": "Portuguese (Brazil)"
+      },
+      {
+        "code": "cn",
+        "n": "Chinese"
+      },
+      {
+        "code": "tw",
+        "n": "Chinese (Traditional)"
+      },
+      {
+        "code": "cs",
+        "n": "Czech"
+      },
+      {
+        "code": "de",
+        "n": "German"
+      },
+      {
+        "code": "es",
+        "n": "Spanish"
+      },
+      {
+        "code": "fr",
+        "n": "French"
+      },
+      {
+        "code": "hi",
+        "n": "Hindi"
+      },
+      {
+        "code": "id",
+        "n": "Indonesian"
+      },
+      {
+        "code": "it",
+        "n": "Italian"
+      },
+      {
+        "code": "jp",
+        "n": "Japanese"
+      },
+      {
+        "code": "kr",
+        "n": "Korean"
+      },
+      {
+        "code": "nl",
+        "n": "Dutch"
+      },
+      {
+        "code": "pl",
+        "n": "Polish"
+      },
+      {
+        "code": "pt",
+        "n": "Portuguese"
+      },
+      {
+        "code": "ro",
+        "n": "Romanian"
+      },
+      {
+        "code": "ru",
+        "n": "Russian"
+      },
+      {
+        "code": "sv",
+        "n": "Swedish"
+      },
+      {
+        "code": "th",
+        "n": "Thai"
+      },
+      {
+        "code": "tr",
+        "n": "Turkish"
+      },
+      {
+        "code": "uk",
+        "n": "Ukrainian"
+      },
+      {
+        "code": "vi",
+        "n": "Vietnamese"
+      }
+    ],
+    "sidebarSections": [
+      {
+        "n": "Combat",
+        "ids": [
+          "combat"
+        ]
+      },
+      {
+        "n": "Visuals",
+        "ids": [
+          "visuals",
+          "vfx"
+        ]
+      },
+      {
+        "n": "FiveM",
+        "ids": [
+          "lua-executor",
+          "events"
+        ]
+      },
+      {
+        "n": "Misc",
+        "ids": [
+          "misc",
+          "settings"
+        ]
+      }
+    ],
+    "executor": {
+      "script": "print('Hello from Nenyoo')",
+      "resourceName": "res_4f2a9c",
+      "output": [
+        "[Lua] Preview sample: the executor is not attached to FiveM"
+      ],
+      "panels": [
+        "Script",
+        "Output",
+        "Run",
+        "Resource",
+        "Clean Up"
+      ]
+    },
+    "events": {
+      "live": [
+        {
+          "name": "esx:playerLoaded",
+          "resource": "es_extended",
+          "args": "{ 1, { job = 'police' } }",
+          "kind": 0,
+          "ageMs": 2100
+        },
+        {
+          "name": "chat:addMessage",
+          "resource": "chat",
+          "args": "{ color = { 255, 0, 0 } }",
+          "kind": 0,
+          "ageMs": 5400
+        },
+        {
+          "name": "esx_billing:payBill",
+          "resource": "esx_billing",
+          "args": "{ 42 }",
+          "kind": 1,
+          "ageMs": 9800
+        },
+        {
+          "name": "vehicleshop:buyVehicle",
+          "resource": "vehicleshop",
+          "args": "{ 'adder', 1000000 }",
+          "kind": 1,
+          "ageMs": 16500
+        },
+        {
+          "name": "baseevents:onPlayerDied",
+          "resource": "baseevents",
+          "args": "{ 0, { 125.2, -410.8 } }",
+          "kind": 0,
+          "ageMs": 31000
+        }
+      ],
+      "scan": [
+        {
+          "name": "esx:playerLoaded",
+          "resource": "es_extended",
+          "file": "resources\\es_extended\\client\\main.lua",
+          "code": "RegisterNetEvent('esx:playerLoaded')",
+          "line": 14,
+          "kind": 0
+        },
+        {
+          "name": "esx_billing:payBill",
+          "resource": "esx_billing",
+          "file": "resources\\esx_billing\\client\\main.lua",
+          "code": "TriggerServerEvent('esx_billing:payBill', billId)",
+          "line": 88,
+          "kind": 2
+        },
+        {
+          "name": "vehicleshop:buyVehicle",
+          "resource": "vehicleshop",
+          "file": "resources\\vehicleshop\\client\\menu.lua",
+          "code": "TriggerServerEvent('vehicleshop:buyVehicle', model, price)",
+          "line": 212,
+          "kind": 2
+        },
+        {
+          "name": "chat:addMessage",
+          "resource": "chat",
+          "file": "resources\\chat\\cl_chat.lua",
+          "code": "AddEventHandler('chat:addMessage', function(message)",
+          "line": 61,
+          "kind": 0
+        },
+        {
+          "name": "hospital:revive",
+          "resource": "hospital",
+          "file": "resources\\hospital\\client.lua",
+          "code": "TriggerEvent('hospital:revive')",
+          "line": 35,
+          "kind": 1
+        }
+      ]
+    }
+  },
+  "navigation": [
+    {
+      "id": "combat",
+      "n": "Aimbot"
+    },
+    {
+      "id": "visuals",
+      "n": "Visuals"
+    },
+    {
+      "id": "vfx",
+      "n": "VFX's"
+    },
+    {
+      "id": "lua-executor",
+      "n": "Lua Executor"
+    },
+    {
+      "id": "events",
+      "n": "Events"
+    },
+    {
+      "id": "misc",
+      "n": "Misc"
+    },
+    {
+      "id": "settings",
+      "n": "Settings"
+    }
+  ],
   "description": "Explore the FiveM menu controls, tabs and custom tool screens. Browser interactions are local simulations; they do not execute Lua, contact a server or change a game.",
   "catalogScope": "Complete declared native and theme control catalog. Paid and runtime-dependent entries are shown for exploration; actual availability depends on the product, session and game build.",
   "highlights": [
@@ -113,6 +488,41 @@
           "group": "Native D2D + DirectWrite GUI",
           "groupOrder": 2,
           "groupItemOrder": 7
+        },
+        {
+          "n": "Language",
+          "t": "array_option",
+          "o": [
+            "English",
+            "Arabic",
+            "Portuguese (Brazil)",
+            "Chinese",
+            "Chinese (Traditional)",
+            "Czech",
+            "German",
+            "Spanish",
+            "French",
+            "Hindi",
+            "Indonesian",
+            "Italian",
+            "Japanese",
+            "Korean",
+            "Dutch",
+            "Polish",
+            "Portuguese",
+            "Romanian",
+            "Russian",
+            "Swedish",
+            "Thai",
+            "Turkish",
+            "Ukrainian",
+            "Vietnamese"
+          ],
+          "i": 0,
+          "d": "Language choice in Welcome Quick Setup and the quick settings menu.",
+          "group": "Quick Setup",
+          "groupOrder": 1,
+          "groupItemOrder": 1
         }
       ]
     },
@@ -781,7 +1191,8 @@
           "groupItemOrder": 3
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "esp": {
       "n": "ESP",
@@ -1151,7 +1562,8 @@
           "groupOrder": 5,
           "groupItemOrder": 4
         }
-      ]
+      ],
+      "flattenChildren": true
     },
     "sky": {
       "n": "Sky",
@@ -1274,7 +1686,8 @@
           "groupItemOrder": 1
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "post-processing": {
       "n": "Post Processing",
@@ -1412,7 +1825,8 @@
           "groupItemOrder": 6
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "weather": {
       "n": "Weather",
@@ -1508,7 +1922,8 @@
           "groupItemOrder": 5
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "misc": {
       "n": "Misc",
@@ -1544,6 +1959,8 @@
           "n": "Script",
           "t": "input_text",
           "d": "Lua editor. Browser preview edits text only; code is not executed.",
+          "multiline": true,
+          "text": "print('Hello from Nenyoo')",
           "group": "Script",
           "groupOrder": 1,
           "groupItemOrder": 1
@@ -1568,6 +1985,7 @@
           "n": "Resource name",
           "t": "input_text",
           "d": "Resource name field",
+          "text": "res_4f2a9c",
           "group": "Resource",
           "groupOrder": 3,
           "groupItemOrder": 1
@@ -1603,7 +2021,8 @@
           "groupOrder": 4,
           "groupItemOrder": 2
         }
-      ]
+      ],
+      "screen": "executor"
     },
     "events": {
       "n": "Events",
@@ -1644,7 +2063,8 @@
           "on": 1,
           "group": "UI Scale",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "General"
         },
         {
           "n": "UI Scale",
@@ -1658,7 +2078,8 @@
           ],
           "group": "UI Scale",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "General"
         },
         {
           "n": "Overlays/Panels Scale",
@@ -1672,7 +2093,8 @@
           ],
           "group": "UI Scale",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "General"
         },
         {
           "n": "Menu Offset X",
@@ -1686,7 +2108,8 @@
           ],
           "group": "More Settings",
           "groupOrder": 6,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Menu Offset Y",
@@ -1700,7 +2123,8 @@
           ],
           "group": "More Settings",
           "groupOrder": 6,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         },
         {
           "n": "Theme",
@@ -1709,7 +2133,8 @@
           "p": "theme-settings",
           "group": "Theme",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Config"
         },
         {
           "n": "Choose Theme",
@@ -1718,7 +2143,8 @@
           "p": "load-theme",
           "group": "Theme",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Config"
         },
         {
           "n": "Streamer Mode",
@@ -1727,7 +2153,8 @@
           "p": "streamer-mode",
           "group": "Settings",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "General"
         },
         {
           "n": "Reload Lua Theme",
@@ -1735,7 +2162,8 @@
           "d": "Re-run the active theme.lua from disk",
           "group": "Theme",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Config"
         },
         {
           "n": "Reset Theme",
@@ -1743,7 +2171,8 @@
           "d": "Wipe theme_settings.ini and reload",
           "group": "Theme",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Config"
         },
         {
           "n": "Reset Menu Position",
@@ -1751,7 +2180,8 @@
           "d": "Recenter the menu window",
           "group": "More Settings",
           "groupOrder": 6,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         },
         {
           "n": "Open Themes Folder",
@@ -1759,7 +2189,8 @@
           "d": "Open the local themes folder in Explorer",
           "group": "Theme",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Config"
         },
         {
           "n": "Open menu",
@@ -1768,7 +2199,8 @@
           "d": "Insert by default; capture is browser-local.",
           "group": "Open Menu Keys",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "General"
         },
         {
           "n": "Alternate key",
@@ -1777,7 +2209,8 @@
           "d": "F1 by default; capture is browser-local.",
           "group": "Open Menu Keys",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "General"
         },
         {
           "n": "Configs",
@@ -1786,7 +2219,8 @@
           "d": "Named snapshots of your settings",
           "group": "Settings",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Config"
         }
       ]
     },
@@ -1799,7 +2233,8 @@
           "p": "nenyoo-appearance",
           "group": "Theme Settings",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "UI Layout",
@@ -1807,7 +2242,8 @@
           "p": "ui-layout",
           "group": "Theme Settings",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         },
         {
           "n": "Typography",
@@ -1815,7 +2251,8 @@
           "p": "typography",
           "group": "Theme Settings",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         },
         {
           "n": "Motion",
@@ -1823,7 +2260,8 @@
           "p": "motion",
           "group": "Theme Settings",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Layout"
         }
       ]
     },
@@ -1832,7 +2270,8 @@
       "c": [
         {
           "n": "Themes are discovered from your local themes folder in the game.",
-          "t": "separator"
+          "t": "separator",
+          "settingsTab": "Config"
         }
       ]
     },
@@ -1845,7 +2284,8 @@
           "d": "Hide the window from screen capture",
           "group": "Streamer Mode",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "General"
         }
       ]
     },
@@ -5554,7 +5994,8 @@
           "groupItemOrder": 1
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "water-color": {
       "n": "Water Color",
@@ -5748,7 +6189,8 @@
           "groupItemOrder": 5
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "particles": {
       "n": "Particles",
@@ -5798,7 +6240,8 @@
           "groupItemOrder": 2
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "fire": {
       "n": "Fire",
@@ -5884,7 +6327,8 @@
           "groupItemOrder": 4
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "decals": {
       "n": "Decals",
@@ -5908,7 +6352,8 @@
           "groupItemOrder": 2
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "footprints": {
       "n": "Footprints",
@@ -6032,7 +6477,8 @@
           "groupItemOrder": 1
         }
       ],
-      "columns": 4
+      "columns": 4,
+      "flattenChildren": true
     },
     "neon": {
       "n": "Neon",
@@ -6406,41 +6852,50 @@
         {
           "n": "Filter by name, resource or arguments",
           "t": "input_text",
-          "group": "Live",
+          "group": "Event Log",
           "groupOrder": 1,
           "groupItemOrder": 1
         },
         {
           "n": "Clear",
           "t": "button",
-          "group": "Live",
+          "group": "Event Log",
           "groupOrder": 1,
           "groupItemOrder": 2
         },
         {
-          "n": "Event name to block",
-          "t": "input_text",
-          "group": "Live",
+          "n": "Use",
+          "t": "button",
+          "d": "Copy a sample event into the local Trigger form.",
+          "group": "Event Log",
           "groupOrder": 1,
           "groupItemOrder": 3
         },
         {
           "n": "Block",
           "t": "button",
-          "d": "Preview only: no live event hook.",
-          "group": "Live",
+          "d": "Preview only: update the local sample blocklist.",
+          "group": "Event Log",
           "groupOrder": 1,
           "groupItemOrder": 4
         },
         {
+          "n": "Event name to block",
+          "t": "input_text",
+          "group": "Blocked Events",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
           "n": "Unblock",
           "t": "button",
-          "d": "Preview only: no live event hook.",
-          "group": "Live",
-          "groupOrder": 1,
-          "groupItemOrder": 5
+          "d": "Preview only: update the local sample blocklist.",
+          "group": "Blocked Events",
+          "groupOrder": 2,
+          "groupItemOrder": 2
         }
-      ]
+      ],
+      "screen": "events-live"
     },
     "events-trigger": {
       "n": "Trigger",
@@ -6449,7 +6904,7 @@
           "n": "Event name",
           "t": "input_text",
           "d": "resource:eventName",
-          "group": "Trigger",
+          "group": "Fire Event",
           "groupOrder": 1,
           "groupItemOrder": 1
         },
@@ -6462,7 +6917,7 @@
             "Latent"
           ],
           "i": 0,
-          "group": "Trigger",
+          "group": "Fire Event",
           "groupOrder": 1,
           "groupItemOrder": 2
         },
@@ -6470,7 +6925,7 @@
           "n": "Arguments (Lua expression)",
           "t": "input_text",
           "d": "{1, 'text', vector3(0, 0, 0)}",
-          "group": "Trigger",
+          "group": "Fire Event",
           "groupOrder": 1,
           "groupItemOrder": 3
         },
@@ -6478,11 +6933,12 @@
           "n": "Fire Event",
           "t": "button",
           "d": "Preview only: no event is sent.",
-          "group": "Trigger",
+          "group": "Fire Event",
           "groupOrder": 1,
           "groupItemOrder": 4
         }
-      ]
+      ],
+      "screen": "events-trigger"
     },
     "events-scanner": {
       "n": "Scanner",
@@ -6490,26 +6946,51 @@
         {
           "n": "Scan Resources",
           "t": "button",
-          "d": "Preview only: does not inspect any server or device.",
-          "group": "Scanner",
+          "d": "Preview only: shows the native standalone preview samples; does not inspect any server or device.",
+          "group": "Scan Results",
           "groupOrder": 1,
           "groupItemOrder": 1
         },
         {
           "n": "Cancel Scan",
           "t": "button",
-          "group": "Scanner",
+          "group": "Scan Results",
           "groupOrder": 1,
           "groupItemOrder": 2
         },
         {
           "n": "Filter results",
           "t": "input_text",
-          "group": "Scanner",
+          "group": "Scan Results",
           "groupOrder": 1,
           "groupItemOrder": 3
+        },
+        {
+          "n": "Use",
+          "t": "button",
+          "d": "Copy a sample scan result into the local Trigger form.",
+          "group": "Scan Results",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Block",
+          "t": "button",
+          "d": "Preview only: update the local sample blocklist.",
+          "group": "Scan Results",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Unblock",
+          "t": "button",
+          "d": "Preview only: update the local sample blocklist.",
+          "group": "Scan Results",
+          "groupOrder": 1,
+          "groupItemOrder": 6
         }
-      ]
+      ],
+      "screen": "events-scanner"
     },
     "nenyoo-appearance": {
       "n": "Nenyoo Appearance",
@@ -6518,53 +6999,57 @@
           "n": "Accent",
           "t": "color",
           "rgb": [
-            186,
-            134,
+            168,
+            139,
             255,
             255
           ],
           "group": "Colors",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Colors"
         },
         {
           "n": "Background",
           "t": "color",
           "rgb": [
-            21,
-            24,
-            27,
-            230
+            17,
+            17,
+            22,
+            250
           ],
           "group": "Colors",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Colors"
         },
         {
           "n": "Panel",
           "t": "color",
           "rgb": [
-            15,
-            18,
-            20,
+            23,
+            23,
+            30,
             255
           ],
           "group": "Colors",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Colors"
         },
         {
           "n": "Nen Color",
           "t": "color",
           "rgb": [
-            186,
-            134,
+            168,
+            139,
             255,
             255
           ],
           "group": "Colors",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Colors"
         },
         {
           "n": "yoo Color",
@@ -6577,111 +7062,120 @@
           ],
           "group": "Colors",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Colors"
         },
         {
           "n": "Sidebar",
           "t": "color",
           "rgb": [
-            21,
-            24,
-            27,
-            230
+            12,
+            12,
+            17,
+            250
           ],
           "group": "Surface Colors",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Colors"
         },
         {
           "n": "Header",
           "t": "color",
           "rgb": [
-            21,
-            24,
-            27,
-            230
+            17,
+            17,
+            22,
+            250
           ],
           "group": "Surface Colors",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Colors"
         },
         {
           "n": "Group Header",
           "t": "color",
           "rgb": [
-            13,
-            16,
-            18,
+            23,
+            23,
+            30,
             255
           ],
           "group": "Surface Colors",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Colors"
         },
         {
           "n": "Input",
           "t": "color",
           "rgb": [
-            28,
-            32,
-            36,
+            14,
+            14,
+            19,
             255
           ],
           "group": "Surface Colors",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Colors"
         },
         {
           "n": "Selection",
           "t": "color",
           "rgb": [
             34,
-            40,
-            45,
+            33,
+            44,
             255
           ],
           "group": "Surface Colors",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Colors"
         },
         {
           "n": "Text",
           "t": "color",
           "rgb": [
-            211,
-            216,
-            219,
+            233,
+            232,
+            240,
             255
           ],
           "group": "Text & Borders",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Colors"
         },
         {
           "n": "Muted Text",
           "t": "color",
           "rgb": [
-            153,
-            162,
-            168,
+            138,
+            136,
+            152,
             255
           ],
           "group": "Text & Borders",
           "groupOrder": 3,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Colors"
         },
         {
           "n": "Section Text",
           "t": "color",
           "rgb": [
+            104,
             102,
-            113,
-            120,
+            118,
             255
           ],
           "group": "Text & Borders",
           "groupOrder": 3,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Colors"
         },
         {
           "n": "Border",
@@ -6690,31 +7184,33 @@
             255,
             255,
             255,
-            12
+            16
           ],
           "group": "Text & Borders",
           "groupOrder": 3,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Colors"
         },
         {
           "n": "Sidebar Width",
           "t": "slider",
           "v": [
-            170,
-            150,
-            230,
+            216,
+            180,
+            260,
             1
           ],
           "d": "Left navigation width",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Corner Radius",
           "t": "slider",
           "v": [
-            3,
+            10,
             0,
             18,
             1
@@ -6722,7 +7218,8 @@
           "d": "Cards and controls",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         }
       ]
     },
@@ -6741,7 +7238,8 @@
           "d": "Maximum columns; adapts to available width",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         },
         {
           "n": "Group Spacing",
@@ -6755,7 +7253,8 @@
           "d": "Space between groups",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Layout"
         },
         {
           "n": "Row Spacing",
@@ -6769,7 +7268,8 @@
           "d": "Extra space between feature controls",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Layout"
         },
         {
           "n": "Scroll Speed",
@@ -6783,7 +7283,8 @@
           "d": "Scroll distance per wheel step",
           "group": "UI Layout",
           "groupOrder": 1,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "settingsTab": "Layout"
         },
         {
           "n": "Sidebar Labels",
@@ -6791,7 +7292,8 @@
           "on": 1,
           "group": "Navigation",
           "groupOrder": 4,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Sidebar Icons",
@@ -6799,15 +7301,16 @@
           "on": 1,
           "group": "Navigation",
           "groupOrder": 4,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         },
         {
-          "n": "Tab Underline",
+          "n": "Collapse Sidebar",
           "t": "toggle",
-          "on": 1,
           "group": "Navigation",
           "groupOrder": 4,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         }
       ]
     },
@@ -6825,46 +7328,50 @@
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Item Size",
           "t": "slider",
           "v": [
-            11,
+            12,
             10,
             20,
             1
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         },
         {
           "n": "Small Size",
           "t": "slider",
           "v": [
-            9,
+            10,
             8,
             16,
             1
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         },
         {
           "n": "Value Size",
           "t": "slider",
           "v": [
-            10,
+            11,
             9,
             18,
             1
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Layout"
         },
         {
           "n": "Description Size",
@@ -6877,20 +7384,22 @@
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Layout"
         },
         {
           "n": "Section Label Size",
           "t": "slider",
           "v": [
-            10,
+            12,
             8,
             14,
             1
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "settingsTab": "Layout"
         },
         {
           "n": "Tagline Size",
@@ -6903,7 +7412,8 @@
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "settingsTab": "Layout"
         },
         {
           "n": "Overlay Text Size",
@@ -6916,7 +7426,8 @@
           ],
           "group": "Typography",
           "groupOrder": 2,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "settingsTab": "Layout"
         },
         {
           "n": "Title Weight",
@@ -6930,13 +7441,14 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Item Weight",
           "t": "slider",
           "v": [
-            400,
+            500,
             400,
             800,
             100
@@ -6944,7 +7456,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         },
         {
           "n": "Small Weight",
@@ -6958,13 +7471,14 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Layout"
         },
         {
           "n": "Value Weight",
           "t": "slider",
           "v": [
-            400,
+            600,
             400,
             800,
             100
@@ -6972,7 +7486,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Layout"
         },
         {
           "n": "Description Weight",
@@ -6986,13 +7501,14 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Layout"
         },
         {
           "n": "Section Label Weight",
           "t": "slider",
           "v": [
-            500,
+            700,
             400,
             800,
             100
@@ -7000,7 +7516,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "settingsTab": "Layout"
         },
         {
           "n": "Tagline Weight",
@@ -7014,7 +7531,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 7
+          "groupItemOrder": 7,
+          "settingsTab": "Layout"
         },
         {
           "n": "Overlay Text Weight",
@@ -7028,7 +7546,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 8
+          "groupItemOrder": 8,
+          "settingsTab": "Layout"
         },
         {
           "n": "Tab Weight",
@@ -7042,7 +7561,8 @@
           "d": "Text thickness, 400 Regular to 800 Extra Bold",
           "group": "Font Weight",
           "groupOrder": 3,
-          "groupItemOrder": 9
+          "groupItemOrder": 9,
+          "settingsTab": "Layout"
         }
       ]
     },
@@ -7056,7 +7576,8 @@
           "on": 1,
           "group": "Motion",
           "groupOrder": 5,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Layout"
         },
         {
           "n": "Motion Speed",
@@ -7070,7 +7591,8 @@
           "d": "Animation speed multiplier",
           "group": "Motion",
           "groupOrder": 5,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Layout"
         }
       ]
     },
@@ -7082,21 +7604,24 @@
           "t": "input_text",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 1
+          "groupItemOrder": 1,
+          "settingsTab": "Config"
         },
         {
           "n": "Save",
           "t": "button",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 2
+          "groupItemOrder": 2,
+          "settingsTab": "Config"
         },
         {
           "n": "Create",
           "t": "button",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 3
+          "groupItemOrder": 3,
+          "settingsTab": "Config"
         },
         {
           "n": "Saved configs",
@@ -7108,32 +7633,52 @@
           "d": "The game lists saved profiles from disk; this preview shows the protected Default profile.",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 4
+          "groupItemOrder": 4,
+          "settingsTab": "Config"
         },
         {
           "n": "Rename",
           "t": "button",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 5
+          "groupItemOrder": 5,
+          "settingsTab": "Config"
         },
         {
           "n": "Delete Current Config",
           "t": "button",
           "group": "Configs",
           "groupOrder": 2,
-          "groupItemOrder": 6
+          "groupItemOrder": 6,
+          "settingsTab": "Config"
+        },
+        {
+          "n": "Confirm Delete",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 7,
+          "settingsTab": "Config"
+        },
+        {
+          "n": "Cancel",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 8,
+          "settingsTab": "Config"
         },
         {
           "n": "Reset Appearance",
           "t": "button",
           "group": "Appearance Defaults",
           "groupOrder": 3,
-          "groupItemOrder": 7
+          "groupItemOrder": 9,
+          "settingsTab": "Config"
         }
       ]
     }
   },
-  "options": 514,
+  "options": 521,
   "menuPages": 59
 }
