@@ -1,5 +1,5 @@
 {
-  "version": "preview-f256ca6d7791d963",
+  "version": "preview-b317973df383360c",
   "games": {
     "gtav": {
       "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/gtav-menu.json",
@@ -91,32 +91,32 @@
         },
         {
           "name": "Inter-Regular.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Regular.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Inter-Regular.ttf",
           "root": "fonts"
         },
         {
           "name": "Inter-Medium.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Medium.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Inter-Medium.ttf",
           "root": "fonts"
         },
         {
           "name": "Inter-SemiBold.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-SemiBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Inter-SemiBold.ttf",
           "root": "fonts"
         },
         {
           "name": "Inter-Bold.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Bold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Inter-Bold.ttf",
           "root": "fonts"
         },
         {
           "name": "Inter-ExtraBold.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-ExtraBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Inter-ExtraBold.ttf",
           "root": "fonts"
         },
         {
           "name": "Naru Sans Demo.ttf",
-          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Naru%20Sans%20Demo.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/Naru%20Sans%20Demo.ttf",
           "root": "fonts"
         },
         {
@@ -136,100 +136,100 @@
         {
           "hash": "LANG_EN",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_EN.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_DE",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_DE.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_FR",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_FR.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_RU",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_RU.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_ES",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_ES.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_PT",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_PT.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_IT",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_IT.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_PL",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_PL.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_TR",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_TR.json",
-          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
-          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Latin/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_CN",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_CN.json",
           "body_font": "Microsoft YaHei UI",
           "title_font": "Microsoft YaHei UI",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_JP",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_JP.json",
           "body_font": "Yu Gothic UI",
           "title_font": "Yu Gothic UI",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_KR",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_KR.json",
           "body_font": "Malgun Gothic",
           "title_font": "Malgun Gothic",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_TH",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_TH.json",
           "body_font": "Leelawadee UI",
           "title_font": "Leelawadee UI",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         },
         {
           "hash": "LANG_HI",
           "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_HI.json",
           "body_font": "Nirmala UI",
           "title_font": "Nirmala UI",
-          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Common/FontAwesome7Free-Solid-900.otf"
         }
       ]
     },
