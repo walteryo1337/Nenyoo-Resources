@@ -1,0 +1,7139 @@
+{
+  "game": "fivem",
+  "name": "Nenyoo FiveM",
+  "root": "home",
+  "version": "Source catalog 5d93b4391ef1",
+  "layout": "tabs",
+  "accent": "#BA86FF",
+  "nativeSize": [
+    1000,
+    680
+  ],
+  "sourceFiles": [
+    "FiveM/src/lua/menu_registry.cpp",
+    "FiveM/src/lua/theme.lua",
+    "FiveM/src/lua/lua_fivem.cpp",
+    "FiveM/src/core/draw.hpp",
+    "FiveM/src/core/settings_store.hpp",
+    "FiveM/src/streamer/streamer_mode.hpp",
+    "FiveM/src/features/story_features.hpp",
+    "FiveM/src/features/misc_fov.hpp",
+    "FiveM/src/features/visual_vfx.hpp",
+    "FiveM/src/features/sky_vfx.hpp",
+    "FiveM/src/features/timecycle_vfx.hpp",
+    "FiveM/src/features/particle_vfx.hpp",
+    "FiveM/src/features/decal_vfx.hpp",
+    "FiveM/src/features/neon_vfx.hpp",
+    "FiveM/src/features/lighting_globals_vfx.hpp",
+    "FiveM/src/features/water_color_vfx.hpp",
+    "FiveM/src/features/world_light_vfx.hpp",
+    "FiveM/src/features/sky_vfx.cpp"
+  ],
+  "sourceFingerprint": "5d93b4391ef14fc0726da4c296a4fa53d8ee25519d2ad6dc74347b18d6b16968",
+  "description": "Explore the FiveM menu controls, tabs and custom tool screens. Browser interactions are local simulations; they do not execute Lua, contact a server or change a game.",
+  "catalogScope": "Complete declared native and theme control catalog. Paid and runtime-dependent entries are shown for exploration; actual availability depends on the product, session and game build.",
+  "highlights": [
+    "Combat: lock-on, silent aim and magic bullet controls",
+    "Ped, vehicle and object ESP configuration",
+    "Sky, weather, lighting, water and particle VFX",
+    "Lua editor and event-tool interface previews",
+    "Theme, typography, layout, keybinds and saved configuration controls"
+  ],
+  "pages": {
+    "home": {
+      "n": "Home",
+      "c": [
+        {
+          "n": "Welcome to FiveM",
+          "t": "separator"
+        },
+        {
+          "n": "Native D2D + DirectWrite GUI",
+          "t": "separator"
+        },
+        {
+          "n": "Combat",
+          "t": "sub_menu",
+          "d": "Story-mode memory aiming",
+          "p": "combat",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Visuals",
+          "t": "sub_menu",
+          "d": "Ped, vehicle and object overlays",
+          "p": "visuals",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "VFX's",
+          "t": "sub_menu",
+          "d": "Sky, weather, lighting and world effects",
+          "p": "vfx",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Misc",
+          "t": "sub_menu",
+          "d": "Camera and gameplay options",
+          "p": "misc",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Lua Executor",
+          "t": "sub_menu",
+          "d": "Run Lua inside the FiveM client",
+          "p": "lua-executor",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Events",
+          "t": "sub_menu",
+          "d": "Watch, fire and scan FiveM events",
+          "p": "events",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Settings",
+          "t": "sub_menu",
+          "d": "Scale, themes, streamer mode",
+          "p": "settings",
+          "group": "Native D2D + DirectWrite GUI",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        }
+      ]
+    },
+    "combat": {
+      "n": "Combat",
+      "c": [
+        {
+          "n": "Lock-on Aimbot",
+          "t": "sub_menu",
+          "d": "Camera tracking and shared target controls",
+          "p": "lock-on-aimbot",
+          "group": "Combat",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Silent Aim",
+          "t": "sub_menu",
+          "d": "Redirect shots without moving the camera",
+          "p": "silent-aim",
+          "group": "Combat",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Magic Bullet",
+          "t": "sub_menu",
+          "d": "Begin redirected shot segments beside the target",
+          "p": "magic-bullet",
+          "group": "Combat",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        }
+      ]
+    },
+    "lock-on-aimbot": {
+      "n": "Lock-on Aimbot",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Hold right mouse to track the closest ped inside the FOV",
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Show Aim FOV",
+          "t": "toggle",
+          "d": "Draw the active acquisition radius",
+          "on": 1,
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Aim FOV",
+          "t": "slider",
+          "d": "Acquisition radius in screen pixels",
+          "v": [
+            140,
+            20,
+            500,
+            5
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Aim Smoothing",
+          "t": "slider",
+          "d": "Higher values produce slower camera correction",
+          "v": [
+            8,
+            1,
+            30,
+            0.5
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Aim Distance",
+          "t": "slider",
+          "d": "Maximum world distance for target acquisition",
+          "v": [
+            250,
+            25,
+            1000,
+            25
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Target Priority",
+          "t": "array_option",
+          "d": "Choose how valid targets inside the FOV are ranked",
+          "o": [
+            "Crosshair",
+            "Distance",
+            "Lowest Health"
+          ],
+          "i": 0,
+          "group": "Target Selection",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Aim Bone",
+          "t": "array_option",
+          "d": "Select the direct-memory aim point",
+          "o": [
+            "Head",
+            "Neck",
+            "Abdomen"
+          ],
+          "i": 0,
+          "group": "Target Selection",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Aim Key",
+          "t": "keybind",
+          "d": "Click to set the activation key; Escape cancels",
+          "k": 2,
+          "group": "Target Selection",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Activation Mode",
+          "t": "array_option",
+          "d": "Hold or toggle the configured aim key",
+          "o": [
+            "Hold",
+            "Toggle"
+          ],
+          "i": 0,
+          "group": "Target Selection",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Target Filter",
+          "t": "array_option",
+          "d": "Filter memory targets by player-info presence",
+          "o": [
+            "All Peds",
+            "NPCs Only",
+            "Players Only"
+          ],
+          "i": 0,
+          "group": "Target Selection",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Sticky Lock",
+          "t": "toggle",
+          "d": "Keep the same valid replay-pool target while aiming",
+          "on": 1,
+          "group": "Lock Behavior",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Dynamic FOV",
+          "t": "toggle",
+          "d": "Shrink acquisition radius for distant targets",
+          "group": "Lock Behavior",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Far FOV Scale",
+          "t": "slider",
+          "d": "Minimum FOV multiplier at maximum distance",
+          "v": [
+            0.55,
+            0.1,
+            1,
+            0.05
+          ],
+          "group": "Lock Behavior",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Velocity Prediction",
+          "t": "toggle",
+          "d": "Lead moving peds using raw velocity",
+          "group": "Prediction",
+          "groupOrder": 4,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Prediction Time",
+          "t": "slider",
+          "d": "Seconds of velocity lead",
+          "v": [
+            0.1,
+            0,
+            1,
+            0.01
+          ],
+          "group": "Prediction",
+          "groupOrder": 4,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Dead Zone",
+          "t": "slider",
+          "d": "Stop correcting inside this pixel radius",
+          "v": [
+            1.5,
+            0,
+            20,
+            0.5
+          ],
+          "group": "Response",
+          "groupOrder": 5,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Maximum Aim Speed",
+          "t": "slider",
+          "d": "Maximum camera correction in degrees per frame",
+          "v": [
+            4,
+            0.1,
+            30,
+            0.1
+          ],
+          "group": "Response",
+          "groupOrder": 5,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Switch Delay",
+          "t": "slider",
+          "d": "Milliseconds before accepting a different target",
+          "v": [
+            0,
+            0,
+            1000,
+            10
+          ],
+          "group": "Response",
+          "groupOrder": 5,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Horizontal Response",
+          "t": "slider",
+          "d": "Horizontal correction multiplier",
+          "v": [
+            1,
+            0.1,
+            3,
+            0.1
+          ],
+          "group": "Response",
+          "groupOrder": 5,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Vertical Response",
+          "t": "slider",
+          "d": "Vertical correction multiplier",
+          "v": [
+            1,
+            0.1,
+            3,
+            0.1
+          ],
+          "group": "Response",
+          "groupOrder": 5,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Skip Friends",
+          "t": "toggle",
+          "d": "Exclude marked peds from camera aim",
+          "on": 1,
+          "group": "Friends & Overlay",
+          "groupOrder": 6,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Target Line",
+          "t": "toggle",
+          "d": "Draw a line to the active aim target",
+          "on": 1,
+          "group": "Friends & Overlay",
+          "groupOrder": 6,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Target Marker",
+          "t": "toggle",
+          "d": "Mark the active aim bone",
+          "on": 1,
+          "group": "Friends & Overlay",
+          "groupOrder": 6,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Friend Key",
+          "t": "array_option",
+          "d": "Mark or unmark the ped nearest the crosshair",
+          "o": [
+            "F6",
+            "F7",
+            "F8"
+          ],
+          "i": 0,
+          "group": "Friends & Overlay",
+          "groupOrder": 6,
+          "groupItemOrder": 4
+        }
+      ]
+    },
+    "silent-aim": {
+      "n": "Silent Aim",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Redirect FireDelayedHit endpoints to the selected bone",
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Show FOV",
+          "t": "toggle",
+          "d": "Draw the silent acquisition radius",
+          "on": 1,
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "FOV",
+          "t": "slider",
+          "d": "Silent target radius in screen pixels",
+          "v": [
+            120,
+            20,
+            500,
+            5
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Distance",
+          "t": "slider",
+          "d": "Maximum silent target distance",
+          "v": [
+            250,
+            25,
+            1000,
+            25
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Bone",
+          "t": "array_option",
+          "d": "Redirect destination bone",
+          "o": [
+            "Head",
+            "Neck",
+            "Abdomen"
+          ],
+          "i": 0,
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Skip Friends",
+          "t": "toggle",
+          "d": "Never redirect at marked friends",
+          "on": 1,
+          "group": "Shot Behavior",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Only While Aiming",
+          "t": "toggle",
+          "d": "Acquire silent targets only while right mouse is held",
+          "group": "Shot Behavior",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Hit Chance",
+          "t": "slider",
+          "d": "Percentage of shots redirected",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "group": "Shot Behavior",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Damage Multiplier",
+          "t": "slider",
+          "d": "Scale FireDelayedHit damage",
+          "v": [
+            1,
+            0.1,
+            10,
+            0.1
+          ],
+          "group": "Shot Behavior",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ]
+    },
+    "magic-bullet": {
+      "n": "Magic Bullet",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Move the redirected shot segment beside its target",
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "FOV",
+          "t": "slider",
+          "d": "Magic-bullet target radius in screen pixels",
+          "v": [
+            160,
+            20,
+            500,
+            5
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Distance",
+          "t": "slider",
+          "d": "Maximum magic-bullet target distance",
+          "v": [
+            300,
+            25,
+            1000,
+            25
+          ],
+          "group": "Aim",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Bone",
+          "t": "array_option",
+          "d": "Shot destination bone",
+          "o": [
+            "Head",
+            "Neck",
+            "Abdomen"
+          ],
+          "i": 0,
+          "group": "Targeting",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Skip Friends",
+          "t": "toggle",
+          "d": "Never divert at marked friends",
+          "on": 1,
+          "group": "Targeting",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "visuals": {
+      "n": "Visuals",
+      "c": [
+        {
+          "n": "ESP",
+          "t": "sub_menu",
+          "d": "Ped, vehicle and object overlays",
+          "p": "esp",
+          "group": "Visuals",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        }
+      ]
+    },
+    "vfx": {
+      "n": "VFX's",
+      "c": [
+        {
+          "n": "Sky",
+          "t": "sub_menu",
+          "d": "Sky colours, sun, moon and clouds",
+          "p": "sky",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Post Processing",
+          "t": "sub_menu",
+          "d": "Shadow, reflection, gamma, blur and saturation",
+          "p": "post-processing",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Weather",
+          "t": "sub_menu",
+          "d": "Edit Legacy weather particle effects",
+          "p": "weather",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Lighting",
+          "t": "sub_menu",
+          "d": "Lightning, fog and ped lighting",
+          "p": "lighting",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Water",
+          "t": "sub_menu",
+          "d": "Edit Legacy water effects",
+          "p": "water",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Liquid",
+          "t": "sub_menu",
+          "d": "Edit Legacy petrol effects",
+          "p": "liquid",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Particles",
+          "t": "sub_menu",
+          "d": "Recolour particle effects",
+          "p": "particles",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Fire",
+          "t": "sub_menu",
+          "d": "Recolour selected fire effects",
+          "p": "fire",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Decals",
+          "t": "sub_menu",
+          "d": "Recolour footprints and bullet impacts",
+          "p": "decals",
+          "group": "VFX's",
+          "groupOrder": 1,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Vehicle Lighting",
+          "t": "sub_menu",
+          "d": "Tune legacy neon lighting",
+          "p": "vehicle-lighting",
+          "group": "VFX's / 2",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        }
+      ],
+      "columns": 4
+    },
+    "lighting": {
+      "n": "Lighting",
+      "c": [
+        {
+          "n": "Lightning",
+          "t": "sub_menu",
+          "d": "Force and recolour strikes",
+          "p": "lightning",
+          "group": "Weather Lighting",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Fog",
+          "t": "sub_menu",
+          "d": "Recolour global fog",
+          "p": "fog",
+          "group": "Weather Lighting",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Ped Light",
+          "t": "sub_menu",
+          "d": "Recolour global ped light",
+          "p": "ped-light",
+          "group": "World Lighting",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Traffic Signals",
+          "t": "sub_menu",
+          "d": "Signal colours and fade distances",
+          "p": "traffic-signals",
+          "group": "Weather Lighting",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Street Light",
+          "t": "sub_menu",
+          "d": "Recolour world light cones",
+          "p": "street-light",
+          "group": "World Lighting",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Scene Lights",
+          "t": "sub_menu",
+          "d": "Recolour emitted scene lights",
+          "p": "scene-lights",
+          "group": "World Lighting",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        }
+      ],
+      "columns": 4
+    },
+    "esp": {
+      "n": "ESP",
+      "c": [
+        {
+          "n": "Enable Ped ESP",
+          "t": "toggle",
+          "d": "Draw story-mode peds from the replay pool",
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Enable Boxes",
+          "t": "toggle",
+          "d": "Draw ped bounds",
+          "on": 1,
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Box Style",
+          "t": "array_option",
+          "d": "Full outline, corners, or translucent fill",
+          "o": [
+            "Full",
+            "Corners",
+            "Filled"
+          ],
+          "i": 0,
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Health Bars",
+          "t": "toggle",
+          "d": "Draw raw ped health",
+          "on": 1,
+          "group": "Markers & Bars",
+          "groupOrder": 4,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Basic Skeleton",
+          "t": "toggle",
+          "d": "Draw the nine directly stored ped bone points",
+          "group": "Markers & Bars",
+          "groupOrder": 4,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Distance Text",
+          "t": "toggle",
+          "d": "Draw ped distance below the box",
+          "on": 1,
+          "group": "Labels",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Model Names",
+          "t": "toggle",
+          "d": "Show known story names or raw archetype hashes",
+          "on": 1,
+          "group": "Labels",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Weapon Names",
+          "t": "toggle",
+          "d": "Show selected weapon names or hashes",
+          "on": 1,
+          "group": "Labels",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Armor Bars",
+          "t": "toggle",
+          "d": "Draw raw ped armor when present",
+          "on": 1,
+          "group": "Markers & Bars",
+          "groupOrder": 4,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Enable Snaplines",
+          "t": "toggle",
+          "d": "Draw lines to peds from the selected screen position",
+          "group": "Snaplines",
+          "groupOrder": 5,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Show Friends",
+          "t": "toggle",
+          "d": "Keep marked friends visible in ESP",
+          "on": 1,
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Head Dot",
+          "t": "toggle",
+          "d": "Draw the direct-memory head position",
+          "group": "Markers & Bars",
+          "groupOrder": 4,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Off-screen Indicators",
+          "t": "toggle",
+          "d": "Clamp edge indicators for projected off-screen peds",
+          "on": 1,
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Vitals Text",
+          "t": "toggle",
+          "d": "Show health and armor percentages",
+          "group": "Labels",
+          "groupOrder": 3,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "ESP Distance",
+          "t": "slider",
+          "d": "Maximum world distance for displayed peds",
+          "v": [
+            300,
+            25,
+            1000,
+            25
+          ],
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Color Mode",
+          "t": "array_option",
+          "d": "Static, animated rainbow, or two-color gradient",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Gradient"
+          ],
+          "i": 0,
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "d": "Animation speed for rainbow mode",
+          "v": [
+            1,
+            0.1,
+            4,
+            0.1
+          ],
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Thickness",
+          "t": "slider",
+          "d": "Line weight for box outlines",
+          "v": [
+            1.25,
+            0.5,
+            4,
+            0.1
+          ],
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Snapline Origin",
+          "t": "array_option",
+          "d": "Where lines start on your screen",
+          "o": [
+            "Bottom Center",
+            "Screen Center",
+            "Top Center"
+          ],
+          "i": 0,
+          "group": "Snaplines",
+          "groupOrder": 5,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Snapline End",
+          "t": "array_option",
+          "d": "Feet, body center, or head",
+          "o": [
+            "Feet",
+            "Body",
+            "Head"
+          ],
+          "i": 0,
+          "group": "Snaplines",
+          "groupOrder": 5,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Snapline Thickness",
+          "t": "slider",
+          "d": "Line weight for snaplines",
+          "v": [
+            1,
+            0.5,
+            4,
+            0.1
+          ],
+          "group": "Snaplines",
+          "groupOrder": 5,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Enable Vehicle ESP",
+          "t": "toggle",
+          "d": "Draw vehicles from the replay vehicle pool",
+          "group": "Vehicles",
+          "groupOrder": 6,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Vehicle Health",
+          "t": "toggle",
+          "d": "Draw raw engine-health bars",
+          "on": 1,
+          "group": "Vehicles",
+          "groupOrder": 6,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Vehicle Names",
+          "t": "toggle",
+          "d": "Show raw vehicle archetype hashes",
+          "on": 1,
+          "group": "Vehicles",
+          "groupOrder": 6,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Vehicle Distance",
+          "t": "slider",
+          "d": "Maximum vehicle ESP distance",
+          "v": [
+            500,
+            25,
+            2000,
+            25
+          ],
+          "group": "Vehicles",
+          "groupOrder": 6,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Enable Object ESP",
+          "t": "toggle",
+          "d": "Draw nearby replay-pool objects",
+          "group": "Objects",
+          "groupOrder": 7,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Object Names",
+          "t": "toggle",
+          "d": "Show raw object archetype hashes",
+          "on": 1,
+          "group": "Objects",
+          "groupOrder": 7,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Object Distance",
+          "t": "slider",
+          "d": "Maximum object ESP distance",
+          "v": [
+            150,
+            10,
+            500,
+            10
+          ],
+          "group": "Objects",
+          "groupOrder": 7,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Color",
+          "t": "color",
+          "rgb": [
+            238,
+            234,
+            246,
+            255
+          ],
+          "d": "Outline and top of gradient boxes",
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Gradient End",
+          "t": "color",
+          "rgb": [
+            168,
+            85,
+            247,
+            255
+          ],
+          "d": "Bottom of gradient boxes",
+          "group": "Boxes",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Friend Color",
+          "t": "color",
+          "rgb": [
+            52,
+            211,
+            130,
+            255
+          ],
+          "d": "Marked friends",
+          "group": "Ped Display",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Marker Color",
+          "t": "color",
+          "rgb": [
+            168,
+            85,
+            247,
+            255
+          ],
+          "d": "Head dots, skeletons, and edge markers",
+          "group": "Markers & Bars",
+          "groupOrder": 4,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Snapline Color",
+          "t": "color",
+          "rgb": [
+            168,
+            85,
+            247,
+            255
+          ],
+          "d": "Line color in static mode",
+          "group": "Snaplines",
+          "groupOrder": 5,
+          "groupItemOrder": 4
+        }
+      ]
+    },
+    "sky": {
+      "n": "Sky",
+      "c": [
+        {
+          "n": "Rainbow Sky",
+          "t": "toggle",
+          "d": "Cycle the sky through animated colours",
+          "group": "Rainbow Sky",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Sky Intensity",
+          "t": "toggle",
+          "d": "Override Legacy sky brightness",
+          "group": "Sky Override",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Intensity",
+          "t": "slider",
+          "d": "Sky brightness multiplier",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "group": "Sky Override",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Sky Colors",
+          "t": "sub_menu",
+          "p": "sky-colors",
+          "d": "Edit Legacy sky keyframe fields",
+          "group": "Other Controls",
+          "groupOrder": 4,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Sun",
+          "t": "sub_menu",
+          "p": "sun",
+          "d": "Edit Legacy sky keyframe fields",
+          "group": "Other Controls",
+          "groupOrder": 4,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Moon",
+          "t": "sub_menu",
+          "p": "moon",
+          "d": "Edit Legacy sky keyframe fields",
+          "group": "Other Controls",
+          "groupOrder": 4,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Clouds",
+          "t": "sub_menu",
+          "p": "clouds",
+          "d": "Edit Legacy sky keyframe fields",
+          "group": "Other Controls",
+          "groupOrder": 4,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Atmosphere",
+          "t": "sub_menu",
+          "p": "atmosphere",
+          "d": "Edit Legacy sky keyframe fields",
+          "group": "Other Controls",
+          "groupOrder": 4,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Rainbow Sky Speed",
+          "t": "slider",
+          "v": [
+            1,
+            0.1,
+            5,
+            0.1
+          ],
+          "d": "Animated sky colour speed",
+          "group": "Rainbow Sky",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow Sky Alpha",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            1,
+            0.05
+          ],
+          "d": "Animated sky colour opacity",
+          "group": "Rainbow Sky",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Color Rainbow Speed",
+          "t": "slider",
+          "v": [
+            1,
+            0.1,
+            10,
+            0.1
+          ],
+          "d": "Per-field colour cycle speed",
+          "group": "Field Colour Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        }
+      ],
+      "columns": 4
+    },
+    "post-processing": {
+      "n": "Post Processing",
+      "c": [
+        {
+          "n": "Shadow Light",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Shadow Light Strength",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Reflection",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Reflection Strength",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Gamma",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Gamma Strength",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Lighting & Reflection",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Blur",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Blur Strength",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Blur 2",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Blur 2 Strength",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Saturation",
+          "t": "toggle",
+          "d": "Override this visual setting",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Saturation Strength",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Visual setting multiplier",
+          "group": "Image Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        }
+      ],
+      "columns": 4
+    },
+    "weather": {
+      "n": "Weather",
+      "c": [
+        {
+          "n": "Rainstorm",
+          "t": "sub_menu",
+          "p": "rainstorm",
+          "d": "Edit this weather effect",
+          "group": "Rain & Snow",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Thunder",
+          "t": "sub_menu",
+          "p": "thunder",
+          "d": "Edit this weather effect",
+          "group": "Rain & Snow",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Snow Light",
+          "t": "sub_menu",
+          "p": "snow-light",
+          "d": "Edit this weather effect",
+          "group": "Rain & Snow",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Snow Heavy",
+          "t": "sub_menu",
+          "p": "snow-heavy",
+          "d": "Edit this weather effect",
+          "group": "Rain & Snow",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Blizzard",
+          "t": "sub_menu",
+          "p": "blizzard",
+          "d": "Edit this weather effect",
+          "group": "Rain & Snow",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Underwater",
+          "t": "sub_menu",
+          "p": "underwater",
+          "d": "Edit this weather effect",
+          "group": "Ambient Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Lake Fog",
+          "t": "sub_menu",
+          "p": "lake-fog",
+          "d": "Edit this weather effect",
+          "group": "Ambient Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Woodland Pollen",
+          "t": "sub_menu",
+          "p": "woodland-pollen",
+          "d": "Edit this weather effect",
+          "group": "Ambient Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Woodland Firefly",
+          "t": "sub_menu",
+          "p": "woodland-firefly",
+          "d": "Edit this weather effect",
+          "group": "Ambient Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Wetland Flies",
+          "t": "sub_menu",
+          "p": "wetland-flies",
+          "d": "Edit this weather effect",
+          "group": "Ambient Effects",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        }
+      ],
+      "columns": 4
+    },
+    "misc": {
+      "n": "Misc",
+      "c": [
+        {
+          "n": "Override FOV",
+          "t": "toggle",
+          "d": "Override gameplay and current weapon camera FOV",
+          "group": "FOV Editor",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Field of View",
+          "t": "slider",
+          "d": "Camera viewing angle from 4 to 100 degrees",
+          "v": [
+            70,
+            4,
+            100,
+            1
+          ],
+          "group": "FOV Editor",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "lua-executor": {
+      "n": "Lua Executor",
+      "c": [
+        {
+          "n": "Script",
+          "t": "input_text",
+          "d": "Lua editor. Browser preview edits text only; code is not executed.",
+          "group": "Script",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Execute",
+          "t": "button",
+          "d": "Preview only: no game session is attached.",
+          "group": "Run",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Stop Script",
+          "t": "button",
+          "d": "Preview only.",
+          "group": "Run",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Resource name",
+          "t": "input_text",
+          "d": "Resource name field",
+          "group": "Resource",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "New Name Each Run",
+          "t": "toggle",
+          "d": "Use a new resource name for each run",
+          "on": 1,
+          "group": "Resource",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Randomize Name",
+          "t": "button",
+          "d": "Change the local preview name",
+          "group": "Resource",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Clear Output",
+          "t": "button",
+          "group": "Clean Up",
+          "groupOrder": 4,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Clear Script",
+          "t": "button",
+          "group": "Clean Up",
+          "groupOrder": 4,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "events": {
+      "n": "Events",
+      "c": [
+        {
+          "n": "Live",
+          "t": "sub_menu",
+          "p": "events-live",
+          "group": "Events",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Trigger",
+          "t": "sub_menu",
+          "p": "events-trigger",
+          "group": "Events",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Scanner",
+          "t": "sub_menu",
+          "p": "events-scanner",
+          "group": "Events",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        }
+      ]
+    },
+    "settings": {
+      "n": "Settings",
+      "c": [
+        {
+          "n": "Auto UI Scale",
+          "t": "toggle",
+          "d": "Scale to your display DPI automatically",
+          "on": 1,
+          "group": "UI Scale",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "UI Scale",
+          "t": "slider",
+          "d": "Manual multiplier for the whole menu",
+          "v": [
+            1,
+            0.5,
+            2,
+            0.05
+          ],
+          "group": "UI Scale",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Overlays/Panels Scale",
+          "t": "slider",
+          "d": "Multiplier for overlay handlers",
+          "v": [
+            1,
+            0.5,
+            2,
+            0.05
+          ],
+          "group": "UI Scale",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Menu Offset X",
+          "t": "slider",
+          "d": "Horizontal menu position offset",
+          "v": [
+            0,
+            -500,
+            500,
+            1
+          ],
+          "group": "More Settings",
+          "groupOrder": 6,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Menu Offset Y",
+          "t": "slider",
+          "d": "Vertical menu position offset",
+          "v": [
+            0,
+            -500,
+            500,
+            1
+          ],
+          "group": "More Settings",
+          "groupOrder": 6,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Theme",
+          "t": "sub_menu",
+          "d": "Colors, typography, layout",
+          "p": "theme-settings",
+          "group": "Theme",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Choose Theme",
+          "t": "sub_menu",
+          "d": "Pick a theme from disk",
+          "p": "load-theme",
+          "group": "Theme",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Streamer Mode",
+          "t": "sub_menu",
+          "d": "Hide the window from screen capture",
+          "p": "streamer-mode",
+          "group": "Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Reload Lua Theme",
+          "t": "button",
+          "d": "Re-run the active theme.lua from disk",
+          "group": "Theme",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Reset Theme",
+          "t": "button",
+          "d": "Wipe theme_settings.ini and reload",
+          "group": "Theme",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Reset Menu Position",
+          "t": "button",
+          "d": "Recenter the menu window",
+          "group": "More Settings",
+          "groupOrder": 6,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Open Themes Folder",
+          "t": "button",
+          "d": "Open the local themes folder in Explorer",
+          "group": "Theme",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Open menu",
+          "t": "keybind",
+          "k": 45,
+          "d": "Insert by default; capture is browser-local.",
+          "group": "Open Menu Keys",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Alternate key",
+          "t": "keybind",
+          "k": 112,
+          "d": "F1 by default; capture is browser-local.",
+          "group": "Open Menu Keys",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Configs",
+          "t": "sub_menu",
+          "p": "configs",
+          "d": "Named snapshots of your settings",
+          "group": "Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "theme-settings": {
+      "n": "Theme Settings",
+      "c": [
+        {
+          "n": "Nenyoo Appearance",
+          "t": "sub_menu",
+          "p": "nenyoo-appearance",
+          "group": "Theme Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "UI Layout",
+          "t": "sub_menu",
+          "p": "ui-layout",
+          "group": "Theme Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Typography",
+          "t": "sub_menu",
+          "p": "typography",
+          "group": "Theme Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Motion",
+          "t": "sub_menu",
+          "p": "motion",
+          "group": "Theme Settings",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        }
+      ]
+    },
+    "load-theme": {
+      "n": "Load Theme",
+      "c": [
+        {
+          "n": "Themes are discovered from your local themes folder in the game.",
+          "t": "separator"
+        }
+      ]
+    },
+    "streamer-mode": {
+      "n": "Streamer Mode",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Hide the window from screen capture",
+          "group": "Streamer Mode",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        }
+      ]
+    },
+    "sky-colors": {
+      "n": "Sky Colors",
+      "c": [
+        {
+          "n": "Override Azimuth East",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Azimuth East Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Azimuth East Color",
+          "t": "color",
+          "rgb": [
+            120,
+            160,
+            255,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Azimuth East Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Azimuth West",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Azimuth West Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Azimuth West Color",
+          "t": "color",
+          "rgb": [
+            255,
+            150,
+            90,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Azimuth West Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Override Azimuth Transition",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Azimuth Transition Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 10
+        },
+        {
+          "n": "Azimuth Transition Color",
+          "t": "color",
+          "rgb": [
+            200,
+            160,
+            200,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 11
+        },
+        {
+          "n": "Azimuth Transition Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sky Colors Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 12
+        },
+        {
+          "n": "Override Zenith",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Zenith Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Zenith Color",
+          "t": "color",
+          "rgb": [
+            60,
+            90,
+            200,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Zenith Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Zenith Transition",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Zenith Transition Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Zenith Transition Color",
+          "t": "color",
+          "rgb": [
+            90,
+            120,
+            220,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Zenith Transition Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sky Colors Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "sun": {
+      "n": "Sun",
+      "c": [
+        {
+          "n": "Override Sun",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Sun Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Sun Color",
+          "t": "color",
+          "rgb": [
+            255,
+            230,
+            180,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Override Sun Disc",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Sun Disc Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Sun Disc Color",
+          "t": "color",
+          "rgb": [
+            255,
+            245,
+            220,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Override Sun Disc Size",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Sun Disc Size Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Override Sun HDR",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Sun HDR Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sun Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 10
+        },
+        {
+          "n": "Override Sun Mie Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Sun Mie Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Override Sun Scatter Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Sun Scatter Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Sun Influence Radius",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Sun Influence Radius Value",
+          "t": "slider",
+          "v": [
+            50,
+            0,
+            200,
+            1
+          ],
+          "d": "Override strength",
+          "group": "Sun Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        }
+      ],
+      "columns": 4
+    },
+    "moon": {
+      "n": "Moon",
+      "c": [
+        {
+          "n": "Override Moon",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Moon Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Moon Color",
+          "t": "color",
+          "rgb": [
+            180,
+            200,
+            255,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Override Moon Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Moon Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Override Moon Disc Size",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Moon Disc Size Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Moon Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Override Moon Influence Radius",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Moon Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Moon Influence Radius Value",
+          "t": "slider",
+          "v": [
+            50,
+            0,
+            200,
+            1
+          ],
+          "d": "Override strength",
+          "group": "Moon Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Override Moon Scatter Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Moon Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Moon Scatter Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Moon Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ],
+      "columns": 4
+    },
+    "clouds": {
+      "n": "Clouds",
+      "c": [
+        {
+          "n": "Override Cloud Base",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Cloud Base Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Cloud Base Color",
+          "t": "color",
+          "rgb": [
+            220,
+            220,
+            230,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Override Cloud Mid",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Cloud Mid Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Cloud Mid Color",
+          "t": "color",
+          "rgb": [
+            200,
+            200,
+            215,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Override Small Cloud",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Small Cloud Mode",
+          "t": "array_option",
+          "o": [
+            "Static",
+            "Rainbow",
+            "Static Rainbow"
+          ],
+          "i": 0,
+          "d": "Static or animated colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Small Cloud Color",
+          "t": "color",
+          "rgb": [
+            210,
+            210,
+            225,
+            255
+          ],
+          "d": "Sky field colour",
+          "group": "Clouds Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Override Cloud HDR",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Cloud HDR Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Override Cloud Density Mult",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Cloud Density Mult Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Cloud Overall Strength",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Cloud Overall Strength Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Clouds Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        }
+      ],
+      "columns": 4
+    },
+    "atmosphere": {
+      "n": "Atmosphere",
+      "c": [
+        {
+          "n": "Override Atmosphere HDR",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Atmosphere Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Atmosphere HDR Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Atmosphere Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Override Plane Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Atmosphere Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Plane Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Atmosphere Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Stars Intensity",
+          "t": "toggle",
+          "d": "Apply this sky override",
+          "group": "Atmosphere Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Stars Intensity Value",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            50,
+            0.1
+          ],
+          "d": "Override strength",
+          "group": "Atmosphere Properties",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "rainstorm": {
+      "n": "Rainstorm",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "thunder": {
+      "n": "Thunder",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "snow-light": {
+      "n": "Snow Light",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "snow-heavy": {
+      "n": "Snow Heavy",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "blizzard": {
+      "n": "Blizzard",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "underwater": {
+      "n": "Underwater",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "lake-fog": {
+      "n": "Lake Fog",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "woodland-pollen": {
+      "n": "Woodland Pollen",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "woodland-firefly": {
+      "n": "Woodland Firefly",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "wetland-flies": {
+      "n": "Wetland Flies",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply this weather override",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Velocity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle fall velocity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Gravity",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Particle gravity",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Box Size X",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn width",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Box Size Y",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn depth",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Box Size Z",
+          "t": "slider",
+          "v": [
+            10,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle spawn height",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Life Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Minimum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Life Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            20,
+            0.1
+          ],
+          "d": "Maximum particle lifetime",
+          "group": "Particle Motion",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Size Min",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Minimum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Size Max",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Maximum particle size",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Edge Softness",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Particle edge softness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Local Lights",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle light multiplier",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Particle Color %",
+          "t": "slider",
+          "v": [
+            100,
+            0,
+            100,
+            1
+          ],
+          "d": "Particle colour blend",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Luminance",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Particle colour brightness",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 9
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Weather particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the particle colour",
+          "group": "Particle Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "lightning": {
+      "n": "Lightning",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override lightning colour and frequency",
+          "group": "Strike Control",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Force Lightning",
+          "t": "toggle",
+          "d": "Trigger a lightning strike while enabled",
+          "group": "Strike Control",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Strike Frequency",
+          "t": "slider",
+          "v": [
+            5000,
+            0,
+            32767,
+            100
+          ],
+          "d": "Per-frame strike chance threshold",
+          "group": "Strike Control",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Main Color",
+          "t": "color",
+          "rgb": [
+            134,
+            158,
+            252,
+            255
+          ],
+          "d": "Lightning tint",
+          "group": "Lightning Colours",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Corona Color",
+          "t": "color",
+          "rgb": [
+            156,
+            202,
+            255,
+            255
+          ],
+          "d": "Lightning tint",
+          "group": "Lightning Colours",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle lightning colours",
+          "group": "Lightning Colours",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Lightning Colours",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ],
+      "columns": 4
+    },
+    "fog": {
+      "n": "Fog",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply the colour override",
+          "group": "Fog Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Global light or fog colour",
+          "group": "Fog Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the colour continuously",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "ped-light": {
+      "n": "Ped Light",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Apply the colour override",
+          "group": "Ped Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Global light or fog colour",
+          "group": "Ped Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the colour continuously",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "street-light": {
+      "n": "Street Light",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override this world light path",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Mode",
+          "t": "array_option",
+          "o": [
+            "Rainbow",
+            "Static Rainbow",
+            "Static"
+          ],
+          "i": 2,
+          "d": "Rainbow, static rainbow or custom colour",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Hue",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Saturation",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Intensity",
+          "t": "slider",
+          "v": [
+            0.5,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Frequency",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Update Delay",
+          "t": "slider",
+          "v": [
+            1000,
+            0,
+            10000,
+            10
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Update Value",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Min Value",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Max Value",
+          "t": "slider",
+          "v": [
+            5,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Custom Color",
+          "t": "color",
+          "rgb": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "d": "Static light colour",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        }
+      ],
+      "columns": 4
+    },
+    "scene-lights": {
+      "n": "Scene Lights",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override this world light path",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Mode",
+          "t": "array_option",
+          "o": [
+            "Rainbow",
+            "Static Rainbow",
+            "Static"
+          ],
+          "i": 2,
+          "d": "Rainbow, static rainbow or custom colour",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Hue",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Saturation",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Intensity",
+          "t": "slider",
+          "v": [
+            0.5,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Frequency",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Update Delay",
+          "t": "slider",
+          "v": [
+            1000,
+            0,
+            10000,
+            10
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Update Value",
+          "t": "slider",
+          "v": [
+            2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Min Value",
+          "t": "slider",
+          "v": [
+            0,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Max Value",
+          "t": "slider",
+          "v": [
+            5,
+            -10,
+            10,
+            0.1
+          ],
+          "d": "Legacy light colour parameter",
+          "group": "Rainbow Motion",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Custom Color",
+          "t": "color",
+          "rgb": [
+            255,
+            0,
+            255,
+            255
+          ],
+          "d": "Static light colour",
+          "group": "Light Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        }
+      ],
+      "columns": 4
+    },
+    "water": {
+      "n": "Water",
+      "c": [
+        {
+          "n": "Ocean Height",
+          "t": "toggle",
+          "d": "Override the ocean surface height",
+          "group": "Ocean",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Height",
+          "t": "slider",
+          "v": [
+            0,
+            -1000,
+            1000,
+            1
+          ],
+          "d": "Ocean surface height",
+          "group": "Ocean",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Transparent Ocean",
+          "t": "toggle",
+          "d": "See through the ocean surface",
+          "group": "Ocean",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Puddles",
+          "t": "toggle",
+          "d": "Override water wetness on the map",
+          "group": "Wetness",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Puddle Amount",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Water wetness multiplier",
+          "group": "Wetness",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Water Color",
+          "t": "sub_menu",
+          "p": "water-color",
+          "d": "Directional and ambient shader colour",
+          "group": "Other Controls",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        }
+      ],
+      "columns": 4
+    },
+    "water-color": {
+      "n": "Water Color",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override water shader colours",
+          "group": "Directional Water",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Override Directional",
+          "t": "toggle",
+          "d": "Apply this water colour",
+          "on": 1,
+          "group": "Directional Water",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Directional Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Water shader colour",
+          "group": "Directional Water",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Directional Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Water light multiplier",
+          "group": "Directional Water",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Override Ambient",
+          "t": "toggle",
+          "d": "Apply this water colour",
+          "on": 1,
+          "group": "Ambient Water",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Ambient Color",
+          "t": "color",
+          "rgb": [
+            38,
+            77,
+            115,
+            255
+          ],
+          "d": "Water shader colour",
+          "group": "Ambient Water",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Ambient Intensity",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            5,
+            0.05
+          ],
+          "d": "Water light multiplier",
+          "group": "Ambient Water",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        }
+      ],
+      "columns": 4
+    },
+    "liquid": {
+      "n": "Liquid",
+      "c": [
+        {
+          "n": "Petrol VFX",
+          "t": "toggle",
+          "d": "Override petrol liquid effects",
+          "group": "Petrol Duration",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Foot Duration",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            100,
+            0.1
+          ],
+          "d": "Petrol effect timing",
+          "group": "Petrol Duration",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Wheel Duration",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            100,
+            0.1
+          ],
+          "d": "Petrol effect timing",
+          "group": "Petrol Duration",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Foot Lifetime",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            100,
+            0.1
+          ],
+          "d": "Petrol effect timing",
+          "group": "Petrol Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Wheel Lifetime",
+          "t": "slider",
+          "v": [
+            1,
+            0,
+            100,
+            0.1
+          ],
+          "d": "Petrol effect timing",
+          "group": "Petrol Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Petrol Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Petrol effect colour",
+          "group": "Petrol Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle petrol colour",
+          "group": "Petrol Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Petrol Appearance",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        }
+      ],
+      "columns": 4
+    },
+    "particles": {
+      "n": "Particles",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Recolour matching particle effects",
+          "group": "Particle Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Particle tint",
+          "group": "Particle Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the tint colour",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "fire": {
+      "n": "Fire",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Recolour matching particle effects",
+          "group": "Fire Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Particle tint",
+          "group": "Fire Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the tint colour",
+          "group": "Fire Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.1
+          ],
+          "d": "Colour cycle speed",
+          "group": "Fire Tint",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Petrol Tank Fires",
+          "t": "toggle",
+          "d": "Include this fire category",
+          "on": 1,
+          "group": "Fire Types",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Vehicle Wreck Fires",
+          "t": "toggle",
+          "d": "Include this fire category",
+          "on": 1,
+          "group": "Fire Types",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Peds On Fire",
+          "t": "toggle",
+          "d": "Include this fire category",
+          "on": 1,
+          "group": "Fire Types",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Environmental Fires",
+          "t": "toggle",
+          "d": "Include this fire category",
+          "on": 1,
+          "group": "Fire Types",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ],
+      "columns": 4
+    },
+    "decals": {
+      "n": "Decals",
+      "c": [
+        {
+          "n": "Footprints",
+          "t": "sub_menu",
+          "p": "footprints",
+          "d": "Legacy decal tint",
+          "group": "Other Controls",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Bullet Impact",
+          "t": "sub_menu",
+          "p": "bullet-impact",
+          "d": "Legacy decal tint",
+          "group": "Other Controls",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "footprints": {
+      "n": "Footprints",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Recolour this decal type",
+          "group": "Footprint Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Decal colour",
+          "group": "Footprint Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the decal colour",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.05
+          ],
+          "d": "Colour cycle speed",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "bullet-impact": {
+      "n": "Bullet Impact",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Recolour this decal type",
+          "group": "Impact Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Decal colour",
+          "group": "Impact Colour",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle the decal colour",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.05
+          ],
+          "d": "Colour cycle speed",
+          "group": "Animation",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        }
+      ],
+      "columns": 4
+    },
+    "vehicle-lighting": {
+      "n": "Vehicle Lighting",
+      "c": [
+        {
+          "n": "Neon",
+          "t": "sub_menu",
+          "p": "neon",
+          "d": "Global neon renderer settings",
+          "group": "Neon Lighting",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Vehicle Lights",
+          "t": "sub_menu",
+          "p": "vehicle-lights",
+          "d": "Interior, plate, dash and door colours",
+          "group": "Vehicle Lights",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        }
+      ],
+      "columns": 4
+    },
+    "neon": {
+      "n": "Neon",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override global neon light settings",
+          "group": "Neon Glow",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Intensity",
+          "t": "slider",
+          "v": [
+            16,
+            0,
+            100,
+            0.1
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Glow",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Radius",
+          "t": "slider",
+          "v": [
+            1.5,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Glow",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Falloff Exponent",
+          "t": "slider",
+          "v": [
+            128,
+            0,
+            256,
+            1
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Glow",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Capsule Sides",
+          "t": "slider",
+          "v": [
+            1.2,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Shape",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Capsule Front/Back",
+          "t": "slider",
+          "v": [
+            0.6,
+            0,
+            10,
+            0.1
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Shape",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Clip Plane Height",
+          "t": "slider",
+          "v": [
+            -0.014,
+            -2,
+            2,
+            0.001
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Shape",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Bike Clip Height",
+          "t": "slider",
+          "v": [
+            0.25,
+            -2,
+            2,
+            0.01
+          ],
+          "d": "Legacy neon light parameter",
+          "group": "Neon Shape",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ],
+      "columns": 4
+    },
+    "vehicle-lights": {
+      "n": "Vehicle Lights",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override vehicle light colours",
+          "group": "Cabin & Plate",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Interior Light",
+          "t": "color",
+          "rgb": [
+            255,
+            200,
+            120,
+            255
+          ],
+          "d": "Vehicle light colour",
+          "group": "Cabin & Plate",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Plate Light",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Vehicle light colour",
+          "group": "Cabin & Plate",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Dash Light",
+          "t": "color",
+          "rgb": [
+            255,
+            200,
+            120,
+            255
+          ],
+          "d": "Vehicle light colour",
+          "group": "Dash & Door",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Door Light",
+          "t": "color",
+          "rgb": [
+            255,
+            200,
+            120,
+            255
+          ],
+          "d": "Vehicle light colour",
+          "group": "Dash & Door",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle vehicle light colours",
+          "group": "Dash & Door",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.05
+          ],
+          "d": "Colour cycle speed",
+          "group": "Dash & Door",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        }
+      ],
+      "columns": 4
+    },
+    "traffic-signals": {
+      "n": "Traffic Signals",
+      "c": [
+        {
+          "n": "Enabled",
+          "t": "toggle",
+          "d": "Override traffic signals",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Red",
+          "t": "color",
+          "rgb": [
+            255,
+            0,
+            0,
+            255
+          ],
+          "d": "Traffic signal colour",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Amber",
+          "t": "color",
+          "rgb": [
+            255,
+            128,
+            0,
+            255
+          ],
+          "d": "Traffic signal colour",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Green",
+          "t": "color",
+          "rgb": [
+            0,
+            255,
+            0,
+            255
+          ],
+          "d": "Traffic signal colour",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Walk",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "d": "Traffic signal colour",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Don't Walk",
+          "t": "color",
+          "rgb": [
+            255,
+            0,
+            0,
+            255
+          ],
+          "d": "Traffic signal colour",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Far Fade Start",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            100000,
+            25
+          ],
+          "d": "Traffic signal fade distance",
+          "group": "Fade Distances",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Far Fade End",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            100000,
+            25
+          ],
+          "d": "Traffic signal fade distance",
+          "group": "Fade Distances",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Near Fade Start",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            100000,
+            25
+          ],
+          "d": "Traffic signal fade distance",
+          "group": "Fade Distances",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Near Fade End",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            100000,
+            25
+          ],
+          "d": "Traffic signal fade distance",
+          "group": "Fade Distances",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Rainbow",
+          "t": "toggle",
+          "d": "Cycle traffic light colours",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Rainbow Speed",
+          "t": "slider",
+          "v": [
+            0.3,
+            0,
+            1,
+            0.05
+          ],
+          "d": "Colour cycle speed",
+          "group": "Signal Colours",
+          "groupOrder": 1,
+          "groupItemOrder": 8
+        }
+      ],
+      "columns": 4
+    },
+    "events-live": {
+      "n": "Live",
+      "c": [
+        {
+          "n": "Filter by name, resource or arguments",
+          "t": "input_text",
+          "group": "Live",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Clear",
+          "t": "button",
+          "group": "Live",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Event name to block",
+          "t": "input_text",
+          "group": "Live",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Block",
+          "t": "button",
+          "d": "Preview only: no live event hook.",
+          "group": "Live",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Unblock",
+          "t": "button",
+          "d": "Preview only: no live event hook.",
+          "group": "Live",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        }
+      ]
+    },
+    "events-trigger": {
+      "n": "Trigger",
+      "c": [
+        {
+          "n": "Event name",
+          "t": "input_text",
+          "d": "resource:eventName",
+          "group": "Trigger",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Send as",
+          "t": "array_option",
+          "o": [
+            "Client",
+            "Server",
+            "Latent"
+          ],
+          "i": 0,
+          "group": "Trigger",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Arguments (Lua expression)",
+          "t": "input_text",
+          "d": "{1, 'text', vector3(0, 0, 0)}",
+          "group": "Trigger",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Fire Event",
+          "t": "button",
+          "d": "Preview only: no event is sent.",
+          "group": "Trigger",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        }
+      ]
+    },
+    "events-scanner": {
+      "n": "Scanner",
+      "c": [
+        {
+          "n": "Scan Resources",
+          "t": "button",
+          "d": "Preview only: does not inspect any server or device.",
+          "group": "Scanner",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Cancel Scan",
+          "t": "button",
+          "group": "Scanner",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Filter results",
+          "t": "input_text",
+          "group": "Scanner",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        }
+      ]
+    },
+    "nenyoo-appearance": {
+      "n": "Nenyoo Appearance",
+      "c": [
+        {
+          "n": "Accent",
+          "t": "color",
+          "rgb": [
+            186,
+            134,
+            255,
+            255
+          ],
+          "group": "Colors",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Background",
+          "t": "color",
+          "rgb": [
+            21,
+            24,
+            27,
+            230
+          ],
+          "group": "Colors",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Panel",
+          "t": "color",
+          "rgb": [
+            15,
+            18,
+            20,
+            255
+          ],
+          "group": "Colors",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Nen Color",
+          "t": "color",
+          "rgb": [
+            186,
+            134,
+            255,
+            255
+          ],
+          "group": "Colors",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "yoo Color",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "group": "Colors",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Sidebar",
+          "t": "color",
+          "rgb": [
+            21,
+            24,
+            27,
+            230
+          ],
+          "group": "Surface Colors",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Header",
+          "t": "color",
+          "rgb": [
+            21,
+            24,
+            27,
+            230
+          ],
+          "group": "Surface Colors",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Group Header",
+          "t": "color",
+          "rgb": [
+            13,
+            16,
+            18,
+            255
+          ],
+          "group": "Surface Colors",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Input",
+          "t": "color",
+          "rgb": [
+            28,
+            32,
+            36,
+            255
+          ],
+          "group": "Surface Colors",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Selection",
+          "t": "color",
+          "rgb": [
+            34,
+            40,
+            45,
+            255
+          ],
+          "group": "Surface Colors",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Text",
+          "t": "color",
+          "rgb": [
+            211,
+            216,
+            219,
+            255
+          ],
+          "group": "Text & Borders",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Muted Text",
+          "t": "color",
+          "rgb": [
+            153,
+            162,
+            168,
+            255
+          ],
+          "group": "Text & Borders",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Section Text",
+          "t": "color",
+          "rgb": [
+            102,
+            113,
+            120,
+            255
+          ],
+          "group": "Text & Borders",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Border",
+          "t": "color",
+          "rgb": [
+            255,
+            255,
+            255,
+            12
+          ],
+          "group": "Text & Borders",
+          "groupOrder": 3,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Sidebar Width",
+          "t": "slider",
+          "v": [
+            170,
+            150,
+            230,
+            1
+          ],
+          "d": "Left navigation width",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Corner Radius",
+          "t": "slider",
+          "v": [
+            3,
+            0,
+            18,
+            1
+          ],
+          "d": "Cards and controls",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "ui-layout": {
+      "n": "UI Layout",
+      "c": [
+        {
+          "n": "Group Columns",
+          "t": "slider",
+          "v": [
+            3,
+            1,
+            3,
+            1
+          ],
+          "d": "Maximum columns; adapts to available width",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Group Spacing",
+          "t": "slider",
+          "v": [
+            16,
+            8,
+            28,
+            1
+          ],
+          "d": "Space between groups",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Row Spacing",
+          "t": "slider",
+          "v": [
+            0,
+            0,
+            12,
+            1
+          ],
+          "d": "Extra space between feature controls",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Scroll Speed",
+          "t": "slider",
+          "v": [
+            70,
+            20,
+            140,
+            1
+          ],
+          "d": "Scroll distance per wheel step",
+          "group": "UI Layout",
+          "groupOrder": 1,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Sidebar Labels",
+          "t": "toggle",
+          "on": 1,
+          "group": "Navigation",
+          "groupOrder": 4,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Sidebar Icons",
+          "t": "toggle",
+          "on": 1,
+          "group": "Navigation",
+          "groupOrder": 4,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Tab Underline",
+          "t": "toggle",
+          "on": 1,
+          "group": "Navigation",
+          "groupOrder": 4,
+          "groupItemOrder": 3
+        }
+      ]
+    },
+    "typography": {
+      "n": "Typography",
+      "c": [
+        {
+          "n": "Title Size",
+          "t": "slider",
+          "v": [
+            20,
+            16,
+            32,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Item Size",
+          "t": "slider",
+          "v": [
+            11,
+            10,
+            20,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Small Size",
+          "t": "slider",
+          "v": [
+            9,
+            8,
+            16,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Value Size",
+          "t": "slider",
+          "v": [
+            10,
+            9,
+            18,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Description Size",
+          "t": "slider",
+          "v": [
+            9,
+            8,
+            16,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Section Label Size",
+          "t": "slider",
+          "v": [
+            10,
+            8,
+            14,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Tagline Size",
+          "t": "slider",
+          "v": [
+            9,
+            8,
+            16,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Overlay Text Size",
+          "t": "slider",
+          "v": [
+            8,
+            7,
+            14,
+            1
+          ],
+          "group": "Typography",
+          "groupOrder": 2,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Title Weight",
+          "t": "slider",
+          "v": [
+            600,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Item Weight",
+          "t": "slider",
+          "v": [
+            400,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Small Weight",
+          "t": "slider",
+          "v": [
+            400,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Value Weight",
+          "t": "slider",
+          "v": [
+            400,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Description Weight",
+          "t": "slider",
+          "v": [
+            400,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Section Label Weight",
+          "t": "slider",
+          "v": [
+            500,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Tagline Weight",
+          "t": "slider",
+          "v": [
+            500,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 7
+        },
+        {
+          "n": "Overlay Text Weight",
+          "t": "slider",
+          "v": [
+            600,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 8
+        },
+        {
+          "n": "Tab Weight",
+          "t": "slider",
+          "v": [
+            600,
+            400,
+            800,
+            100
+          ],
+          "d": "Text thickness, 400 Regular to 800 Extra Bold",
+          "group": "Font Weight",
+          "groupOrder": 3,
+          "groupItemOrder": 9
+        }
+      ]
+    },
+    "motion": {
+      "n": "Motion",
+      "c": [
+        {
+          "n": "Animations Enabled",
+          "t": "toggle",
+          "d": "Enable interface transitions",
+          "on": 1,
+          "group": "Motion",
+          "groupOrder": 5,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Motion Speed",
+          "t": "slider",
+          "v": [
+            1,
+            0.5,
+            2,
+            0.05
+          ],
+          "d": "Animation speed multiplier",
+          "group": "Motion",
+          "groupOrder": 5,
+          "groupItemOrder": 2
+        }
+      ]
+    },
+    "configs": {
+      "n": "Configs",
+      "c": [
+        {
+          "n": "Config name",
+          "t": "input_text",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 1
+        },
+        {
+          "n": "Save",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 2
+        },
+        {
+          "n": "Create",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 3
+        },
+        {
+          "n": "Saved configs",
+          "t": "array_option",
+          "o": [
+            "Default"
+          ],
+          "i": 0,
+          "d": "The game lists saved profiles from disk; this preview shows the protected Default profile.",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 4
+        },
+        {
+          "n": "Rename",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 5
+        },
+        {
+          "n": "Delete Current Config",
+          "t": "button",
+          "group": "Configs",
+          "groupOrder": 2,
+          "groupItemOrder": 6
+        },
+        {
+          "n": "Reset Appearance",
+          "t": "button",
+          "group": "Appearance Defaults",
+          "groupOrder": 3,
+          "groupItemOrder": 7
+        }
+      ]
+    }
+  },
+  "options": 514,
+  "menuPages": 59
+}

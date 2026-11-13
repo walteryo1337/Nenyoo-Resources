@@ -1,0 +1,511 @@
+{
+  "version": "preview-f256ca6d7791d963",
+  "games": {
+    "gtav": {
+      "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/gtav-menu.json",
+      "catalogsUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/gtav-catalogs.json",
+      "assets": [
+        {
+          "name": "tick.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/tick.png"
+        },
+        {
+          "name": "search.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/search.png"
+        },
+        {
+          "name": "Up Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Up%20Arrow.png"
+        },
+        {
+          "name": "Down Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Down%20Arrow.png"
+        },
+        {
+          "name": "Left Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Left%20Arrow.png"
+        },
+        {
+          "name": "Right Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Right%20Arrow.png"
+        },
+        {
+          "name": "nenyoo_logo.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/nenyoo_logo.png"
+        },
+        {
+          "name": "flag_EN.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/EN.png"
+        },
+        {
+          "name": "flag_DE.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/DE.png"
+        },
+        {
+          "name": "flag_FR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/FR.png"
+        },
+        {
+          "name": "flag_RU.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/RU.png"
+        },
+        {
+          "name": "flag_ES.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/ES.png"
+        },
+        {
+          "name": "flag_PT.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/PT.png"
+        },
+        {
+          "name": "flag_IT.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/IT.png"
+        },
+        {
+          "name": "flag_PL.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/PL.png"
+        },
+        {
+          "name": "flag_TR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/TR.png"
+        },
+        {
+          "name": "flag_CN.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/CN.png"
+        },
+        {
+          "name": "flag_JP.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/JP.png"
+        },
+        {
+          "name": "flag_KR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/KR.png"
+        },
+        {
+          "name": "flag_TH.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/TH.png"
+        },
+        {
+          "name": "flag_HI.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/flags/HI.png"
+        },
+        {
+          "name": "Inter-Regular.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Regular.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "Inter-Medium.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Medium.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "Inter-SemiBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-SemiBold.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "Inter-Bold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-Bold.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "Inter-ExtraBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Inter-ExtraBold.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "Naru Sans Demo.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Naru%20Sans%20Demo.ttf",
+          "root": "fonts"
+        },
+        {
+          "name": "On.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/On.png"
+        },
+        {
+          "name": "Off.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Off.png"
+        },
+        {
+          "name": "Moon Header.gif",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Textures/Moon%20Header.gif"
+        }
+      ],
+      "languages": [
+        {
+          "hash": "LANG_EN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_EN.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_DE",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_DE.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_FR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_FR.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_RU",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_RU.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_ES",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_ES.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_PT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_PT.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_IT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_IT.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_PL",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_PL.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_TR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_TR.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/Pricedown_Bl.otf",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_CN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_CN.json",
+          "body_font": "Microsoft YaHei UI",
+          "title_font": "Microsoft YaHei UI",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_JP",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_JP.json",
+          "body_font": "Yu Gothic UI",
+          "title_font": "Yu Gothic UI",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_KR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_KR.json",
+          "body_font": "Malgun Gothic",
+          "title_font": "Malgun Gothic",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_TH",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_TH.json",
+          "body_font": "Leelawadee UI",
+          "title_font": "Leelawadee UI",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        },
+        {
+          "hash": "LANG_HI",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Translations/LANG_HI.json",
+          "body_font": "Nirmala UI",
+          "title_font": "Nirmala UI",
+          "icon_font": "https://walteryo1337.github.io/Nenyoo-Resources/GTAV/Fonts/FontAwesome7Free-Solid-900.otf"
+        }
+      ]
+    },
+    "fivem": {
+      "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/fivem-menu.json"
+    },
+    "rdr2": {
+      "menuUrl": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Previews/rdr2-menu.json",
+      "assets": [
+        {
+          "name": "tick.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/tick.png",
+          "hash": "7cddd04f001d2919"
+        },
+        {
+          "name": "search.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/search.png",
+          "hash": "3d8f4ac08c7019e0"
+        },
+        {
+          "name": "Up Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Up%20Arrow.png",
+          "hash": "8149dc80c8ad7d13"
+        },
+        {
+          "name": "Down Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Down%20Arrow.png",
+          "hash": "035c26d88c95eda6"
+        },
+        {
+          "name": "Left Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Left%20Arrow.png",
+          "hash": "83ca38a21940a6b3"
+        },
+        {
+          "name": "Right Arrow.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Right%20Arrow.png",
+          "hash": "2234563bb7ec850f"
+        },
+        {
+          "name": "nenyoo_logo.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/nenyoo_logo.png",
+          "hash": "a591f2cccfce450e"
+        },
+        {
+          "name": "flag_EN.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/EN.png",
+          "hash": "8e5ac895b3b8dcc7"
+        },
+        {
+          "name": "flag_DE.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/DE.png",
+          "hash": "27c70cb223fcdd36"
+        },
+        {
+          "name": "flag_FR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/FR.png",
+          "hash": "6d3f9af08c17f4b0"
+        },
+        {
+          "name": "flag_RU.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/RU.png",
+          "hash": "241644e070dad519"
+        },
+        {
+          "name": "flag_ES.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/ES.png",
+          "hash": "07da89408eddadea"
+        },
+        {
+          "name": "flag_PT.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/PT.png",
+          "hash": "ca452a299792f167"
+        },
+        {
+          "name": "flag_IT.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/IT.png",
+          "hash": "8367acee53c894f8"
+        },
+        {
+          "name": "flag_PL.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/PL.png",
+          "hash": "7da60aac310e10da"
+        },
+        {
+          "name": "flag_TR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/TR.png",
+          "hash": "5b5bdbe9d56b85b9"
+        },
+        {
+          "name": "flag_CN.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/CN.png",
+          "hash": "e37f3cc28b0ed9ba"
+        },
+        {
+          "name": "flag_JP.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/JP.png",
+          "hash": "9288357e2e758b95"
+        },
+        {
+          "name": "flag_KR.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/KR.png",
+          "hash": "077e8b79d5822fa8"
+        },
+        {
+          "name": "flag_TH.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/TH.png",
+          "hash": "5a77ddfe50ba98b0"
+        },
+        {
+          "name": "flag_HI.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/flags/HI.png",
+          "hash": "5c61395b743a2641"
+        },
+        {
+          "name": "Inter-Regular.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Inter-Regular.ttf",
+          "root": "fonts",
+          "hash": "420df1c0a8533e3a"
+        },
+        {
+          "name": "Inter-Medium.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Inter-Medium.ttf",
+          "root": "fonts",
+          "hash": "b4d7e29ef886d7f2"
+        },
+        {
+          "name": "Inter-SemiBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Inter-SemiBold.ttf",
+          "root": "fonts",
+          "hash": "b5f73f85879dca98"
+        },
+        {
+          "name": "Inter-Bold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Inter-Bold.ttf",
+          "root": "fonts",
+          "hash": "a7884f0e51295be6"
+        },
+        {
+          "name": "Inter-ExtraBold.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Inter-ExtraBold.ttf",
+          "root": "fonts",
+          "hash": "aedb8519169ad787"
+        },
+        {
+          "name": "Naru Sans Demo.ttf",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Naru%20Sans%20Demo.ttf",
+          "root": "fonts",
+          "hash": "c88a3f37b924a2e8"
+        },
+        {
+          "name": "On.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/On.png",
+          "hash": "8c1e9ad7f560b120"
+        },
+        {
+          "name": "Off.png",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Off.png",
+          "hash": "7494c29fdc556562"
+        },
+        {
+          "name": "Moon Header.gif",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Textures/Moon%20Header.gif",
+          "hash": "df81af339ebbe65a"
+        }
+      ],
+      "languages": [
+        {
+          "hash": "LANG_EN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_EN.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_DE",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_DE.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_FR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_FR.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_RU",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_RU.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_ES",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_ES.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_PT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_PT.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_IT",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_IT.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_PL",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_PL.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_TR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_TR.json",
+          "body_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Chalet%20LondonNineteenSixty_Regular.otf",
+          "title_font": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Fonts/Pricedown_Bl.otf"
+        },
+        {
+          "hash": "LANG_CN",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_CN.json",
+          "body_font": "Microsoft YaHei UI",
+          "title_font": "Microsoft YaHei UI"
+        },
+        {
+          "hash": "LANG_JP",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_JP.json",
+          "body_font": "Yu Gothic UI",
+          "title_font": "Yu Gothic UI"
+        },
+        {
+          "hash": "LANG_KR",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_KR.json",
+          "body_font": "Malgun Gothic",
+          "title_font": "Malgun Gothic"
+        },
+        {
+          "hash": "LANG_TH",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_TH.json",
+          "body_font": "Leelawadee UI",
+          "title_font": "Leelawadee UI"
+        },
+        {
+          "hash": "LANG_HI",
+          "url": "https://walteryo1337.github.io/Nenyoo-Resources/RDR2/Translations/LANG_HI.json",
+          "body_font": "Nirmala UI",
+          "title_font": "Nirmala UI"
+        }
+      ]
+    }
+  },
+  "fonts": {
+    "interRegular": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Fonts/inter-regular.woff",
+    "interSemibold": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Fonts/inter-semibold.woff",
+    "outfitLight": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Fonts/outfit-light.woff",
+    "license": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Fonts/OFL.txt"
+  },
+  "artwork": {
+    "gtav": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Artwork/gtav.webp",
+    "fivem": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Artwork/fivem.webp",
+    "rdr2": "https://walteryo1337.github.io/Nenyoo-Resources/Site/Artwork/rdr2.webp"
+  },
+  "sha256": {
+    "Site/Previews/gtav-menu.json": "f8572e29501be783fc2d6b121feccb7e0fc850f1a6165acaec636f0a68667693",
+    "Site/Previews/gtav-catalogs.json": "f1ca65198edf5d5155ff9d12bcf0fb2b1ae435ae84c01237586273b4a734aad8",
+    "Site/Previews/fivem-menu.json": "33f3bce578678152350b3e6c83fb8418d04ea11c840df37948d5e35f46d0a43e",
+    "Site/Previews/rdr2-menu.json": "496f19fdf2d0a4b55b496d2bef0ae61e639c0b4ae6e728dd3ff617086a74e329",
+    "Site/Fonts/inter-regular.woff": "e89e9b8de5a9c1641b472d0b4c496c48c88b65d46a36ab172832cbc69c33853b",
+    "Site/Fonts/inter-semibold.woff": "24c6dd8201996a60c36121cc9f0e2994e6010f1f848e5b0fe8fe671843ffc49e",
+    "Site/Fonts/outfit-light.woff": "bf155aef523c2ad73305ba61bc5955eff3ba28d96e19d5a60efff2d5765d3fbd",
+    "Site/Fonts/OFL.txt": "c5a68851aa6c8fec1db62aa3110da6bd9a1b0b6a5ba3c4fabb095b70b30aa007",
+    "Site/Artwork/gtav.webp": "ca9355099e48a57b8ae661754ac8736125e004da5bc31ad9caf2e0b003fcfa0e",
+    "Site/Artwork/fivem.webp": "486bc309a6f910deac85a563de633f0cb8b48b73b4e332b004ef8f84fa649a18",
+    "Site/Artwork/rdr2.webp": "9cd0b85d995d9c6351dc9357e34a3d866897d3171804f2132eabb3b4be9029cf"
+  }
+}
